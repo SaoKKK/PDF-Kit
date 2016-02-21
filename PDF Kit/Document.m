@@ -7,6 +7,7 @@
 //
 
 #import "Document.h"
+#import "MyWindowController.h"
 
 @interface Document ()
 
@@ -14,41 +15,50 @@
 
 @implementation Document
 
+@synthesize strPDFDoc;
+
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // Add your subclass-specific initialization here.
+        strPDFDoc = nil;
     }
     return self;
 }
 
-- (void)windowControllerDidLoadNib:(NSWindowController *)aController {
-    [super windowControllerDidLoadNib:aController];
-    // Add any code here that needs to be executed once the windowController has loaded the document's window.
-}
-
 + (BOOL)autosavesInPlace {
-    return YES;
+    return NO;
 }
 
 - (NSString *)windowNibName {
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
     return @"Document";
 }
 
+- (void)makeWindowControllers {
+    //ドキュメントウインドウコントローラのインスタンスを作成
+    NSWindowController *cntr = [[MyWindowController alloc]initWithWindowNibName:[self windowNibName]];
+    [self addWindowController:cntr];
+}
+
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
-    // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-    // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-    [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
     return nil;
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {
-    // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-    // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
+    //ドキュメントデータを読み込みドキュメントウインドウに表示
+    PDFDocument *_pdfDoc = [[PDFDocument alloc]initWithURL:[self fileURL]];
+    if (! _pdfDoc) {
+        //ファイルの読み込みに失敗した場合
+        *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+        return NO;
+    } else {
+        if ([self windowControllers].count != 0) {
+            //復帰のための読み込みの場合（既存のPDFビューに直接読み込む）
+            MyWindowController *winCtr = [[self windowControllers]objectAtIndex:0];
+            [winCtr._pdfView setDocument:_pdfDoc];
+        } else {
+            strPDFDoc = _pdfDoc;
+        }
+    }
     return YES;
 }
 

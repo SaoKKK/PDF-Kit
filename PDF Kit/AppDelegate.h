@@ -10,6 +10,9 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (readwrite,retain,nonatomic)NSMutableArray* PDFLst;
+@property (readwrite,retain,nonatomic)NSMutableArray* errLst;
+@property (weak) IBOutlet NSWindow *statusWin;
 
 @end
 

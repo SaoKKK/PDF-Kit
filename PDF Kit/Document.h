@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
 
 @interface Document : NSDocument
 
+@property (readwrite,nonatomic)PDFDocument* strPDFDoc;
 
 @end
 

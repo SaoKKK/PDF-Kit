@@ -4,23 +4,37 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Sao's PDF Kit</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>pdf</string>
+				<string>PDF</string>
+				<string>ai</string>
+				<string>AI</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string></string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>application/pdf</string>
+			</array>
 			<key>CFBundleTypeName</key>
-			<string>DocumentType</string>
+			<string>NSPDFPboardType</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
 				<string>????</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adobe.pdf</string>
+				<string>com.adobe.illustrator.ai-image</string>
+			</array>
 			<key>NSDocumentClass</key>
 			<string>Document</string>
 		</dict>
