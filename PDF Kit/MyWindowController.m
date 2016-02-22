@@ -24,6 +24,8 @@
     Document *doc = [self document];
     //ファイルから読み込まれたPDFドキュメントをビューに表示
     [_pdfView setDocument:doc.strPDFDoc];
+    //delegateを設定
+    [[_pdfView document] setDelegate: self];
 }
 
 @end

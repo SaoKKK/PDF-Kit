@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B951BD651C719DD0007B9359 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD641C719DD0007B9359 /* AppDelegate.m */; };
+		B951BD681C719DD0007B9359 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD671C719DD0007B9359 /* main.m */; };
+		B951BD6B1C719DD0007B9359 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD6A1C719DD0007B9359 /* Document.m */; };
+		B951BD6E1C719DD0007B9359 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B951BD6C1C719DD0007B9359 /* Document.xib */; };
+		B951BD701C719DD0007B9359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B951BD6F1C719DD0007B9359 /* Assets.xcassets */; };
+		B951BD731C719DD0007B9359 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B951BD711C719DD0007B9359 /* MainMenu.xib */; };
+		B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD7F1C71A8FC007B9359 /* MergePDFWin.m */; };
+		B951BD831C71A920007B9359 /* MergePDFWin.xib in Resources */ = {isa = PBXBuildFile; fileRef = B951BD851C71A920007B9359 /* MergePDFWin.xib */; };
+		B951BD891C71C1FE007B9359 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B951BD881C71C1FE007B9359 /* Quartz.framework */; };
+		B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = B951BD8A1C71C2A4007B9359 /* btnAdd.png */; };
+		B951BD911C71C2A5007B9359 /* btnClear.png in Resources */ = {isa = PBXBuildFile; fileRef = B951BD8B1C71C2A5007B9359 /* btnClear.png */; };
+		B951BD921C71C2A5007B9359 /* btnRemove.png in Resources */ = {isa = PBXBuildFile; fileRef = B951BD8C1C71C2A5007B9359 /* btnRemove.png */; };
+		B951BD931C71C2A5007B9359 /* btnRestore.png in Resources */ = {isa = PBXBuildFile; fileRef = B951BD8D1C71C2A5007B9359 /* btnRestore.png */; };
+		B951BD941C71C2A5007B9359 /* btnSave.png in Resources */ = {isa = PBXBuildFile; fileRef = B951BD8E1C71C2A5007B9359 /* btnSave.png */; };
+		B951BD951C71C2A5007B9359 /* vline.png in Resources */ = {isa = PBXBuildFile; fileRef = B951BD8F1C71C2A5007B9359 /* vline.png */; };
+		B951BD9B1C71C58D007B9359 /* CCBackGroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD981C71C58D007B9359 /* CCBackGroundView.m */; };
+		B951BD9C1C71C58D007B9359 /* CCClearWin.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD9A1C71C58D007B9359 /* CCClearWin.m */; };
+		B951BDA31C71C759007B9359 /* PDFLst.array in Resources */ = {isa = PBXBuildFile; fileRef = B951BDA21C71C759007B9359 /* PDFLst.array */; };
+		B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BDA51C71DB23007B9359 /* ErrLstController.m */; };
+		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
+		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B951BD601C719DD0007B9359 /* Sao's PDF Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sao's PDF Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B951BD631C719DD0007B9359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B951BD641C719DD0007B9359 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B951BD671C719DD0007B9359 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B951BD691C719DD0007B9359 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		B951BD6A1C719DD0007B9359 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		B951BD6D1C719DD0007B9359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		B951BD6F1C719DD0007B9359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B951BD721C719DD0007B9359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B951BD741C719DD0007B9359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B951BD7C1C719E7E007B9359 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Document.strings; sourceTree = "<group>"; };
+		B951BD7D1C719E7E007B9359 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		B951BD7E1C71A8FC007B9359 /* MergePDFWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergePDFWin.h; sourceTree = "<group>"; };
+		B951BD7F1C71A8FC007B9359 /* MergePDFWin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergePDFWin.m; sourceTree = "<group>"; };
+		B951BD841C71A920007B9359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MergePDFWin.xib; sourceTree = "<group>"; };
+		B951BD871C71A929007B9359 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MergePDFWin.strings; sourceTree = "<group>"; };
+		B951BD881C71C1FE007B9359 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		B951BD8A1C71C2A4007B9359 /* btnAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnAdd.png; path = Graphics/btnAdd.png; sourceTree = "<group>"; };
+		B951BD8B1C71C2A5007B9359 /* btnClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnClear.png; path = Graphics/btnClear.png; sourceTree = "<group>"; };
+		B951BD8C1C71C2A5007B9359 /* btnRemove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnRemove.png; path = Graphics/btnRemove.png; sourceTree = "<group>"; };
+		B951BD8D1C71C2A5007B9359 /* btnRestore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnRestore.png; path = Graphics/btnRestore.png; sourceTree = "<group>"; };
+		B951BD8E1C71C2A5007B9359 /* btnSave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnSave.png; path = Graphics/btnSave.png; sourceTree = "<group>"; };
+		B951BD8F1C71C2A5007B9359 /* vline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vline.png; path = Graphics/vline.png; sourceTree = "<group>"; };
+		B951BD971C71C58D007B9359 /* CCBackGroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackGroundView.h; sourceTree = "<group>"; };
+		B951BD981C71C58D007B9359 /* CCBackGroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackGroundView.m; sourceTree = "<group>"; };
+		B951BD991C71C58D007B9359 /* CCClearWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClearWin.h; sourceTree = "<group>"; };
+		B951BD9A1C71C58D007B9359 /* CCClearWin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClearWin.m; sourceTree = "<group>"; };
+		B951BDA21C71C759007B9359 /* PDFLst.array */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PDFLst.array; path = Resources/PDFLst.array; sourceTree = "<group>"; };
+		B951BDA41C71DB23007B9359 /* ErrLstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrLstController.h; sourceTree = "<group>"; };
+		B951BDA51C71DB23007B9359 /* ErrLstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrLstController.m; sourceTree = "<group>"; };
+		B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
+		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
+		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
+		B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPDFView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B951BD5D1C719DD0007B9359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B951BD891C71C1FE007B9359 /* Quartz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B951BD571C719DD0007B9359 = {
+			isa = PBXGroup;
+			children = (
+				B951BD621C719DD0007B9359 /* Sao's PDF Kit */,
+				B951BD9D1C71C6AE007B9359 /* Frameworks */,
+				B951BD611C719DD0007B9359 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B951BD611C719DD0007B9359 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD601C719DD0007B9359 /* Sao's PDF Kit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B951BD621C719DD0007B9359 /* Sao's PDF Kit */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD631C719DD0007B9359 /* AppDelegate.h */,
+				B951BD641C719DD0007B9359 /* AppDelegate.m */,
+				B951BD711C719DD0007B9359 /* MainMenu.xib */,
+				B98CA6DE1C761548008C3E89 /* Document */,
+				B951BD6F1C719DD0007B9359 /* Assets.xcassets */,
+				B951BD961C71C53B007B9359 /* Custom Class */,
+				B951BD7B1C719E15007B9359 /* Merge PDF Win */,
+				B951BD9F1C71C714007B9359 /* Resources */,
+				B951BD7A1C719E0C007B9359 /* Graphics */,
+				B951BD741C719DD0007B9359 /* Info.plist */,
+				B951BD661C719DD0007B9359 /* Supporting Files */,
+			);
+			name = "Sao's PDF Kit";
+			path = "PDF Kit";
+			sourceTree = "<group>";
+		};
+		B951BD661C719DD0007B9359 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD671C719DD0007B9359 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B951BD7A1C719E0C007B9359 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD8A1C71C2A4007B9359 /* btnAdd.png */,
+				B951BD8B1C71C2A5007B9359 /* btnClear.png */,
+				B951BD8C1C71C2A5007B9359 /* btnRemove.png */,
+				B951BD8D1C71C2A5007B9359 /* btnRestore.png */,
+				B951BD8E1C71C2A5007B9359 /* btnSave.png */,
+				B951BD8F1C71C2A5007B9359 /* vline.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		B951BD7B1C719E15007B9359 /* Merge PDF Win */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD851C71A920007B9359 /* MergePDFWin.xib */,
+				B951BD7E1C71A8FC007B9359 /* MergePDFWin.h */,
+				B951BD7F1C71A8FC007B9359 /* MergePDFWin.m */,
+				B951BDA41C71DB23007B9359 /* ErrLstController.h */,
+				B951BDA51C71DB23007B9359 /* ErrLstController.m */,
+			);
+			name = "Merge PDF Win";
+			sourceTree = "<group>";
+		};
+		B951BD961C71C53B007B9359 /* Custom Class */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD971C71C58D007B9359 /* CCBackGroundView.h */,
+				B951BD981C71C58D007B9359 /* CCBackGroundView.m */,
+				B951BD991C71C58D007B9359 /* CCClearWin.h */,
+				B951BD9A1C71C58D007B9359 /* CCClearWin.m */,
+			);
+			name = "Custom Class";
+			sourceTree = "<group>";
+		};
+		B951BD9D1C71C6AE007B9359 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD9E1C71C6C6007B9359 /* Linked Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B951BD9E1C71C6C6007B9359 /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD881C71C1FE007B9359 /* Quartz.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		B951BD9F1C71C714007B9359 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B951BDA21C71C759007B9359 /* PDFLst.array */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B98CA6DE1C761548008C3E89 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				B951BD6C1C719DD0007B9359 /* Document.xib */,
+				B951BD691C719DD0007B9359 /* Document.h */,
+				B951BD6A1C719DD0007B9359 /* Document.m */,
+				B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */,
+				B98CA6E01C7615A1008C3E89 /* MyWindowController.m */,
+				B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */,
+				B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */,
+			);
+			name = Document;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B951BD5F1C719DD0007B9359 /* Sao's PDF Kit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B951BD771C719DD0007B9359 /* Build configuration list for PBXNativeTarget "Sao's PDF Kit" */;
+			buildPhases = (
+				B951BD5C1C719DD0007B9359 /* Sources */,
+				B951BD5D1C719DD0007B9359 /* Frameworks */,
+				B951BD5E1C719DD0007B9359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sao's PDF Kit";
+			productName = "PDF Kit";
+			productReference = B951BD601C719DD0007B9359 /* Sao's PDF Kit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B951BD581C719DD0007B9359 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "河野 さおり";
+				TargetAttributes = {
+					B951BD5F1C719DD0007B9359 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = B951BD5B1C719DD0007B9359 /* Build configuration list for PBXProject "Sao's PDF Kit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+			);
+			mainGroup = B951BD571C719DD0007B9359;
+			productRefGroup = B951BD611C719DD0007B9359 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B951BD5F1C719DD0007B9359 /* Sao's PDF Kit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B951BD5E1C719DD0007B9359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B951BD831C71A920007B9359 /* MergePDFWin.xib in Resources */,
+				B951BD931C71C2A5007B9359 /* btnRestore.png in Resources */,
+				B951BD701C719DD0007B9359 /* Assets.xcassets in Resources */,
+				B951BD6E1C719DD0007B9359 /* Document.xib in Resources */,
+				B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */,
+				B951BD921C71C2A5007B9359 /* btnRemove.png in Resources */,
+				B951BD911C71C2A5007B9359 /* btnClear.png in Resources */,
+				B951BDA31C71C759007B9359 /* PDFLst.array in Resources */,
+				B951BD731C719DD0007B9359 /* MainMenu.xib in Resources */,
+				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
+				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B951BD5C1C719DD0007B9359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */,
+				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
+				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,
+				B951BD6B1C719DD0007B9359 /* Document.m in Sources */,
+				B951BD681C719DD0007B9359 /* main.m in Sources */,
+				B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */,
+				B951BD651C719DD0007B9359 /* AppDelegate.m in Sources */,
+				B951BD9C1C71C58D007B9359 /* CCClearWin.m in Sources */,
+				B951BD9B1C71C58D007B9359 /* CCBackGroundView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B951BD6C1C719DD0007B9359 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B951BD6D1C719DD0007B9359 /* Base */,
+				B951BD7C1C719E7E007B9359 /* ja */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		B951BD711C719DD0007B9359 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B951BD721C719DD0007B9359 /* Base */,
+				B951BD7D1C719E7E007B9359 /* ja */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		B951BD851C71A920007B9359 /* MergePDFWin.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B951BD841C71A920007B9359 /* Base */,
+				B951BD871C71A929007B9359 /* ja */,
+			);
+			name = MergePDFWin.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B951BD751C719DD0007B9359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B951BD761C719DD0007B9359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B951BD781C719DD0007B9359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "PDF Kit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sao.PDF-Kit";
+				PRODUCT_NAME = "Sao's PDF Kit";
+			};
+			name = Debug;
+		};
+		B951BD791C719DD0007B9359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "PDF Kit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "Sao.PDF-Kit";
+				PRODUCT_NAME = "Sao's PDF Kit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B951BD5B1C719DD0007B9359 /* Build configuration list for PBXProject "Sao's PDF Kit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B951BD751C719DD0007B9359 /* Debug */,
+				B951BD761C719DD0007B9359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B951BD771C719DD0007B9359 /* Build configuration list for PBXNativeTarget "Sao's PDF Kit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B951BD781C719DD0007B9359 /* Debug */,
+				B951BD791C719DD0007B9359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B951BD581C719DD0007B9359 /* Project object */;
+}

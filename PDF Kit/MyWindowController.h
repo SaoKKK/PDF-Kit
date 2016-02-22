@@ -8,9 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
+#import "MyPDFView.h"
 
 @interface MyWindowController : NSWindowController
 
-@property (strong) IBOutlet PDFView *_pdfView;
+@property (strong) MyPDFView *_pdfView;
 
 @end
