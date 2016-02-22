@@ -11,7 +11,5 @@
 
 @interface Document : NSDocument
 
-@property (readwrite,nonatomic)PDFDocument* strPDFDoc;
-
 @end
 

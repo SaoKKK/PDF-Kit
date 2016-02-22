@@ -8,10 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
-#import "MyPDFView.h"
 
-@interface MyWindowController : NSWindowController
+@class MyPDFView;
 
-@property (strong) MyPDFView *_pdfView;
+@interface MyWindowController : NSWindowController{
+    IBOutlet NSWindow *window;
+    IBOutlet NSWindow *progressWin;
+    IBOutlet NSProgressIndicator *savingProgBar;
+    IBOutlet MyPDFView *_pdfView;
+    NSURL *docURL;
+}
 
 @end
