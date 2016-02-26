@@ -18,7 +18,7 @@
                 <outlet property="errTable" destination="ihy-CK-PBB" id="dNP-NB-AJf"/>
                 <outlet property="mergePDFtable" destination="cfB-a1-FJs" id="INq-be-2ou"/>
                 <outlet property="progressBar" destination="yuP-YF-lfL" id="YdG-Ur-o7H"/>
-                <outlet property="progressWin" destination="GNP-5R-tjx" id="3uO-9A-Fvz"/>
+                <outlet property="progressWin" destination="GNP-5R-tjx" id="7Hh-oO-Wa9"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="954-wO-hx8"/>
             </connections>
         </customObject>
@@ -481,7 +481,7 @@ DQ
             <point key="canvasLocation" x="389" y="761"/>
         </window>
         <customObject id="kew-6q-Zds" customClass="ErrLstController"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="GNP-5R-tjx">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="GNP-5R-tjx">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="109" y="138" width="300" height="89"/>

@@ -16,6 +16,8 @@
 @interface MergePDFWin (){
     IBOutlet NSWindow *window;
     IBOutlet NSWindow *errSheet;
+    IBOutlet NSWindow *progressWin;
+    IBOutlet NSProgressIndicator *progressBar;
 }
 
 @end
@@ -23,9 +25,7 @@
 @implementation MergePDFWin{
     NSArray *langAllPages;
     NSString *errMsgTxt,*errInfoTxt;
-    double pageIndexInfo,outputPDFTotalPg;
-    IBOutlet NSWindow *progressWin;
-    IBOutlet NSProgressIndicator *progressBar;
+    double outputPDFPageIndex,outputPDFTotalPg;
 }
 
 #pragma mark - initialize method
@@ -34,8 +34,6 @@
     self = [super init];
     if (self) {
         langAllPages = [NSArray arrayWithObjects:@"All Pages",@"全ページ",nil];
-        //ノーティフィケーションを設定
-        [self setUpNotification];
       }
     return self;
 }
@@ -55,6 +53,8 @@
             }
             [mergePDFtable reloadData];
         }
+        //ノーティフィケーションを設定
+        [self setUpNotification];
     }
     return self;
 }
@@ -325,7 +325,7 @@
 
 - (IBAction)btnMerge:(id)sender {
     [self.window makeFirstResponder:self];
-    pageIndexInfo = 0;
+    outputPDFPageIndex = 0;
     outputPDFTotalPg = 0;
     AppDelegate *appD = [NSApp delegate];
     //PDFLstの内容をチェック
@@ -413,10 +413,10 @@
     //PDF結合処理開始
     PDFDocument *outputDoc = [[PDFDocument alloc] init];
     NSUInteger pageIndex = 0;
+    //PDF作成開始ノーティフィケーションを送信
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidBeginCreate" object:self];
+    
     for (int i = 0; i < appD.PDFLst.count; i++){
-        //PDF作成開始ノーティフィケーションを送信
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidBeginCreate" object:self];
-
         NSDictionary *data = [appD.PDFLst objectAtIndex:i];
         NSURL *url = [NSURL fileURLWithPath:[data objectForKey:@"fPath"]];
         PDFDocument *inputDoc = [[PDFDocument alloc]initWithURL:url];
@@ -424,8 +424,9 @@
         NSUInteger index = [pageRange firstIndex];
         while(index != NSNotFound) {
             //PDFページ挿入終了ノーティフィケーションを送信
-            pageIndexInfo = pageIndex;
+            outputPDFPageIndex++;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndPageInsert" object:self];
+            
             PDFPage *page = [inputDoc pageAtIndex:index - 1];
             [outputDoc insertPage:page atIndex:pageIndex++];
             
@@ -473,13 +474,11 @@
     return indexset;
 }
 
-
 #pragma mark - notification
 
 //ノーティフィケーションを受け取った時の動作
 - (void)PDFDidBeginCreate:(NSNotification*)note {
     //プログレスバーのステータスを設定
-    NSLog(@"%f",outputPDFTotalPg);
     [progressBar setMaxValue:outputPDFTotalPg];
     [progressBar setDoubleValue: 0.0];
     //プログレス・パネルをシート表示
@@ -488,14 +487,12 @@
 
 - (void)PDFDidEndPageInsert:(NSNotification*)note {
     //プログレスバーの値を更新
-    NSLog(@"%f",pageIndexInfo);
-    [progressBar setDoubleValue:pageIndexInfo];
+    [progressBar setDoubleValue:outputPDFPageIndex];
     [progressBar displayIfNeeded];
 }
 
 - (void)PDFDidEndCreate:(NSNotification*)note {
-    //プログレス・パネルを終了させる
-    NSLog(@"%f",pageIndexInfo);
+   //プログレス・パネルを終了させる
     [self.window endSheet:progressWin returnCode:0];
     //[progressWin orderOut:self];
 }
