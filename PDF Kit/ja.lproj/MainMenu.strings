@@ -135,7 +135,7 @@
 "Kd2-mp-pUS.title" = "すべてを表示";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
-"LE2-aR-0XJ.title" = "Bring All to Front";
+"LE2-aR-0XJ.title" = "すべてを手前に移動";
 
 /* Class = "NSMenuItem"; title = "Paste Ruler"; ObjectID = "LVM-kO-fVI"; */
 "LVM-kO-fVI.title" = "Paste Ruler";
@@ -327,7 +327,7 @@
 "q09-fT-Sye.title" = "Find Next";
 
 /* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
-"qIS-W8-SiK.title" = "Page Setup…";
+"qIS-W8-SiK.title" = "印刷書式…";
 
 /* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "rbD-Rh-wIN"; */
 "rbD-Rh-wIN.title" = "Check Spelling While Typing";
@@ -342,7 +342,7 @@
 "tRr-pd-1PS.title" = "Data Detectors";
 
 /* Class = "NSMenuItem"; title = "Open Recent"; ObjectID = "tXI-mr-wws"; */
-"tXI-mr-wws.title" = "Open Recent";
+"tXI-mr-wws.title" = "最近使った項目を開く";
 
 /* Class = "NSMenu"; title = "Kern"; ObjectID = "tlD-Oa-oAM"; */
 "tlD-Oa-oAM.title" = "Kern";
@@ -394,3 +394,7 @@
 
 //Status Dialogメッセージ"The file does not exist..."
 "YrD-Gu-5hN.title" = "指定されたファイルは存在しません。";
+
+
+
+

@@ -16,6 +16,8 @@
             <connections>
                 <outlet property="mnMergePDF" destination="T87-cJ-ES5" id="vnw-0h-HyP"/>
                 <outlet property="statusWin" destination="pIj-hh-1WQ" id="6HU-Ba-flq"/>
+                <outlet property="statusWinInfo" destination="P6V-eo-Ka3" id="0Qi-5y-HxR"/>
+                <outlet property="statusWinMsg" destination="AUk-is-Uck" id="mRt-CC-pz1"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -707,7 +709,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="P6V-eo-Ka3">
-                        <rect key="frame" x="18" y="14" width="204" height="45"/>
+                        <rect key="frame" x="18" y="20" width="204" height="39"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="The file does not exist..." id="YrD-Gu-5hN">
                             <font key="font" metaFont="smallSystem"/>

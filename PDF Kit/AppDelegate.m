@@ -10,6 +10,8 @@
 
 @interface AppDelegate (){
     IBOutlet NSMenuItem *mnMergePDF;
+    IBOutlet NSTextField *statusWinMsg;
+    IBOutlet NSTextField *statusWinInfo;
 }
 @property (strong) NSWindowController* _mergePDFWC;
 
@@ -17,7 +19,7 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst;
+@synthesize PDFLst,errLst,statusWin;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューアイテムのアクションを設定
@@ -50,6 +52,21 @@
 - (IBAction)mnMergePDF:(id)sender {
     self._mergePDFWC = [[NSWindowController alloc]initWithWindowNibName:@"MergePDFWin"];
     [self._mergePDFWC showWindow:self];
+}
+
+#pragma mark - status window
+
+- (void)showStatusWin:(NSRect)rect messageText:(NSString*)message infoText:(NSString*)info{
+    [statusWin setFrame:rect display:NO];
+    [statusWinMsg setStringValue:message];
+    [statusWinInfo setStringValue:info];
+    [statusWin setLevel:NSFloatingWindowLevel];
+    [statusWin orderFront:self];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(closeStatusWin) userInfo:nil repeats:NO];
+}
+
+- (void)closeStatusWin{
+    [statusWin orderOut:self];
 }
 
 @end

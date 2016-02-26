@@ -15,6 +15,9 @@
     IBOutlet NSButton *btnRemove;
     IBOutlet PDFView *_pdfView;
     IBOutlet NSTableView *errTable;
+    IBOutlet NSButton *btnClear;
+    IBOutlet NSButton *btnStoreWS;
+    IBOutlet NSButton *btnMerge;
     NSIndexSet *dragRows; //ドラッグ中の行インデクスを保持
 }
 

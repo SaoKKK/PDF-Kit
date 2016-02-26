@@ -26,6 +26,7 @@
 		B951BD9C1C71C58D007B9359 /* CCClearWin.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD9A1C71C58D007B9359 /* CCClearWin.m */; };
 		B951BDA31C71C759007B9359 /* PDFLst.array in Resources */ = {isa = PBXBuildFile; fileRef = B951BDA21C71C759007B9359 /* PDFLst.array */; };
 		B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BDA51C71DB23007B9359 /* ErrLstController.m */; };
+		B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B95DD1DB1C7C602C002F1936 /* Localizable.strings */; };
 		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
 /* End PBXBuildFile section */
@@ -40,13 +41,11 @@
 		B951BD6D1C719DD0007B9359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
 		B951BD6F1C719DD0007B9359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B951BD721C719DD0007B9359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		B951BD741C719DD0007B9359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B951BD7C1C719E7E007B9359 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Document.strings; sourceTree = "<group>"; };
 		B951BD7D1C719E7E007B9359 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		B951BD7E1C71A8FC007B9359 /* MergePDFWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergePDFWin.h; sourceTree = "<group>"; };
 		B951BD7F1C71A8FC007B9359 /* MergePDFWin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergePDFWin.m; sourceTree = "<group>"; };
 		B951BD841C71A920007B9359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MergePDFWin.xib; sourceTree = "<group>"; };
-		B951BD871C71A929007B9359 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MergePDFWin.strings; sourceTree = "<group>"; };
 		B951BD881C71C1FE007B9359 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		B951BD8A1C71C2A4007B9359 /* btnAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnAdd.png; path = Graphics/btnAdd.png; sourceTree = "<group>"; };
 		B951BD8B1C71C2A5007B9359 /* btnClear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnClear.png; path = Graphics/btnClear.png; sourceTree = "<group>"; };
@@ -61,6 +60,11 @@
 		B951BDA21C71C759007B9359 /* PDFLst.array */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PDFLst.array; path = Resources/PDFLst.array; sourceTree = "<group>"; };
 		B951BDA41C71DB23007B9359 /* ErrLstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrLstController.h; sourceTree = "<group>"; };
 		B951BDA51C71DB23007B9359 /* ErrLstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrLstController.m; sourceTree = "<group>"; };
+		B95DD1DC1C7C602C002F1936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B95DD1DE1C7C6035002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B95DD1DF1C7C6069002F1936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		B95DD1E11C7C606C002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/Info.plist; sourceTree = "<group>"; };
+		B95DD1E21C7C7370002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MergePDFWin.xib; sourceTree = "<group>"; };
 		B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
 		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
 		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
@@ -108,7 +112,6 @@
 				B951BD7B1C719E15007B9359 /* Merge PDF Win */,
 				B951BD9F1C71C714007B9359 /* Resources */,
 				B951BD7A1C719E0C007B9359 /* Graphics */,
-				B951BD741C719DD0007B9359 /* Info.plist */,
 				B951BD661C719DD0007B9359 /* Supporting Files */,
 			);
 			name = "Sao's PDF Kit";
@@ -119,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				B951BD671C719DD0007B9359 /* main.m */,
+				B95DD1E01C7C6069002F1936 /* Info.plist */,
+				B95DD1DB1C7C602C002F1936 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B951BD831C71A920007B9359 /* MergePDFWin.xib in Resources */,
+				B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */,
 				B951BD931C71C2A5007B9359 /* btnRestore.png in Resources */,
 				B951BD701C719DD0007B9359 /* Assets.xcassets in Resources */,
 				B951BD6E1C719DD0007B9359 /* Document.xib in Resources */,
@@ -313,9 +319,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				B951BD841C71A920007B9359 /* Base */,
-				B951BD871C71A929007B9359 /* ja */,
+				B95DD1E21C7C7370002F1936 /* ja */,
 			);
 			name = MergePDFWin.xib;
+			sourceTree = "<group>";
+		};
+		B95DD1DB1C7C602C002F1936 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B95DD1DC1C7C602C002F1936 /* Base */,
+				B95DD1DE1C7C6035002F1936 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B95DD1E01C7C6069002F1936 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B95DD1DF1C7C6069002F1936 /* Base */,
+				B95DD1E11C7C606C002F1936 /* ja */,
+			);
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -405,7 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "PDF Kit/Info.plist";
+				INFOPLIST_FILE = "PDF Kit/Base.lproj/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "Sao.PDF-Kit";
@@ -418,7 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "PDF Kit/Info.plist";
+				INFOPLIST_FILE = "PDF Kit/Base.lproj/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "Sao.PDF-Kit";

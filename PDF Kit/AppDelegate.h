@@ -14,5 +14,7 @@
 @property (readwrite,retain,nonatomic)NSMutableArray* errLst;
 @property (weak) IBOutlet NSWindow *statusWin;
 
+- (void)showStatusWin:(NSRect)rect messageText:(NSString*)message infoText:(NSString*)info;
+
 @end
 

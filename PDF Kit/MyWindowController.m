@@ -57,7 +57,11 @@
 
 //ドキュメントを保存
 - (void)saveDocument:(id)sender{
-    [_pdfView.document writeToURL:docURL];
+    if (docURL){
+        [_pdfView.document writeToURL:docURL];
+    } else {
+        [self saveDocumentAs:sender];
+    }
 }
 
 //ドキュメントを別名で保存
@@ -66,7 +70,10 @@
     NSSavePanel *savePanel = [NSSavePanel savePanel];
     NSArray *fileTypes = [NSArray arrayWithObjects:@"pdf", nil];
     [savePanel setAllowedFileTypes:fileTypes]; //保存するファイルの種類
-    [savePanel setNameFieldStringValue:[[docURL path] lastPathComponent]]; //初期ファイル名
+    //初期ファイル名をセット
+    if (docURL){
+        [savePanel setNameFieldStringValue:[[docURL path] lastPathComponent]];
+    }
     [savePanel setCanSelectHiddenExtension:YES]; //拡張子を隠すチェックボックスの有無
     [savePanel setExtensionHidden:NO]; //拡張子を隠すチェックボックスの初期ステータス
     [savePanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
@@ -80,5 +87,12 @@
         }
     }];
 }
+
+#pragma mark - make new document
+
+- (void)makeNewDocWithPDF:(PDFDocument*)pdf{
+    [_pdfView setDocument:pdf];
+}
+
 
 @end

@@ -19,4 +19,6 @@
     NSURL *docURL;
 }
 
+- (void)makeNewDocWithPDF:(PDFDocument*)pdf;
+
 @end

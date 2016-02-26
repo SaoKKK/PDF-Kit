@@ -22,14 +22,14 @@
                 <outlet property="errSheet" destination="IbW-kM-Z5R" id="e7e-Mk-qCw"/>
                 <outlet property="errTable" destination="ihy-CK-PBB" id="JeA-SK-lQh"/>
                 <outlet property="mergePDFtable" destination="cfB-a1-FJs" id="l6U-Ny-06e"/>
-                <outlet property="progressBar" destination="ibj-A1-jpY" id="dfK-Mu-he0"/>
-                <outlet property="progressWin" destination="ZcY-tr-UaE" id="IHO-8U-yKY"/>
-                <outlet property="window" destination="F0z-JX-Cv5" id="ZS5-ks-0Sk"/>
+                <outlet property="progressBar" destination="yuP-YF-lfL" id="QIu-F2-R6p"/>
+                <outlet property="progressWin" destination="GNP-5R-tjx" id="Gqm-hu-P5h"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="04Z-EK-j91"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Merge PDF" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="PDFを結合" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" rightStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="25" y="401" width="753" height="372"/>
@@ -46,10 +46,10 @@
                             <rect key="frame" x="1" y="1" width="258" height="24"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button focusRingType="none" verticalHuggingPriority="750" id="JzW-Ce-1Ti">
+                                <button verticalHuggingPriority="750" id="JzW-Ce-1Ti">
                                     <rect key="frame" x="140" y="-3" width="100" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="push" title="Merge PDF" bezelStyle="rounded" imagePosition="left" alignment="center" controlSize="small" enabled="NO" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Grr-ud-YRR">
+                                    <buttonCell key="cell" type="push" title="PDFを結合" bezelStyle="rounded" imagePosition="left" alignment="center" controlSize="small" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Grr-ud-YRR">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="smallSystem"/>
                                     </buttonCell>
@@ -108,7 +108,7 @@ CA
                                 <button verticalHuggingPriority="750" id="7bM-jf-5px">
                                     <rect key="frame" x="67" y="1" width="60" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="square" title="Clear" bezelStyle="shadowlessSquare" image="btnClear" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" imageScaling="proportionallyDown" inset="2" id="A1W-8e-m0f">
+                                    <buttonCell key="cell" type="square" title="クリア" bezelStyle="shadowlessSquare" image="btnClear" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" imageScaling="proportionallyDown" inset="2" id="A1W-8e-m0f">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -117,9 +117,9 @@ CA
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" id="LFr-XO-JUH">
-                                    <rect key="frame" x="280" y="1" width="143" height="22"/>
+                                    <rect key="frame" x="280" y="1" width="125" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="square" title="Restore Work State" bezelStyle="shadowlessSquare" image="btnRestore" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="0cr-lP-jWd">
+                                    <buttonCell key="cell" type="square" title="作業状況を復元" bezelStyle="shadowlessSquare" image="btnRestore" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="0cr-lP-jWd">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -135,7 +135,7 @@ CA
                                 <button verticalHuggingPriority="750" id="Eyc-SK-jpu">
                                     <rect key="frame" x="140" y="1" width="130" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="square" title="Store Work State" bezelStyle="shadowlessSquare" image="btnSave" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" imageScaling="proportionallyDown" inset="2" id="ChF-5n-Hme">
+                                    <buttonCell key="cell" type="square" title="作業状況を保存" bezelStyle="shadowlessSquare" image="btnSave" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" imageScaling="proportionallyDown" inset="2" id="ChF-5n-Hme">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -164,7 +164,7 @@ CA
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn identifier="fName" editable="NO" width="250" minWidth="40" maxWidth="1000" id="woq-X9-Q5F">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="File Name">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="ファイル名">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -200,7 +200,7 @@ CA
                                             </prototypeCellViews>
                                         </tableColumn>
                                         <tableColumn identifier="fSize" editable="NO" width="62" minWidth="40" maxWidth="100" id="BnB-D1-Tf9">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Size">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="サイズ">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -237,7 +237,7 @@ CA
                                             </prototypeCellViews>
                                         </tableColumn>
                                         <tableColumn identifier="totalPage" editable="NO" width="62" minWidth="40" maxWidth="62" id="50r-w7-LWw">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Total Page">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="ページ数">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -273,7 +273,7 @@ CA
                                             </prototypeCellViews>
                                         </tableColumn>
                                         <tableColumn identifier="pageRange" width="106" minWidth="10" maxWidth="106" id="f7z-cw-n3R">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Page Range">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="ページ範囲">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -297,7 +297,7 @@ CA
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 <objectValues>
-                                                                    <string>All Pages</string>
+                                                                    <string>全ページ</string>
                                                                     <string>e.g. 1-3,5,10</string>
                                                                 </objectValues>
                                                             </comboBoxCell>
@@ -395,7 +395,7 @@ CA
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="oSf-qt-RH7">
                         <rect key="frame" x="19" y="135" width="264" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Failed to read the following files." id="f7d-dQ-pMa">
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="以下のファイルは読み込みに失敗しました。" id="f7d-dQ-pMa">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -486,25 +486,25 @@ DQ
             <point key="canvasLocation" x="389" y="761"/>
         </window>
         <customObject id="kew-6q-Zds" customClass="ErrLstController"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ZcY-tr-UaE">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="GNP-5R-tjx">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="109" y="138" width="300" height="89"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
-            <view key="contentView" id="Am6-RW-Vuk">
+            <view key="contentView" id="brW-ln-6Pb">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ekF-N8-fhb">
-                        <rect key="frame" x="18" y="55" width="173" height="14"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="AEa-0M-3vK">
+                        <rect key="frame" x="18" y="55" width="148" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Creating a new PDF document..." id="ybd-AW-Wsr">
-                            <font key="font" metaFont="smallSystem"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="新規PDFドキュメント作成中..." id="6H4-Do-8tQ">
+                            <font key="font" size="11" name=".HiraKakuInterface-W3"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" id="ibj-A1-jpY">
+                    <progressIndicator wantsLayer="YES" maxValue="100" style="bar" id="yuP-YF-lfL">
                         <rect key="frame" x="20" y="19" width="260" height="20"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     </progressIndicator>

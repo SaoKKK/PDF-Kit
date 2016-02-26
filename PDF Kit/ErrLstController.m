@@ -14,12 +14,12 @@
 # pragma mark - NSTableView data source
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    AppDelegate *appD = [[NSApplication sharedApplication]delegate];
+    AppDelegate *appD = [NSApp delegate];
     return appD.errLst.count;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    AppDelegate *appD = [[NSApplication sharedApplication]delegate];
+    AppDelegate *appD = [NSApp delegate];
     NSString *identifier = [tableColumn identifier];
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
     cellView.textField.stringValue = [appD.errLst objectAtIndex:row];

@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Sao's PDF Kit
+
+  Created by 河野 さおり on 2016/02/23.
+  Copyright © 2016年 河野 さおり. All rights reserved.
+*/
+
+//File error alert.massageText
+"FILE_ERROR_MESSAGETEXT" = "ファイルパスエラー:";
+
+//File error alert.informativeText
+"FILE_ERROR_INFOTEXT" = "は存在しません。";
+
+//PDF read error status window.messageText
+"PDF_READ_ERROR_MESSAGETEXT" = "PDFの読み込みに失敗しました。";
+
+//PDF read error status window.informativeText
+"PDF_READ_ERROR_INFOTEXT" = "ファイルが存在しない、あるいはファイルに問題があります。";
+
+//Button Store Work Stade Action End messageText
+"SAVE_FILELIST_MESSAGETEXT" = "保存完了";
+
+//Button Store Work Stade Action End messageText
+"SAVE_FILELIST_INFOTEXT" = "作業状況一時ファイルの保存に成功しました。";
+
+//Page range text
+"ALL_PAGES" = "全ページ";
