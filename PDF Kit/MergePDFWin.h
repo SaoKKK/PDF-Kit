@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@interface MergePDFWin : NSWindowController<NSWindowDelegate, NSTableViewDelegate,NSTableViewDataSource>{
+@interface MergePDFWin : NSWindowController<NSWindowDelegate, NSTableViewDelegate,NSTableViewDataSource,NSComboBoxDelegate,NSComboBoxDataSource>{
     @private
     IBOutlet NSTableView *mergePDFtable;
     IBOutlet PDFView *_pdfView;

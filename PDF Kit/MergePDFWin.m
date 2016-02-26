@@ -26,6 +26,7 @@
     NSArray *langAllPages;
     NSString *errMsgTxt,*errInfoTxt;
     double outputPDFPageIndex,outputPDFTotalPg;
+    NSArray *comboData;
 }
 
 #pragma mark - initialize method
@@ -55,6 +56,13 @@
         }
         //ノーティフィケーションを設定
         [self setUpNotification];
+        //コンボボックスのデータソース用配列を作成
+        NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
+        if ([language isEqualToString:@"ja"]){
+            comboData = [NSArray arrayWithObjects:@"全ページ",@"e.g. 1-2,5,10",nil];
+        } else {
+            comboData = [NSArray arrayWithObjects:@"All Pages",@"e.g. 1-2,5,10",nil];
+        }
     }
     return self;
 }
@@ -79,6 +87,18 @@
         [btnMerge setEnabled:YES];
         [btnStoreWS setEnabled:YES];
     }
+}
+
+# pragma mark - NSComboBox data source
+
+//コンボボックスのデータソースのアイテム数を返す
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox{
+    return comboData.count;
+}
+
+//各インデクスのオブジェクトバリューを返す
+- (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index{
+    return [comboData objectAtIndex:index];
 }
 
 # pragma mark - NSTableView data source
