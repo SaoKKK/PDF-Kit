@@ -7,13 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "MergePDFWin.h"
 
 @interface AppDelegate (){
     IBOutlet NSMenuItem *mnMergePDF;
     IBOutlet NSTextField *statusWinMsg;
     IBOutlet NSTextField *statusWinInfo;
 }
-@property (strong) NSWindowController* _mergePDFWC;
+
+@property (strong) MergePDFWin* _mergePDFWC;
 
 @end
 
@@ -50,7 +52,7 @@
 
 //MergePDF アクション
 - (IBAction)mnMergePDF:(id)sender {
-    self._mergePDFWC = [[NSWindowController alloc]initWithWindowNibName:@"MergePDFWin"];
+    self._mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
     [self._mergePDFWC showWindow:self];
 }
 

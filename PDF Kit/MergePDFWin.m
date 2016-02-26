@@ -13,21 +13,20 @@
 
 #define MyTVDragNDropPboardType @"MyTVDragNDropPboardType"
 
-@interface MergePDFWin ()
-
-@property (strong) IBOutlet NSWindow *window;
-@property (strong) IBOutlet NSWindow *errSheet;
+@interface MergePDFWin (){
+    IBOutlet NSWindow *window;
+    IBOutlet NSWindow *errSheet;
+}
 
 @end
 
 @implementation MergePDFWin{
     NSArray *langAllPages;
     NSString *errMsgTxt,*errInfoTxt;
+    double pageIndexInfo,outputPDFTotalPg;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *progressBar;
 }
-
-@synthesize window,errSheet;
 
 #pragma mark - initialize method
 
@@ -35,6 +34,8 @@
     self = [super init];
     if (self) {
         langAllPages = [NSArray arrayWithObjects:@"All Pages",@"全ページ",nil];
+        //ノーティフィケーションを設定
+        [self setUpNotification];
       }
     return self;
 }
@@ -152,7 +153,7 @@
 
 //行追加
 - (IBAction)btnAdd:(id)sender{
-    [window makeFirstResponder:self];
+    [self.window makeFirstResponder:self];
     AppDelegate *appD = [NSApp delegate];
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
     NSArray *fileTypes = [NSArray arrayWithObjects:@"pdf", nil];
@@ -309,7 +310,7 @@
 
 - (void)showErrLst{
     [errTable reloadData];
-    [[NSApplication sharedApplication] beginSheet:errSheet modalForWindow:window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    [[NSApplication sharedApplication] beginSheet:errSheet modalForWindow:self.window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
 }
 
 - (void)sheetDidEnd:(NSWindow*)sheet returnCode:(int)returnCode contextInfo:(void*)contextInfo{
@@ -324,6 +325,8 @@
 
 - (IBAction)btnMerge:(id)sender {
     [self.window makeFirstResponder:self];
+    pageIndexInfo = 0;
+    outputPDFTotalPg = 0;
     AppDelegate *appD = [NSApp delegate];
     //PDFLstの内容をチェック
     NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -359,7 +362,7 @@
                             return;
                         } else if (pages.count == 1) {
                             //"-"が含まれない場合
-                            if ([range integerValue]<=totalPage) {
+                            if ([range integerValue] <= totalPage && [range integerValue] > 0) {
                                 [pageRange addIndex:[range integerValue]];
                             } else {
                                 [self setErrMessage:[data objectForKey:@"fName"]];
@@ -391,6 +394,7 @@
                     }
                 }
             }
+            outputPDFTotalPg = outputPDFTotalPg + [pageRange count];
             [indexes addObject:pageRange];
         } else {
             //ファイルが実在しない場合
@@ -410,13 +414,8 @@
     PDFDocument *outputDoc = [[PDFDocument alloc] init];
     NSUInteger pageIndex = 0;
     for (int i = 0; i < appD.PDFLst.count; i++){
-        
-        //プログレスバーのステータスを設定
-        double pgCnt = [[_pdfView document] pageCount];
-        [progressBar setMaxValue:pgCnt];
-        [progressBar setDoubleValue: 0.0];
-        //プログレス・パネルをシート表示
-        [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
+        //PDF作成開始ノーティフィケーションを送信
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidBeginCreate" object:self];
 
         NSDictionary *data = [appD.PDFLst objectAtIndex:i];
         NSURL *url = [NSURL fileURLWithPath:[data objectForKey:@"fPath"]];
@@ -424,19 +423,17 @@
         NSIndexSet *pageRange = [indexes objectAtIndex:i];
         NSUInteger index = [pageRange firstIndex];
         while(index != NSNotFound) {
-            
-            //プログレスバーの値を更新
-            [progressBar setDoubleValue:pageIndex];
-            [progressBar displayIfNeeded];
-
+            //PDFページ挿入終了ノーティフィケーションを送信
+            pageIndexInfo = pageIndex;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndPageInsert" object:self];
             PDFPage *page = [inputDoc pageAtIndex:index - 1];
             [outputDoc insertPage:page atIndex:pageIndex++];
             
             index = [pageRange indexGreaterThanIndex:index];
         }
     }
-    //プログレス・パネルを終了させる
-    [progressWin orderOut:self];
+    //PDF作成終了ノーティフィケーションを送信
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndCreate" object:self];
 
     NSDocumentController *docC = [NSDocumentController sharedDocumentController];
     [docC openUntitledDocumentAndDisplay:YES error:nil];
@@ -465,7 +462,6 @@
     [alert setInformativeText:errInfoTxt];
     [alert setAlertStyle:NSCriticalAlertStyle];
     [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){}];
-    return;
 }
 
 //最初と最後のインデクスを指定してインデクスセットを作成
@@ -475,6 +471,40 @@
         [indexset addIndex:i];
     }
     return indexset;
+}
+
+
+#pragma mark - notification
+
+//ノーティフィケーションを受け取った時の動作
+- (void)PDFDidBeginCreate:(NSNotification*)note {
+    //プログレスバーのステータスを設定
+    NSLog(@"%f",outputPDFTotalPg);
+    [progressBar setMaxValue:outputPDFTotalPg];
+    [progressBar setDoubleValue: 0.0];
+    //プログレス・パネルをシート表示
+   [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
+}
+
+- (void)PDFDidEndPageInsert:(NSNotification*)note {
+    //プログレスバーの値を更新
+    NSLog(@"%f",pageIndexInfo);
+    [progressBar setDoubleValue:pageIndexInfo];
+    [progressBar displayIfNeeded];
+}
+
+- (void)PDFDidEndCreate:(NSNotification*)note {
+    //プログレス・パネルを終了させる
+    NSLog(@"%f",pageIndexInfo);
+    [self.window endSheet:progressWin returnCode:0];
+    //[progressWin orderOut:self];
+}
+
+//ノーティフィケーションを設定
+- (void)setUpNotification{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PDFDidBeginCreate:) name:@"PDFDidBeginCreate" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PDFDidEndPageInsert:) name:@"PDFDidEndPageInsert" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PDFDidEndCreate:) name:@"PDFDidEndCreate" object:nil];
 }
 
 @end

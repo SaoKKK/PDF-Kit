@@ -12,8 +12,8 @@
 @interface MergePDFWin : NSWindowController<NSWindowDelegate, NSTableViewDelegate,NSTableViewDataSource>{
     @private
     IBOutlet NSTableView *mergePDFtable;
-    IBOutlet NSButton *btnRemove;
     IBOutlet PDFView *_pdfView;
+    IBOutlet NSButton *btnRemove;
     IBOutlet NSTableView *errTable;
     IBOutlet NSButton *btnClear;
     IBOutlet NSButton *btnStoreWS;
