@@ -4,6 +4,7 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
         <plugIn identifier="com.apple.pdfkit.ibplugin" version="9532"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MyWindowController">
@@ -19,36 +20,127 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="0.0" y="47" width="642" height="753"/>
+            <rect key="contentRect" x="17" y="62" width="794" height="694"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" id="gIp-Ho-8D9">
-                <rect key="frame" x="0.0" y="0.0" width="642" height="753"/>
+                <rect key="frame" x="0.0" y="0.0" width="794" height="694"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <pdfView autoresizesSubviews="NO" autoScales="YES" id="ZDH-V6-1A7" customClass="MyPDFView">
-                        <rect key="frame" x="96" y="0.0" width="546" height="712"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </pdfView>
-                    <pdfThumbnailView id="fbb-fr-f9P">
-                        <rect key="frame" x="0.0" y="0.0" width="97" height="712"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                        <size key="thumbnailSize" width="64" height="64"/>
-                    </pdfThumbnailView>
                     <button verticalHuggingPriority="750" id="ZbJ-pm-tfY">
-                        <rect key="frame" x="329" y="716" width="81" height="32"/>
+                        <rect key="frame" x="329" y="657" width="81" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9eK-Iq-c5M">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <box title="Box" boxType="custom" borderType="line" titlePosition="noTitle" id="jif-9H-guz">
+                        <rect key="frame" x="0.0" y="717" width="260" height="27"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" id="LSk-HI-8dS">
+                            <rect key="frame" x="1" y="1" width="258" height="25"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button toolTip="Go next page" verticalHuggingPriority="750" id="5JJ-sH-s7o">
+                                    <rect key="frame" x="124" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goNext" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Dag-en-GG1">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <button toolTip="Go to last page" verticalHuggingPriority="750" id="pP2-z9-epX">
+                                    <rect key="frame" x="146" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goLast" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="pEA-Nq-4SD">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <button toolTip="Go back" verticalHuggingPriority="750" id="6cf-5B-Xxp">
+                                    <rect key="frame" x="179" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goBack" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="zQf-yr-Xzl">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <button toolTip="Go foward" verticalHuggingPriority="750" id="lRO-DS-mPu">
+                                    <rect key="frame" x="205" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goFoward" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="YuS-AT-rYh">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <button toolTip="Go to first page" verticalHuggingPriority="750" id="j3B-Oj-8mJ">
+                                    <rect key="frame" x="1" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goTop" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="G8Y-F3-avj">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <button toolTip="Go previous page" verticalHuggingPriority="750" id="osZ-tz-OTY">
+                                    <rect key="frame" x="23" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goPrev" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Cic-7N-rcx">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <textField verticalHuggingPriority="750" id="KhR-Ct-3xb">
+                                    <rect key="frame" x="49" y="3" width="75" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="1" drawsBackground="YES" id="a9n-a7-6pO">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" red="0.31724759619999998" green="0.31724759619999998" blue="0.31724759619999998" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </box>
+                    <splitView dividerStyle="thin" vertical="YES" id="2Ye-tK-6Ax">
+                        <rect key="frame" x="0.0" y="0.0" width="794" height="661"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView id="cER-Sg-RkZ">
+                                <rect key="frame" x="0.0" y="0.0" width="210" height="661"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <pdfThumbnailView id="fbb-fr-f9P">
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="713"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <size key="thumbnailSize" width="64" height="64"/>
+                                    </pdfThumbnailView>
+                                </subviews>
+                            </customView>
+                            <customView id="2Bw-UO-RPI">
+                                <rect key="frame" x="211" y="0.0" width="583" height="661"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <pdfView autoresizesSubviews="NO" autoScales="YES" id="ZDH-V6-1A7" customClass="MyPDFView">
+                                        <rect key="frame" x="0.0" y="8" width="583" height="653"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </pdfView>
+                                </subviews>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="251"/>
+                        </holdingPriorities>
+                    </splitView>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
-            <point key="canvasLocation" x="207" y="466.5"/>
+            <point key="canvasLocation" x="204" y="327.5"/>
         </window>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="zIg-me-7fv">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -77,4 +169,12 @@
             <point key="canvasLocation" x="95" y="997.5"/>
         </window>
     </objects>
+    <resources>
+        <image name="goBack" width="23" height="23"/>
+        <image name="goFoward" width="23" height="23"/>
+        <image name="goLast" width="23" height="23"/>
+        <image name="goNext" width="23" height="23"/>
+        <image name="goPrev" width="23" height="23"/>
+        <image name="goTop" width="23" height="23"/>
+    </resources>
 </document>

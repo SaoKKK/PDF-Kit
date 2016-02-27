@@ -24,33 +24,33 @@
     docURL = [[self document] fileURL];
     PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
     [_pdfView setDocument:doc];
+    
     //ドキュメントの保存過程にノーティフィケーションを設定
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(documentBeginWrite:) name: @"PDFDidBeginDocumentWrite" object: [_pdfView document]];
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(documentEndWrite:) name: @"PDFDidEndDocumentWrite" object: [_pdfView document]];
-    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(documentEndPageWrite:) name: @"PDFDidEndPageWrite" object: [_pdfView document]];
+    //ドキュメント保存開始
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidBeginDocumentWrite" object:[_pdfView document] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        double pgCnt = [[_pdfView document] pageCount];
+        [savingProgBar setMaxValue:pgCnt];
+        [savingProgBar setDoubleValue: 0.0];
+        //プログレス・パネルをシート表示
+        [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
+    }];
+    //ドキュメント保存中
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndDocumentWrite" object:[_pdfView document] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレス・バーの値を更新
+        double currentPg = [[notif.userInfo objectForKey: @"PDFDocumentPageIndex"] floatValue];
+        [savingProgBar setDoubleValue:currentPg];
+        [savingProgBar displayIfNeeded];
+    }];
+    //ドキュメント保存完了
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndPageWrite" object:[_pdfView document] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレス・パネルを終了させる
+        [self.window endSheet:progressWin returnCode:0];
+    }];
+    
     //デリゲートを設定
     [[_pdfView document] setDelegate: self];
-}
-
-#pragma mark - saving progress
-
-- (void) documentBeginWrite: (NSNotification *) notification{
-    double pgCnt = [[_pdfView document] pageCount];
-    [savingProgBar setMaxValue:pgCnt];
-    [savingProgBar setDoubleValue: 0.0];
-    //プログレス・パネルをシート表示
-    [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
-}
-
-- (void) documentEndWrite: (NSNotification *) notification{
-    //プログレス・パネルを終了させる
-    [self.window endSheet:progressWin returnCode:0];
-}
-
-- (void) documentEndPageWrite: (NSNotification *) notification{
-    double currentPg = [[[notification userInfo] objectForKey: @"PDFDocumentPageIndex"] floatValue];
-    [savingProgBar setDoubleValue:currentPg];
-    [savingProgBar displayIfNeeded];
+    //オート・スケールをオフにする
+    [_pdfView setAutoScales:NO];
 }
 
 #pragma mark - save document

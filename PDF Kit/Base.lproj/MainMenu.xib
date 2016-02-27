@@ -360,6 +360,9 @@
                             <menuItem isSeparatorItem="YES" id="zYm-MT-mhJ"/>
                             <menuItem title="Merge PDF..." id="T87-cJ-ES5">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showMergeWin:" target="-1" id="Ltw-0G-aKD"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Item 2" id="58g-Vh-TrJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>

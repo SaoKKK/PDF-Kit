@@ -27,6 +27,12 @@
 		B951BDA31C71C759007B9359 /* PDFLst.array in Resources */ = {isa = PBXBuildFile; fileRef = B951BDA21C71C759007B9359 /* PDFLst.array */; };
 		B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BDA51C71DB23007B9359 /* ErrLstController.m */; };
 		B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B95DD1DB1C7C602C002F1936 /* Localizable.strings */; };
+		B96EE7831C818A630063C7A2 /* goBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77D1C818A630063C7A2 /* goBack.png */; };
+		B96EE7841C818A630063C7A2 /* goFoward.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77E1C818A630063C7A2 /* goFoward.png */; };
+		B96EE7851C818A630063C7A2 /* goLast.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77F1C818A630063C7A2 /* goLast.png */; };
+		B96EE7861C818A630063C7A2 /* goNext.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7801C818A630063C7A2 /* goNext.png */; };
+		B96EE7871C818A630063C7A2 /* goPrev.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7811C818A630063C7A2 /* goPrev.png */; };
+		B96EE7881C818A630063C7A2 /* goTop.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7821C818A630063C7A2 /* goTop.png */; };
 		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +71,12 @@
 		B95DD1DE1C7C6035002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B95DD1DF1C7C6069002F1936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		B95DD1E11C7C606C002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/Info.plist; sourceTree = "<group>"; };
+		B96EE77D1C818A630063C7A2 /* goBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goBack.png; path = Graphics/goBack.png; sourceTree = "<group>"; };
+		B96EE77E1C818A630063C7A2 /* goFoward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goFoward.png; path = Graphics/goFoward.png; sourceTree = "<group>"; };
+		B96EE77F1C818A630063C7A2 /* goLast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goLast.png; path = Graphics/goLast.png; sourceTree = "<group>"; };
+		B96EE7801C818A630063C7A2 /* goNext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goNext.png; path = Graphics/goNext.png; sourceTree = "<group>"; };
+		B96EE7811C818A630063C7A2 /* goPrev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goPrev.png; path = Graphics/goPrev.png; sourceTree = "<group>"; };
+		B96EE7821C818A630063C7A2 /* goTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goTop.png; path = Graphics/goTop.png; sourceTree = "<group>"; };
 		B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
 		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
 		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
@@ -131,6 +143,12 @@
 		B951BD7A1C719E0C007B9359 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B96EE77D1C818A630063C7A2 /* goBack.png */,
+				B96EE77E1C818A630063C7A2 /* goFoward.png */,
+				B96EE77F1C818A630063C7A2 /* goLast.png */,
+				B96EE7801C818A630063C7A2 /* goNext.png */,
+				B96EE7811C818A630063C7A2 /* goPrev.png */,
+				B96EE7821C818A630063C7A2 /* goTop.png */,
 				B951BD8A1C71C2A4007B9359 /* btnAdd.png */,
 				B951BD8B1C71C2A5007B9359 /* btnClear.png */,
 				B951BD8C1C71C2A5007B9359 /* btnRemove.png */,
@@ -262,16 +280,22 @@
 			files = (
 				B951BD831C71A920007B9359 /* MergePDFWin.xib in Resources */,
 				B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */,
+				B96EE7861C818A630063C7A2 /* goNext.png in Resources */,
+				B96EE7881C818A630063C7A2 /* goTop.png in Resources */,
 				B951BD931C71C2A5007B9359 /* btnRestore.png in Resources */,
 				B951BD701C719DD0007B9359 /* Assets.xcassets in Resources */,
 				B951BD6E1C719DD0007B9359 /* Document.xib in Resources */,
 				B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */,
 				B951BD921C71C2A5007B9359 /* btnRemove.png in Resources */,
+				B96EE7871C818A630063C7A2 /* goPrev.png in Resources */,
 				B951BD911C71C2A5007B9359 /* btnClear.png in Resources */,
 				B951BDA31C71C759007B9359 /* PDFLst.array in Resources */,
 				B951BD731C719DD0007B9359 /* MainMenu.xib in Resources */,
+				B96EE7851C818A630063C7A2 /* goLast.png in Resources */,
 				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
 				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
+				B96EE7841C818A630063C7A2 /* goFoward.png in Resources */,
+				B96EE7831C818A630063C7A2 /* goBack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

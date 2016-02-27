@@ -1,9 +1,15 @@
 
 /* Class = "NSButtonCell"; title = "作業状況を復元"; ObjectID = "0cr-lP-jWd"; */
-"0cr-lP-jWd.title" = "作業状況を復元";
+"LFr-XO-JUH.title" = "作業状況を復元";
+"LFr-XO-JUH.ibShadowedToolTip" = "保存された作業ファイルを復元します";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Add a new PDF file"; ObjectID = "4Lx-tN-UdZ"; */
-"4Lx-tN-UdZ.ibShadowedToolTip" = "Add a new PDF file";
+"4Lx-tN-UdZ.ibShadowedToolTip" = "先頭ページへ";
+"Qdy-MM-YYM.ibShadowedToolTip" = "前ページへ";
+"v6a-w7-7RS.ibShadowedToolTip" = "次ページへ";
+"rwU-7e-6HD.ibShadowedToolTip" = "最終ページへ";
+"Fva-QY-0bT.ibShadowedToolTip" = "戻る";
+"NCc-At-R8m.ibShadowedToolTip" = "進む";
 
 /* Class = "NSTableColumn"; headerCell.title = "ページ数"; ObjectID = "50r-w7-LWw"; */
 "50r-w7-LWw.headerCell.title" = "ページ数";
@@ -12,10 +18,11 @@
 "6H4-Do-8tQ.title" = "新規PDFドキュメント作成中...";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Remove selected files"; ObjectID = "7ob-jv-pbT"; */
-"7ob-jv-pbT.ibShadowedToolTip" = "Remove selected files";
+"7ob-jv-pbT.ibShadowedToolTip" = "選択されたデータを削除";
 
 /* Class = "NSButtonCell"; title = "クリア"; ObjectID = "A1W-8e-m0f"; */
-"A1W-8e-m0f.title" = "クリア";
+"7bM-jf-5px.title" = "クリア";
+"7bM-jf-5px.ibShadowedToolTip" = "テーブルのデータをクリア";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "BPg-7Q-fNU"; */
 "BPg-7Q-fNU.title" = "Text Cell";
@@ -24,7 +31,8 @@
 "BnB-D1-Tf9.headerCell.title" = "サイズ";
 
 /* Class = "NSButtonCell"; title = "作業状況を保存"; ObjectID = "ChF-5n-Hme"; */
-"ChF-5n-Hme.title" = "作業状況を保存";
+"Eyc-SK-jpu.title" = "作業状況を保存";
+"Eyc-SK-jpu.ibShadowedToolTip" = "テーブルの作業状況を保存します";
 
 /* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Cs7-ne-c3h"; */
 "Cs7-ne-c3h.title" = "Table View Cell";
@@ -75,7 +83,7 @@
 "f7z-cw-n3R.headerCell.title" = "ページ範囲";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Add a new PDF file"; ObjectID = "fpP-Zu-7eJ"; */
-"fpP-Zu-7eJ.ibShadowedToolTip" = "Add a new PDF file";
+"fpP-Zu-7eJ.ibShadowedToolTip" = "テーブルにデータを追加";
 
 /* Class = "NSTextFieldCell"; title = "1"; ObjectID = "hXA-KH-eFf"; */
 "hXA-KH-eFf.title" = "1";
@@ -88,9 +96,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "syE-LX-Adv"; */
 "syE-LX-Adv.title" = "Text Cell";
-
-/* Class = "NSButton"; ibShadowedToolTip = "Remove selected files"; ObjectID = "v6a-w7-7RS"; */
-"v6a-w7-7RS.ibShadowedToolTip" = "Remove selected files";
 
 /* Class = "NSTableColumn"; headerCell.title = "ファイル名"; ObjectID = "woq-X9-Q5F"; */
 "woq-X9-Q5F.headerCell.title" = "ファイル名";

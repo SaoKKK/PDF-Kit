@@ -43,7 +43,7 @@
                             <subviews>
                                 <button focusRingType="none" verticalHuggingPriority="750" id="JzW-Ce-1Ti">
                                     <rect key="frame" x="140" y="-3" width="100" height="28"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="push" title="Merge PDF" bezelStyle="rounded" imagePosition="left" alignment="center" controlSize="small" enabled="NO" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Grr-ud-YRR">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="smallSystem"/>
@@ -100,7 +100,7 @@ CA
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="vline" id="efn-Om-8PG"/>
                                 </imageView>
-                                <button verticalHuggingPriority="750" id="7bM-jf-5px">
+                                <button toolTip="Clear the table data" verticalHuggingPriority="750" id="7bM-jf-5px">
                                     <rect key="frame" x="67" y="1" width="60" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" title="Clear" bezelStyle="shadowlessSquare" image="btnClear" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" imageScaling="proportionallyDown" inset="2" id="A1W-8e-m0f">
@@ -111,7 +111,7 @@ CA
                                         <action selector="btnClear:" target="-2" id="eRV-94-KO7"/>
                                     </connections>
                                 </button>
-                                <button verticalHuggingPriority="750" id="LFr-XO-JUH">
+                                <button toolTip="Restore work state" verticalHuggingPriority="750" id="LFr-XO-JUH">
                                     <rect key="frame" x="280" y="1" width="143" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" title="Restore Work State" bezelStyle="shadowlessSquare" image="btnRestore" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="0cr-lP-jWd">
@@ -127,7 +127,7 @@ CA
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="vline" id="xNX-C3-t95"/>
                                 </imageView>
-                                <button verticalHuggingPriority="750" id="Eyc-SK-jpu">
+                                <button toolTip="Store work state" verticalHuggingPriority="750" id="Eyc-SK-jpu">
                                     <rect key="frame" x="140" y="1" width="130" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" title="Store Work State" bezelStyle="shadowlessSquare" image="btnSave" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" imageScaling="proportionallyDown" inset="2" id="ChF-5n-Hme">
@@ -144,14 +144,14 @@ CA
                         <color key="fillColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </box>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="25" horizontalPageScroll="10" verticalLineScroll="25" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="mh3-3P-LUh">
-                        <rect key="frame" x="0.0" y="26" width="494" height="346"/>
+                        <rect key="frame" x="0.0" y="26" width="495" height="346"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="21C-I0-4Tu">
-                            <rect key="frame" x="1" y="0.0" width="492" height="345"/>
+                            <rect key="frame" x="1" y="0.0" width="493" height="345"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" rowHeight="23" headerView="094-p9-kd0" viewBased="YES" id="cfB-a1-FJs">
-                                    <rect key="frame" x="0.0" y="0.0" width="492" height="0.0"/>
+                                    <rect key="frame" x="1" y="0.0" width="493" height="322"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -212,7 +212,7 @@ CA
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="7Gg-dN-LLn">
-                                                            <rect key="frame" x="0.0" y="-1" width="61" height="14"/>
+                                                            <rect key="frame" x="1" y="-1" width="61" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="ct3-mc-sDm">
                                                                 <byteCountFormatter key="formatter" id="2TI-i5-Mqd"/>
@@ -285,7 +285,7 @@ CA
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <comboBox verticalHuggingPriority="750" id="K0Q-gg-ZgU">
-                                                            <rect key="frame" x="2" y="-6" width="90" height="22"/>
+                                                            <rect key="frame" x="3" y="-6" width="90" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <comboBoxCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="Qkx-Qt-qEZ">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -312,8 +312,8 @@ CA
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="PFF-zU-O0A">
-                            <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="PFF-zU-O0A">
+                            <rect key="frame" x="1" y="329" width="492" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="WeF-Ft-Kfb">
@@ -321,7 +321,7 @@ CA
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="094-p9-kd0">
-                            <rect key="frame" x="0.0" y="0.0" width="492" height="23"/>
+                            <rect key="frame" x="2" y="0.0" width="493" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
@@ -336,29 +336,76 @@ CA
                             <rect key="frame" x="1" y="1" width="258" height="25"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button toolTip="Remove selected files" verticalHuggingPriority="750" id="v6a-w7-7RS">
-                                    <rect key="frame" x="73" y="0.0" width="25" height="25"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="YJn-kS-nwj">
+                                <button toolTip="Go next page" verticalHuggingPriority="750" id="v6a-w7-7RS">
+                                    <rect key="frame" x="124" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goNext" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="YJn-kS-nwj">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="goToNextPage:" target="o4f-Ak-Xvu" id="gI7-jF-5gk"/>
+                                    </connections>
                                 </button>
-                                <button toolTip="Add a new PDF file" verticalHuggingPriority="750" id="4Lx-tN-UdZ">
-                                    <rect key="frame" x="49" y="0.0" width="25" height="25"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Vsa-Pt-iDY">
+                                <button toolTip="Go to last page" verticalHuggingPriority="750" id="rwU-7e-6HD">
+                                    <rect key="frame" x="146" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goLast" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="JSu-lv-Bhc">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="goToLastPage:" target="o4f-Ak-Xvu" id="Ccb-3R-Rom"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="Go back" verticalHuggingPriority="750" id="Fva-QY-0bT">
+                                    <rect key="frame" x="179" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goBack" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="1yj-Lj-OPi">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="goBack:" target="o4f-Ak-Xvu" id="R4t-g1-Nty"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="Go foward" verticalHuggingPriority="750" id="NCc-At-R8m">
+                                    <rect key="frame" x="205" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goFoward" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="aHU-0J-ae3">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="goForward:" target="o4f-Ak-Xvu" id="iv0-CX-aq5"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="Go to first page" verticalHuggingPriority="750" id="4Lx-tN-UdZ">
+                                    <rect key="frame" x="1" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goTop" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Vsa-Pt-iDY">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="goToFirstPage:" target="o4f-Ak-Xvu" id="yG9-Kq-5se"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="Go previous page" verticalHuggingPriority="750" id="Qdy-MM-YYM">
+                                    <rect key="frame" x="23" y="0.0" width="23" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goPrev" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="eNd-ax-Kmi">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="goToPreviousPage:" target="o4f-Ak-Xvu" id="kKO-sh-3gb"/>
+                                    </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" id="rog-f8-sal">
-                                    <rect key="frame" x="3" y="3" width="44" height="19"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="1" drawsBackground="YES" id="hXA-KH-eFf">
-                                        <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="aDo-qx-iI6">
-                                            <real key="minimum" value="1"/>
-                                        </numberFormatter>
+                                    <rect key="frame" x="49" y="3" width="75" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="1" drawsBackground="YES" id="hXA-KH-eFf">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -369,6 +416,11 @@ CA
                         <color key="borderColor" red="0.31724759619999998" green="0.31724759619999998" blue="0.31724759619999998" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
                         <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </box>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eRP-az-V4m">
+                        <rect key="frame" x="668" y="30" width="1" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="vline" id="MnW-xq-uDu"/>
+                    </imageView>
                 </subviews>
             </view>
             <connections>
@@ -507,13 +559,17 @@ DQ
         </window>
     </objects>
     <resources>
-        <image name="NSGoLeftTemplate" width="9" height="12"/>
-        <image name="NSGoRightTemplate" width="9" height="12"/>
         <image name="btnAdd" width="28" height="28"/>
         <image name="btnClear" width="22" height="22"/>
         <image name="btnRemove" width="28" height="28"/>
         <image name="btnRestore" width="22" height="22"/>
         <image name="btnSave" width="22" height="22"/>
+        <image name="goBack" width="23" height="23"/>
+        <image name="goFoward" width="23" height="23"/>
+        <image name="goLast" width="23" height="23"/>
+        <image name="goNext" width="23" height="23"/>
+        <image name="goPrev" width="23" height="23"/>
+        <image name="goTop" width="23" height="23"/>
         <image name="vline" width="1" height="18"/>
     </resources>
 </document>

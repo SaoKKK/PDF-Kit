@@ -25,7 +25,7 @@
 @implementation MergePDFWin{
     NSArray *langAllPages;
     NSString *errMsgTxt,*errInfoTxt;
-    double outputPDFPageIndex,outputPDFTotalPg;
+    double outputPDFTotalPg;
     NSArray *comboData;
 }
 
@@ -340,7 +340,7 @@
 
 - (IBAction)btnMerge:(id)sender {
     [self.window makeFirstResponder:self];
-    outputPDFPageIndex = 0;
+    double outputPDFPageIndex = 0;
     outputPDFTotalPg = 0;
     AppDelegate *appD = [NSApp delegate];
     //PDFLstの内容をチェック
@@ -440,8 +440,7 @@
         while(index != NSNotFound) {
             //PDFページ挿入終了ノーティフィケーションを送信
             outputPDFPageIndex++;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndPageInsert" object:self];
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndPageInsert" object:self userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:outputPDFPageIndex] forKey:@"page"]];
             PDFPage *page = [inputDoc pageAtIndex:index - 1];
             [outputDoc insertPage:page atIndex:pageIndex++];
             
@@ -469,7 +468,6 @@
     }
 }
 
-
 //エラーダイアログ表示
 - (void)showErrorDialog{
     NSAlert *alert = [[NSAlert alloc]init];
@@ -489,34 +487,29 @@
     return indexset;
 }
 
-#pragma mark - notification
+#pragma mark - set notification
 
-//ノーティフィケーションを受け取った時の動作
-- (void)PDFDidBeginCreate:(NSNotification*)note {
-    //プログレスバーのステータスを設定
-    [progressBar setMaxValue:outputPDFTotalPg];
-    [progressBar setDoubleValue: 0.0];
-    //プログレス・パネルをシート表示
-   [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
-}
-
-- (void)PDFDidEndPageInsert:(NSNotification*)note {
-    //プログレスバーの値を更新
-    [progressBar setDoubleValue:outputPDFPageIndex];
-    [progressBar displayIfNeeded];
-}
-
-- (void)PDFDidEndCreate:(NSNotification*)note {
-   //プログレス・パネルを終了させる
-    [self.window endSheet:progressWin returnCode:0];
-    //[progressWin orderOut:self];
-}
-
-//ノーティフィケーションを設定
 - (void)setUpNotification{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PDFDidBeginCreate:) name:@"PDFDidBeginCreate" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PDFDidEndPageInsert:) name:@"PDFDidEndPageInsert" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(PDFDidEndCreate:) name:@"PDFDidEndCreate" object:nil];
+    //PDF挿入開始
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidBeginCreate" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレスバーのステータスを設定
+        [progressBar setMaxValue:outputPDFTotalPg];
+        [progressBar setDoubleValue: 0.0];
+        //プログレス・パネルをシート表示
+        [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
+    }];
+    //PDF挿入過程
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndPageInsert" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレスバーの値を更新
+        NSNumber *page = [[notif userInfo] objectForKey:@"page"];
+        [progressBar setDoubleValue:page.doubleValue];
+        [progressBar displayIfNeeded];
+    }];
+    //PDF挿入終了
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndCreate" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレス・パネルを終了させる
+        [self.window endSheet:progressWin returnCode:0];
+    }];
 }
 
 @end

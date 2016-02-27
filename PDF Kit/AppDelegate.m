@@ -24,10 +24,6 @@
 @synthesize PDFLst,errLst,statusWin;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    //メニューアイテムのアクションを設定
-    [mnMergePDF setRepresentedObject:@"MergePDF"];
-    [mnMergePDF setAction:@selector(mnMergePDF:)];
-    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -48,12 +44,17 @@
     return NO;
 }
 
+#pragma mark - open file
+
+
 #pragma mark - menu item action
 
 //MergePDF アクション
-- (IBAction)mnMergePDF:(id)sender {
-    self._mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
-    [self._mergePDFWC showWindow:self];
+- (IBAction)showMergeWin:(id)sender {
+    if (self._mergePDFWC == nil){
+        self._mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
+        [self._mergePDFWC showWindow:self];
+    }
 }
 
 #pragma mark - status window
