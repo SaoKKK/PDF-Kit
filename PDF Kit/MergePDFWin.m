@@ -57,12 +57,7 @@
         //ノーティフィケーションを設定
         [self setUpNotification];
         //コンボボックスのデータソース用配列を作成
-        NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
-        if ([language isEqualToString:@"ja"]){
-            comboData = [NSArray arrayWithObjects:@"全ページ",@"e.g. 1-2,5,10",nil];
-        } else {
-            comboData = [NSArray arrayWithObjects:@"All Pages",@"e.g. 1-2,5,10",nil];
-        }
+        comboData = [NSArray arrayWithObjects:NSLocalizedString(@"ALL_PAGES", @""),@"e.g. 1-2,5,10",nil];
     }
     return self;
 }
@@ -135,7 +130,7 @@
                 //テーブルのデータが実在しない場合
                 [_pdfView setDocument:nil];
                 NSRect rect = NSMakeRect(self.window.frame.origin.x + _pdfView.frame.origin.x + (_pdfView.frame.size.width - appD.statusWin.frame.size.width)*0.5, self.window.frame.origin.y + (self.window.frame.size.height - appD.statusWin.frame.size.height)*0.5, appD.statusWin.frame.size.width, appD.statusWin.frame.size.height);
-                [appD showStatusWin:rect messageText:NSLocalizedString(@"PDF_READ_ERROR_MESSAGETEXT", @"PDF_READ_ERROR_MESSAGETEXT") infoText:NSLocalizedString(@"PDF_READ_ERROR_INFOTEXT", @"PDF_READ_ERROR_INFOTEXT")];
+                [appD showStatusWin:rect messageText:NSLocalizedString(@"PDF_READ_ERROR_MESSAGETEXT", @"") infoText:NSLocalizedString(@"PDF_READ_ERROR_INFOTEXT", @"")];
             }
         } else {
             [_pdfView setDocument:nil];
@@ -157,7 +152,7 @@
 - (IBAction)comboPageRange:(id)sender {
     AppDelegate *appD = [NSApp delegate];
     if ([sender indexOfSelectedItem] == 0) {
-        [sender setStringValue:NSLocalizedString(@"ALL_PAGES", @"ALL_PAGES")];
+        [sender setStringValue:NSLocalizedString(@"ALL_PAGES", @"")];
         [self.window makeFirstResponder:nil];
         [sender setEditable:NO];
     } else if ([sender indexOfSelectedItem] == 1){
@@ -222,7 +217,7 @@
     for (int i = 0; i < appD.PDFLst.count; i++) {
         NSMutableDictionary *data = [appD.PDFLst objectAtIndex:i];
         if ([langAllPages containsObject:[data objectForKey:@"pageRange"]]) {
-            [data setObject:NSLocalizedString(@"ALL_PAGES", @"ALL_PAGES") forKey:@"pageRange"];
+            [data setObject:NSLocalizedString(@"ALL_PAGES", @"") forKey:@"pageRange"];
             [appD.PDFLst replaceObjectAtIndex:i withObject:data];
         }
     }
@@ -318,7 +313,7 @@
     [data setObject:[url path] forKey:@"fPath"];
     [data setObject:[[url path]lastPathComponent] forKey:@"fName"];
     [data setObject:[fInfo objectForKey:NSFileSize] forKey:@"fSize"];
-    [data setObject:NSLocalizedString(@"ALL_PAGES", @"ALL_PAGES") forKey:@"pageRange"];
+    [data setObject:NSLocalizedString(@"ALL_PAGES", @"") forKey:@"pageRange"];
     //PDF情報を取得
     PDFDocument *document = [[PDFDocument alloc]initWithURL:url];
     NSUInteger totalPage = [document pageCount];
