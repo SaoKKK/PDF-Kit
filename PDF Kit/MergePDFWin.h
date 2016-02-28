@@ -18,6 +18,15 @@
     IBOutlet NSButton *btnClear;
     IBOutlet NSButton *btnStoreWS;
     IBOutlet NSButton *btnMerge;
+    IBOutlet NSButton *btnGoToFirstPage;
+    IBOutlet NSButton *btnGoToPrevPage;
+    IBOutlet NSButton *btnGoToNextPage;
+    IBOutlet NSButton *btnGoToLastPage;
+    IBOutlet NSButton *btnGoBack;
+    IBOutlet NSButton *btnGoFoward;
+    IBOutlet NSTextField *txtPage;
+    IBOutlet NSTextField *txtTotalPg;
+    IBOutlet NSNumberFormatter *txtPageFormatter;
     NSIndexSet *dragRows; //ドラッグ中の行インデクスを保持
 }
 

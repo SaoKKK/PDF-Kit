@@ -113,9 +113,12 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <pdfThumbnailView id="fbb-fr-f9P">
-                                        <rect key="frame" x="0.0" y="0.0" width="213" height="713"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="661"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <size key="thumbnailSize" width="64" height="64"/>
+                                        <size key="thumbnailSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="pdfView" destination="ZDH-V6-1A7" id="bLX-1N-ahP"/>
+                                        </connections>
                                     </pdfThumbnailView>
                                 </subviews>
                             </customView>
@@ -134,13 +137,16 @@
                             <real value="250"/>
                             <real value="251"/>
                         </holdingPriorities>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="hVN-Bq-6b7"/>
+                        </connections>
                     </splitView>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
-            <point key="canvasLocation" x="204" y="327.5"/>
+            <point key="canvasLocation" x="204" y="327"/>
         </window>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="zIg-me-7fv">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>

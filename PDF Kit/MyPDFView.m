@@ -16,4 +16,8 @@
     // Drawing code here.
 }
 
+- (void)awakeFromNib{
+}
+
+
 @end

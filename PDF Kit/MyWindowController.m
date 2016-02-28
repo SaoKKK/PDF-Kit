@@ -24,8 +24,17 @@
     docURL = [[self document] fileURL];
     PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
     [_pdfView setDocument:doc];
-    
-    //ドキュメントの保存過程にノーティフィケーションを設定
+    //ノーティフィケーションを設定
+    [self setupNotification];
+    //デリゲートを設定
+    [[_pdfView document] setDelegate: self];
+    //オート・スケールをオフにする
+    [_pdfView setAutoScales:NO];
+}
+
+#pragma mark - setup notification
+
+- (void)setupNotification{
     //ドキュメント保存開始
     [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidBeginDocumentWrite" object:[_pdfView document] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         double pgCnt = [[_pdfView document] pageCount];
@@ -46,11 +55,14 @@
         //プログレス・パネルを終了させる
         [self.window endSheet:progressWin returnCode:0];
     }];
-    
-    //デリゲートを設定
-    [[_pdfView document] setDelegate: self];
-    //オート・スケールをオフにする
-    [_pdfView setAutoScales:NO];
+    //ページ移動
+    [[NSNotificationCenter defaultCenter] addObserverForName:PDFViewPageChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        if (_pdfView.canGoToNextPage){
+            
+        };
+    }];
+    //表示ドキュメント変更
+
 }
 
 #pragma mark - save document

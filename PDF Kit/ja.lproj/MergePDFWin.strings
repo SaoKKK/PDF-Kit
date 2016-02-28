@@ -1,6 +1,6 @@
 
 /* Class = "NSButtonCell"; title = "作業状況を復元"; ObjectID = "0cr-lP-jWd"; */
-"LFr-XO-JUH.title" = "作業状況を復元";
+"0cr-lP-jWd.title" = "作業状況を復元";
 "LFr-XO-JUH.ibShadowedToolTip" = "保存された作業ファイルを復元します";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Add a new PDF file"; ObjectID = "4Lx-tN-UdZ"; */
@@ -21,7 +21,7 @@
 "7ob-jv-pbT.ibShadowedToolTip" = "選択されたデータを削除";
 
 /* Class = "NSButtonCell"; title = "クリア"; ObjectID = "A1W-8e-m0f"; */
-"7bM-jf-5px.title" = "クリア";
+"A1W-8e-m0f.title" = "クリア";
 "7bM-jf-5px.ibShadowedToolTip" = "テーブルのデータをクリア";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "BPg-7Q-fNU"; */
@@ -31,7 +31,7 @@
 "BnB-D1-Tf9.headerCell.title" = "サイズ";
 
 /* Class = "NSButtonCell"; title = "作業状況を保存"; ObjectID = "ChF-5n-Hme"; */
-"Eyc-SK-jpu.title" = "作業状況を保存";
+"ChF-5n-Hme.title" = "作業状況を保存";
 "Eyc-SK-jpu.ibShadowedToolTip" = "テーブルの作業状況を保存します";
 
 /* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Cs7-ne-c3h"; */
