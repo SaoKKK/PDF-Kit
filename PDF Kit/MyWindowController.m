@@ -30,6 +30,12 @@
     [[_pdfView document] setDelegate: self];
     //オート・スケールをオフにする
     [_pdfView setAutoScales:NO];
+    //ページ表示テキストフィールドを更新
+    NSUInteger totalPg = _pdfView.document.pageCount;
+    [txtTotalPg setStringValue:[NSString stringWithFormat:@"%li",totalPg]];
+    [txtPageFormatter setMaximum:[NSNumber numberWithInteger:totalPg]];
+    //ページ表示テキストフィールドの値を変更
+    [self updateTxtPg];
 }
 
 #pragma mark - setup notification
@@ -57,12 +63,46 @@
     }];
     //ページ移動
     [[NSNotificationCenter defaultCenter] addObserverForName:PDFViewPageChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //ページ移動ボタンの有効/無効の切り替え
+        if (_pdfView.canGoToFirstPage) {
+            [btnGoToFirstPage setEnabled:YES];
+        } else {
+            [btnGoToFirstPage setEnabled:NO];
+        }
+        if (_pdfView.canGoToPreviousPage) {
+            [btnGoToPrevPage setEnabled:YES];
+        } else {
+            [btnGoToPrevPage setEnabled:NO];
+        }
         if (_pdfView.canGoToNextPage){
-            
-        };
+            [btnGoToNextPage setEnabled:YES];
+        } else {
+            [btnGoToNextPage setEnabled:NO];
+        }
+        if (_pdfView.canGoToLastPage){
+            [btnGoToLastPage setEnabled:YES];
+        } else {
+            [btnGoToLastPage setEnabled:NO];
+        }
+        if (_pdfView.canGoBack) {
+            [btnGoBack setEnabled:YES];
+        } else {
+            [btnGoBack setEnabled:NO];
+        }
+        if (_pdfView.canGoForward) {
+            [btnGoFoward setEnabled:YES];
+        } else {
+            [btnGoFoward setEnabled:NO];
+        }
+        //ページ表示テキストフィールドの値を変更
+        [self updateTxtPg];
     }];
-    //表示ドキュメント変更
+}
 
+- (void) updateTxtPg {
+    PDFDocument *doc = _pdfView.document;
+    NSUInteger index = [doc indexForPage:[_pdfView currentPage]] + 1;
+    [txtPage setStringValue:[NSString stringWithFormat:@"%li",index]];
 }
 
 #pragma mark - save document
@@ -104,6 +144,14 @@
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf{
     [_pdfView setDocument:pdf];
+}
+
+#pragma mark - actions
+
+- (IBAction)txtJumpPage:(id)sender {
+    PDFDocument *doc = [_pdfView document];
+    PDFPage *page = [doc pageAtIndex:[[sender stringValue]integerValue]-1];
+    [_pdfView goToPage:page];
 }
 
 @end

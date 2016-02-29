@@ -10,8 +10,17 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MyWindowController">
             <connections>
                 <outlet property="_pdfView" destination="ZDH-V6-1A7" id="dWF-xX-MgC"/>
+                <outlet property="btnGoBack" destination="qYc-Mk-Lw2" id="1UC-uK-GCa"/>
+                <outlet property="btnGoFoward" destination="EQj-QK-ez5" id="Ioz-Is-pwm"/>
+                <outlet property="btnGoToFirstPage" destination="qQV-EE-fwh" id="xBL-dT-9NE"/>
+                <outlet property="btnGoToLastPage" destination="SgK-S8-bVv" id="S0r-Ob-QEk"/>
+                <outlet property="btnGoToNextPage" destination="TsC-r6-Xod" id="nYe-c4-yWh"/>
+                <outlet property="btnGoToPrevPage" destination="OLo-a6-4K7" id="gBt-Qz-JCk"/>
                 <outlet property="progressWin" destination="zIg-me-7fv" id="QWG-Ww-5tt"/>
                 <outlet property="savingProgBar" destination="ShM-ah-6li" id="q0D-xY-FFj"/>
+                <outlet property="txtPage" destination="Osd-cl-Syu" id="LAG-dl-aZT"/>
+                <outlet property="txtPageFormatter" destination="epz-pv-gaK" id="5Bw-K7-6r4"/>
+                <outlet property="txtTotalPg" destination="lk5-IJ-Rb2" id="Py4-qF-wxz"/>
                 <outlet property="window" destination="xOd-HO-29H" id="mTr-SO-Hy8"/>
             </connections>
         </customObject>
@@ -127,9 +136,116 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <pdfView autoresizesSubviews="NO" autoScales="YES" id="ZDH-V6-1A7" customClass="MyPDFView">
-                                        <rect key="frame" x="0.0" y="8" width="583" height="653"/>
+                                        <rect key="frame" x="0.0" y="25" width="583" height="636"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </pdfView>
+                                    <button toolTip="Go to last page" verticalHuggingPriority="750" id="SgK-S8-bVv">
+                                        <rect key="frame" x="162" y="0.0" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goLast" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="s4f-lq-1rh">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="goToLastPage:" target="ZDH-V6-1A7" id="n2J-o1-Ust"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" id="Osd-cl-Syu">
+                                        <rect key="frame" x="52" y="3" width="40" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="mpR-Am-u2s">
+                                            <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="epz-pv-gaK">
+                                                <real key="minimum" value="1"/>
+                                            </numberFormatter>
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <allowedInputSourceLocales>
+                                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                            </allowedInputSourceLocales>
+                                        </textFieldCell>
+                                        <connections>
+                                            <action selector="txtJumpPage:" target="-2" id="H5S-Qt-rFT"/>
+                                        </connections>
+                                    </textField>
+                                    <textField focusRingType="none" verticalHuggingPriority="750" id="lk5-IJ-Rb2">
+                                        <rect key="frame" x="106" y="5" width="37" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" id="th4-dn-Au8">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button toolTip="Go to first page" verticalHuggingPriority="750" id="qQV-EE-fwh">
+                                        <rect key="frame" x="4" y="0.0" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goTop" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="ZLF-c9-qEA">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="goToFirstPage:" target="ZDH-V6-1A7" id="Oix-z6-yyD"/>
+                                        </connections>
+                                    </button>
+                                    <button toolTip="Go next page" verticalHuggingPriority="750" id="TsC-r6-Xod">
+                                        <rect key="frame" x="140" y="0.0" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goNext" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="qCM-8I-dWO">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="goToNextPage:" target="ZDH-V6-1A7" id="3d6-tO-qOP"/>
+                                        </connections>
+                                    </button>
+                                    <button toolTip="Go previous page" verticalHuggingPriority="750" id="OLo-a6-4K7">
+                                        <rect key="frame" x="26" y="0.0" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goPrev" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="hn5-4N-5VN">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="goToPreviousPage:" target="ZDH-V6-1A7" id="yEJ-tw-uf7"/>
+                                        </connections>
+                                    </button>
+                                    <textField focusRingType="none" verticalHuggingPriority="750" id="WgP-Dw-zUS">
+                                        <rect key="frame" x="96" y="5" width="15" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" title="/" id="Bqg-Z5-yja">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button toolTip="Go back" verticalHuggingPriority="750" id="qYc-Mk-Lw2">
+                                        <rect key="frame" x="207" y="0.0" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goBack" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="4JU-pt-rs0">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="goBack:" target="ZDH-V6-1A7" id="a63-aJ-duP"/>
+                                        </connections>
+                                    </button>
+                                    <button toolTip="Go foward" verticalHuggingPriority="750" id="EQj-QK-ez5">
+                                        <rect key="frame" x="233" y="0.0" width="23" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goFoward" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Ghg-e5-4aZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="goForward:" target="ZDH-V6-1A7" id="zId-0W-ViS"/>
+                                        </connections>
+                                    </button>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MGI-vy-Z3b">
+                                        <rect key="frame" x="195" y="3" width="1" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="vline" id="Ssp-9r-xR5"/>
+                                    </imageView>
                                 </subviews>
                             </customView>
                         </subviews>
@@ -182,5 +298,6 @@
         <image name="goNext" width="23" height="23"/>
         <image name="goPrev" width="23" height="23"/>
         <image name="goTop" width="23" height="23"/>
+        <image name="vline" width="1" height="18"/>
     </resources>
 </document>

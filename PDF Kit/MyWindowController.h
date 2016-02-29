@@ -16,6 +16,15 @@
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *savingProgBar;
     IBOutlet MyPDFView *_pdfView;
+    IBOutlet NSButton *btnGoToFirstPage;
+    IBOutlet NSButton *btnGoToPrevPage;
+    IBOutlet NSButton *btnGoToNextPage;
+    IBOutlet NSButton *btnGoToLastPage;
+    IBOutlet NSButton *btnGoBack;
+    IBOutlet NSButton *btnGoFoward;
+    IBOutlet NSTextField *txtPage;
+    IBOutlet NSTextField *txtTotalPg;
+    IBOutlet NSNumberFormatter *txtPageFormatter;
     NSURL *docURL;
 }
 
