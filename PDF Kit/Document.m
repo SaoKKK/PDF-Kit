@@ -42,7 +42,7 @@
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError{
     //PDFビューのドキュメントをNSDataにパッケージして返す
     MyWindowController *winC = [[self windowControllers]objectAtIndex:0];
-    return [[winC pdfViewDocument] dataRepresentation];
+    return [winC pdfViewDocumentData];
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {

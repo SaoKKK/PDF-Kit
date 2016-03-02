@@ -36,7 +36,7 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="17" y="62" width="680" height="694"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
-            <value key="minSize" type="size" width="94" height="86"/>
+            <value key="minSize" type="size" width="400" height="86"/>
             <view key="contentView" id="gIp-Ho-8D9">
                 <rect key="frame" x="0.0" y="0.0" width="680" height="694"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -111,7 +111,7 @@
                                                     <subviews>
                                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="BKS-K1-xdv">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="611"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <clipView key="contentView" id="eR5-9X-P8M">
                                                                 <rect key="frame" x="1" y="23" width="198" height="587"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,6 +369,51 @@
                             <action selector="test:" target="-2" id="84p-IC-T3L"/>
                         </connections>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8Gp-5y-7Rn">
+                        <rect key="frame" x="266" y="3" width="1" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="vline" id="cal-k8-4JN"/>
+                    </imageView>
+                    <matrix focusRingType="none" verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="I6G-df-AsF">
+                        <rect key="frame" x="560" y="0.0" width="108" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="27" height="25"/>
+                        <size key="intercellSpacing" width="0.0" height="2"/>
+                        <buttonCell key="prototype" type="bevel" bezelStyle="regularSquare" image="singlePage_off" imagePosition="only" alignment="left" alternateImage="singlePage_on" inset="2" id="gzn-Mn-cxL">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="bevel" bezelStyle="regularSquare" image="singlePage_off" imagePosition="only" alignment="left" alternateImage="singlePage_on" inset="2" id="un7-YT-TWZ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="bevel" bezelStyle="regularSquare" image="singleCon_off" imagePosition="only" alignment="left" alternateImage="singleCon_on" controlSize="small" state="on" focusRingType="none" inset="2" id="DUF-WY-ew0">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="bevel" bezelStyle="regularSquare" image="twoUp_off" imagePosition="only" alignment="left" alternateImage="twoUp_on" controlSize="small" focusRingType="none" inset="2" id="DVh-Je-VxG">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                            </column>
+                            <column>
+                                <buttonCell type="bevel" bezelStyle="regularSquare" image="twoCont_off" imagePosition="only" alignment="left" alternateImage="twoCont_on" inset="2" id="wzI-2x-zR3">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                        <connections>
+                            <action selector="displayModeMatrix:" target="-2" id="F9T-nv-5d0"/>
+                        </connections>
+                    </matrix>
                 </subviews>
             </view>
             <connections>
@@ -413,6 +458,14 @@
         <image name="goPrev" width="23" height="23"/>
         <image name="goTop" width="23" height="23"/>
         <image name="sidebar" width="23" height="23"/>
+        <image name="singleCon_off" width="25" height="23"/>
+        <image name="singleCon_on" width="25" height="23"/>
+        <image name="singlePage_off" width="25" height="23"/>
+        <image name="singlePage_on" width="25" height="23"/>
+        <image name="twoCont_off" width="25" height="23"/>
+        <image name="twoCont_on" width="25" height="23"/>
+        <image name="twoUp_off" width="25" height="23"/>
+        <image name="twoUp_on" width="25" height="23"/>
         <image name="vline" width="1" height="18"/>
     </resources>
 </document>

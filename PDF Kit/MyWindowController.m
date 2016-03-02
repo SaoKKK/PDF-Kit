@@ -17,7 +17,6 @@
 @end
 
 @implementation MyWindowController
-@synthesize _pdfView;
 
 #pragma mark - Window Controller Method
 
@@ -47,8 +46,8 @@
 
 #pragma mark - document save/open support
 
-- (PDFDocument*)pdfViewDocument{
-    return [_pdfView document];
+- (NSData *)pdfViewDocumentData{
+    return [[_pdfView document]dataRepresentation];
 }
 
 - (void)revertDocumentToSaved{
@@ -180,6 +179,24 @@
         //目次エリアを非表示
         oldTocWidth = tocView.frame.size.width; //非表示前の目次エリア幅を保存
         [tocView setFrame:NSMakeRect(0, 0, 0, _splitView.frame.size.height)];
+    }
+}
+
+//ディスプレイ・モードを切り替え
+- (IBAction)displayModeMatrix:(id)sender {
+    switch ([sender selectedColumn]) {
+        case 0:
+            [_pdfView setDisplayMode:kPDFDisplaySinglePage];
+            break;
+        case 2:
+            [_pdfView setDisplayMode:kPDFDisplayTwoUp];
+            break;
+        case 3:
+            [_pdfView setDisplayMode:kPDFDisplayTwoUpContinuous];
+            break;
+        default:
+            [_pdfView setDisplayMode:kPDFDisplaySinglePageContinuous];
+            break;
     }
 }
 
