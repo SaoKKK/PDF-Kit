@@ -15,7 +15,7 @@
     IBOutlet NSWindow *window;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *savingProgBar;
-    IBOutlet MyPDFView *_pdfView;
+    IBOutlet PDFThumbnailView *thumbView;
     IBOutlet NSButton *btnGoToFirstPage;
     IBOutlet NSButton *btnGoToPrevPage;
     IBOutlet NSButton *btnGoToNextPage;
@@ -25,9 +25,17 @@
     IBOutlet NSTextField *txtPage;
     IBOutlet NSTextField *txtTotalPg;
     IBOutlet NSNumberFormatter *txtPageFormatter;
-    NSURL *docURL;
+    IBOutlet NSSplitView *_splitView;
+    IBOutlet NSView *tocView;
+    IBOutlet NSTabView *tabToc;
+    IBOutlet NSSearchField *searchField;
+    NSURL *docURL;  //ドキュメントのURL保持用
+    CGFloat oldTocWidth; //目次エリアの変更前の幅保持用
 }
+@property (strong) IBOutlet MyPDFView *_pdfView;
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
+- (PDFDocument*)pdfViewDocument;
+- (void)revertDocumentToSaved;
 
 @end

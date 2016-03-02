@@ -10,11 +10,14 @@
 #import "Document.h"
 #import "MyPDFView.h"
 
+#define kMinTocAreaSplit	200.0f
+
 @interface MyWindowController ()
 
 @end
 
 @implementation MyWindowController
+@synthesize _pdfView;
 
 #pragma mark - Window Controller Method
 
@@ -36,6 +39,21 @@
     [txtPageFormatter setMaximum:[NSNumber numberWithInteger:totalPg]];
     //ページ表示テキストフィールドの値を変更
     [self updateTxtPg];
+    //目次エリア幅保持用変数に初期値を保存
+    oldTocWidth = 165.0F;
+    //サムネイルビューの設定
+    [thumbView setAllowsMultipleSelection:YES];
+}
+
+#pragma mark - document save/open support
+
+- (PDFDocument*)pdfViewDocument{
+    return [_pdfView document];
+}
+
+- (void)revertDocumentToSaved{
+    PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
+    [_pdfView setDocument:doc];
 }
 
 #pragma mark - setup notification
@@ -105,45 +123,37 @@
     [txtPage setStringValue:[NSString stringWithFormat:@"%li",index]];
 }
 
-#pragma mark - save document
-
-//ドキュメントを保存
-- (void)saveDocument:(id)sender{
-    if (docURL){
-        [_pdfView.document writeToURL:docURL];
-    } else {
-        [self saveDocumentAs:sender];
-    }
-}
-
-//ドキュメントを別名で保存
-- (void)saveDocumentAs:(id)sender{
-    //savePanelの設定と表示
-    NSSavePanel *savePanel = [NSSavePanel savePanel];
-    NSArray *fileTypes = [NSArray arrayWithObjects:@"pdf", nil];
-    [savePanel setAllowedFileTypes:fileTypes]; //保存するファイルの種類
-    //初期ファイル名をセット
-    if (docURL){
-        [savePanel setNameFieldStringValue:[[docURL path] lastPathComponent]];
-    }
-    [savePanel setCanSelectHiddenExtension:YES]; //拡張子を隠すチェックボックスの有無
-    [savePanel setExtensionHidden:NO]; //拡張子を隠すチェックボックスの初期ステータス
-    [savePanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
-        if (result == NSFileHandlingPanelOKButton) {
-            docURL = [savePanel URL];
-            [savePanel orderOut:self];
-            [_pdfView.document writeToURL:docURL];
-            Document *doc = [self document];
-            //ドキュメントのURLを更新
-            [doc setFileURL:docURL];
-        }
-    }];
-}
-
 #pragma mark - make new document
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf{
     [_pdfView setDocument:pdf];
+}
+
+#pragma mark - split view delegate
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)dividerIndex{
+    return proposedMin + kMinTocAreaSplit;
+}
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMax ofSubviewAt:(NSInteger)dividerIndex{
+    return proposedMax - kMinTocAreaSplit;
+}
+
+- (void)splitView:(NSSplitView *)splitView resizeSubviewsWithOldSize:(NSSize)oldSize{
+    NSRect newFrame = [splitView frame];    //新しいsplitView全体のサイズを取得
+    NSView *leftView = [[splitView subviews]objectAtIndex:0];
+    NSRect leftFrame = [leftView frame];
+    NSView *rightView = [[splitView subviews]objectAtIndex:1];
+    NSRect rightFrame = [rightView frame];
+    CGFloat dividerThickness = [splitView dividerThickness];
+    
+    leftFrame.size.height = newFrame.size.height;
+    rightFrame.size.width = newFrame.size.width - leftFrame.size.width - dividerThickness;
+    rightFrame.size.height = newFrame.size.height;
+    rightFrame.origin.x = leftFrame.size.width + dividerThickness;
+    
+    [leftView setFrame:leftFrame];
+    [rightView setFrame:rightFrame];
 }
 
 #pragma mark - actions
@@ -152,6 +162,29 @@
     PDFDocument *doc = [_pdfView document];
     PDFPage *page = [doc pageAtIndex:[[sender stringValue]integerValue]-1];
     [_pdfView goToPage:page];
+}
+
+//コンテンツ・エリアのビューを切り替え
+- (IBAction)segSelContentsView:(id)sender {
+    [tabToc selectTabViewItemAtIndex:[sender selectedSegment]];
+}
+
+//コンテンツ・エリアの表示／非表示を切り替え
+- (IBAction)showSideBar:(id)sender {
+    CGFloat currentTocWidth = tocView.frame.size.width;
+    if (currentTocWidth == 0) {
+        //目次エリアを表示
+        [tocView setFrame:NSMakeRect(0, 0, oldTocWidth, _splitView.frame.size.height)];
+        [searchField setFrame:NSMakeRect(70, 4, oldTocWidth-77, 19)];
+    } else {
+        //目次エリアを非表示
+        oldTocWidth = tocView.frame.size.width; //非表示前の目次エリア幅を保存
+        [tocView setFrame:NSMakeRect(0, 0, 0, _splitView.frame.size.height)];
+    }
+}
+
+- (IBAction)test:(id)sender {
+    NSLog (@"%@",[thumbView selectedPages]);
 }
 
 @end

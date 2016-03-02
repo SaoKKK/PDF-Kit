@@ -15,6 +15,6 @@
 @property (weak) IBOutlet NSWindow *statusWin;
 
 - (void)showStatusWin:(NSRect)rect messageText:(NSString*)message infoText:(NSString*)info;
-
+- (void)restorePDFLst;
 @end
 

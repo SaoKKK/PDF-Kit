@@ -10,7 +10,6 @@
 #import "MergePDFWin.h"
 
 @interface AppDelegate (){
-    IBOutlet NSMenuItem *mnMergePDF;
     IBOutlet NSTextField *statusWinMsg;
     IBOutlet NSTextField *statusWinInfo;
 }
@@ -44,6 +43,10 @@
     return NO;
 }
 
+- (void)restorePDFLst{
+    PDFLst = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"PDFLst" ofType:@"array"]];
+}
+
 #pragma mark - open file
 
 
@@ -55,6 +58,11 @@
         self._mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
         [self._mergePDFWC showWindow:self];
     }
+}
+
+//Delete アクション
+- (IBAction)delete:(id)sender{
+    
 }
 
 #pragma mark - status window

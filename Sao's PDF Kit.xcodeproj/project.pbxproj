@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B907C4B71C848A440019F247 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B907C4B61C848A440019F247 /* sidebar.png */; };
 		B951BD651C719DD0007B9359 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD641C719DD0007B9359 /* AppDelegate.m */; };
 		B951BD681C719DD0007B9359 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD671C719DD0007B9359 /* main.m */; };
 		B951BD6B1C719DD0007B9359 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD6A1C719DD0007B9359 /* Document.m */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B907C4B61C848A440019F247 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = Graphics/sidebar.png; sourceTree = "<group>"; };
 		B94605781C80958B00953468 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MergePDFWin.strings; sourceTree = "<group>"; };
 		B951BD601C719DD0007B9359 /* Sao's PDF Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sao's PDF Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B951BD631C719DD0007B9359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		B951BD7A1C719E0C007B9359 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B907C4B61C848A440019F247 /* sidebar.png */,
 				B96EE77D1C818A630063C7A2 /* goBack.png */,
 				B96EE77E1C818A630063C7A2 /* goFoward.png */,
 				B96EE77F1C818A630063C7A2 /* goLast.png */,
@@ -294,6 +297,7 @@
 				B96EE7851C818A630063C7A2 /* goLast.png in Resources */,
 				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
 				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
+				B907C4B71C848A440019F247 /* sidebar.png in Resources */,
 				B96EE7841C818A630063C7A2 /* goFoward.png in Resources */,
 				B96EE7831C818A630063C7A2 /* goBack.png in Resources */,
 			);

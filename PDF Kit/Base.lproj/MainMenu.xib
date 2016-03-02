@@ -14,7 +14,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="mnMergePDF" destination="T87-cJ-ES5" id="vnw-0h-HyP"/>
                 <outlet property="statusWin" destination="pIj-hh-1WQ" id="6HU-Ba-flq"/>
                 <outlet property="statusWinInfo" destination="P6V-eo-Ka3" id="0Qi-5y-HxR"/>
                 <outlet property="statusWinMsg" destination="AUk-is-Uck" id="mRt-CC-pz1"/>
@@ -168,6 +167,9 @@
                                 </connections>
                             </menuItem>
                             <menuItem title="Delete" id="pa3-QI-u2k">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="delete:" target="-1" id="0Mk-Ml-PaM"/>

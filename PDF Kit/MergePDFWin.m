@@ -12,6 +12,7 @@
 #import "MyWindowController.h"
 
 #define MyTVDragNDropPboardType @"MyTVDragNDropPboardType"
+#define APPD (AppDelegate *)[NSApp delegate]
 
 @interface MergePDFWin (){
     IBOutlet NSWindow *window;
@@ -43,13 +44,12 @@
     self = [super initWithWindow:win];
     if (self){
         //既存のPDFリストがなく、開かれているドキュメントがある場合は開かれているドキュメントをリストに取り込む
-        AppDelegate *appD = [NSApp delegate];
         NSDocumentController *docC = [NSDocumentController sharedDocumentController];
         NSArray *docs = [docC documents];
-        if (appD.PDFLst.count == 0 && docs.count > 0) {
+        if ([APPD PDFLst].count == 0 && docs.count > 0) {
             for (NSDocument *doc in docs){
                 if (doc.fileURL != nil) {
-                    [self addToPDFLst:doc.fileURL atIndex:appD.PDFLst.count];
+                    [self addToPDFLst:doc.fileURL atIndex:[APPD PDFLst].count];
                 }
             }
             [mergePDFtable reloadData];
@@ -72,8 +72,7 @@
 
 //ボタンのEnabledを変更
 - (void)setEnabledButtons{
-    AppDelegate *appD = [NSApp delegate];
-    if (appD.PDFLst.count == 0) {
+    if ([APPD PDFLst].count == 0) {
         [btnClear setEnabled:NO];
         [btnMerge setEnabled:NO];
         [btnStoreWS setEnabled:NO];
@@ -99,14 +98,12 @@
 # pragma mark - NSTableView data source
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    AppDelegate *appD = [NSApp delegate];
-    return appD.PDFLst.count;
+    return [APPD PDFLst].count;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    AppDelegate *appD = [NSApp delegate];
     NSString *identifier = [tableColumn identifier];
-    NSDictionary *data = [appD.PDFLst objectAtIndex:row];
+    NSDictionary *data = [[APPD PDFLst] objectAtIndex:row];
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
     cellView.objectValue = [data objectForKey:identifier];
     return cellView;
@@ -118,8 +115,7 @@
         [btnRemove setEnabled:YES];
         if ([[mergePDFtable selectedRowIndexes]count] == 1){
             //PDFViewにPDFドキュメントを設定
-            AppDelegate *appD = [NSApp delegate];
-            NSDictionary *data = [appD.PDFLst objectAtIndex:[mergePDFtable selectedRow]];
+            NSDictionary *data = [[APPD PDFLst] objectAtIndex:[mergePDFtable selectedRow]];
             NSFileManager *fileMgr = [NSFileManager defaultManager];
             NSString *fPath = [data objectForKey:@"fPath"];
             if ([fileMgr fileExistsAtPath:fPath]) {
@@ -129,8 +125,8 @@
             } else {
                 //テーブルのデータが実在しない場合
                 [_pdfView setDocument:nil];
-                NSRect rect = NSMakeRect(self.window.frame.origin.x + _pdfView.frame.origin.x + (_pdfView.frame.size.width - appD.statusWin.frame.size.width)*0.5, self.window.frame.origin.y + (self.window.frame.size.height - appD.statusWin.frame.size.height)*0.5, appD.statusWin.frame.size.width, appD.statusWin.frame.size.height);
-                [appD showStatusWin:rect messageText:NSLocalizedString(@"PDF_READ_ERROR_MESSAGETEXT", @"") infoText:NSLocalizedString(@"PDF_READ_ERROR_INFOTEXT", @"")];
+                NSRect rect = NSMakeRect(self.window.frame.origin.x + _pdfView.frame.origin.x + (_pdfView.frame.size.width - [APPD statusWin].frame.size.width)*0.5, self.window.frame.origin.y + (self.window.frame.size.height - [APPD statusWin].frame.size.height)*0.5, [APPD statusWin].frame.size.width, [APPD statusWin].frame.size.height);
+                [APPD showStatusWin:rect messageText:NSLocalizedString(@"PDF_READ_ERROR_MESSAGETEXT", @"") infoText:NSLocalizedString(@"PDF_READ_ERROR_INFOTEXT", @"")];
             }
         } else {
             [_pdfView setDocument:nil];
@@ -142,15 +138,13 @@
 }
 
 - (void)closeStatusWin{
-    AppDelegate *appD = [NSApp delegate];
-    [appD.statusWin orderOut:self];
+    [[APPD statusWin] orderOut:self];
 }
 
 #pragma mark - Actions
 
 //コンボボックス・アクション/データ更新
 - (IBAction)comboPageRange:(id)sender {
-    AppDelegate *appD = [NSApp delegate];
     if ([sender indexOfSelectedItem] == 0) {
         [sender setStringValue:NSLocalizedString(@"ALL_PAGES", @"")];
         [self.window makeFirstResponder:nil];
@@ -161,15 +155,14 @@
         [self.window makeFirstResponder:sender];
     }
     NSInteger row = [mergePDFtable rowForView:sender];
-    NSDictionary *data = [appD.PDFLst objectAtIndex:row];
+    NSDictionary *data = [[APPD PDFLst] objectAtIndex:row];
     [data setValue:[sender stringValue] forKey:@"pageRange"];
-    [appD.PDFLst replaceObjectAtIndex:row withObject:data];
+    [[APPD PDFLst] replaceObjectAtIndex:row withObject:data];
 }
 
 //行追加
 - (IBAction)btnAdd:(id)sender{
     [self.window makeFirstResponder:self];
-    AppDelegate *appD = [NSApp delegate];
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
     NSArray *fileTypes = [NSArray arrayWithObjects:@"pdf", nil];
     [openPanel setAllowedFileTypes:fileTypes];
@@ -178,7 +171,7 @@
     [openPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
         if (result == NSFileHandlingPanelOKButton) {
             for (NSURL *url in [openPanel URLs]) {
-                [self addToPDFLst:url atIndex:appD.PDFLst.count];
+                [self addToPDFLst:url atIndex:[APPD PDFLst].count];
             }
             [mergePDFtable reloadData];
             [btnRemove setEnabled:NO];
@@ -190,9 +183,8 @@
 //行削除
 - (IBAction)btnRemove:(id)sender{
     [window makeFirstResponder:self];
-    AppDelegate *appD = [NSApp delegate];
     NSIndexSet *selectedRows = [mergePDFtable selectedRowIndexes];
-    [appD.PDFLst removeObjectsAtIndexes:selectedRows];
+    [[APPD PDFLst] removeObjectsAtIndexes:selectedRows];
     [mergePDFtable reloadData];
     [_pdfView setDocument:nil];
     [btnRemove setEnabled:NO];
@@ -202,8 +194,7 @@
 //テーブル・クリア
 - (IBAction)btnClear:(id)sender {
     [window makeFirstResponder:self];
-    AppDelegate *appD = [NSApp delegate];
-    [appD.PDFLst removeAllObjects];
+    [[APPD PDFLst] removeAllObjects];
     [mergePDFtable reloadData];
     [btnRemove setEnabled:NO];
     [self setEnabledButtons];
@@ -211,13 +202,12 @@
 
 - (IBAction)btnOpenData:(id)sender {
     [window makeFirstResponder:self];
-    AppDelegate *appD = [NSApp delegate];
-    appD.PDFLst = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"PDFLst" ofType:@"array"]];
-    for (int i = 0; i < appD.PDFLst.count; i++) {
-        NSMutableDictionary *data = [appD.PDFLst objectAtIndex:i];
+    [APPD restorePDFLst];
+    for (int i = 0; i < [APPD PDFLst].count; i++) {
+        NSMutableDictionary *data = [[APPD PDFLst] objectAtIndex:i];
         if ([langAllPages containsObject:[data objectForKey:@"pageRange"]]) {
             [data setObject:NSLocalizedString(@"ALL_PAGES", @"") forKey:@"pageRange"];
-            [appD.PDFLst replaceObjectAtIndex:i withObject:data];
+            [[APPD PDFLst] replaceObjectAtIndex:i withObject:data];
         }
     }
     [mergePDFtable reloadData];
@@ -226,11 +216,10 @@
 
 - (IBAction)btnSaveData:(id)sender {
     [window makeFirstResponder:self];
-    AppDelegate *appD = [NSApp delegate];
-    [appD.PDFLst writeToFile:[[NSBundle mainBundle] pathForResource:@"PDFLst" ofType: @"array"] atomically:YES];
+    [[APPD PDFLst] writeToFile:[[NSBundle mainBundle] pathForResource:@"PDFLst" ofType: @"array"] atomically:YES];
     //終了ダイアログ表示
-    NSRect rect = NSMakeRect(self.window.frame.origin.x + (mergePDFtable.frame.size.width - appD.statusWin.frame.size.width)*0.5, self.window.frame.origin.y + (self.window.frame.size.height - appD.statusWin.frame.size.height)*0.5, appD.statusWin.frame.size.width, appD.statusWin.frame.size.height);
-    [appD showStatusWin:rect messageText:NSLocalizedString(@"SAVE_FILELIST_MESSAGETEXT", @"SAVE_FILELIST_MESSAGETEXT") infoText:NSLocalizedString(@"SAVE_FILELIST_INFOTEXT", @"SAVE_FILELIST_INFOTEXT")];
+    NSRect rect = NSMakeRect(self.window.frame.origin.x + (mergePDFtable.frame.size.width - [APPD statusWin].frame.size.width)*0.5, self.window.frame.origin.y + (self.window.frame.size.height - [APPD statusWin].frame.size.height)*0.5, [APPD statusWin].frame.size.width, [APPD statusWin].frame.size.height);
+    [APPD showStatusWin:rect messageText:NSLocalizedString(@"SAVE_FILELIST_MESSAGETEXT", @"SAVE_FILELIST_MESSAGETEXT") infoText:NSLocalizedString(@"SAVE_FILELIST_INFOTEXT", @"SAVE_FILELIST_INFOTEXT")];
 }
 
 - (IBAction)txtJumpPg:(id)sender {
@@ -262,23 +251,22 @@
 
 //ドロップ受付開始
 - (BOOL)tableView:(NSTableView*)tv acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)op {
-    AppDelegate *appD = [NSApp delegate];
     if (dragRows) {
         //テーブル内の行の移動
         NSUInteger index = [dragRows firstIndex];
         while(index != NSNotFound) {
             //ドロップ先にドラッグ元のオブジェクトを挿入する
-            if (row > appD.PDFLst.count) {
-                [appD.PDFLst addObject:[appD.PDFLst objectAtIndex:index]];
+            if (row > [APPD PDFLst].count) {
+                [[APPD PDFLst] addObject:[[APPD PDFLst] objectAtIndex:index]];
             }else{
-                [appD.PDFLst insertObject:[appD.PDFLst objectAtIndex:index] atIndex:row];
+                [[APPD PDFLst] insertObject:[[APPD PDFLst] objectAtIndex:index] atIndex:row];
             }
             //ドラッグ元のオブジェクトを削除する
             if (index > row) {
                 //indexを後ろにずらす
-                [appD.PDFLst removeObjectAtIndex:index + 1];
+                [[APPD PDFLst] removeObjectAtIndex:index + 1];
             }else{
-                [appD.PDFLst removeObjectAtIndex:index];
+                [[APPD PDFLst] removeObjectAtIndex:index];
             }
             index = [dragRows indexGreaterThanIndex:index];
             row ++;
@@ -289,7 +277,7 @@
         NSPasteboard *pasteboard = [info draggingPasteboard];
         NSArray *dropDataList = [pasteboard propertyListForType:NSFilenamesPboardType];
         NSWorkspace *workSpc = [NSWorkspace sharedWorkspace];
-        [appD.errLst removeAllObjects];
+        [[APPD errLst] removeAllObjects];
         for (id path in dropDataList) {
             NSString *uti = [workSpc typeOfFile:path error:nil];
             NSString *fName = [path lastPathComponent];
@@ -297,13 +285,13 @@
                 [self addToPDFLst:[NSURL fileURLWithPath:path] atIndex:row];
                 row ++;
             } else {
-                [appD.errLst addObject:fName];
+                [[APPD errLst] addObject:fName];
             }
         }
     }
     [tv reloadData];
     [self setEnabledButtons];
-    if (appD.errLst.count > 0) {
+    if ([APPD errLst].count > 0) {
         [self showErrLst];
     }
     return YES;
@@ -311,7 +299,6 @@
 
 //PDFファイル情報を配列に追加
 - (void)addToPDFLst:(NSURL*)url atIndex:(NSInteger)row{
-    AppDelegate *appD = [NSApp delegate];
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     NSDictionary *fInfo = [NSDictionary dictionaryWithDictionary:[fileMgr attributesOfItemAtPath:[url path] error:nil]];
     NSMutableDictionary *data = [NSMutableDictionary dictionary];
@@ -323,7 +310,7 @@
     PDFDocument *document = [[PDFDocument alloc]initWithURL:url];
     NSUInteger totalPage = [document pageCount];
     [data setObject:[NSNumber numberWithUnsignedInteger:totalPage] forKey:@"totalPage"];
-    [appD.PDFLst insertObject:data atIndex:row];
+    [[APPD PDFLst] insertObject:data atIndex:row];
 }
 
 #pragma mark - Error list window controll
@@ -347,11 +334,10 @@
     [self.window makeFirstResponder:self];
     double outputPDFPageIndex = 0;
     outputPDFTotalPg = 0;
-    AppDelegate *appD = [NSApp delegate];
     //PDFLstの内容をチェック
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     NSMutableArray *indexes = [NSMutableArray array];
-    for (NSDictionary *data in appD.PDFLst) {
+    for (NSDictionary *data in [APPD PDFLst]) {
         if ([fileMgr fileExistsAtPath:[data objectForKey:@"fPath"]]) {
             //ページ範囲をインデックス・セットに変換
             NSMutableIndexSet *pageRange = [NSMutableIndexSet indexSet];
@@ -436,8 +422,8 @@
     //PDF作成開始ノーティフィケーションを送信
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidBeginCreate" object:self];
     
-    for (int i = 0; i < appD.PDFLst.count; i++){
-        NSDictionary *data = [appD.PDFLst objectAtIndex:i];
+    for (int i = 0; i < [APPD PDFLst].count; i++){
+        NSDictionary *data = [[APPD PDFLst] objectAtIndex:i];
         NSURL *url = [NSURL fileURLWithPath:[data objectForKey:@"fPath"]];
         PDFDocument *inputDoc = [[PDFDocument alloc]initWithURL:url];
         NSIndexSet *pageRange = [indexes objectAtIndex:i];

@@ -9,20 +9,20 @@
 #import "ErrLstController.h"
 #import "AppDelegate.h"
 
+#define APPD (AppDelegate *)[NSApp delegate]
+
 @implementation ErrLstController
 
 # pragma mark - NSTableView data source
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    AppDelegate *appD = [NSApp delegate];
-    return appD.errLst.count;
+    return [APPD errLst].count;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    AppDelegate *appD = [NSApp delegate];
     NSString *identifier = [tableColumn identifier];
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
-    cellView.textField.stringValue = [appD.errLst objectAtIndex:row];
+    cellView.textField.stringValue = [[APPD errLst] objectAtIndex:row];
     return cellView;
 }
 
