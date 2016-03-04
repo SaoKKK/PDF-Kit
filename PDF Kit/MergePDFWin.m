@@ -58,6 +58,8 @@
         [self setUpNotification];
         //コンボボックスのデータソース用配列を作成
         comboData = [NSArray arrayWithObjects:NSLocalizedString(@"ALL_PAGES", @""),@"e.g. 1-2,5,10",nil];
+        //スクリーンモード保持用変数を初期化
+        bFullscreen = NO;
     }
     return self;
 }
@@ -80,6 +82,15 @@
         [btnClear setEnabled:YES];
         [btnMerge setEnabled:YES];
         [btnStoreWS setEnabled:YES];
+    }
+}
+
+//スクリーンモード変更メニューのタイトルを変更
+- (void)mnFullScreenSetTitle{
+    if (bFullscreen) {
+        [[APPD mnFullScreen]setTitle:NSLocalizedString(@"MnTitleExitFullScreen", @"")];
+    } else {
+        [[APPD mnFullScreen]setTitle:NSLocalizedString(@"MnTitleEnterFullScreen", @"")];
     }
 }
 
@@ -226,6 +237,36 @@
     PDFDocument *doc = [_pdfView document];
     PDFPage *page = [doc pageAtIndex:[[sender stringValue]integerValue]-1];
     [_pdfView goToPage:page];
+}
+
+#pragma mark - menu action
+//移動メニュー
+- (IBAction)goToPreviousPage:(id)sender{
+    [_pdfView goToPreviousPage:nil];
+}
+
+- (IBAction)goToNextPage:(id)sender{
+    [_pdfView goToNextPage:nil];
+}
+
+- (IBAction)goToFirstPage:(id)sender{
+    [_pdfView goToFirstPage:nil];
+}
+
+- (IBAction)goToLastPage:(id)sender{
+    [_pdfView goToLastPage:nil];
+}
+
+- (IBAction)goBack:(id)sender{
+    [_pdfView goBack:nil];
+}
+
+- (IBAction)goForward:(id)sender{
+    [_pdfView goForward:nil];
+}
+
+- (IBAction)mnGoToPage:(id)sender{
+    [self.window makeFirstResponder:txtPage];
 }
 
 #pragma mark - Drag Operation Method
@@ -501,6 +542,12 @@
         //プログレス・パネルを終了させる
         [self.window endSheet:progressWin returnCode:0];
     }];
+    //メインウインドウになった
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        [APPD documentMenuSetEnabled:YES];
+        //スクリーンモード変更メニューのタイトルを変更
+        [self mnFullScreenSetTitle];
+    }];
     //ページ移動
     [[NSNotificationCenter defaultCenter] addObserverForName:PDFViewPageChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         //ページ移動ボタンの有効/無効の切り替え
@@ -530,9 +577,9 @@
             [btnGoBack setEnabled:NO];
         }
         if (_pdfView.canGoForward) {
-            [btnGoFoward setEnabled:YES];
+            [btnGoForward setEnabled:YES];
         } else {
-            [btnGoFoward setEnabled:NO];
+            [btnGoForward setEnabled:NO];
         }
         //ページ表示テキストフィールドの値を変更
         [self updateTxtPage];
@@ -551,6 +598,15 @@
             [txtPage setStringValue:@""];
             [txtPageFormatter setMaximum:nil];
         }
+    }];
+    //スクリーンモード変更
+    [[NSNotificationCenter defaultCenter]addObserverForName:NSWindowDidEnterFullScreenNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        bFullscreen = YES;
+        [self mnFullScreenSetTitle];
+    }];
+    [[NSNotificationCenter defaultCenter]addObserverForName:NSWindowDidExitFullScreenNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        bFullscreen = NO;
+        [self mnFullScreenSetTitle];
     }];
 }
 

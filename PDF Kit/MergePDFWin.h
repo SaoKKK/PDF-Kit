@@ -23,11 +23,12 @@
     IBOutlet NSButton *btnGoToNextPage;
     IBOutlet NSButton *btnGoToLastPage;
     IBOutlet NSButton *btnGoBack;
-    IBOutlet NSButton *btnGoFoward;
+    IBOutlet NSButton *btnGoForward;
     IBOutlet NSTextField *txtPage;
     IBOutlet NSTextField *txtTotalPg;
     IBOutlet NSNumberFormatter *txtPageFormatter;
     NSIndexSet *dragRows; //ドラッグ中の行インデクスを保持
+    BOOL bFullscreen;   //スクリーンモード保持用
 }
 
 @end

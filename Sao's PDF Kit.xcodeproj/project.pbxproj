@@ -16,6 +16,9 @@
 		B93FD57A1C86D45B00B68959 /* twoCont_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD5721C86D45B00B68959 /* twoCont_on.png */; };
 		B93FD57B1C86D45B00B68959 /* twoUp_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD5731C86D45B00B68959 /* twoUp_off.png */; };
 		B93FD57C1C86D45B00B68959 /* twoUp_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD5741C86D45B00B68959 /* twoUp_on.png */; };
+		B93FD5A71C872C0A00B68959 /* fitToWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD5A41C872C0A00B68959 /* fitToWindow.png */; };
+		B93FD5A81C872C0A00B68959 /* zoomIn.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD5A51C872C0A00B68959 /* zoomIn.png */; };
+		B93FD5A91C872C0A00B68959 /* zoomOut.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD5A61C872C0A00B68959 /* zoomOut.png */; };
 		B951BD651C719DD0007B9359 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD641C719DD0007B9359 /* AppDelegate.m */; };
 		B951BD681C719DD0007B9359 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD671C719DD0007B9359 /* main.m */; };
 		B951BD6B1C719DD0007B9359 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BD6A1C719DD0007B9359 /* Document.m */; };
@@ -37,7 +40,7 @@
 		B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BDA51C71DB23007B9359 /* ErrLstController.m */; };
 		B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B95DD1DB1C7C602C002F1936 /* Localizable.strings */; };
 		B96EE7831C818A630063C7A2 /* goBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77D1C818A630063C7A2 /* goBack.png */; };
-		B96EE7841C818A630063C7A2 /* goFoward.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77E1C818A630063C7A2 /* goFoward.png */; };
+		B96EE7841C818A630063C7A2 /* goForward.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77E1C818A630063C7A2 /* goForward.png */; };
 		B96EE7851C818A630063C7A2 /* goLast.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77F1C818A630063C7A2 /* goLast.png */; };
 		B96EE7861C818A630063C7A2 /* goNext.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7801C818A630063C7A2 /* goNext.png */; };
 		B96EE7871C818A630063C7A2 /* goPrev.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7811C818A630063C7A2 /* goPrev.png */; };
@@ -56,6 +59,9 @@
 		B93FD5721C86D45B00B68959 /* twoCont_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twoCont_on.png; path = Graphics/twoCont_on.png; sourceTree = "<group>"; };
 		B93FD5731C86D45B00B68959 /* twoUp_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twoUp_off.png; path = Graphics/twoUp_off.png; sourceTree = "<group>"; };
 		B93FD5741C86D45B00B68959 /* twoUp_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twoUp_on.png; path = Graphics/twoUp_on.png; sourceTree = "<group>"; };
+		B93FD5A41C872C0A00B68959 /* fitToWindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fitToWindow.png; path = Graphics/fitToWindow.png; sourceTree = "<group>"; };
+		B93FD5A51C872C0A00B68959 /* zoomIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoomIn.png; path = Graphics/zoomIn.png; sourceTree = "<group>"; };
+		B93FD5A61C872C0A00B68959 /* zoomOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoomOut.png; path = Graphics/zoomOut.png; sourceTree = "<group>"; };
 		B94605781C80958B00953468 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MergePDFWin.strings; sourceTree = "<group>"; };
 		B951BD601C719DD0007B9359 /* Sao's PDF Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sao's PDF Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B951BD631C719DD0007B9359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,7 +96,7 @@
 		B95DD1DF1C7C6069002F1936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		B95DD1E11C7C606C002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/Info.plist; sourceTree = "<group>"; };
 		B96EE77D1C818A630063C7A2 /* goBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goBack.png; path = Graphics/goBack.png; sourceTree = "<group>"; };
-		B96EE77E1C818A630063C7A2 /* goFoward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goFoward.png; path = Graphics/goFoward.png; sourceTree = "<group>"; };
+		B96EE77E1C818A630063C7A2 /* goForward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goForward.png; path = Graphics/goForward.png; sourceTree = "<group>"; };
 		B96EE77F1C818A630063C7A2 /* goLast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goLast.png; path = Graphics/goLast.png; sourceTree = "<group>"; };
 		B96EE7801C818A630063C7A2 /* goNext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goNext.png; path = Graphics/goNext.png; sourceTree = "<group>"; };
 		B96EE7811C818A630063C7A2 /* goPrev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goPrev.png; path = Graphics/goPrev.png; sourceTree = "<group>"; };
@@ -137,9 +143,9 @@
 				B951BD641C719DD0007B9359 /* AppDelegate.m */,
 				B951BD711C719DD0007B9359 /* MainMenu.xib */,
 				B98CA6DE1C761548008C3E89 /* Document */,
+				B951BD7B1C719E15007B9359 /* Merge PDF Win */,
 				B951BD6F1C719DD0007B9359 /* Assets.xcassets */,
 				B951BD961C71C53B007B9359 /* Custom Class */,
-				B951BD7B1C719E15007B9359 /* Merge PDF Win */,
 				B951BD9F1C71C714007B9359 /* Resources */,
 				B951BD7A1C719E0C007B9359 /* Graphics */,
 				B951BD661C719DD0007B9359 /* Supporting Files */,
@@ -161,6 +167,9 @@
 		B951BD7A1C719E0C007B9359 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B93FD5A41C872C0A00B68959 /* fitToWindow.png */,
+				B93FD5A51C872C0A00B68959 /* zoomIn.png */,
+				B93FD5A61C872C0A00B68959 /* zoomOut.png */,
 				B93FD56D1C86D45B00B68959 /* singleCon_off.png */,
 				B93FD56E1C86D45B00B68959 /* singleCon_on.png */,
 				B93FD56F1C86D45B00B68959 /* singlePage_off.png */,
@@ -171,7 +180,7 @@
 				B93FD5741C86D45B00B68959 /* twoUp_on.png */,
 				B907C4B61C848A440019F247 /* sidebar.png */,
 				B96EE77D1C818A630063C7A2 /* goBack.png */,
-				B96EE77E1C818A630063C7A2 /* goFoward.png */,
+				B96EE77E1C818A630063C7A2 /* goForward.png */,
 				B96EE77F1C818A630063C7A2 /* goLast.png */,
 				B96EE7801C818A630063C7A2 /* goNext.png */,
 				B96EE7811C818A630063C7A2 /* goPrev.png */,
@@ -308,6 +317,7 @@
 				B951BD831C71A920007B9359 /* MergePDFWin.xib in Resources */,
 				B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */,
 				B96EE7861C818A630063C7A2 /* goNext.png in Resources */,
+				B93FD5A81C872C0A00B68959 /* zoomIn.png in Resources */,
 				B96EE7881C818A630063C7A2 /* goTop.png in Resources */,
 				B93FD5751C86D45B00B68959 /* singleCon_off.png in Resources */,
 				B951BD931C71C2A5007B9359 /* btnRestore.png in Resources */,
@@ -317,6 +327,7 @@
 				B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */,
 				B93FD57A1C86D45B00B68959 /* twoCont_on.png in Resources */,
 				B93FD5791C86D45B00B68959 /* twoCont_off.png in Resources */,
+				B93FD5A91C872C0A00B68959 /* zoomOut.png in Resources */,
 				B93FD57C1C86D45B00B68959 /* twoUp_on.png in Resources */,
 				B951BD921C71C2A5007B9359 /* btnRemove.png in Resources */,
 				B96EE7871C818A630063C7A2 /* goPrev.png in Resources */,
@@ -329,7 +340,8 @@
 				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
 				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
 				B907C4B71C848A440019F247 /* sidebar.png in Resources */,
-				B96EE7841C818A630063C7A2 /* goFoward.png in Resources */,
+				B93FD5A71C872C0A00B68959 /* fitToWindow.png in Resources */,
+				B96EE7841C818A630063C7A2 /* goForward.png in Resources */,
 				B96EE7831C818A630063C7A2 /* goBack.png in Resources */,
 				B93FD57B1C86D45B00B68959 /* twoUp_off.png in Resources */,
 			);

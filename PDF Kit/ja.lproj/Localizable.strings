@@ -26,3 +26,7 @@
 
 //Page range text
 "ALL_PAGES" = "全ページ";
+
+//View menu item title strings
+"MnTitleEnterFullScreen" = "フルスクリーンにする";
+"MnTitleExitFullScreen" = "フルスクリーンを解除";

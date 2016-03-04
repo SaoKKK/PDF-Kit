@@ -22,16 +22,19 @@
     IBOutlet NSButton *btnGoToNextPage;
     IBOutlet NSButton *btnGoToLastPage;
     IBOutlet NSButton *btnGoBack;
-    IBOutlet NSButton *btnGoFoward;
+    IBOutlet NSButton *btnGoForward;
     IBOutlet NSTextField *txtPage;
     IBOutlet NSTextField *txtTotalPg;
     IBOutlet NSNumberFormatter *txtPageFormatter;
+    IBOutlet NSSegmentedControl *segZoom;
+    IBOutlet NSMatrix *matrixDisplayMode;
     IBOutlet NSSplitView *_splitView;
     IBOutlet NSView *tocView;
     IBOutlet NSTabView *tabToc;
     IBOutlet NSSearchField *searchField;
     NSURL *docURL;  //ドキュメントのURL保持用
     CGFloat oldTocWidth; //目次エリアの変更前の幅保持用
+    BOOL bFullscreen;   //スクリーンモード保持用
 }
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;

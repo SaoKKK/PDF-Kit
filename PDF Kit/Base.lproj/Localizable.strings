@@ -27,5 +27,9 @@
 //Page range text
 "ALL_PAGES" = "All Pages";
 
+//View menu item title strings
+"MnTitleEnterFullScreen" = "Enter Full Screen";
+"MnTitleExitFullScreen" = "Exit Full Screen";
+
 "" = "";
 "" = "";

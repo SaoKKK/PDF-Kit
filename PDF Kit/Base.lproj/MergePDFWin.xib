@@ -12,7 +12,7 @@
                 <outlet property="_pdfView" destination="o4f-Ak-Xvu" id="Lkx-Zg-nBF"/>
                 <outlet property="btnClear" destination="7bM-jf-5px" id="SEm-47-CtX"/>
                 <outlet property="btnGoBack" destination="Fva-QY-0bT" id="MzT-V8-vUQ"/>
-                <outlet property="btnGoFoward" destination="NCc-At-R8m" id="EDA-Xv-580"/>
+                <outlet property="btnGoForward" destination="NCc-At-R8m" id="Zcf-Bl-YrR"/>
                 <outlet property="btnGoToFirstPage" destination="4Lx-tN-UdZ" id="daI-SP-Bsx"/>
                 <outlet property="btnGoToLastPage" destination="rwU-7e-6HD" id="erO-W8-51b"/>
                 <outlet property="btnGoToNextPage" destination="v6a-w7-7RS" id="ZV0-tA-ZmO"/>
@@ -439,7 +439,7 @@ CA
                                 <button toolTip="Go foward" verticalHuggingPriority="750" id="NCc-At-R8m">
                                     <rect key="frame" x="230" y="0.0" width="23" height="23"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goFoward" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="aHU-0J-ae3">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="goForward" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="aHU-0J-ae3">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -601,7 +601,7 @@ DQ
         <image name="btnRestore" width="22" height="22"/>
         <image name="btnSave" width="22" height="22"/>
         <image name="goBack" width="23" height="23"/>
-        <image name="goFoward" width="23" height="23"/>
+        <image name="goForward" width="23" height="23"/>
         <image name="goLast" width="23" height="23"/>
         <image name="goNext" width="23" height="23"/>
         <image name="goPrev" width="23" height="23"/>

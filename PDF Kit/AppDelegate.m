@@ -10,6 +10,15 @@
 #import "MergePDFWin.h"
 
 @interface AppDelegate (){
+    IBOutlet NSMenuItem *mnItemView;
+    IBOutlet NSMenuItem *mnItemGo;
+    IBOutlet NSMenu *mnView;
+    IBOutlet NSMenu *mnGo;
+    IBOutlet NSMenuItem *mnSinglePage;
+    IBOutlet NSMenuItem *mnSingleCont;
+    IBOutlet NSMenuItem *mnTwoPages;
+    IBOutlet NSMenuItem *mnTwoPageCont;
+    NSArray *mnPageDisplay; //表示モード変更メニューグループ
     IBOutlet NSTextField *statusWinMsg;
     IBOutlet NSTextField *statusWinInfo;
 }
@@ -23,6 +32,9 @@
 @synthesize PDFLst,errLst,statusWin;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    //メニューグループを作成
+    mnPageDisplay = [NSArray arrayWithObjects:mnSinglePage,mnSingleCont,mnTwoPages,mnTwoPageCont,nil];
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -47,9 +59,6 @@
     PDFLst = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"PDFLst" ofType:@"array"]];
 }
 
-#pragma mark - open file
-
-
 #pragma mark - menu item action
 
 //MergePDF アクション
@@ -60,10 +69,31 @@
     }
 }
 
-//Delete アクション
-- (IBAction)delete:(id)sender{
-    
+#pragma mark - menu control
+
+//ディスプレイモード変更メニューのステータス変更
+- (void)setMnPageDisplayState:(NSInteger)tag{
+    for (int i=0; i < mnPageDisplay.count; i++) {
+        if (i == tag) {
+            [[mnPageDisplay objectAtIndex:i]setState:YES];
+        } else {
+            [[mnPageDisplay objectAtIndex:i]setState:NO];
+        }
+    }
 }
+
+//ドキュメントメニューの有効／無効を切り替え
+- (void)documentMenuSetEnabled:(BOOL)enabled{
+    [mnItemGo setEnabled:enabled];
+    [mnItemView setEnabled:enabled];
+    for (NSMenuItem *item in [mnGo itemArray]) {
+        [item setEnabled:enabled];
+    }
+    for (NSMenuItem *item in [mnView itemArray]){
+        [item setEnabled:enabled];
+    }
+}
+
 
 #pragma mark - status window
 

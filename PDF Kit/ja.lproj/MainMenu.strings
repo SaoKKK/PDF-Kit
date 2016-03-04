@@ -105,7 +105,7 @@
 "H1b-Si-o9J.title" = "Writing Direction";
 
 /* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
-"H8h-7b-M4v.title" = "View";
+"H8h-7b-M4v.title" = "表示";
 
 /* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "HFQ-gK-NFA"; */
 "HFQ-gK-NFA.title" = "Text Replacement";
@@ -115,6 +115,44 @@
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
 "HyV-fh-RgO.title" = "View";
+
+// menu item View
+"HyV-fh-RgO.title" = "表示";
+// menu item Single Page
+"vMI-OH-7jF.title" = "単ページ表示";
+// menu item Single Page Continuous
+"lH5-m2-okq.title" = "単ページ連続表示";
+// menu item Two Pages
+"bcl-No-8o4.title" = "見開表示";
+// menu item Two Pages Continuous
+"T3n-UQ-drN.title" = "見開連続表示";
+// memu item Actual Size
+"5u2-Bj-I70.title" = "実際のサイズ";
+// menu item Zoom to Fit
+"pnX-U1-zdr.title" = "ウインドウに合わせる";
+// menu item Zoom In
+"uzB-W5-Iaf.title" = "拡大";
+// menu item Zoom Out
+"P38-qd-m5f.title" = "縮小";
+// menu item Enter Full Screen
+"uEs-de-IhG.title" = "フルスクリーンにする";
+
+// menu item Go
+"uec-tg-F7v.title" = "移動";
+// menu item
+"OBp-55-fn0.title" = "前ページへ";
+// menu item
+"TaX-By-9xG.title" = "次ページへ";
+// menu item
+"e0R-J4-zmR.title" = "最初のページへ";
+// menu item
+"9Ey-WJ-ZzM.title" = "最後のページへ";
+// menu item
+"JEm-sw-yNJ.title" = "指定のページへ移動...";
+// menu item
+"dDD-jY-g1L.title" = "戻る";
+// menu item
+"G89-Bs-PYg.title" = "進む";
 
 /* Class = "NSMenuItem"; title = "Subscript"; ObjectID = "I0S-gh-46l"; */
 "I0S-gh-46l.title" = "Subscript";
@@ -129,7 +167,7 @@
 "J7y-lM-qPV.title" = "Use None";
 
 /* Class = "NSMenuItem"; title = "Revert to Saved"; ObjectID = "KaW-ft-85H"; */
-"KaW-ft-85H.title" = "戻す";
+"KaW-ft-85H.title" = "最後の保存に戻す";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "すべてを表示";
