@@ -94,6 +94,7 @@
         //スクリーンモード変更メニューのタイトルを変更
         [self mnFullScreenSetTitle];
     }];
+    //ウインドウが閉じられた
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         NSDocumentController *docCtr = [NSDocumentController sharedDocumentController];
         if (docCtr.documents.count == 1) {
@@ -246,6 +247,10 @@
 }
 
 #pragma mark - actions
+
+- (IBAction)test:(id)sender {
+    
+}
 
 - (IBAction)txtJumpPage:(id)sender {
     PDFDocument *doc = [_pdfView document];

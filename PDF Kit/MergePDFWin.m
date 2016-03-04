@@ -36,7 +36,7 @@
     self = [super init];
     if (self) {
         langAllPages = [NSArray arrayWithObjects:@"All Pages",@"全ページ",nil];
-      }
+    }
     return self;
 }
 
@@ -91,6 +91,133 @@
         [[APPD mnFullScreen]setTitle:NSLocalizedString(@"MnTitleExitFullScreen", @"")];
     } else {
         [[APPD mnFullScreen]setTitle:NSLocalizedString(@"MnTitleEnterFullScreen", @"")];
+    }
+}
+
+#pragma mark - set up notification
+
+- (void)setUpNotification{
+    //PDF挿入開始
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidBeginCreate" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレスバーのステータスを設定
+        [progressBar setMaxValue:outputPDFTotalPg];
+        [progressBar setDoubleValue: 0.0];
+        //プログレス・パネルをシート表示
+        [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
+    }];
+    //PDF挿入過程
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndPageInsert" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレスバーの値を更新
+        NSNumber *page = [[notif userInfo] objectForKey:@"page"];
+        [progressBar setDoubleValue:page.doubleValue];
+        [progressBar displayIfNeeded];
+    }];
+    //PDF挿入終了
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndCreate" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //プログレス・パネルを終了させる
+        [self.window endSheet:progressWin returnCode:0];
+    }];
+    //キーウインドウになった
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeKeyNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //メニューの有効/無効の切り替え
+        [APPD mergeMenuSetEnabled];
+        //ページ移動ボタンの有効/無効の切り替え
+        [self updateGoButtonEnabled];
+        //スクリーンモード変更メニューのタイトルを変更
+        [self mnFullScreenSetTitle];
+    }];
+    //ウインドウが閉じられた
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        NSDocumentController *docCtr = [NSDocumentController sharedDocumentController];
+        if (docCtr.documents.count == 0) {
+            [APPD documentMenuSetEnabled:NO];
+        }
+    }];
+    //ページ移動
+    [[NSNotificationCenter defaultCenter] addObserverForName:PDFViewPageChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //ページ移動ボタンの有効/無効の切り替え
+        [self updateGoButtonEnabled];
+        //ページ表示テキストフィールドの値を変更
+        [self updateTxtPage];
+    }];
+    //表示ドキュメント変更
+    [[NSNotificationCenter defaultCenter] addObserverForName:PDFViewDocumentChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        PDFDocument *doc = _pdfView.document;
+        if (doc) {
+            NSUInteger totalPg = doc.pageCount;
+            [txtTotalPg setStringValue:[NSString stringWithFormat:@"%li",totalPg]];
+            [txtPageFormatter setMaximum:[NSNumber numberWithInteger:totalPg]];
+            //ページ表示テキストフィールドの値を変更
+            [self updateTxtPage];
+            //ページ移動ボタンの有効/無効の切り替え
+            [self updateGoButtonEnabled];
+        } else {
+            [txtTotalPg setStringValue:@""];
+            [txtPage setStringValue:@""];
+            [txtPageFormatter setMaximum:nil];
+            [APPD documentMenuSetEnabled:NO];
+        }
+    }];
+    //スクリーンモード変更
+    [[NSNotificationCenter defaultCenter]addObserverForName:NSWindowDidEnterFullScreenNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        bFullscreen = YES;
+        [self mnFullScreenSetTitle];
+    }];
+    [[NSNotificationCenter defaultCenter]addObserverForName:NSWindowDidExitFullScreenNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        bFullscreen = NO;
+        [self mnFullScreenSetTitle];
+    }];
+}
+
+- (void) updateTxtPage {
+    PDFDocument *doc = _pdfView.document;
+    NSUInteger index = [doc indexForPage:[_pdfView currentPage]] + 1;
+    [txtPage setStringValue:[NSString stringWithFormat:@"%li",index]];
+}
+
+//ページ移動ボタン／メニューの有効/無効の切り替え
+- (void)updateGoButtonEnabled{
+    if (_pdfView.canGoToFirstPage) {
+        [btnGoToFirstPage setEnabled:YES];
+        [[APPD mnGoToFirstPg]setEnabled:YES];
+    } else {
+        [btnGoToFirstPage setEnabled:NO];
+        [[APPD mnGoToFirstPg]setEnabled:NO];
+    }
+    if (_pdfView.canGoToPreviousPage) {
+        [btnGoToPrevPage setEnabled:YES];
+        [[APPD mnGoToPrevPg]setEnabled:YES];
+    } else {
+        [btnGoToPrevPage setEnabled:NO];
+        [[APPD mnGoToPrevPg]setEnabled:NO];
+    }
+    if (_pdfView.canGoToNextPage){
+        [btnGoToNextPage setEnabled:YES];
+        [[APPD mnGoToNextPg]setEnabled:YES];
+    } else {
+        [btnGoToNextPage setEnabled:NO];
+        [[APPD mnGoToNextPg]setEnabled:NO];
+    }
+    if (_pdfView.canGoToLastPage){
+        [btnGoToLastPage setEnabled:YES];
+        [[APPD mnGoToLastPg]setEnabled:YES];
+    } else {
+        [btnGoToLastPage setEnabled:NO];
+        [[APPD mnGoToLastPg]setEnabled:NO];
+    }
+    if (_pdfView.canGoBack) {
+        [btnGoBack setEnabled:YES];
+        [[APPD mnGoBack]setEnabled:YES];
+    } else {
+        [btnGoBack setEnabled:NO];
+        [[APPD mnGoBack]setEnabled:NO];
+    }
+    if (_pdfView.canGoForward) {
+        [btnGoForward setEnabled:YES];
+        [[APPD mnGoForward]setEnabled:YES];
+    } else {
+        [btnGoForward setEnabled:NO];
+        [[APPD mnGoForward]setEnabled:NO];
     }
 }
 
@@ -241,6 +368,34 @@
 
 #pragma mark - menu action
 //移動メニュー
+//移動メニュー
+- (IBAction)goToPreviousPage:(id)sender{
+    [_pdfView goToPreviousPage:nil];
+}
+
+- (IBAction)goToNextPage:(id)sender{
+    [_pdfView goToNextPage:nil];
+}
+
+- (IBAction)goToFirstPage:(id)sender{
+    [_pdfView goToFirstPage:nil];
+}
+
+- (IBAction)goToLastPage:(id)sender{
+    [_pdfView goToLastPage:nil];
+}
+
+- (IBAction)goBack:(id)sender{
+    [_pdfView goBack:nil];
+}
+
+- (IBAction)goForward:(id)sender{
+    [_pdfView goForward:nil];
+}
+
+- (IBAction)mnGoToPage:(id)sender{
+    [self.window makeFirstResponder:txtPage];
+}
 
 #pragma mark - Drag Operation Method
 
@@ -454,7 +609,7 @@
     }
     //PDF作成終了ノーティフィケーションを送信
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndCreate" object:self];
-
+    
     NSDocumentController *docC = [NSDocumentController sharedDocumentController];
     [docC openUntitledDocumentAndDisplay:YES error:nil];
     MyWindowController *newWC= [docC.currentDocument.windowControllers objectAtIndex:0];
@@ -490,103 +645,6 @@
         [indexset addIndex:i];
     }
     return indexset;
-}
-
-#pragma mark - set notification
-
-- (void)setUpNotification{
-    //PDF挿入開始
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidBeginCreate" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        //プログレスバーのステータスを設定
-        [progressBar setMaxValue:outputPDFTotalPg];
-        [progressBar setDoubleValue: 0.0];
-        //プログレス・パネルをシート表示
-        [self.window beginSheet:progressWin completionHandler:^(NSInteger returnCode){}];
-    }];
-    //PDF挿入過程
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndPageInsert" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        //プログレスバーの値を更新
-        NSNumber *page = [[notif userInfo] objectForKey:@"page"];
-        [progressBar setDoubleValue:page.doubleValue];
-        [progressBar displayIfNeeded];
-    }];
-    //PDF挿入終了
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndCreate" object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        //プログレス・パネルを終了させる
-        [self.window endSheet:progressWin returnCode:0];
-    }];
-    //メインウインドウになった
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        [APPD documentMenuSetEnabled:YES];
-        //スクリーンモード変更メニューのタイトルを変更
-        [self mnFullScreenSetTitle];
-    }];
-    //ページ移動
-    [[NSNotificationCenter defaultCenter] addObserverForName:PDFViewPageChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        //ページ移動ボタンの有効/無効の切り替え
-        if (_pdfView.canGoToFirstPage) {
-            [btnGoToFirstPage setEnabled:YES];
-        } else {
-            [btnGoToFirstPage setEnabled:NO];
-        }
-        if (_pdfView.canGoToPreviousPage) {
-            [btnGoToPrevPage setEnabled:YES];
-        } else {
-            [btnGoToPrevPage setEnabled:NO];
-        }
-        if (_pdfView.canGoToNextPage){
-            [btnGoToNextPage setEnabled:YES];
-        } else {
-            [btnGoToNextPage setEnabled:NO];
-        }
-        if (_pdfView.canGoToLastPage){
-            [btnGoToLastPage setEnabled:YES];
-        } else {
-            [btnGoToLastPage setEnabled:NO];
-        }
-        if (_pdfView.canGoBack) {
-            [btnGoBack setEnabled:YES];
-        } else {
-            [btnGoBack setEnabled:NO];
-        }
-        if (_pdfView.canGoForward) {
-            [btnGoForward setEnabled:YES];
-        } else {
-            [btnGoForward setEnabled:NO];
-        }
-        //ページ表示テキストフィールドの値を変更
-        [self updateTxtPage];
-    }];
-    //表示ドキュメント変更
-    [[NSNotificationCenter defaultCenter] addObserverForName:PDFViewDocumentChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        PDFDocument *doc = _pdfView.document;
-        if (doc) {
-            NSUInteger totalPg = doc.pageCount;
-            [txtTotalPg setStringValue:[NSString stringWithFormat:@"%li",totalPg]];
-            [txtPageFormatter setMaximum:[NSNumber numberWithInteger:totalPg]];
-            //ページ表示テキストフィールドの値を変更
-            [self updateTxtPage];
-        } else {
-            [txtTotalPg setStringValue:@""];
-            [txtPage setStringValue:@""];
-            [txtPageFormatter setMaximum:nil];
-        }
-    }];
-    //スクリーンモード変更
-    [[NSNotificationCenter defaultCenter]addObserverForName:NSWindowDidEnterFullScreenNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        bFullscreen = YES;
-        [self mnFullScreenSetTitle];
-    }];
-    [[NSNotificationCenter defaultCenter]addObserverForName:NSWindowDidExitFullScreenNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        bFullscreen = NO;
-        [self mnFullScreenSetTitle];
-    }];
-}
-
-- (void) updateTxtPage {
-    PDFDocument *doc = _pdfView.document;
-    NSUInteger index = [doc indexForPage:[_pdfView currentPage]] + 1;
-    [txtPage setStringValue:[NSString stringWithFormat:@"%li",index]];
 }
 
 @end

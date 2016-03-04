@@ -15,20 +15,20 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="mnFullScreen" destination="uEs-de-IhG" id="uC9-3i-3RW"/>
-                <outlet property="mnGo" destination="uec-tg-F7v" id="841-E9-whR"/>
+                <outlet property="mnGo" destination="uec-tg-F7v" id="wPb-wX-dfs"/>
                 <outlet property="mnGoBack" destination="dDD-jY-g1L" id="Ngf-wU-HxB"/>
                 <outlet property="mnGoForward" destination="G89-Bs-PYg" id="NgJ-mg-2O7"/>
                 <outlet property="mnGoToFirstPg" destination="e0R-J4-zmR" id="4DP-oE-HaI"/>
                 <outlet property="mnGoToLastPg" destination="9Ey-WJ-ZzM" id="spe-J1-6UX"/>
                 <outlet property="mnGoToNextPg" destination="TaX-By-9xG" id="pjH-fI-QwW"/>
                 <outlet property="mnGoToPrevPg" destination="OBp-55-fn0" id="Hzc-3h-MHJ"/>
-                <outlet property="mnItemGo" destination="TC5-LB-uub" id="NPG-sq-hcW"/>
-                <outlet property="mnItemView" destination="H8h-7b-M4v" id="Uag-F2-Wwx"/>
+                <outlet property="mnItemGo" destination="TC5-LB-uub" id="LST-E7-xyb"/>
+                <outlet property="mnItemView" destination="H8h-7b-M4v" id="5DB-z2-qAe"/>
                 <outlet property="mnSingleCont" destination="lH5-m2-okq" id="orP-e2-JT3"/>
                 <outlet property="mnSinglePage" destination="vMI-OH-7jF" id="xwA-Bj-3RR"/>
                 <outlet property="mnTwoPageCont" destination="T3n-UQ-drN" id="i4r-1X-c4H"/>
                 <outlet property="mnTwoPages" destination="bcl-No-8o4" id="307-M1-WjO"/>
-                <outlet property="mnView" destination="HyV-fh-RgO" id="2iF-7g-XNM"/>
+                <outlet property="mnView" destination="HyV-fh-RgO" id="xcZ-vd-xoC"/>
                 <outlet property="mnZoomIn" destination="uzB-W5-Iaf" id="RSc-H9-E5l"/>
                 <outlet property="mnZoomOut" destination="P38-qd-m5f" id="e9q-Ss-Pfn"/>
                 <outlet property="statusWin" destination="pIj-hh-1WQ" id="6HU-Ba-flq"/>

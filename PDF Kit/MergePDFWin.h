@@ -10,7 +10,7 @@
 #import <Quartz/Quartz.h>
 
 @interface MergePDFWin : NSWindowController<NSWindowDelegate, NSTableViewDelegate,NSTableViewDataSource,NSComboBoxDelegate,NSComboBoxDataSource>{
-    @private
+@private
     IBOutlet NSTableView *mergePDFtable;
     IBOutlet PDFView *_pdfView;
     IBOutlet NSButton *btnRemove;

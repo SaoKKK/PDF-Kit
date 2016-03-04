@@ -10,6 +10,10 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (weak) IBOutlet NSMenuItem *mnItemView;
+@property (weak) IBOutlet NSMenuItem *mnItemGo;
+@property (weak) IBOutlet NSMenu *mnView;
+@property (weak) IBOutlet NSMenu *mnGo;
 @property (weak) IBOutlet NSMenuItem *mnGoToPrevPg;
 @property (weak) IBOutlet NSMenuItem *mnGoToNextPg;
 @property (weak) IBOutlet NSMenuItem *mnGoToFirstPg;
@@ -25,7 +29,9 @@
 
 - (void)setMnPageDisplayState:(NSInteger)tag;
 - (void)documentMenuSetEnabled:(BOOL)enabled;
+- (void)mergeMenuSetEnabled;
 - (void)showStatusWin:(NSRect)rect messageText:(NSString*)message infoText:(NSString*)info;
 - (void)restorePDFLst;
+
 @end
 

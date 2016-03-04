@@ -10,10 +10,6 @@
 #import "MergePDFWin.h"
 
 @interface AppDelegate (){
-    IBOutlet NSMenuItem *mnItemView;
-    IBOutlet NSMenuItem *mnItemGo;
-    IBOutlet NSMenu *mnView;
-    IBOutlet NSMenu *mnGo;
     IBOutlet NSMenuItem *mnSinglePage;
     IBOutlet NSMenuItem *mnSingleCont;
     IBOutlet NSMenuItem *mnTwoPages;
@@ -29,12 +25,11 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,statusWin;
+@synthesize PDFLst,errLst,statusWin,mnItemView,mnItemGo,mnView,mnGo;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成
     mnPageDisplay = [NSArray arrayWithObjects:mnSinglePage,mnSingleCont,mnTwoPages,mnTwoPageCont,nil];
-    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -63,7 +58,7 @@
 
 //MergePDF アクション
 - (IBAction)showMergeWin:(id)sender {
-    if (self._mergePDFWC == nil){
+    if (![self._mergePDFWC.window isVisible]){
         self._mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
         [self._mergePDFWC showWindow:self];
     }
@@ -94,6 +89,21 @@
     }
 }
 
+//PDF結合ウインドウ用メニュー有効／無効の切り替え
+- (void)mergeMenuSetEnabled{
+    [mnItemGo setEnabled:YES];
+    [mnItemView setEnabled:YES];
+    for (NSMenuItem *item in [mnGo itemArray]) {
+        [item setEnabled:YES];
+    }
+    for (NSMenuItem *item in [mnView itemArray]){
+        if (item == [mnView itemArray].lastObject){
+            [item setEnabled:YES];
+        } else {
+            [item setEnabled:NO];
+        }
+    }
+}
 
 #pragma mark - status window
 
