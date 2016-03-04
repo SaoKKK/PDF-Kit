@@ -241,33 +241,6 @@
 
 #pragma mark - menu action
 //移動メニュー
-- (IBAction)goToPreviousPage:(id)sender{
-    [_pdfView goToPreviousPage:nil];
-}
-
-- (IBAction)goToNextPage:(id)sender{
-    [_pdfView goToNextPage:nil];
-}
-
-- (IBAction)goToFirstPage:(id)sender{
-    [_pdfView goToFirstPage:nil];
-}
-
-- (IBAction)goToLastPage:(id)sender{
-    [_pdfView goToLastPage:nil];
-}
-
-- (IBAction)goBack:(id)sender{
-    [_pdfView goBack:nil];
-}
-
-- (IBAction)goForward:(id)sender{
-    [_pdfView goForward:nil];
-}
-
-- (IBAction)mnGoToPage:(id)sender{
-    [self.window makeFirstResponder:txtPage];
-}
 
 #pragma mark - Drag Operation Method
 
