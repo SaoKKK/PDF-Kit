@@ -31,5 +31,8 @@
 "MnTitleEnterFullScreen" = "Enter Full Screen";
 "MnTitleExitFullScreen" = "Exit Full Screen";
 
+//table view header title
+"RESULT" = "Result: ";
+
 "" = "";
 "" = "";

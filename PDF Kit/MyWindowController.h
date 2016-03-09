@@ -11,7 +11,7 @@
 
 @class MyPDFView;
 
-@interface MyWindowController : NSWindowController{
+@interface MyWindowController : NSWindowController<NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
     IBOutlet NSWindow *window;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *savingProgBar;
@@ -28,13 +28,17 @@
     IBOutlet NSNumberFormatter *txtPageFormatter;
     IBOutlet NSSegmentedControl *segZoom;
     IBOutlet NSMatrix *matrixDisplayMode;
+    IBOutlet NSOutlineView *_olView;
+    IBOutlet NSTableView *_tbView;
     IBOutlet NSSplitView *_splitView;
+    IBOutlet NSSegmentedControl *segTabTocSelect;
     IBOutlet NSView *tocView;
     IBOutlet NSTabView *tabToc;
     IBOutlet NSSearchField *searchField;
     NSURL *docURL;  //ドキュメントのURL保持用
     CGFloat oldTocWidth; //目次エリアの変更前の幅保持用
     BOOL bFullscreen;   //スクリーンモード保持用
+    NSMutableArray *searchResult; //検索結果保持用
 }
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;

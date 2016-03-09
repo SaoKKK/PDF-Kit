@@ -6,3 +6,7 @@
 "xOd-HO-29H.title" = "Window";
 
 "9eK-Iq-c5M.title" = "ボタン";
+
+//TableView header title
+"RHz-PF-bq9.headerCell.title" = "ページ";
+"bHY-Bk-jUu.headerCell.title" = "結果";

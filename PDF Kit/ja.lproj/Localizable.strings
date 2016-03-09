@@ -30,3 +30,6 @@
 //View menu item title strings
 "MnTitleEnterFullScreen" = "フルスクリーンにする";
 "MnTitleExitFullScreen" = "フルスクリーンを解除";
+
+//table view header title
+"RESULT" = "結果：";

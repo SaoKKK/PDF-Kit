@@ -42,10 +42,19 @@
     [txtPageFormatter setMaximum:[NSNumber numberWithInteger:totalPg]];
     //ページ表示テキストフィールドの値を変更
     [self updateTxtPg];
-    //目次エリア幅保持用変数に初期値を保存
-    oldTocWidth = 165.0F;
     //サムネイルビューの設定
     [thumbView setAllowsMultipleSelection:YES];
+    //アウトラインルートがあるかどうかチェック
+    if ([[_pdfView document]outlineRoot]) {
+        //アウトラインビューのデータを読み込み
+        [_olView reloadData];
+        [_olView expandItem:nil expandChildren:YES];
+        //目次エリアの初期表示をアウトラインに変更
+        [segTabTocSelect setSelected:YES forSegment:1];
+        [self segSelContentsView:segTabTocSelect];
+    }
+    //検索結果保持用配列を初期化
+    searchResult = [NSMutableArray array];
 }
 
 #pragma mark - document save/open support
@@ -217,6 +226,92 @@
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf{
     [_pdfView setDocument:pdf];
+}
+
+#pragma mark - search in document
+
+- (IBAction)searchField:(id)sender {
+    NSString *searchString = [sender stringValue];
+    if ([searchString isEqualToString:@""]) {
+        //目次エリアの表示を元に戻す
+        [self segSelContentsView:segTabTocSelect];
+        return;
+    }
+    //検索実行
+    PDFDocument *doc = [_pdfView document];
+    [doc beginFindString:searchString withOptions:NSCaseInsensitiveSearch];
+}
+
+- (void)didMatchString:(PDFSelection *)instance{
+    //元の選択領域を保持
+    PDFSelection *sel = instance.copy;
+    //テーブルの結果列の項目作成
+    [instance extendSelectionAtStart:10];
+    [instance extendSelectionAtEnd:10];
+    NSString *labelString = [self stringByRemoveLine:instance.string];
+    labelString = [NSString stringWithFormat:@"...%@...",labelString];
+    //テーブルのページ列の項目作成
+    PDFPage *page = [[instance pages]objectAtIndex:0];
+    NSString *pageLabel = page.label;
+    
+    //検索結果を作成
+    NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:sel,@"selection",labelString,@"result",pageLabel,@"page",nil];
+    [searchResult addObject:result];
+    //検索結果を表示
+    [tabToc selectTabViewItemAtIndex:2];
+    [[[_tbView.tableColumns objectAtIndex:1]headerCell] setTitle:[NSString stringWithFormat:@"%@%li",NSLocalizedString(@"RESULT", @""),searchResult.count]];
+    [_tbView reloadData];
+}
+
+//改行を削除した文字列を返す
+- (NSString*)stringByRemoveLine:(NSString*)string{
+    NSMutableArray *lines = [NSMutableArray array];
+    [string enumerateLinesUsingBlock:^(NSString *line,BOOL *stop){
+        [lines addObject:line];
+    }];
+    NSString *newStr = [lines componentsJoinedByString:@" "];
+    return newStr;
+}
+
+- (void)documentDidBeginDocumentFind:(NSNotification *)notification{
+    [searchResult removeAllObjects];
+    [_tbView reloadData];
+}
+
+#pragma mark - table view data source and delegate
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
+    return searchResult.count;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    NSString *identifier = tableColumn.identifier;
+    NSDictionary *result = [searchResult objectAtIndex:row];
+    NSTableCellView *view = [tableView makeViewWithIdentifier:identifier owner:self];
+    if ([identifier isEqualToString:@"page"]){
+        view.textField.stringValue = [result objectForKey:identifier];
+    } else {
+        NSMutableAttributedString *labelTxt = [[NSMutableAttributedString alloc]initWithString:[result objectForKey:identifier]];
+        NSDictionary *attr = @{NSFontAttributeName:[NSFont systemFontOfSize:11 weight:NSFontWeightBold]};
+        NSRange range = [[result objectForKey:identifier] rangeOfString:searchField.stringValue options:NSCaseInsensitiveSearch];
+        [labelTxt setAttributes:attr range:range];
+        [view.textField setAttributedStringValue:labelTxt];
+    }
+    return view;
+}
+
+//行選択時
+- (void)tableViewSelectionDidChange:(NSNotification *)notification{
+    //選択行を取得
+    NSInteger row = [_tbView selectedRow];
+    if (row != -1){
+        //選択領域を取得
+        PDFSelection *sel = [[searchResult objectAtIndex:row] objectForKey:@"selection"];
+        //選択領域を表示
+        [sel setColor:[NSColor yellowColor]];
+        [_pdfView setCurrentSelection:sel];
+        [_pdfView scrollSelectionToVisible:self];
+    }
 }
 
 #pragma mark - split view delegate
