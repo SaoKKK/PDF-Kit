@@ -30,6 +30,7 @@
 - (void)setMnPageDisplayState:(NSInteger)tag;
 - (void)documentMenuSetEnabled:(BOOL)enabled;
 - (void)mergeMenuSetEnabled;
+- (void)findMenuSetEnabled:(BOOL)enabled;
 - (void)showStatusWin:(NSRect)rect messageText:(NSString*)message infoText:(NSString*)info;
 - (void)restorePDFLst;
 

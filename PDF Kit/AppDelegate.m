@@ -14,6 +14,7 @@
     IBOutlet NSMenuItem *mnSingleCont;
     IBOutlet NSMenuItem *mnTwoPages;
     IBOutlet NSMenuItem *mnTwoPageCont;
+    IBOutlet NSMenuItem *mnItemFindInPDF;
     NSArray *mnPageDisplay; //表示モード変更メニューグループ
     IBOutlet NSTextField *statusWinMsg;
     IBOutlet NSTextField *statusWinInfo;
@@ -65,6 +66,11 @@
 }
 
 #pragma mark - menu control
+
+//検索メニューの有効／無効を切り替え
+- (void)findMenuSetEnabled:(BOOL)enabled{
+    [mnItemFindInPDF setEnabled:enabled];
+}
 
 //ディスプレイモード変更メニューのステータス変更
 - (void)setMnPageDisplayState:(NSInteger)tag{

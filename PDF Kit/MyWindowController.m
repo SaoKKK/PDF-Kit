@@ -477,4 +477,8 @@
     [self.window makeFirstResponder:txtPage];
 }
 
+- (IBAction)mnFindInPDF:(id)sender{
+    [self.window makeFirstResponder:searchField];
+}
+
 @end
