@@ -280,12 +280,14 @@
 
 #pragma mark - outline data control
 
+//メニュー／新規しおり作成
 - (IBAction)mnNewBookmark:(id)sender{
     PDFPage *page = [[_pdfView document]pageAtIndex:0];
     PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:NSMakePoint(0, 0)];
     [self makeNewBookMark:NSLocalizedString(@"UntitledLabal", @"") withDestination:destination];
 }
 
+//メニュー／選択範囲から新規しおり作成
 - (IBAction)mnNewBookmarkFromSelection:(id)sender{
     PDFSelection *sel = [_pdfView currentSelection];
     if (!sel) {
@@ -307,6 +309,7 @@
     }
 }
 
+//新規PDFアウトライン作成
 - (void)makeNewBookMark:(NSString *)label withDestination:(PDFDestination *)destination{
     PDFOutline *ol = [[PDFOutline alloc]init];
     [ol setLabel:label];
@@ -338,7 +341,7 @@
     //追加行が名称未設定Bookmarkの場合、ラベルを編集状態にする
     [_olView expandItem:[_olView itemAtRow:selectedRow] expandChildren:YES];
     if ([ol.label isEqualToString:NSLocalizedString(@"UntitledLabal", @"")]) {
-        [_olView editColumn:0 row:selectedRow + index + 1 withEvent:nil select:YES];
+        [_olView editColumn:0 row:[_olView rowForItem:ol] withEvent:nil select:YES];
     }
 }
 

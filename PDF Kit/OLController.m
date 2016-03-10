@@ -64,6 +64,13 @@
     return view;
 }
 
+//更新の受付
+- (IBAction)labelUpdated:(id)sender {
+    PDFOutline *ol = (PDFOutline*)[_olView itemAtRow:[_olView rowForView:sender]];
+    [ol setLabel:[sender stringValue]];
+}
+
+
 #pragma mark - navigate between the destinations
 
 //行選択アクション
