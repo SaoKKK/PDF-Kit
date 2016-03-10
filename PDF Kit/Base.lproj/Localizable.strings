@@ -34,5 +34,16 @@
 //table view header title
 "RESULT" = "Result: ";
 
+//PDFOutline not exist dialog message
+"NotExistOutline_msg" = "This document does not have any bookmarks.";
+"NotExistOutline_info" = "if needed, please start to make a new bookmark from bookmark menu.";
+
+//New Bookmark Undefined Label
+"UntitledLabal" = "Untitled";
+
+//New Bookmark from Selection NoSelection dialog message
+"NoSelectBM_msg" = "No Objects Are Selected.";
+"NoSelectBM_info" = "Choose menu item \"New Bookmark from Selection\" after choosing the location where the bookmark is set.";
+
 "" = "";
 "" = "";

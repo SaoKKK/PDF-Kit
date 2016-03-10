@@ -169,6 +169,17 @@
 // menu item
 "G89-Bs-PYg.title" = "進む";
 
+// menu Bookmark
+"r86-BW-sKA.title" = "しおり";
+// menu item New Bookmark
+"f66-iI-bBa.title" = "新規しおり作成";
+// menu item New Bookmark from Selecton
+"26Z-a0-6uA.title" = "選択範囲から新規しおり作成";
+// menu item Remove Bookmark
+"QUy-8Q-3Zt.title" = "しおりを削除";
+// menu item Clear Bookmark
+"gRL-h3-Ngi.title" = "しおりデータをクリア";
+
 /* Class = "NSMenuItem"; title = "Subscript"; ObjectID = "I0S-gh-46l"; */
 "I0S-gh-46l.title" = "Subscript";
 

@@ -278,6 +278,70 @@
     [_tbView reloadData];
 }
 
+#pragma mark - outline data control
+
+- (IBAction)mnNewBookmark:(id)sender{
+    PDFPage *page = [[_pdfView document]pageAtIndex:0];
+    PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:NSMakePoint(0, 0)];
+    [self makeNewBookMark:NSLocalizedString(@"UntitledLabal", @"") withDestination:destination];
+}
+
+- (IBAction)mnNewBookmarkFromSelection:(id)sender{
+    PDFSelection *sel = [_pdfView currentSelection];
+    if (!sel) {
+        NSAlert *alert = [[NSAlert alloc]init];
+        alert.messageText = NSLocalizedString(@"NoSelectBM_msg", @"");
+        [alert setInformativeText:NSLocalizedString(@"NoSelectBM_info", @"")];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setAlertStyle:NSInformationalAlertStyle];
+        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
+            return;
+        }];
+    } else {
+        NSString *label = [sel string];
+        PDFPage *page = [[sel pages]objectAtIndex:0];
+        NSRect rect = [sel boundsForPage:page];
+        NSPoint point = NSMakePoint(rect.origin.x, rect.origin.y + rect.size.height);
+        PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:point];
+        [self makeNewBookMark:label withDestination:destination];
+    }
+}
+
+- (void)makeNewBookMark:(NSString *)label withDestination:(PDFDestination *)destination{
+    PDFOutline *ol = [[PDFOutline alloc]init];
+    [ol setLabel:label];
+    [ol setDestination:destination];
+    [self addNewDataToSelection:ol];
+}
+
+- (void)addNewDataToSelection:(PDFOutline*)ol{
+    PDFOutline *parentOL = [[PDFOutline alloc]init];
+    //ルートアイテムがない場合は作成
+    if (![[_pdfView document]outlineRoot]) {
+        PDFOutline *root = [[PDFOutline alloc]init];
+        [[_pdfView document] setOutlineRoot:root];
+        [segTabTocSelect setSelectedSegment:1];
+        [self segSelContentsView:segTabTocSelect];
+    }
+    NSInteger selectedRow = _olView.selectedRow;
+    if (selectedRow == -1){
+        //何も選択されていない = ルートが親
+        parentOL = [[_pdfView document]outlineRoot];
+    } else {
+        //選択行が親
+        parentOL = (PDFOutline *)[_olView itemAtRow:selectedRow];
+    }
+    //親の小グループの末尾に追加
+    NSInteger index = parentOL.numberOfChildren;
+    [parentOL insertChild:ol atIndex:index];
+    [_olView reloadData];
+    //追加行が名称未設定Bookmarkの場合、ラベルを編集状態にする
+    [_olView expandItem:[_olView itemAtRow:selectedRow] expandChildren:YES];
+    if ([ol.label isEqualToString:NSLocalizedString(@"UntitledLabal", @"")]) {
+        [_olView editColumn:0 row:selectedRow + index + 1 withEvent:nil select:YES];
+    }
+}
+
 #pragma mark - table view data source and delegate
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
@@ -355,7 +419,24 @@
 
 //コンテンツ・エリアのビューを切り替え
 - (IBAction)segSelContentsView:(id)sender {
-    [tabToc selectTabViewItemAtIndex:[sender selectedSegment]];
+    if ([sender selectedSegment]==1 && ![[_pdfView document]outlineRoot]) {
+        //ドキュメントにアウトラインがない時にアウトライン表示が選択された
+        NSAlert *alert = [[NSAlert alloc]init];
+        alert.messageText = NSLocalizedString(@"NotExistOutline_msg", @"");
+        [alert setInformativeText:NSLocalizedString(@"NotExistOutline_info", @"")];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setAlertStyle:NSInformationalAlertStyle];
+        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
+            //セグメントの選択を元に戻す
+            if ([tabToc indexOfTabViewItem:[tabToc selectedTabViewItem]] == 0) {
+                [segTabTocSelect setSelectedSegment:0];
+            } else {
+                [segTabTocSelect setSelected:NO forSegment:1];
+            }
+        }];
+    } else {
+        [tabToc selectTabViewItemAtIndex:[sender selectedSegment]];
+    }
 }
 
 //コンテンツ・エリアの表示／非表示を切り替え
