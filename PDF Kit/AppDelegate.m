@@ -61,6 +61,7 @@
 - (IBAction)showMergeWin:(id)sender {
     if (! [_mergePDFWC.window isVisible]){
         _mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
+        [_mergePDFWC setShouldCascadeWindows:NO];
         [_mergePDFWC showWindow:self];
     }
 }

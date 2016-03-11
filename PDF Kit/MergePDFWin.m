@@ -19,6 +19,7 @@
     IBOutlet NSWindow *errSheet;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *progressBar;
+    NSRect winFrame; //ウインドウ位置保持用
 }
 
 @end
