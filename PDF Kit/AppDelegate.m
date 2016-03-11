@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 #import "MergePDFWin.h"
+#import "BMPanelController.h"
 
 @interface AppDelegate (){
+    BMPanelController *_bmPanelC;
+    MergePDFWin *_mergePDFWC;
     IBOutlet NSMenuItem *mnSinglePage;
     IBOutlet NSMenuItem *mnSingleCont;
     IBOutlet NSMenuItem *mnTwoPages;
@@ -19,8 +22,6 @@
     IBOutlet NSTextField *statusWinMsg;
     IBOutlet NSTextField *statusWinInfo;
 }
-
-@property (strong) MergePDFWin* _mergePDFWC;
 
 @end
 
@@ -57,11 +58,17 @@
 
 #pragma mark - menu item action
 
-//MergePDF アクション
 - (IBAction)showMergeWin:(id)sender {
-    if (![self._mergePDFWC.window isVisible]){
-        self._mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
-        [self._mergePDFWC showWindow:self];
+    if (! [_mergePDFWC.window isVisible]){
+        _mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
+        [_mergePDFWC showWindow:self];
+    }
+}
+
+- (IBAction)showBookmarkPanel:(id)sender{
+    if (! [_bmPanelC.window isVisible]){
+        _bmPanelC = [[BMPanelController alloc]initWithWindowNibName:@"BMPanelController"];
+        [_bmPanelC showWindow:self];
     }
 }
 

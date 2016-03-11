@@ -42,5 +42,5 @@
 "UntitledLabal" = "名称未設定";
 
 //New Bookmark from Selection NoSelection dialog message
-"NoSelectBM_msg" = "何も選択されていません。";
-"NoSelectBM_info" = "しおりを設定したい場所を選択してから、メニュー・コマンドを実行してください。";
+"NoSelectBM_msg" = "選択範囲から新規しおり作成エラー：";
+"NoSelectBM_info" = "何も選択されていません。\nしおりを設定したい場所を選択してから、メニュー・コマンドを実行してください。";

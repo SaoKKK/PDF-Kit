@@ -48,6 +48,8 @@
 		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
 		B9A8C96A1C916C10008A2DEB /* OLController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A8C9691C916C10008A2DEB /* OLController.m */; };
+		B9C585711C92963400243A38 /* BMPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5856F1C92963400243A38 /* BMPanelController.m */; };
+		B9C585741C92A3D100243A38 /* BMPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C585761C92A3D100243A38 /* BMPanelController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,10 @@
 		B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPDFView.m; sourceTree = "<group>"; };
 		B9A8C9681C916C10008A2DEB /* OLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLController.h; sourceTree = "<group>"; };
 		B9A8C9691C916C10008A2DEB /* OLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLController.m; sourceTree = "<group>"; };
+		B9C5856E1C92963400243A38 /* BMPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPanelController.h; sourceTree = "<group>"; };
+		B9C5856F1C92963400243A38 /* BMPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPanelController.m; sourceTree = "<group>"; };
+		B9C585751C92A3D100243A38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BMPanelController.xib; sourceTree = "<group>"; };
+		B9C585781C92A3DF00243A38 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/BMPanelController.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 				B951BD641C719DD0007B9359 /* AppDelegate.m */,
 				B951BD711C719DD0007B9359 /* MainMenu.xib */,
 				B98CA6DE1C761548008C3E89 /* Document */,
+				B9C585731C92965500243A38 /* BMPanel */,
 				B951BD7B1C719E15007B9359 /* Merge PDF Win */,
 				B951BD6F1C719DD0007B9359 /* Assets.xcassets */,
 				B951BD961C71C53B007B9359 /* Custom Class */,
@@ -261,6 +268,16 @@
 			name = Document;
 			sourceTree = "<group>";
 		};
+		B9C585731C92965500243A38 /* BMPanel */ = {
+			isa = PBXGroup;
+			children = (
+				B9C585761C92A3D100243A38 /* BMPanelController.xib */,
+				B9C5856E1C92963400243A38 /* BMPanelController.h */,
+				B9C5856F1C92963400243A38 /* BMPanelController.m */,
+			);
+			name = BMPanel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,6 +358,7 @@
 				B951BDA31C71C759007B9359 /* PDFLst.array in Resources */,
 				B951BD731C719DD0007B9359 /* MainMenu.xib in Resources */,
 				B93FD5781C86D45B00B68959 /* singlePage_on.png in Resources */,
+				B9C585741C92A3D100243A38 /* BMPanelController.xib in Resources */,
 				B96EE7851C818A630063C7A2 /* goLast.png in Resources */,
 				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
 				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
@@ -359,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C585711C92963400243A38 /* BMPanelController.m in Sources */,
 				B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */,
 				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
 				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,
@@ -418,6 +437,15 @@
 				B95DD1E11C7C606C002F1936 /* ja */,
 			);
 			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		B9C585761C92A3D100243A38 /* BMPanelController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9C585751C92A3D100243A38 /* Base */,
+				B9C585781C92A3DF00243A38 /* ja */,
+			);
+			name = BMPanelController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

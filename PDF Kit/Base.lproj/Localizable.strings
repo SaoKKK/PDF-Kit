@@ -42,8 +42,8 @@
 "UntitledLabal" = "Untitled";
 
 //New Bookmark from Selection NoSelection dialog message
-"NoSelectBM_msg" = "No Objects Are Selected.";
-"NoSelectBM_info" = "Choose menu item \"New Bookmark from Selection\" after choosing the location where the bookmark is set.";
+"NoSelectBM_msg" = "New Bookmark from Selection Error:";
+"NoSelectBM_info" = "No Objects Are Selected.\nChoose menu item \"New Bookmark from Selection\" after choosing the location where the bookmark is set.";
 
 "" = "";
 "" = "";

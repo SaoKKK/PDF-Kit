@@ -1,0 +1,27 @@
+
+/* Class = "NSTextFieldCell"; title = "Point"; ObjectID = "5mh-7y-uuL"; */
+"5mh-7y-uuL.title" = "位置";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "76s-T2-RJ8"; */
+"76s-T2-RJ8.title" = "ラベル";
+
+/* Class = "NSTextFieldCell"; title = "Page:"; ObjectID = "LRL-1U-kUz"; */
+"LRL-1U-kUz.title" = "ページ:";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "W0P-kO-0QN"; */
+"W0P-kO-0QN.title" = "Box";
+
+/* Class = "NSWindow"; title = "Bookmark"; ObjectID = "YXj-70-y5w"; */
+"YXj-70-y5w.title" = "しおり";
+
+/* Class = "NSButtonCell"; title = "Get Destination from Current Selection"; ObjectID = "g9H-Sh-ExD"; */
+"g9H-Sh-ExD.title" = "現在の選択範囲から移動先を取得";
+
+/* Class = "NSTextFieldCell"; title = "x:"; ObjectID = "nfz-Kr-gmp"; */
+"nfz-Kr-gmp.title" = "x:";
+
+/* Class = "NSTextFieldCell"; title = "y:"; ObjectID = "qhq-ai-CxF"; */
+"qhq-ai-CxF.title" = "y:";
+
+/* Class = "NSTextFieldCell"; title = "Destination"; ObjectID = "ymo-D8-dfZ"; */
+"ymo-D8-dfZ.title" = "移動先";
