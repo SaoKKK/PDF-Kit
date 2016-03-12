@@ -11,7 +11,7 @@
 
 @class MyPDFView;
 
-@interface MyWindowController : NSWindowController<NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
+@interface MyWindowController : NSWindowController<NSWindowDelegate,NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
     IBOutlet NSWindow *window;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *savingProgBar;

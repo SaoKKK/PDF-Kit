@@ -10,6 +10,30 @@
 #import "MergePDFWin.h"
 #import "BMPanelController.h"
 
+#pragma mark - WindowController
+
+@interface NSWindowController(ConvenienceWC)
+- (BOOL)isWindowShown;
+- (void)showOrHideWindow;
+@end
+
+@implementation NSWindowController(ConvenienceWC)
+
+- (BOOL)isWindowShown{
+    return [[self window]isVisible];
+}
+
+- (void)showOrHideWindow{
+    NSWindow *window = [self window];
+    if ([window isVisible]) {
+        [window orderOut:self];
+    } else {
+        [self showWindow:self];
+    }
+}
+
+@end
+
 @interface AppDelegate (){
     BMPanelController *_bmPanelC;
     MergePDFWin *_mergePDFWC;
@@ -59,21 +83,30 @@
 #pragma mark - menu item action
 
 - (IBAction)showMergeWin:(id)sender {
-    if (! [_mergePDFWC.window isVisible]){
+    if (! _mergePDFWC){
         _mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
-        [_mergePDFWC setShouldCascadeWindows:NO];
-        [_mergePDFWC showWindow:self];
     }
+    [_mergePDFWC setShouldCascadeWindows:NO];
+    [_mergePDFWC showWindow:self];
 }
 
 - (IBAction)showBookmarkPanel:(id)sender{
-    if (! [_bmPanelC.window isVisible]){
+    if (! _bmPanelC){
         _bmPanelC = [[BMPanelController alloc]initWithWindowNibName:@"BMPanelController"];
-        [_bmPanelC showWindow:self];
     }
+    [_bmPanelC showOrHideWindow];
 }
 
 #pragma mark - menu control
+
+//メニュータイトルの変更
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem{
+    SEL action = menuItem.action;
+    if (action==@selector(showBookmarkPanel:)) {
+        [menuItem setTitle:([_bmPanelC isWindowShown] ? NSLocalizedString(@"HideBM", @""):NSLocalizedString(@"ShowBM", @""))];
+    }
+    return YES;
+}
 
 //検索メニューの有効／無効を切り替え
 - (void)findMenuSetEnabled:(BOOL)enabled{

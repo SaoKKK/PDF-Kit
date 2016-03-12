@@ -225,7 +225,9 @@
 #pragma mark - make new document
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf{
+    [_pdfView setAutoScales:YES];
     [_pdfView setDocument:pdf];
+    [_pdfView setAutoScales:NO];
 }
 
 #pragma mark - search in document
@@ -411,7 +413,8 @@
 #pragma mark - actions
 
 - (IBAction)test:(id)sender {
-    
+    NSDocumentController *docC = [NSDocumentController sharedDocumentController];
+    NSLog(@"%li",docC.documents.count);
 }
 
 - (IBAction)txtJumpPage:(id)sender {

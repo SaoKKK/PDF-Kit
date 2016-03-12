@@ -37,6 +37,14 @@
     //ドキュメントウインドウコントローラのインスタンスを作成
     NSWindowController *cntr = [[MyWindowController alloc]initWithWindowNibName:[self windowNibName]];
     [self addWindowController:cntr];
+    //ウインドウの位置を制御
+    NSDocumentController *docCtr = [NSDocumentController sharedDocumentController];
+    if (docCtr.documents.count == 1) {
+        //ドキュメントがひとつも開かれていなければ初期位置に戻す
+        NSRect screen = [[NSScreen mainScreen]visibleFrame];
+        NSRect winFrame = cntr.window.frame;
+        [cntr.window setFrameOrigin:NSMakePoint(0, screen.size.height-winFrame.size.height)];
+    }
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError{
