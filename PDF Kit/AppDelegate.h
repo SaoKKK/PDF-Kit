@@ -26,6 +26,8 @@
 @property (readwrite,retain,nonatomic)NSMutableArray* PDFLst;
 @property (readwrite,retain,nonatomic)NSMutableArray* errLst;
 @property (weak) IBOutlet NSWindow *statusWin;
+@property (assign) BOOL isDocWinMain;
+@property (readwrite,nonatomic)NSMutableDictionary *olInfo;
 
 - (void)setMnPageDisplayState:(NSInteger)tag;
 - (void)documentMenuSetEnabled:(BOOL)enabled;

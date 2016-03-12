@@ -51,7 +51,7 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,statusWin,mnItemView,mnItemGo,mnView,mnGo;
+@synthesize PDFLst,errLst,olInfo,statusWin,mnItemView,mnItemGo,mnView,mnGo;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成
@@ -67,6 +67,7 @@
     if (self) {
         PDFLst = [NSMutableArray array];
         errLst = [NSMutableArray array];
+        olInfo = [NSMutableDictionary dictionary];
     }
     return self;
 }

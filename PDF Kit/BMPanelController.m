@@ -12,10 +12,20 @@
 
 @end
 
-@implementation BMPanelController
+@implementation BMPanelController{
+    
+}
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+}
+
+- (IBAction)getDestinationFromCurrentSelection:(id)sender{
+    NSDocumentController *docC = [NSDocumentController sharedDocumentController];
+    NSDocument *doc = [docC currentDocument];
+    MyWindowController *winC = [doc.windowControllers objectAtIndex:0];
+    NSWindow *docWin = winC.window;
+    NSLog(@"%@",docWin.title);
 }
 
 @end

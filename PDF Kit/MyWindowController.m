@@ -93,6 +93,7 @@
     }];
     //メインウインドウ変更
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        (APPD).isDocWinMain = YES;
         [APPD documentMenuSetEnabled:YES];
         //ページ移動メニューの有効/無効の切り替え
         [self updateGoButtonEnabled];
@@ -103,10 +104,14 @@
         //スクリーンモード変更メニューのタイトルを変更
         [self mnFullScreenSetTitle];
     }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidResignMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        (APPD).isDocWinMain = NO;
+    }];
     //ウインドウが閉じられた
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         NSDocumentController *docCtr = [NSDocumentController sharedDocumentController];
         if (docCtr.documents.count == 1) {
+            (APPD).isDocWinMain = NO;
             [APPD documentMenuSetEnabled:NO];
         }
     }];
@@ -413,8 +418,14 @@
 #pragma mark - actions
 
 - (IBAction)test:(id)sender {
-    NSDocumentController *docC = [NSDocumentController sharedDocumentController];
-    NSLog(@"%li",docC.documents.count);
+    (APPD).isDocWinMain = YES;
+    NSLog(@"%hhi",(APPD).isDocWinMain);
+
+    //[self.document saveDocument:nil];
+}
+
+- (void)aa:(id)sender{
+    NSLog(@"aa");
 }
 
 - (IBAction)txtJumpPage:(id)sender {

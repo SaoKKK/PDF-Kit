@@ -7,6 +7,9 @@
 //
 
 #import "OLController.h"
+#import "AppDelegate.h"
+
+#define APPD (AppDelegate *)[NSApp delegate]
 
 @implementation OLController{
     IBOutlet NSOutlineView *_olView;
@@ -57,7 +60,7 @@
         if (page.label){
             pageStr = page.label;
         } else {
-            [NSString stringWithFormat:@"%li",[doc indexForPage:page]+1];
+            pageStr = [NSString stringWithFormat:@"%li",[doc indexForPage:page]+1];
         }
         view.textField.stringValue = pageStr;
     }
@@ -75,7 +78,20 @@
 
 //行選択アクション
 - (IBAction)takeDestination:(id)sender {
-    [_pdfView goToDestination:[[sender itemAtRow:[sender selectedRow]]destination]];
+    PDFOutline *ol = [sender itemAtRow:[sender selectedRow]];
+    [_pdfView goToDestination:ol.destination];
+
+    //情報データを更新
+    PDFPage *page = ol.destination.page;
+    PDFDocument *doc = [_pdfView document];
+    NSString *pageLabel = @"";
+    pageLabel = page.label;
+    [(APPD).olInfo setObject:ol.label forKey:@"label"];
+    [(APPD).olInfo setObject:ol.destination forKey:@"destination"];
+    [(APPD).olInfo setObject:pageLabel forKey:@"pageLabel"];
+    [(APPD).olInfo setObject:[NSString stringWithFormat:@"%li",[doc indexForPage:page]] forKey:@"pageIndex"];
+    [(APPD).olInfo setObject:[NSNumber numberWithFloat:ol.destination.point.x] forKey:@"pointX"];
+    [(APPD).olInfo setObject:[NSNumber numberWithFloat:ol.destination.point.y] forKey:@"pointY"];
 }
 
 //ページ移動時

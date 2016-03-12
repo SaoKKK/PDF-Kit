@@ -37,6 +37,7 @@
     //ドキュメントウインドウコントローラのインスタンスを作成
     NSWindowController *cntr = [[MyWindowController alloc]initWithWindowNibName:[self windowNibName]];
     [self addWindowController:cntr];
+    [cntr setShouldCloseDocument:YES];
     //ウインドウの位置を制御
     NSDocumentController *docCtr = [NSDocumentController sharedDocumentController];
     if (docCtr.documents.count == 1) {
