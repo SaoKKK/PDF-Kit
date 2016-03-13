@@ -17,9 +17,13 @@
     IBOutlet NSSegmentedControl *segPageViewMode;
 }
 
-- (void)awakeFromNib{
-    //ページ移動ノーティフィケーションを設定
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChanged) name:PDFViewPageChangedNotification object:_pdfView];
+- (id)init{
+    self = [super init];
+    if (self){
+        //ページ移動ノーティフィケーションを設定
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChanged) name:PDFViewPageChangedNotification object:_pdfView];
+    }
+    return self;
 }
 
 #pragma mark - outlineView data source
@@ -83,6 +87,11 @@
         [_pdfView goToDestination:ol.destination];
         //情報データを更新
         [self updateOLInfo:ol];
+    }
+    if ([_olView selectedRow] >= 0) {
+        (APPD).isOLSelected = YES;
+    } else {
+        (APPD).isOLSelected = NO;
     }
 }
 

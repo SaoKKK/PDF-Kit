@@ -49,8 +49,11 @@
         [_olView reloadData];
         [_olView expandItem:nil expandChildren:YES];
         //目次エリアの初期表示をアウトラインに変更
-        [segTabTocSelect setSelected:YES forSegment:1];
-        [self segSelContentsView:segTabTocSelect];
+        if (_pdfView.document.outlineRoot.numberOfChildren) {
+            [segTabTocSelect setSelected:YES forSegment:1];
+            [self segSelContentsView:segTabTocSelect];
+            (APPD).isOLExists = YES;
+        }
     }
     //検索結果保持用配列を初期化
     searchResult = [NSMutableArray array];
@@ -89,7 +92,6 @@
         if (returnCode == NSAlertFirstButtonReturn) {
             [self.document saveDocument:nil];
             [self.window orderOut:self];
-            bOLEdited = NO;
         } else if (returnCode == NSAlertThirdButtonReturn){
             [self.window orderOut:self];
         }
@@ -112,6 +114,8 @@
 - (void)revertDocumentToSaved{
     PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
     [_pdfView setDocument:doc];
+    [_olView reloadData];
+    [_olView expandItem:nil expandChildren:YES];
 }
 
 #pragma mark - setup notification
@@ -395,12 +399,38 @@
     bOLEdited = YES;
 }
 
+//メニュー／しおり削除
+- (IBAction)removeOutline:(id)sender{
+    NSIndexSet *selectedRows = _olView.selectedRowIndexes;
+    NSInteger index = selectedRows.lastIndex;
+    while (index != NSNotFound) {
+        PDFOutline *ol = [_olView itemAtRow:index];
+        [ol removeFromParent];
+        index = [selectedRows indexLessThanIndex:index];
+    }
+    [_olView reloadData];
+    bOLEdited = YES;
+}
+
+//メニュー／しおりクリア
+- (IBAction)clearOutline:(id)sender{
+    PDFOutline *root = _pdfView.document.outlineRoot;
+    for (int i = 0; i<root.numberOfChildren; i++) {
+        PDFOutline *ol = [root childAtIndex:i];
+        [ol removeFromParent];
+    }
+    [_olView reloadData];
+    (APPD).isOLExists = NO;
+    bOLEdited = YES;
+}
+
 //ビューをしおり編集モードに
 - (void)viewToEditBMMode{
     //ルートアイテムがない場合は作成
     if (![[_pdfView document]outlineRoot]) {
         PDFOutline *root = [[PDFOutline alloc]init];
         [[_pdfView document] setOutlineRoot:root];
+        (APPD).isOLExists = YES;
     }
     [segTabTocSelect setSelectedSegment:1];
     [self segSelContentsView:segTabTocSelect];

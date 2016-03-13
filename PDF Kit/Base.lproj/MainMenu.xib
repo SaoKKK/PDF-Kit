@@ -356,10 +356,20 @@ CA
                                 </connections>
                             </menuItem>
                             <menuItem title="Remove Bookmark" enabled="NO" id="QUy-8Q-3Zt">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                <connections>
+                                    <action selector="removeOutline:" target="-1" id="3JO-WJ-mZT"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isOLSelected" id="utP-Pr-hm9"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Clear Bookmark" enabled="NO" id="gRL-h3-Ngi">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="clearOutline:" target="-1" id="GmM-Cr-Vuj"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isOLExists" id="RP2-fs-1dj"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="0OB-aV-bo3"/>
                             <menuItem title="Item 3" id="p6E-hJ-887">

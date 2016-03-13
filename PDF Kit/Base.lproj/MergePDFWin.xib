@@ -333,7 +333,7 @@ CA
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <pdfView autoresizesSubviews="NO" scaleFactor="0.39516129032258063" autoScales="YES" id="Ust-MN-93b">
+                    <pdfView autoresizesSubviews="NO" autoScales="YES" id="Ust-MN-93b">
                         <rect key="frame" x="493" y="53" width="260" height="319"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </pdfView>
