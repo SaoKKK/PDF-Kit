@@ -30,6 +30,7 @@
     IBOutlet NSSegmentedControl *segZoom;
     IBOutlet NSMatrix *matrixDisplayMode;
     IBOutlet NSOutlineView *_olView;
+    IBOutlet NSSegmentedControl *segPageViewMode;
     IBOutlet NSTableView *_tbView;
     IBOutlet NSSplitView *_splitView;
     IBOutlet NSSegmentedControl *segTabTocSelect;
@@ -40,6 +41,7 @@
     CGFloat oldTocWidth; //目次エリアの変更前の幅保持用
     BOOL bFullscreen;   //スクリーンモード保持用
     NSMutableArray *searchResult; //検索結果保持用
+    BOOL bOLEdited; //Outline更新フラグ
 }
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;

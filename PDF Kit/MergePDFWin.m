@@ -577,10 +577,10 @@
             NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
             if ([language isEqualToString:@"en"]){
                 errMsgTxt = @"File Not Found Error:";
-                errInfoTxt = [NSMutableString stringWithFormat:@"an error occurred in the file \"%@\" processing.\nThe file does not exist.",[data objectForKey:@"fName"]];
+                errInfoTxt = [NSString stringWithFormat:@"an error occurred in the file \"%@\" processing.\nThe file does not exist.",[data objectForKey:@"fName"]];
             } else {
                 errMsgTxt = @"ファイルパスエラー:";
-                errInfoTxt = [NSMutableString stringWithFormat:@"ファイル \"%@\" の処理でエラーが起こりました。\nファイルが見つかりません。",[data objectForKey:@"fName"]];
+                errInfoTxt = [NSString stringWithFormat:@"ファイル \"%@\" の処理でエラーが起こりました。\nファイルが見つかりません。",[data objectForKey:@"fName"]];
             }
             [self showErrorDialog];
             return;

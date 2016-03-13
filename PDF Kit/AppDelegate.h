@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BMPanelController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (strong) BMPanelController *_bmPanelC;
 @property (weak) IBOutlet NSMenuItem *mnItemView;
 @property (weak) IBOutlet NSMenuItem *mnItemGo;
 @property (weak) IBOutlet NSMenu *mnView;
@@ -35,6 +37,7 @@
 - (void)findMenuSetEnabled:(BOOL)enabled;
 - (void)showStatusWin:(NSRect)rect messageText:(NSString*)message infoText:(NSString*)info;
 - (void)restorePDFLst;
+- (IBAction)showBookmarkPanel:(id)sender;
 
 @end
 

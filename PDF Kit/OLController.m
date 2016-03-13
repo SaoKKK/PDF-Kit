@@ -14,6 +14,7 @@
 @implementation OLController{
     IBOutlet NSOutlineView *_olView;
     IBOutlet MyPDFView *_pdfView;
+    IBOutlet NSSegmentedControl *segPageViewMode;
 }
 
 - (void)awakeFromNib{
@@ -73,15 +74,20 @@
     [ol setLabel:[sender stringValue]];
 }
 
-
 #pragma mark - navigate between the destinations
 
-//行選択アクション
-- (IBAction)takeDestination:(id)sender {
-    PDFOutline *ol = [sender itemAtRow:[sender selectedRow]];
-    [_pdfView goToDestination:ol.destination];
+//選択行変更時
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification{
+    if ([_olView selectedRowIndexes].count == 1) {
+        PDFOutline *ol = [_olView itemAtRow:[_olView selectedRow]];
+        [_pdfView goToDestination:ol.destination];
+        //情報データを更新
+        [self updateOLInfo:ol];
+    }
+}
 
-    //情報データを更新
+//PDFOutline情報の更新
+- (void)updateOLInfo:(PDFOutline*)ol{
     PDFPage *page = ol.destination.page;
     PDFDocument *doc = [_pdfView document];
     NSString *pageLabel = @"";
@@ -96,7 +102,7 @@
 
 //ページ移動時
 - (void) pageChanged{
-    if (![[_pdfView document] outlineRoot])
+    if (![[_pdfView document] outlineRoot]||segPageViewMode.selectedSegment==1)
         return;
     //現在のページインデクスを取得
     NSUInteger newPageIndex = [[_pdfView document] indexForPage:[_pdfView currentPage]];

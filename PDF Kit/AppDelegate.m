@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MergePDFWin.h"
-#import "BMPanelController.h"
 
 #pragma mark - WindowController
 
@@ -35,7 +34,6 @@
 @end
 
 @interface AppDelegate (){
-    BMPanelController *_bmPanelC;
     MergePDFWin *_mergePDFWC;
     IBOutlet NSMenuItem *mnSinglePage;
     IBOutlet NSMenuItem *mnSingleCont;
@@ -51,7 +49,7 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,olInfo,statusWin,mnItemView,mnItemGo,mnView,mnGo;
+@synthesize PDFLst,errLst,olInfo,statusWin,mnItemView,mnItemGo,mnView,mnGo,_bmPanelC;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成

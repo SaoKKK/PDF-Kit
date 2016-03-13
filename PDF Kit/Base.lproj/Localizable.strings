@@ -34,6 +34,11 @@
 //table view header title
 "RESULT" = "Result: ";
 
+//Document Changed Alert Dialog Button Title
+"Save" = "Save";
+"Cancel" = "Cancel";
+"Don't Save" = "Don't Save";
+
 //PDFOutline not exist dialog message
 "NotExistOutline_msg" = "This document does not have any bookmarks.";
 "NotExistOutline_info" = "if needed, please start to make a new bookmark from bookmark menu.";

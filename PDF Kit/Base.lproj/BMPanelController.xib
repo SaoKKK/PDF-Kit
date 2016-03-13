@@ -15,10 +15,10 @@
         <window title="Bookmark" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="YXj-70-y5w" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" rightStrut="YES" topStrut="YES"/>
-            <rect key="contentRect" x="1004" y="586" width="276" height="214"/>
+            <rect key="contentRect" x="995" y="569" width="284" height="214"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="FMz-7U-amu">
-                <rect key="frame" x="0.0" y="0.0" width="276" height="214"/>
+                <rect key="frame" x="0.0" y="0.0" width="284" height="214"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="AxX-sK-ROg">
@@ -40,14 +40,14 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="W0P-kO-0QN">
-                        <rect key="frame" x="0.0" y="159" width="276" height="5"/>
+                        <rect key="frame" x="0.0" y="159" width="284" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <textField verticalHuggingPriority="750" id="YmT-Qp-dqy">
-                        <rect key="frame" x="10" y="170" width="256" height="19"/>
+                        <rect key="frame" x="10" y="170" width="262" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="eLg-tW-rIC">
                             <font key="font" metaFont="smallSystem"/>
@@ -87,7 +87,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="CK5-sR-NMb">
-                        <rect key="frame" x="176" y="93" width="10" height="14"/>
+                        <rect key="frame" x="184" y="93" width="16" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="y:" id="qhq-ai-CxF">
                             <font key="font" metaFont="smallSystem"/>
@@ -111,15 +111,11 @@
                             </allowedInputSourceLocales>
                         </textFieldCell>
                         <connections>
+                            <action selector="takeIntegerValueFrom:" target="8os-1y-kqW" id="pS3-xH-acQ"/>
                             <binding destination="Dmm-53-Exd" name="enabled" keyPath="delegate.isDocWinMain" id="Tox-8Y-uZB"/>
                             <binding destination="2tu-Oe-Rg5" name="value" keyPath="selection.pageIndex" id="UGb-o6-wJu"/>
                         </connections>
                     </textField>
-                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="8os-1y-kqW">
-                        <rect key="frame" x="153" y="112" width="15" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="tVy-BJ-PEs"/>
-                    </stepper>
                     <textField verticalHuggingPriority="750" id="OUf-VP-vnt">
                         <rect key="frame" x="93" y="90" width="60" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -135,6 +131,7 @@
                             </allowedInputSourceLocales>
                         </textFieldCell>
                         <connections>
+                            <action selector="takeFloatValueFrom:" target="KbC-ox-Z2b" id="3qz-kL-aZr"/>
                             <binding destination="Dmm-53-Exd" name="enabled" keyPath="delegate.isDocWinMain" id="0Iu-Td-xGC"/>
                             <binding destination="2tu-Oe-Rg5" name="value" keyPath="selection.pointX" id="0Sq-m1-qbd"/>
                         </connections>
@@ -143,9 +140,12 @@
                         <rect key="frame" x="153" y="88" width="15" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="T1o-6z-szh"/>
+                        <connections>
+                            <action selector="takeFloatValueFrom:" target="OUf-VP-vnt" id="pgF-MM-Hl3"/>
+                        </connections>
                     </stepper>
                     <textField verticalHuggingPriority="750" id="R6c-tA-fOm">
-                        <rect key="frame" x="191" y="91" width="60" height="19"/>
+                        <rect key="frame" x="199" y="91" width="60" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="Xvr-sH-0hD">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="nbE-bJ-5ix">
@@ -159,17 +159,21 @@
                             </allowedInputSourceLocales>
                         </textFieldCell>
                         <connections>
+                            <action selector="takeFloatValueFrom:" target="Pr7-Xb-IQb" id="jD4-wH-vMS"/>
                             <binding destination="Dmm-53-Exd" name="enabled" keyPath="delegate.isDocWinMain" id="L60-r0-Mfj"/>
                             <binding destination="2tu-Oe-Rg5" name="value" keyPath="selection.pointY" id="9IN-zw-1sq"/>
                         </connections>
                     </textField>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="Pr7-Xb-IQb">
-                        <rect key="frame" x="251" y="89" width="15" height="22"/>
+                        <rect key="frame" x="259" y="89" width="15" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="iaK-4T-dJ9"/>
+                        <connections>
+                            <action selector="takeFloatValueFrom:" target="R6c-tA-fOm" id="Lyn-1l-eh4"/>
+                        </connections>
                     </stepper>
                     <button verticalHuggingPriority="750" id="fr9-wL-Tf0">
-                        <rect key="frame" x="5" y="51" width="264" height="28"/>
+                        <rect key="frame" x="5" y="51" width="272" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Get Destination from Current Selection" bezelStyle="rounded" alignment="center" controlSize="small" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g9H-Sh-ExD">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -181,14 +185,14 @@
                         </connections>
                     </button>
                     <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="R3a-6s-LcJ">
-                        <rect key="frame" x="-1" y="43" width="276" height="5"/>
+                        <rect key="frame" x="-1" y="43" width="285" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <button verticalHuggingPriority="750" id="0UW-On-okP">
-                        <rect key="frame" x="4" y="9" width="264" height="28"/>
+                        <rect key="frame" x="4" y="9" width="273" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Update Bookmark Data" bezelStyle="rounded" alignment="center" controlSize="small" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5QD-ff-MIY">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -218,9 +222,9 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Cf8-BH-bI7">
-                        <rect key="frame" x="212" y="116" width="36" height="14"/>
+                        <rect key="frame" x="212" y="114" width="60" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" id="paR-bK-CWs">
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="right" id="paR-bK-CWs">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -229,12 +233,21 @@
                             <binding destination="2tu-Oe-Rg5" name="value" keyPath="selection.pageLabel" id="aC7-pf-6Jg"/>
                         </connections>
                     </textField>
+                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="8os-1y-kqW">
+                        <rect key="frame" x="153" y="112" width="15" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="tVy-BJ-PEs"/>
+                        <connections>
+                            <action selector="takeIntegerValueFrom:" target="U8e-uH-2PH" id="Mca-Wg-LLc"/>
+                            <binding destination="2tu-Oe-Rg5" name="maxValue" keyPath="selection.lastIndex" id="hVI-s2-apV"/>
+                        </connections>
+                    </stepper>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="ALh-re-Ab1"/>
             </connections>
-            <point key="canvasLocation" x="155" y="216"/>
+            <point key="canvasLocation" x="149" y="231"/>
         </window>
         <customObject id="Dmm-53-Exd" userLabel="sharedApp" customClass="NSApplication"/>
         <objectController id="2tu-Oe-Rg5">
@@ -244,9 +257,10 @@
                 <string>pageLabel</string>
                 <string>pointX</string>
                 <string>pointY</string>
+                <string>lastIndex</string>
             </declaredKeys>
             <connections>
-                <binding destination="Dmm-53-Exd" name="contentObject" keyPath="delegate.olInfo" id="C9O-KM-UoZ"/>
+                <binding destination="Dmm-53-Exd" name="contentObject" keyPath="delegate.olInfo" id="GCu-n6-DIa"/>
             </connections>
         </objectController>
     </objects>

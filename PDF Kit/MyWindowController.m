@@ -24,8 +24,9 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    //スクリーンモード保持用変数を初期化
+    //インスタンス変数を初期化
     bFullscreen = NO;
+    bOLEdited = NO;
     //ファイルから読み込まれたPDFドキュメントをビューに表示
     docURL = [[self document] fileURL];
     PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
@@ -36,10 +37,8 @@
     [[_pdfView document] setDelegate: self];
     //オート・スケールをオフにする
     [_pdfView setAutoScales:NO];
-    //ページ表示テキストフィールドを更新
-    NSUInteger totalPg = _pdfView.document.pageCount;
-    [txtTotalPg setStringValue:[NSString stringWithFormat:@"%li",totalPg]];
-    [txtPageFormatter setMaximum:[NSNumber numberWithInteger:totalPg]];
+    //ドキュメント情報を更新
+    [self updateDocInfo];
     //ページ表示テキストフィールドの値を変更
     [self updateTxtPg];
     //サムネイルビューの設定
@@ -56,6 +55,53 @@
     //検索結果保持用配列を初期化
     searchResult = [NSMutableArray array];
 }
+
+//しおりが更新されていた場合のウインドウを閉じる動作
+- (BOOL)windowShouldClose:(id)sender{
+    if ([(NSDocument*)self.document isDocumentEdited]) {
+        bOLEdited = NO;
+    } else {
+        if (bOLEdited) {
+            [self outlineChangedAlert];
+        }
+    }
+    return !bOLEdited;
+}
+
+- (void)outlineChangedAlert{
+    NSAlert *alert = [[NSAlert alloc]init];
+    NSString *errMsgTxt,*errInfoTxt;
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([language isEqualToString:@"en"]){
+        errMsgTxt = [NSString stringWithFormat:@"Do you want to save the changes made to the document \"%@\" ?",docURL.path.lastPathComponent];
+        errInfoTxt = @"Your changes will be lost if you don't save.";
+    } else {
+        errMsgTxt = [NSString stringWithFormat:@"書類 \"%@\" に加えた変更を保存しますか?",docURL.path.lastPathComponent];
+        errInfoTxt = @"保存しないと変更は失われます。";
+    }
+    alert.messageText = errMsgTxt;
+    [alert setInformativeText:errInfoTxt];
+    [alert addButtonWithTitle:NSLocalizedString(@"Save",@"")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Cancel",@"")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Don't Save",@"")];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
+        if (returnCode == NSAlertFirstButtonReturn) {
+            [self.document saveDocument:nil];
+            [self.window orderOut:self];
+            bOLEdited = NO;
+        } else if (returnCode == NSAlertThirdButtonReturn){
+            [self.window orderOut:self];
+        }
+    }];
+}
+
+//ドキュメント情報を更新
+- (void)updateDocInfo{
+    PDFDocument *doc = [_pdfView document];
+    [(APPD).olInfo setObject:[NSNumber numberWithFloat:doc.pageCount] forKey:@"totalPage"];
+    [(APPD).olInfo setObject:[NSNumber numberWithFloat:doc.pageCount-1] forKey:@"lastIndex"];
+    }
 
 #pragma mark - document save/open support
 
@@ -90,6 +136,8 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidEndPageWrite" object:[_pdfView document] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         //プログレス・パネルを終了させる
         [self.window endSheet:progressWin returnCode:0];
+        //ドキュメント更新フラグを初期化
+        bOLEdited = NO;
     }];
     //メインウインドウ変更
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
@@ -325,14 +373,8 @@
 }
 
 - (void)addNewDataToSelection:(PDFOutline*)ol{
+    [self viewToEditBMMode];
     PDFOutline *parentOL = [[PDFOutline alloc]init];
-    //ルートアイテムがない場合は作成
-    if (![[_pdfView document]outlineRoot]) {
-        PDFOutline *root = [[PDFOutline alloc]init];
-        [[_pdfView document] setOutlineRoot:root];
-        [segTabTocSelect setSelectedSegment:1];
-        [self segSelContentsView:segTabTocSelect];
-    }
     NSInteger selectedRow = _olView.selectedRow;
     if (selectedRow == -1){
         //何も選択されていない = ルートが親
@@ -349,6 +391,23 @@
     [_olView expandItem:[_olView itemAtRow:selectedRow] expandChildren:YES];
     if ([ol.label isEqualToString:NSLocalizedString(@"UntitledLabal", @"")]) {
         [_olView editColumn:0 row:[_olView rowForItem:ol] withEvent:nil select:YES];
+    }
+    bOLEdited = YES;
+}
+
+//ビューをしおり編集モードに
+- (void)viewToEditBMMode{
+    //ルートアイテムがない場合は作成
+    if (![[_pdfView document]outlineRoot]) {
+        PDFOutline *root = [[PDFOutline alloc]init];
+        [[_pdfView document] setOutlineRoot:root];
+    }
+    [segTabTocSelect setSelectedSegment:1];
+    [self segSelContentsView:segTabTocSelect];
+    [segPageViewMode setSelected:YES forSegment:1];
+    if (!(APPD)._bmPanelC.window.isVisible){
+        [APPD showBookmarkPanel:nil];
+        [self.window makeKeyWindow];
     }
 }
 
@@ -418,10 +477,12 @@
 #pragma mark - actions
 
 - (IBAction)test:(id)sender {
-    (APPD).isDocWinMain = YES;
-    NSLog(@"%hhi",(APPD).isDocWinMain);
-
-    //[self.document saveDocument:nil];
+    PDFPage *page = _pdfView.currentPage;
+    //ページ表示に必要なNSView座標系でのサイズ
+    NSSize size = [_pdfView rowSizeForPage:page];
+    //NSView座標系のpointをPDF座標系のpointに変換
+    NSPoint point = [_pdfView convertPoint:NSMakePoint(size.width, size.height) toPage:page];
+    NSLog(@"%f,%f",point.x,point.y);
 }
 
 - (void)aa:(id)sender{
