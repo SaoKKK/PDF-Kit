@@ -215,13 +215,10 @@
     NSInteger i = dragOLArray.count-1;
     while (oldIndex != NSNotFound) {
         PDFOutline *oldOL = [_olView itemAtRow:oldIndex];
-        if (oldIndex < targetIndex) {
-            //下への移動
-            if (targetOL == oldOL.parent) {
-                //同じ親の中の移動の場合（ドロップ先のインデクスが上にずれる）
-                index --;
-                targetIndex --;
-            }
+        if (oldIndex < targetIndex && targetOL == oldOL.parent){
+            //同じ親の中の下への移動（ドロップ先のインデクスが上にずれる）
+            index --;
+            targetIndex --;
         }
         //ペースト元のしおりを削除
         [oldOL removeFromParent];
