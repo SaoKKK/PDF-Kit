@@ -373,10 +373,6 @@ CA
                                     <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isOLExists" id="RP2-fs-1dj"/>
                                 </connections>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="0OB-aV-bo3"/>
-                            <menuItem title="Item 3" id="p6E-hJ-887">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

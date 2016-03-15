@@ -17,7 +17,7 @@
     IBOutlet MyPDFView *_pdfView;
     IBOutlet NSSegmentedControl *segPageViewMode;
     NSArray *dragOLArray; //ドラッグ中のしおりデータを保持
-    NSMutableIndexSet *oldIndexes;
+    NSMutableIndexSet *oldIndexes; //ドラッグ元の行インデクスを保持
 }
 
 -(void)awakeFromNib{

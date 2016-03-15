@@ -45,7 +45,7 @@
     //サムネイルビューの設定
     [thumbView setAllowsMultipleSelection:YES];
     //アウトラインルートがあるかどうかチェック
-    if ([[_pdfView document]outlineRoot]) {
+    if ([self isOLExists]) {
         //アウトラインビューのデータを読み込み
         [_olView reloadData];
         [_olView expandItem:nil expandChildren:YES];
