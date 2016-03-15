@@ -344,15 +344,17 @@ CA
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Bookmark" autoenablesItems="NO" id="r86-BW-sKA">
                         <items>
-                            <menuItem title="New Bookmark" keyEquivalent="b" id="f66-iI-bBa" userLabel="New Bookmark">
+                            <menuItem title="New Bookmark" enabled="NO" keyEquivalent="b" id="f66-iI-bBa" userLabel="New Bookmark">
                                 <connections>
                                     <action selector="mnNewBookmark:" target="-1" id="mO6-Ph-D4F"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isDocWinMain" id="eAo-bH-9jx"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="New Bookmark from Selection" keyEquivalent="b" id="26Z-a0-6uA" userLabel="New Bookmark from Selection">
+                            <menuItem title="New Bookmark from Selection" enabled="NO" keyEquivalent="b" id="26Z-a0-6uA" userLabel="New Bookmark from Selection">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="mnNewBookmarkFromSelection:" target="-1" id="V9w-D4-OgR"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isDocWinMain" id="87g-Ru-L0Q"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Remove Bookmark" enabled="NO" id="QUy-8Q-3Zt">

@@ -148,7 +148,7 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="z8M-9K-wjv" id="tjX-xW-I69">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="228" height="596"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -513,6 +513,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="aa:" target="-1" id="hhs-Es-GcU"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="JWA-R3-mSh">
                         <rect key="frame" x="221" y="670" width="81" height="32"/>

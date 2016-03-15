@@ -10,6 +10,7 @@
 #import "Document.h"
 #import "MyPDFView.h"
 #import "AppDelegate.h"
+#import "OLController.h"
 
 #define kMinTocAreaSplit	200.0f
 #define APPD (AppDelegate *)[NSApp delegate]
@@ -52,11 +53,19 @@
         if (_pdfView.document.outlineRoot.numberOfChildren) {
             [segTabTocSelect setSelected:YES forSegment:1];
             [self segSelContentsView:segTabTocSelect];
-            (APPD).isOLExists = YES;
         }
     }
     //検索結果保持用配列を初期化
     searchResult = [NSMutableArray array];
+}
+
+//アウトライン情報があるかどうかを返す
+- (BOOL)isOLExists{
+    if ([[_pdfView document]outlineRoot]) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 //しおりが更新されていた場合のウインドウを閉じる動作
@@ -146,7 +155,9 @@
     //メインウインドウ変更
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         (APPD).isDocWinMain = YES;
+        [(OLController*)_olView.delegate updateSelectedRowInfo];
         [APPD documentMenuSetEnabled:YES];
+        (APPD).isOLExists = [self isOLExists];
         //ページ移動メニューの有効/無効の切り替え
         [self updateGoButtonEnabled];
         //倍率変更メニューの有効／無効の切り替え
@@ -156,14 +167,14 @@
         //スクリーンモード変更メニューのタイトルを変更
         [self mnFullScreenSetTitle];
     }];
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidResignMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        (APPD).isDocWinMain = NO;
-    }];
     //ウインドウが閉じられた
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         NSDocumentController *docCtr = [NSDocumentController sharedDocumentController];
         if (docCtr.documents.count == 1) {
             (APPD).isDocWinMain = NO;
+            (APPD).isOLExists = NO;
+            (APPD).isOLSelectedSingle = NO;
+            (APPD).isOLSelected = NO;
             [APPD documentMenuSetEnabled:NO];
         }
     }];
@@ -342,7 +353,8 @@
 //メニュー／新規しおり作成
 - (IBAction)mnNewBookmark:(id)sender{
     PDFPage *page = [[_pdfView document]pageAtIndex:0];
-    PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:NSMakePoint(0, 0)];
+    NSRect rect = [page boundsForBox:kPDFDisplayBoxArtBox];
+    PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:NSMakePoint(0, rect.size.height)];
     [self makeNewBookMark:NSLocalizedString(@"UntitledLabal", @"") withDestination:destination];
 }
 
@@ -350,14 +362,7 @@
 - (IBAction)mnNewBookmarkFromSelection:(id)sender{
     PDFSelection *sel = [_pdfView currentSelection];
     if (!sel) {
-        NSAlert *alert = [[NSAlert alloc]init];
-        alert.messageText = NSLocalizedString(@"NoSelectBM_msg", @"");
-        [alert setInformativeText:NSLocalizedString(@"NoSelectBM_info", @"")];
-        [alert addButtonWithTitle:@"OK"];
-        [alert setAlertStyle:NSInformationalAlertStyle];
-        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
-            return;
-        }];
+        [self showNoSelectAlert];
     } else {
         NSString *label = [sel string];
         PDFPage *page = [[sel pages]objectAtIndex:0];
@@ -366,6 +371,33 @@
         PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:point];
         [self makeNewBookMark:label withDestination:destination];
     }
+}
+
+//BMパネル新規しおり作成
+- (void)newBMFromInfo{
+    NSString *label = [(APPD).olInfo objectForKey:@"olLabel"];
+    [self makeNewBookMark:label withDestination:[self destinationFromInfo]];
+}
+
+- (PDFDestination*)destinationFromInfo{
+    NSInteger pageIndex = [[(APPD).olInfo objectForKey:@"pageIndex"]integerValue];
+    double pointX = [[(APPD).olInfo objectForKey:@"pointX"]doubleValue];
+    double pointY = [[(APPD).olInfo objectForKey:@"pointY"]doubleValue];
+    PDFPage *page = [[_pdfView document]pageAtIndex:pageIndex];
+    PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:NSMakePoint(pointX, pointY)];
+    return destination;
+}
+
+//未選択アラート表示
+- (void)showNoSelectAlert{
+    NSAlert *alert = [[NSAlert alloc]init];
+    alert.messageText = NSLocalizedString(@"NoSelectBM_msg", @"");
+    [alert setInformativeText:NSLocalizedString(@"NoSelectBM_info", @"")];
+    [alert addButtonWithTitle:@"OK"];
+    [alert setAlertStyle:NSInformationalAlertStyle];
+    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
+        return;
+    }];
 }
 
 //新規PDFアウトライン作成
@@ -441,6 +473,31 @@
     }
 }
 
+//現在の選択範囲からPDFDestinationを取得
+- (void)getDestinationFromCurrentSelection{
+    PDFSelection *sel = [_pdfView currentSelection];
+    if (!sel) {
+        [self showNoSelectAlert];
+    } else {
+        PDFDocument *doc = _pdfView.document;
+        PDFPage *page = [[sel pages]objectAtIndex:0];
+        NSRect rect = [sel boundsForPage:page];
+        [(APPD).olInfo setObject:[NSNumber numberWithInteger:[doc indexForPage:page]] forKey:@"pageIndex"];
+        [(APPD).olInfo setObject:page.label forKey:@"pageLabel"];
+        [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.origin.x] forKey:@"pointX"];
+        [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.origin.y+rect.size.height] forKey:@"pointY"];
+    }
+}
+
+//アウトラインを更新
+- (void)updateOL{
+    NSInteger selectedRow = _olView.selectedRow;
+    PDFOutline *ol = [_olView itemAtRow:selectedRow];
+    [ol setLabel:[(APPD).olInfo objectForKey:@"olLabel"]];
+    [ol setDestination:[self destinationFromInfo]];
+    [_olView reloadData];
+}
+
 #pragma mark - table view data source and delegate
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
@@ -509,14 +566,17 @@
 - (IBAction)test:(id)sender {
     PDFPage *page = _pdfView.currentPage;
     //ページ表示に必要なNSView座標系でのサイズ
+    NSRect rect = [page boundsForBox:kPDFDisplayBoxArtBox];
     NSSize size = [_pdfView rowSizeForPage:page];
     //NSView座標系のpointをPDF座標系のpointに変換
     NSPoint point = [_pdfView convertPoint:NSMakePoint(size.width, size.height) toPage:page];
     NSLog(@"%f,%f",point.x,point.y);
+    NSLog(@"%f,%f,%f,%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
 }
 
-- (void)aa:(id)sender{
-    NSLog(@"aa");
+- (IBAction)aa:(id)sender{
+    PDFDestination *dest = _pdfView.currentDestination;
+    NSLog(@"%f,%f",dest.point.x,dest.point.y);
 }
 
 - (IBAction)txtJumpPage:(id)sender {

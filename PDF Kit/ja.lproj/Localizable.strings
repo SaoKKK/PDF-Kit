@@ -53,3 +53,10 @@
 //Menu item Show or Hide Bookmark Panel
 "ShowBM" = "しおりパネルを表示";
 "HideBM" = "しおりパネルを隠す";
+
+//Bookmark panel empty input error message
+"OLLabel_msg" = "ラベルが入力されていません。";
+"PageIndex_msg" = "移動先のページインデックスが入力されていません。";
+"PointX_msg" = "移動先の位置のX座標が入力されていません。";
+"PointY_msg" = "移動先の位置のY座標が入力されていません。";
+"EmptyErr_info" = "この値に空白は許可されません。入力を正しく行ってください。";

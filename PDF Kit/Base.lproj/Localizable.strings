@@ -53,3 +53,10 @@
 //Menu item Show or Hide Bookmark Panel
 "ShowBM" = "Show Bookmark Panel";
 "HideBM" = "Hide Bookmark Panel";
+
+//Bookmark panel empty input error message
+"OLLabel_msg" = "Label is empty.";
+"PageIndex_msg" = "Page index of destination is empty.";
+"PointX_msg" = "Point x of destination is empty.";
+"PointY_msg" = "Point y of destination is empty.";
+"EmptyErr_info" = "This field value cannot be empty. Please input rightly.";

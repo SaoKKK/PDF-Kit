@@ -10,20 +10,22 @@
 #import "AppDelegate.h"
 
 #define APPD (AppDelegate *)[NSApp delegate]
+#define MyPBoardType @"MyPBoardType"
 
 @implementation OLController{
     IBOutlet NSOutlineView *_olView;
     IBOutlet MyPDFView *_pdfView;
     IBOutlet NSSegmentedControl *segPageViewMode;
+    NSArray *dragOLArray; //ドラッグ中のしおりデータを保持
+    NSMutableIndexSet *oldIndexes;
 }
 
-- (id)init{
-    self = [super init];
-    if (self){
-        //ページ移動ノーティフィケーションを設定
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChanged) name:PDFViewPageChangedNotification object:_pdfView];
-    }
-    return self;
+-(void)awakeFromNib{
+    //ページ移動ノーティフィケーションを設定
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChanged) name:PDFViewPageChangedNotification object:_pdfView];
+    //ドラッグ＆ドロップするデータタイプを設定
+    [_olView registerForDraggedTypes:[NSArray arrayWithObjects:MyPBoardType, nil]];
+    [_olView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
 }
 
 #pragma mark - outlineView data source
@@ -88,10 +90,20 @@
         //情報データを更新
         [self updateOLInfo:ol];
     }
-    if ([_olView selectedRow] >= 0) {
+    [self updateSelectedRowInfo];
+}
+
+//行の選択状況情報を更新
+- (void)updateSelectedRowInfo{
+    if ([_olView selectedRowIndexes].count == 1) {
         (APPD).isOLSelected = YES;
-    } else {
+        (APPD).isOLSelectedSingle = YES;
+    } else if ([_olView selectedRowIndexes].count == 0) {
+        (APPD).isOLSelectedSingle = NO;
         (APPD).isOLSelected = NO;
+    } else {
+        (APPD).isOLSelectedSingle = NO;
+        (APPD).isOLSelected = YES;
     }
 }
 
@@ -99,14 +111,15 @@
 - (void)updateOLInfo:(PDFOutline*)ol{
     PDFPage *page = ol.destination.page;
     PDFDocument *doc = [_pdfView document];
-    NSString *pageLabel = @"";
-    pageLabel = page.label;
-    [(APPD).olInfo setObject:ol.label forKey:@"label"];
+    NSRect rect = [page boundsForBox:kPDFDisplayBoxArtBox];
+    [(APPD).olInfo setObject:ol.label forKey:@"olLabel"];
     [(APPD).olInfo setObject:ol.destination forKey:@"destination"];
-    [(APPD).olInfo setObject:pageLabel forKey:@"pageLabel"];
-    [(APPD).olInfo setObject:[NSString stringWithFormat:@"%li",[doc indexForPage:page]] forKey:@"pageIndex"];
-    [(APPD).olInfo setObject:[NSNumber numberWithFloat:ol.destination.point.x] forKey:@"pointX"];
-    [(APPD).olInfo setObject:[NSNumber numberWithFloat:ol.destination.point.y] forKey:@"pointY"];
+    [(APPD).olInfo setObject:page.label forKey:@"pageLabel"];
+    [(APPD).olInfo setObject:[NSNumber numberWithInteger:[doc indexForPage:page]] forKey:@"pageIndex"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:ol.destination.point.x] forKey:@"pointX"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:ol.destination.point.y] forKey:@"pointY"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.size.width] forKey:@"xMax"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.size.height] forKey:@"yMax"];
 }
 
 //ページ移動時
@@ -143,6 +156,88 @@
 }
 - (void)outlineViewItemDidCollapse:(NSNotification *)notification{
     [self pageChanged];
+}
+
+#pragma mark - drag and drop controll
+
+// ドラッグ開始（ペーストボードに書き込む）
+- (BOOL)outlineView:(NSOutlineView *)ov writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pboard{
+    [pboard setData:[NSData data] forType:MyPBoardType];
+    dragOLArray = [NSMutableArray arrayWithArray:items];
+    oldIndexes = [[NSMutableIndexSet alloc]init];
+    for (id item in items) {
+        [oldIndexes addIndex:[_olView rowForItem:item]];
+    }
+    return YES;
+}
+
+//ドロップを確認
+- (NSDragOperation)outlineView:(NSOutlineView *)ov validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(NSInteger)index{
+    PDFOutline *targetOL = item;
+    NSDragOperation result = NSDragOperationGeneric;
+    [info setAnimatesToDestination:YES];
+    if (item) {
+        //ドロップ先が自分か自分の子孫であればドロップ不可
+        for (PDFOutline *draggedOL in dragOLArray){
+            if ([self targetOL:targetOL isDescendant:draggedOL]){
+                result = NSDragOperationNone;
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+//ドロップ先が自分を含むそれ以下の階層であれば真を返す
+- (BOOL)targetOL:(PDFOutline*)ol isDescendant:(PDFOutline*)parentOL{
+    while (ol != nil) {
+        if (ol == parentOL) {
+            return YES;
+        }
+        ol = ol.parent;
+    }
+    return NO;
+}
+
+//ドロップ受付開始
+- (BOOL)outlineView:(NSOutlineView*)ov acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index{
+    PDFOutline *targetOL = item; //ドロップ先のしおり
+    if (!item){
+        //ルートへのドロップ
+        targetOL = _pdfView.document.outlineRoot;
+    }
+    if (index == -1){
+        //しおり上へのドロップの場合、しおりの子の末尾に入れる
+        index = [targetOL numberOfChildren];
+    }
+    NSInteger targetIndex = [_olView rowForItem:targetOL]+index+1;
+    NSInteger oldIndex = oldIndexes.lastIndex;
+    NSInteger i = dragOLArray.count-1;
+    while (oldIndex != NSNotFound) {
+        PDFOutline *oldOL = [_olView itemAtRow:oldIndex];
+        if (oldIndex < targetIndex) {
+            //下への移動
+            if (targetOL == oldOL.parent) {
+                //同じ親の中の移動の場合（ドロップ先のインデクスが上にずれる）
+                index --;
+                targetIndex --;
+            }
+        }
+        //ペースト元のしおりを削除
+        [oldOL removeFromParent];
+        [_olView reloadData];
+        //ドロップ先にペーストボードアイテムを挿入
+        [targetOL insertChild:[dragOLArray objectAtIndex:i] atIndex:index];
+        [_olView reloadData];
+        if (oldIndex > targetIndex) {
+            //上への移動の場合（ドロップ元のインデクスが下にずれる）
+            [oldIndexes shiftIndexesStartingAtIndex:targetIndex by:1];
+            oldIndex ++;
+        }
+        oldIndex = [oldIndexes indexLessThanIndex:oldIndex];
+        i--;
+    }
+    return YES;
 }
 
 @end

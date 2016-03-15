@@ -47,5 +47,8 @@
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
 - (NSData *)pdfViewDocumentData;
 - (void)revertDocumentToSaved;
+- (void)getDestinationFromCurrentSelection;
+- (void)updateOL;
+- (void)newBMFromInfo;
 
 @end

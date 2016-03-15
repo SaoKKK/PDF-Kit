@@ -11,5 +11,5 @@
 #import "MyPDFView.h"
 
 @interface OLController : NSObject <NSOutlineViewDataSource,NSOutlineViewDelegate>
-
+- (void)updateSelectedRowInfo;
 @end

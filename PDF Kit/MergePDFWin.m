@@ -120,12 +120,18 @@
     }];
     //キーウインドウになった
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeKeyNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
-        //メニューの有効/無効の切り替え
-        [APPD mergeMenuSetEnabled];
-        //ページ移動ボタンの有効/無効の切り替え
-        [self updateGoButtonEnabled];
-        //スクリーンモード変更メニューのタイトルを変更
-        [self mnFullScreenSetTitle];
+        if (NSApp.keyWindow == self.window){
+            //メニューの有効/無効の切り替え
+            (APPD).isDocWinMain = NO;
+            (APPD).isOLSelectedSingle = NO;
+            (APPD).isOLSelected = NO;
+            (APPD).isOLExists = NO;
+            [APPD mergeMenuSetEnabled];
+            //ページ移動ボタンの有効/無効の切り替え
+            [self updateGoButtonEnabled];
+            //スクリーンモード変更メニューのタイトルを変更
+            [self mnFullScreenSetTitle];
+        }
     }];
     //ウインドウが閉じられた
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
