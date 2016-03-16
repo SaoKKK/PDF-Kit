@@ -20,6 +20,7 @@
 @end
 
 @implementation MyWindowController
+@synthesize bOLEdited;
 
 #pragma mark - Window Controller Method
 
@@ -310,6 +311,13 @@
     //検索実行
     PDFDocument *doc = [_pdfView document];
     [doc beginFindString:searchString withOptions:NSCaseInsensitiveSearch];
+    [tabToc selectTabViewItemAtIndex:2];
+}
+
+- (void)documentDidEndDocumentFind:(NSNotification *)notification{
+    //検索結果を表示
+    [[[_tbView.tableColumns objectAtIndex:1]headerCell] setTitle:[NSString stringWithFormat:@"%@%li",NSLocalizedString(@"RESULT", @""),searchResult.count]];
+    [_tbView reloadData];
 }
 
 - (void)didMatchString:(PDFSelection *)instance{
@@ -327,10 +335,6 @@
     //検索結果を作成
     NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:sel,@"selection",labelString,@"result",pageLabel,@"page",nil];
     [searchResult addObject:result];
-    //検索結果を表示
-    [tabToc selectTabViewItemAtIndex:2];
-    [[[_tbView.tableColumns objectAtIndex:1]headerCell] setTitle:[NSString stringWithFormat:@"%@%li",NSLocalizedString(@"RESULT", @""),searchResult.count]];
-    [_tbView reloadData];
 }
 
 //改行を削除した文字列を返す
@@ -495,6 +499,7 @@
     PDFOutline *ol = [_olView itemAtRow:selectedRow];
     [ol setLabel:[(APPD).olInfo objectForKey:@"olLabel"]];
     [ol setDestination:[self destinationFromInfo]];
+    (APPD).isOLExists = YES;
     [_olView reloadData];
 }
 

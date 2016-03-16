@@ -28,6 +28,13 @@
     [_olView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
 }
 
+//現在のドキュメントのウインドウコントローラを返す
+- (MyWindowController*)currentDocWinController{
+    NSDocumentController *docC = [NSDocumentController sharedDocumentController];
+    NSDocument *doc = [docC currentDocument];
+    return [doc.windowControllers objectAtIndex:0];
+}
+
 #pragma mark - outlineView data source
 
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item{
@@ -234,6 +241,7 @@
         oldIndex = [oldIndexes indexLessThanIndex:oldIndex];
         i--;
     }
+    [self currentDocWinController].bOLEdited = YES;
     return YES;
 }
 
