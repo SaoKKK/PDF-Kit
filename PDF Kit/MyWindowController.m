@@ -154,10 +154,10 @@
     }];
     //メインウインドウ変更
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeMainNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        (APPD).isWinExist = YES;
         (APPD).isDocWinMain = YES;
-        [(OLController*)_olView.delegate updateSelectedRowInfo];
-        [APPD documentMenuSetEnabled:YES];
         (APPD).isOLExists = [self isOLExists];
+        [(OLController*)_olView.delegate updateSelectedRowInfo];
         //ページ移動メニューの有効/無効の切り替え
         [self updateGoButtonEnabled];
         //倍率変更メニューの有効／無効の切り替え
@@ -171,11 +171,11 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillCloseNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         NSDocumentController *docCtr = [NSDocumentController sharedDocumentController];
         if (docCtr.documents.count == 1) {
+            (APPD).isWinExist = NO;
             (APPD).isDocWinMain = NO;
             (APPD).isOLExists = NO;
             (APPD).isOLSelectedSingle = NO;
             (APPD).isOLSelected = NO;
-            [APPD documentMenuSetEnabled:NO];
         }
     }];
     //ページ移動

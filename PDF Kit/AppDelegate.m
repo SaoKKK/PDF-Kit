@@ -39,7 +39,6 @@
     IBOutlet NSMenuItem *mnSingleCont;
     IBOutlet NSMenuItem *mnTwoPages;
     IBOutlet NSMenuItem *mnTwoPageCont;
-    IBOutlet NSMenuItem *mnItemFindInPDF;
     NSArray *mnPageDisplay; //表示モード変更メニューグループ
     IBOutlet NSTextField *statusWinMsg;
     IBOutlet NSTextField *statusWinInfo;
@@ -49,7 +48,7 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,olInfo,statusWin,mnItemView,mnItemGo,mnView,mnGo,_bmPanelC;
+@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成
@@ -107,11 +106,6 @@
     return YES;
 }
 
-//検索メニューの有効／無効を切り替え
-- (void)findMenuSetEnabled:(BOOL)enabled{
-    [mnItemFindInPDF setEnabled:enabled];
-}
-
 //ディスプレイモード変更メニューのステータス変更
 - (void)setMnPageDisplayState:(NSInteger)tag{
     for (int i=0; i < mnPageDisplay.count; i++) {
@@ -119,34 +113,6 @@
             [[mnPageDisplay objectAtIndex:i]setState:YES];
         } else {
             [[mnPageDisplay objectAtIndex:i]setState:NO];
-        }
-    }
-}
-
-//ドキュメントメニューの有効／無効を切り替え
-- (void)documentMenuSetEnabled:(BOOL)enabled{
-    [mnItemGo setEnabled:enabled];
-    [mnItemView setEnabled:enabled];
-    for (NSMenuItem *item in [mnGo itemArray]) {
-        [item setEnabled:enabled];
-    }
-    for (NSMenuItem *item in [mnView itemArray]){
-        [item setEnabled:enabled];
-    }
-}
-
-//PDF結合ウインドウ用メニュー有効／無効の切り替え
-- (void)mergeMenuSetEnabled{
-    [mnItemGo setEnabled:YES];
-    [mnItemView setEnabled:YES];
-    for (NSMenuItem *item in [mnGo itemArray]) {
-        [item setEnabled:YES];
-    }
-    for (NSMenuItem *item in [mnView itemArray]){
-        if (item == [mnView itemArray].lastObject){
-            [item setEnabled:YES];
-        } else {
-            [item setEnabled:NO];
         }
     }
 }
