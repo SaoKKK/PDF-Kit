@@ -352,6 +352,41 @@
     [_tbView reloadData];
 }
 
+#pragma mark - table view data source and delegate
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
+    return searchResult.count;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    NSString *identifier = tableColumn.identifier;
+    NSDictionary *result = [searchResult objectAtIndex:row];
+    NSTableCellView *view = [tableView makeViewWithIdentifier:identifier owner:self];
+    if ([identifier isEqualToString:@"page"]){
+        view.textField.stringValue = [result objectForKey:identifier];
+    } else {
+        NSMutableAttributedString *labelTxt = [[NSMutableAttributedString alloc]initWithString:[result objectForKey:identifier]];
+        NSDictionary *attr = @{NSFontAttributeName:[NSFont systemFontOfSize:11 weight:NSFontWeightBold]};
+        NSRange range = [[result objectForKey:identifier] rangeOfString:searchField.stringValue options:NSCaseInsensitiveSearch];
+        [labelTxt setAttributes:attr range:range];
+        [view.textField setAttributedStringValue:labelTxt];
+    }
+    return view;
+}
+
+//行選択時
+- (void)tableViewSelectionDidChange:(NSNotification *)notification{
+    //選択行を取得
+    NSInteger row = [_tbView selectedRow];
+    if (row != -1){
+        //選択領域を取得
+        PDFSelection *sel = [[searchResult objectAtIndex:row] objectForKey:@"selection"];
+        //選択領域を表示
+        [_pdfView setCurrentSelection:sel animate:YES];
+        [_pdfView scrollSelectionToVisible:self];
+    }
+}
+
 #pragma mark - outline data control
 
 //メニュー／新規しおり作成
@@ -501,42 +536,6 @@
     [ol setDestination:[self destinationFromInfo]];
     (APPD).isOLExists = YES;
     [_olView reloadData];
-}
-
-#pragma mark - table view data source and delegate
-
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    return searchResult.count;
-}
-
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    NSString *identifier = tableColumn.identifier;
-    NSDictionary *result = [searchResult objectAtIndex:row];
-    NSTableCellView *view = [tableView makeViewWithIdentifier:identifier owner:self];
-    if ([identifier isEqualToString:@"page"]){
-        view.textField.stringValue = [result objectForKey:identifier];
-    } else {
-        NSMutableAttributedString *labelTxt = [[NSMutableAttributedString alloc]initWithString:[result objectForKey:identifier]];
-        NSDictionary *attr = @{NSFontAttributeName:[NSFont systemFontOfSize:11 weight:NSFontWeightBold]};
-        NSRange range = [[result objectForKey:identifier] rangeOfString:searchField.stringValue options:NSCaseInsensitiveSearch];
-        [labelTxt setAttributes:attr range:range];
-        [view.textField setAttributedStringValue:labelTxt];
-    }
-    return view;
-}
-
-//行選択時
-- (void)tableViewSelectionDidChange:(NSNotification *)notification{
-    //選択行を取得
-    NSInteger row = [_tbView selectedRow];
-    if (row != -1){
-        //選択領域を取得
-        PDFSelection *sel = [[searchResult objectAtIndex:row] objectForKey:@"selection"];
-        //選択領域を表示
-        [sel setColor:[NSColor yellowColor]];
-        [_pdfView setCurrentSelection:sel];
-        [_pdfView scrollSelectionToVisible:self];
-    }
 }
 
 #pragma mark - split view delegate

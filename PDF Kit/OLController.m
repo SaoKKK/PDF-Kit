@@ -131,21 +131,30 @@
 
 //ページ移動時
 - (void) pageChanged{
-    if (![[_pdfView document] outlineRoot]||segPageViewMode.selectedSegment==1)
+    PDFDocument *doc = [_pdfView document];
+    if (!doc.outlineRoot||segPageViewMode.selectedSegment==1)
         return;
     //現在のページインデクスを取得
-    NSUInteger newPageIndex = [[_pdfView document] indexForPage:[_pdfView currentPage]];
+    NSUInteger newPage = [doc indexForPage:[_pdfView currentDestination].page];
+    if (_olView.selectedRow >= 0) {
+        //現在のページと同ページのしおりが選択されている場合は選択行を変更しない
+        PDFOutline *selectedOL = [_olView itemAtRow:[_olView selectedRow]];
+        NSUInteger selectedRowPage = [doc indexForPage:selectedOL.destination.page];
+        if (selectedRowPage == newPage) {
+            return;
+        }
+    }
     //アウトラインを走査してページをチェック
     NSInteger newRow;
     for (int i = 0; i < [_olView numberOfRows]; i++){
         PDFOutline  *ol;
         //PDFアウトラインのページを取得
         ol = (PDFOutline *)[_olView itemAtRow: i];
-        if ([[_pdfView document] indexForPage:[[ol destination] page]] == newPageIndex){
+        if ([doc indexForPage:[[ol destination] page]] == newPage){
             //現在のページとPDFアウトラインのページが一致した場合
             newRow = i;
             break;
-        } else if ([[_pdfView document] indexForPage:[[ol destination] page]] > newPageIndex){
+        } else if ([doc indexForPage:[[ol destination] page]] > newPage){
             //現在のページよりPDFアウトラインのページが後ろの場合
             newRow = i - 1;
             break;
