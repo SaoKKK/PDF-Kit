@@ -15,7 +15,7 @@
 @implementation OLController{
     IBOutlet NSOutlineView *_olView;
     IBOutlet MyPDFView *_pdfView;
-    IBOutlet NSSegmentedControl *segPageViewMode;
+    IBOutlet NSSegmentedControl *segOLViewMode;
     NSArray *dragOLArray; //ドラッグ中のしおりデータを保持
     NSMutableIndexSet *oldIndexes; //ドラッグ元の行インデクスを保持
 }
@@ -67,6 +67,11 @@
     NSTableCellView *view = [olView makeViewWithIdentifier:identifier owner:self];
     if ([identifier isEqualToString:@"label"]){
         view.textField.stringValue = [item label];
+        if (segOLViewMode.selectedSegment == 1) {
+            [view.textField setEditable:YES];
+        } else {
+            [view.textField setEditable:NO];
+        }
     } else {
         PDFDocument *doc = [_pdfView document];
         PDFPage *page = [[item destination]page];
@@ -133,7 +138,7 @@
 //ページ移動時
 - (void) pageChanged{
     PDFDocument *doc = [_pdfView document];
-    if (!doc.outlineRoot||segPageViewMode.selectedSegment==1)
+    if (!doc.outlineRoot||segOLViewMode.selectedSegment==1)
         return;
     //現在のページインデクスを取得
     NSUInteger newPage = [doc indexForPage:[_pdfView currentDestination].page];

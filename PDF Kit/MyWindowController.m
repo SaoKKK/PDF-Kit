@@ -448,6 +448,9 @@
 }
 
 - (void)addNewDataToSelection:(PDFOutline*)ol{
+    //ルートアイテムがない場合は作成
+    [self createOLRoot];
+    //アウトラインビューを編集モードに変更
     [self viewToEditBMMode];
     PDFOutline *parentOL = [[PDFOutline alloc]init];
     NSInteger selectedRow = _olView.selectedRow;
@@ -495,21 +498,21 @@
     bOLEdited = YES;
 }
 
-//ビューをしおり編集モードに
-- (void)viewToEditBMMode{
-    //ルートアイテムがない場合は作成
+//しおりのルートアイテムを作成
+- (void)createOLRoot{
     if (![[_pdfView document]outlineRoot]) {
         PDFOutline *root = [[PDFOutline alloc]init];
         [[_pdfView document] setOutlineRoot:root];
         (APPD).isOLExists = YES;
     }
+}
+
+//ビューをしおり編集モードに
+- (void)viewToEditBMMode{
     [segTabTocSelect setSelectedSegment:1];
     [self segSelContentsView:segTabTocSelect];
-    [segPageViewMode setSelected:YES forSegment:1];
-    if (!(APPD)._bmPanelC.window.isVisible){
-        [APPD showBookmarkPanel:nil];
-        [self.window makeKeyWindow];
-    }
+    [segOLViewMode setSelectedSegment:1];
+    [self segOLViewMode:segOLViewMode];
 }
 
 //現在の選択範囲からPDFDestinationを取得
@@ -535,6 +538,25 @@
     [ol setLabel:[(APPD).olInfo objectForKey:@"olLabel"]];
     [ol setDestination:[self destinationFromInfo]];
     (APPD).isOLExists = YES;
+    [_olView reloadData];
+}
+
+//アウトラインビューのモードを変更
+- (IBAction)segOLViewMode:(id)sender {
+    switch ([sender selectedSegment]) {
+        case 0:
+            if ((APPD)._bmPanelC.window.isVisible){
+                [APPD showBookmarkPanel:nil];
+            }
+            break;
+            
+        default:
+            if (!(APPD)._bmPanelC.window.isVisible){
+                [APPD showBookmarkPanel:nil];
+                [self.window makeKeyWindow];
+            }
+            break;
+    }
     [_olView reloadData];
 }
 
@@ -579,8 +601,6 @@
 }
 
 - (IBAction)aa:(id)sender{
-    PDFDestination *dest = _pdfView.currentDestination;
-    NSLog(@"%f,%f",dest.point.x,dest.point.y);
 }
 
 - (IBAction)txtJumpPage:(id)sender {
