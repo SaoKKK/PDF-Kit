@@ -375,6 +375,14 @@ CA
 </string>
                                 <connections>
                                     <action selector="removeOutline:" target="-1" id="3JO-WJ-mZT"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled2" keyPath="self.isOLExists" previousBinding="utP-Pr-hm9" id="woc-nt-zyg">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                            <integer key="NSNullPlaceholder" value="-1"/>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isOLSelected" id="utP-Pr-hm9"/>
                                 </connections>
                             </menuItem>

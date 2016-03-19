@@ -484,6 +484,10 @@
     }
     [_olView reloadData];
     bOLEdited = YES;
+    (APPD).isOLSelected = NO;
+    if (_pdfView.document.outlineRoot.numberOfChildren == 0) {
+        (APPD).isOLExists = NO;
+    }
 }
 
 //メニュー／しおりクリア
@@ -503,8 +507,8 @@
     if (![[_pdfView document]outlineRoot]) {
         PDFOutline *root = [[PDFOutline alloc]init];
         [[_pdfView document] setOutlineRoot:root];
-        (APPD).isOLExists = YES;
     }
+    (APPD).isOLExists = YES;
 }
 
 //ビューをしおり編集モードに
