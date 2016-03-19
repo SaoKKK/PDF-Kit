@@ -85,6 +85,7 @@
 - (IBAction)labelUpdated:(id)sender {
     PDFOutline *ol = (PDFOutline*)[_olView itemAtRow:[_olView rowForView:sender]];
     [ol setLabel:[sender stringValue]];
+    [self currentDocWinController].bOLEdited = YES;
 }
 
 #pragma mark - navigate between the destinations
