@@ -42,7 +42,6 @@
     BOOL bFullscreen; //スクリーンモード保持用
     NSMutableArray *searchResult; //検索結果保持用
 }
-@property (assign) BOOL bOLEdited; //Outline更新フラグ
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
 - (NSData *)pdfViewDocumentData;

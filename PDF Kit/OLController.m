@@ -90,7 +90,7 @@
 - (IBAction)labelUpdated:(id)sender {
     PDFOutline *ol = (PDFOutline*)[_olView itemAtRow:[_olView rowForView:sender]];
     [ol setLabel:[sender stringValue]];
-    [self currentDocWinController].bOLEdited = YES;
+    [[self currentDocWinController].document updateChangeCount:NSChangeDone];
 }
 
 #pragma mark - navigate between the destinations
@@ -256,7 +256,7 @@
         oldIndex = [oldIndexes indexLessThanIndex:oldIndex];
         i--;
     }
-    [self currentDocWinController].bOLEdited = YES;
+    [[self currentDocWinController].document updateChangeCount:NSChangeDone];
     return YES;
 }
 

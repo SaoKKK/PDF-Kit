@@ -35,11 +35,6 @@
 "NotExistOutline_msg" = "このドキュメントにはしおりのデータが含まれていません。";
 "NotExistOutline_info" = "しおりが必要な場合は、しおりメニューからしおり作成メニューを選択してください。";
 
-//Document Changed Alert Dialog Button Title
-"Save" = "保存";
-"Cancel" = "キャンセル";
-"Don't Save" = "保存しない";
-
 //table view header title
 "RESULT" = "結果：";
 

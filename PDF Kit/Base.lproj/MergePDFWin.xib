@@ -50,7 +50,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button focusRingType="none" verticalHuggingPriority="750" id="6PT-ec-g0p">
-                                    <rect key="frame" x="140" y="-3" width="100" height="28"/>
+                                    <rect key="frame" x="149" y="-3" width="100" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="push" title="Merge PDF" bezelStyle="rounded" imagePosition="left" alignment="center" controlSize="small" enabled="NO" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="rCC-nR-zqZ">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -59,6 +59,14 @@
                                     <connections>
                                         <action selector="btnMerge:" target="-2" id="DUJ-zC-h0I"/>
                                     </connections>
+                                </button>
+                                <button id="1Ze-uZ-BP1">
+                                    <rect key="frame" x="4" y="1" width="144" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="VT8-Ul-Ilp">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="smallSystem"/>
+                                    </buttonCell>
                                 </button>
                             </subviews>
                         </view>
