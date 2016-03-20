@@ -1,38 +1,38 @@
 
 /* Class = "NSButtonCell"; title = "作業状況を復元"; ObjectID = "0cr-lP-jWd"; */
-"0cr-lP-jWd.title" = "作業状況を復元";
-"LFr-XO-JUH.ibShadowedToolTip" = "保存された作業ファイルを復元します";
+"lnp-CX-PpU.title" = "作業状況を復元";
+"ZKP-dg-S3v.ibShadowedToolTip" = "保存された作業ファイルを復元します";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Add a new PDF file"; ObjectID = "4Lx-tN-UdZ"; */
-"4Lx-tN-UdZ.ibShadowedToolTip" = "先頭ページへ";
-"Qdy-MM-YYM.ibShadowedToolTip" = "前ページへ";
-"v6a-w7-7RS.ibShadowedToolTip" = "次ページへ";
-"rwU-7e-6HD.ibShadowedToolTip" = "最終ページへ";
-"Fva-QY-0bT.ibShadowedToolTip" = "戻る";
-"NCc-At-R8m.ibShadowedToolTip" = "進む";
+"46E-jt-vpL.ibShadowedToolTip" = "先頭ページへ";
+"EyP-yY-rKh.ibShadowedToolTip" = "前ページへ";
+"PEq-sA-Zsl.ibShadowedToolTip" = "次ページへ";
+"dPX-Kv-4gk.ibShadowedToolTip" = "最終ページへ";
+"VEb-AD-1jG.ibShadowedToolTip" = "戻る";
+"waV-8q-1d1.ibShadowedToolTip" = "進む";
 
 /* Class = "NSTableColumn"; headerCell.title = "ページ数"; ObjectID = "50r-w7-LWw"; */
-"50r-w7-LWw.headerCell.title" = "ページ数";
+"4Pb-m1-knj.headerCell.title" = "ページ数";
 
 /* Class = "NSTextFieldCell"; title = "新規PDFドキュメント作成中..."; ObjectID = "6H4-Do-8tQ"; */
 "6H4-Do-8tQ.title" = "新規PDFドキュメント作成中...";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Remove selected files"; ObjectID = "7ob-jv-pbT"; */
-"7ob-jv-pbT.ibShadowedToolTip" = "選択されたデータを削除";
+"4R3-EX-ran.ibShadowedToolTip" = "選択されたデータを削除";
 
 /* Class = "NSButtonCell"; title = "クリア"; ObjectID = "A1W-8e-m0f"; */
-"A1W-8e-m0f.title" = "クリア";
-"7bM-jf-5px.ibShadowedToolTip" = "テーブルのデータをクリア";
+"4HF-o7-3tA.title" = "クリア";
+"dTu-Gb-pY3.ibShadowedToolTip" = "テーブルのデータをクリア";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "BPg-7Q-fNU"; */
 "BPg-7Q-fNU.title" = "Text Cell";
 
 /* Class = "NSTableColumn"; headerCell.title = "サイズ"; ObjectID = "BnB-D1-Tf9"; */
-"BnB-D1-Tf9.headerCell.title" = "サイズ";
+"WWw-x6-EhM.headerCell.title" = "サイズ";
 
 /* Class = "NSButtonCell"; title = "作業状況を保存"; ObjectID = "ChF-5n-Hme"; */
-"ChF-5n-Hme.title" = "作業状況を保存";
-"Eyc-SK-jpu.ibShadowedToolTip" = "テーブルの作業状況を保存します";
+"onh-7A-bVh.title" = "作業状況を保存";
+"Bcj-3T-jdI.ibShadowedToolTip" = "テーブルの作業状況を保存します";
 
 /* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "Cs7-ne-c3h"; */
 "Cs7-ne-c3h.title" = "Table View Cell";
@@ -41,13 +41,13 @@
 "Eqs-qe-8FO.title" = "Table View Cell";
 
 /* Class = "NSWindow"; title = "PDFを結合"; ObjectID = "F0z-JX-Cv5"; */
-"F0z-JX-Cv5.title" = "PDFを結合";
+"04x-SL-0Uo.title" = "PDFを結合";
 
 /* Class = "NSWindow"; title = "Window"; ObjectID = "GNP-5R-tjx"; */
 "GNP-5R-tjx.title" = "Window";
 
 /* Class = "NSButtonCell"; title = "PDFを結合"; ObjectID = "Grr-ud-YRR"; */
-"Grr-ud-YRR.title" = "PDFを結合";
+"rCC-nR-zqZ.title" = "PDFを結合";
 
 /* Class = "NSWindow"; title = "Window"; ObjectID = "IbW-kM-Z5R"; */
 "IbW-kM-Z5R.title" = "Window";
@@ -80,10 +80,10 @@
 "f7d-dQ-pMa.title" = "以下のファイルは読み込みに失敗しました。";
 
 /* Class = "NSTableColumn"; headerCell.title = "ページ範囲"; ObjectID = "f7z-cw-n3R"; */
-"f7z-cw-n3R.headerCell.title" = "ページ範囲";
+"mXl-22-8ZA.headerCell.title" = "ページ範囲";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Add a new PDF file"; ObjectID = "fpP-Zu-7eJ"; */
-"fpP-Zu-7eJ.ibShadowedToolTip" = "テーブルにデータを追加";
+"LR6-6l-Jyk.ibShadowedToolTip" = "テーブルにデータを追加";
 
 /* Class = "NSTextFieldCell"; title = "1"; ObjectID = "hXA-KH-eFf"; */
 "hXA-KH-eFf.title" = "1";
@@ -98,7 +98,10 @@
 "syE-LX-Adv.title" = "Text Cell";
 
 /* Class = "NSTableColumn"; headerCell.title = "ファイル名"; ObjectID = "woq-X9-Q5F"; */
-"woq-X9-Q5F.headerCell.title" = "ファイル名";
+"M08-RE-qoD.headerCell.title" = "ファイル名";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "z5V-lN-Y1L"; */
 "z5V-lN-Y1L.title" = "Text Cell";
+
+//check box "create bookmark"
+"VT8-Ul-Ilp.title" = "しおりを作成";
