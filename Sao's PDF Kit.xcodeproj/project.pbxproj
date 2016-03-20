@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B907C4B71C848A440019F247 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B907C4B61C848A440019F247 /* sidebar.png */; };
+		B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */; };
 		B93FD5751C86D45B00B68959 /* singleCon_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56D1C86D45B00B68959 /* singleCon_off.png */; };
 		B93FD5761C86D45B00B68959 /* singleCon_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56E1C86D45B00B68959 /* singleCon_on.png */; };
 		B93FD5771C86D45B00B68959 /* singlePage_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56F1C86D45B00B68959 /* singlePage_off.png */; };
@@ -54,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		B907C4B61C848A440019F247 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = Graphics/sidebar.png; sourceTree = "<group>"; };
+		B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCColoredTitleButton.h; sourceTree = "<group>"; };
+		B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCColoredTitleButton.m; sourceTree = "<group>"; };
 		B93FD56D1C86D45B00B68959 /* singleCon_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singleCon_off.png; path = Graphics/singleCon_off.png; sourceTree = "<group>"; };
 		B93FD56E1C86D45B00B68959 /* singleCon_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singleCon_on.png; path = Graphics/singleCon_on.png; sourceTree = "<group>"; };
 		B93FD56F1C86D45B00B68959 /* singlePage_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singlePage_off.png; path = Graphics/singlePage_off.png; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 		B951BD961C71C53B007B9359 /* Custom Class */ = {
 			isa = PBXGroup;
 			children = (
+				B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */,
+				B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */,
 				B951BD971C71C58D007B9359 /* CCBackGroundView.h */,
 				B951BD981C71C58D007B9359 /* CCBackGroundView.m */,
 				B951BD991C71C58D007B9359 /* CCClearWin.h */,
@@ -378,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9C585711C92963400243A38 /* BMPanelController.m in Sources */,
+				B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */,
 				B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */,
 				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
 				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,

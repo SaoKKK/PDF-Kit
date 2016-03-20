@@ -136,12 +136,12 @@
 }
 
 //ページ移動時
-- (void) pageChanged{
+- (void)pageChanged{
     PDFDocument *doc = [_pdfView document];
+    NSUInteger newPage = [doc indexForPage:[_pdfView currentDestination].page];
     if (!doc.outlineRoot||segOLViewMode.selectedSegment==1)
         return;
     //現在のページインデクスを取得
-    NSUInteger newPage = [doc indexForPage:[_pdfView currentDestination].page];
     if (_olView.selectedRow >= 0) {
         //現在のページと同ページのしおりが選択されている場合は選択行を変更しない
         PDFOutline *selectedOL = [_olView itemAtRow:[_olView selectedRow]];

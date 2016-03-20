@@ -20,6 +20,7 @@
                 <outlet property="btnMerge" destination="6PT-ec-g0p" id="jKW-sA-eeW"/>
                 <outlet property="btnRemove" destination="4R3-EX-ran" id="elA-NR-gh4"/>
                 <outlet property="btnStoreWS" destination="Bcj-3T-jdI" id="hOr-Zf-XXg"/>
+                <outlet property="chkCreateBM" destination="1Ze-uZ-BP1" id="3Vn-Sl-GFm"/>
                 <outlet property="errSheet" destination="IbW-kM-Z5R" id="Zfn-ZQ-SzU"/>
                 <outlet property="errTable" destination="ihy-CK-PBB" id="4jZ-CW-OIR"/>
                 <outlet property="mergePDFtable" destination="ExI-pE-pJT" id="sck-Y8-QYw"/>
@@ -60,10 +61,10 @@
                                         <action selector="btnMerge:" target="-2" id="DUJ-zC-h0I"/>
                                     </connections>
                                 </button>
-                                <button id="1Ze-uZ-BP1">
-                                    <rect key="frame" x="4" y="1" width="144" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="VT8-Ul-Ilp">
+                                <button id="1Ze-uZ-BP1" customClass="CCColoredTitleButton">
+                                    <rect key="frame" x="4" y="1" width="118" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Create Bookmark" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="VT8-Ul-Ilp">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="smallSystem"/>
                                     </buttonCell>

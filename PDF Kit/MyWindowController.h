@@ -41,6 +41,7 @@
     CGFloat oldTocWidth; //目次エリアの変更前の幅保持用
     BOOL bFullscreen; //スクリーンモード保持用
     NSMutableArray *searchResult; //検索結果保持用
+    NSUInteger selectedViewMode; //指定ビューモード保持用
 }
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;

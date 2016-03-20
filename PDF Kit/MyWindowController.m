@@ -25,12 +25,17 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    //インスタンス変数を初期化
-    bFullscreen = NO;
     //ファイルから読み込まれたPDFドキュメントをビューに表示
     docURL = [[self document] fileURL];
     PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
     [_pdfView setDocument:doc];
+    [self initWindow];
+}
+
+- (void)initWindow{
+    //インスタンス変数を初期化
+    selectedViewMode = 0;
+    bFullscreen = NO;
     //ノーティフィケーションを設定
     [self setupNotification];
     //デリゲートを設定
@@ -56,6 +61,7 @@
     }
     //検索結果保持用配列を初期化
     searchResult = [NSMutableArray array];
+    
 }
 
 //アウトライン情報があるかどうかを返す
@@ -253,7 +259,7 @@
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf{
     [_pdfView setAutoScales:YES];
     [_pdfView setDocument:pdf];
-    [_pdfView setAutoScales:NO];
+    [self initWindow];
     [self.document updateChangeCount:NSChangeDone];
 }
 
@@ -510,6 +516,7 @@
             if ((APPD)._bmPanelC.window.isVisible){
                 [APPD showBookmarkPanel:nil];
             }
+            selectedViewMode = 0;
             break;
             
         default:
@@ -517,6 +524,7 @@
                 [APPD showBookmarkPanel:nil];
                 [self.window makeKeyWindow];
             }
+            selectedViewMode = 1;
             break;
     }
     [_olView reloadData];
@@ -563,6 +571,12 @@
 }
 
 - (IBAction)aa:(id)sender{
+    PDFDocument *doc = [_pdfView document];
+    for (int i = 0; i < doc.pageCount; i++){
+        PDFPage *page = [doc pageAtIndex:i];
+        NSLog(@"label=%@",page.label);
+        NSLog(@"index=%li",[doc indexForPage:page]);
+    }
 }
 
 - (IBAction)txtJumpPage:(id)sender {
@@ -573,23 +587,29 @@
 
 //コンテンツ・エリアのビューを切り替え
 - (IBAction)segSelContentsView:(id)sender {
-    if ([sender selectedSegment]==1 && ![[_pdfView document]outlineRoot]) {
-        //ドキュメントにアウトラインがない時にアウトライン表示が選択された
-        NSAlert *alert = [[NSAlert alloc]init];
-        alert.messageText = NSLocalizedString(@"NotExistOutline_msg", @"");
-        [alert setInformativeText:NSLocalizedString(@"NotExistOutline_info", @"")];
-        [alert addButtonWithTitle:@"OK"];
-        [alert setAlertStyle:NSInformationalAlertStyle];
-        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
-            //セグメントの選択を元に戻す
-            if ([tabToc indexOfTabViewItem:[tabToc selectedTabViewItem]] == 0) {
-                [segTabTocSelect setSelectedSegment:0];
-            } else {
-                [segTabTocSelect setSelected:NO forSegment:1];
-            }
-        }];
+    if ([sender selectedSegment]==1) {
+        if (![[_pdfView document]outlineRoot]) {
+            //ドキュメントにアウトラインがない時にアウトライン表示が選択された
+            NSAlert *alert = [[NSAlert alloc]init];
+            alert.messageText = NSLocalizedString(@"NotExistOutline_msg", @"");
+            [alert setInformativeText:NSLocalizedString(@"NotExistOutline_info", @"")];
+            [alert addButtonWithTitle:@"OK"];
+            [alert setAlertStyle:NSInformationalAlertStyle];
+            [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
+                //セグメントの選択を元に戻す
+                if ([tabToc indexOfTabViewItem:[tabToc selectedTabViewItem]] == 0) {
+                    [segTabTocSelect setSelectedSegment:0];
+                } else {
+                    [segTabTocSelect setSelected:NO forSegment:1];
+                }
+            }];
+        } else {
+            [tabToc selectTabViewItemAtIndex:[sender selectedSegment]];
+            [segOLViewMode setSelectedSegment:selectedViewMode];
+        }
     } else {
         [tabToc selectTabViewItemAtIndex:[sender selectedSegment]];
+        [segOLViewMode setSelectedSegment:1];
     }
 }
 

@@ -610,12 +610,30 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndPageInsert" object:self userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:outputPDFPageIndex] forKey:@"page"]];
             PDFPage *page = [inputDoc pageAtIndex:index - 1];
             [outputDoc insertPage:page atIndex:pageIndex++];
-            
+            PDFPage *outPage = [outputDoc pageAtIndex:pageIndex-1];
+            [outPage setValue:[NSString stringWithFormat:@"%li",pageIndex]forKey:@"label"];
+            //しおりの作成
+            if ([chkCreateBM state]) {
+                if (index==[pageRange firstIndex]){
+                    if (i==0){
+                        //ルートオブジェクトを作成
+                        PDFOutline *root = [[PDFOutline alloc]init];
+                        [outputDoc setOutlineRoot:root];
+                    }
+                    PDFOutline *ol = [[PDFOutline alloc]init];
+                    NSRect rect = [outPage boundsForBox:kPDFDisplayBoxArtBox];
+                    PDFDestination *destination = [[PDFDestination alloc]initWithPage:outPage atPoint:NSMakePoint(0, rect.size.height)];
+                    [ol setLabel:[[data objectForKey:@"fName"] stringByDeletingPathExtension]];
+                    [ol setDestination:destination];
+                    [outputDoc.outlineRoot insertChild:ol atIndex:[outputDoc.outlineRoot numberOfChildren]];
+                }
+            }
             index = [pageRange indexGreaterThanIndex:index];
         }
     }
     //PDF作成終了ノーティフィケーションを送信
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndCreate" object:self];
+    //一時ファイルを保存
     
     NSDocumentController *docC = [NSDocumentController sharedDocumentController];
     [docC openUntitledDocumentAndDisplay:YES error:nil];

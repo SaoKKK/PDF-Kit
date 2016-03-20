@@ -27,6 +27,7 @@
     IBOutlet NSTextField *txtPage;
     IBOutlet NSTextField *txtTotalPg;
     IBOutlet NSNumberFormatter *txtPageFormatter;
+    IBOutlet NSButton *chkCreateBM;
     NSIndexSet *dragRows; //ドラッグ中の行インデクスを保持
     BOOL bFullscreen;   //スクリーンモード保持用
 }
