@@ -18,11 +18,10 @@
     IBOutlet NSSegmentedControl *segOLViewMode;
     NSArray *dragOLArray; //ドラッグ中のしおりデータを保持
     NSMutableIndexSet *oldIndexes; //ドラッグ元の行インデクスを保持
+    BOOL bRowClicked; //アウトラインの行がユーザに選択されたか
 }
 
 -(void)awakeFromNib{
-    //ページ移動ノーティフィケーションを設定
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pageChanged) name:PDFViewPageChangedNotification object:_pdfView];
     //ドラッグ＆ドロップするデータタイプを設定
     [_olView registerForDraggedTypes:[NSArray arrayWithObjects:MyPBoardType, nil]];
     [_olView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
@@ -91,96 +90,6 @@
     PDFOutline *ol = (PDFOutline*)[_olView itemAtRow:[_olView rowForView:sender]];
     [ol setLabel:[sender stringValue]];
     [[self currentDocWinController].document updateChangeCount:NSChangeDone];
-}
-
-#pragma mark - navigate between the destinations
-
-//選択行変更時
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification{
-    if ([_olView selectedRowIndexes].count == 1) {
-        PDFDocument *doc = [_pdfView document];
-        PDFOutline *ol = [_olView itemAtRow:[_olView selectedRow]];
-        NSUInteger olPg = [doc indexForPage:ol.destination.page];
-        NSUInteger lastOLPg;
-        NSUInteger page = [doc indexForPage:_pdfView.currentPage];
-        if ([_olView selectedRow] == [_olView numberOfRows]-1) {
-            //選択行が最終行であった場合＝しおりの該当範囲はしおりの移動先から最終ページまで
-            lastOLPg = [doc pageCount]-1;
-        } else {
-            //しおりの該当範囲はしおりの移動先から次のしおりの移動先まで
-            PDFOutline *nextOL = [_olView itemAtRow:[_olView selectedRow]+1];
-            lastOLPg = [doc indexForPage:nextOL.destination.page];
-        }
-        if (page < olPg || page > lastOLPg) {
-            [_pdfView goToDestination:ol.destination];
-            //情報データを更新
-            [self updateOLInfo:ol];
-        }
-    }
-    [self updateSelectedRowInfo];
-}
-
-//行の選択状況情報を更新
-- (void)updateSelectedRowInfo{
-    if ([_olView selectedRowIndexes].count == 1) {
-        (APPD).isOLSelected = YES;
-        (APPD).isOLSelectedSingle = YES;
-    } else if ([_olView selectedRowIndexes].count == 0) {
-        (APPD).isOLSelectedSingle = NO;
-        (APPD).isOLSelected = NO;
-    } else {
-        (APPD).isOLSelectedSingle = NO;
-        (APPD).isOLSelected = YES;
-    }
-}
-
-//PDFOutline情報の更新
-- (void)updateOLInfo:(PDFOutline*)ol{
-    PDFPage *page = ol.destination.page;
-    PDFDocument *doc = [_pdfView document];
-    NSRect rect = [page boundsForBox:kPDFDisplayBoxArtBox];
-    [(APPD).olInfo setObject:ol.label forKey:@"olLabel"];
-    [(APPD).olInfo setObject:ol.destination forKey:@"destination"];
-    [(APPD).olInfo setObject:page.label forKey:@"pageLabel"];
-    [(APPD).olInfo setObject:[NSNumber numberWithInteger:[doc indexForPage:page]] forKey:@"pageIndex"];
-    [(APPD).olInfo setObject:[NSNumber numberWithDouble:ol.destination.point.x] forKey:@"pointX"];
-    [(APPD).olInfo setObject:[NSNumber numberWithDouble:ol.destination.point.y] forKey:@"pointY"];
-    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.size.width] forKey:@"xMax"];
-    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.size.height] forKey:@"yMax"];
-}
-
-//ページ移動時
-- (void)pageChanged{
-    PDFDocument *doc = [_pdfView document];
-    if (!doc.outlineRoot||segOLViewMode.selectedSegment==1)
-        return;
-    //現在のページインデクスを取得
-    NSUInteger newPage = [doc indexForPage:[_pdfView currentPage]];
-    //アウトラインを走査してページをチェック
-    NSInteger newRow = -1;
-    for (NSInteger i = [_olView numberOfRows] - 1; i >= 0; i--){
-        PDFOutline  *ol = [_olView itemAtRow: i];
-        //PDFアウトラインのページを取得
-        NSUInteger olPage = [doc indexForPage:ol.destination.page];
-        if (olPage <= newPage){
-            //PDFアウトラインのページが現在のページより前の場合
-            newRow = i;
-            break;
-        }
-    }
-    //該当行を選択
-    if (newRow >= 0){
-        [_olView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
-        [_olView scrollRowToVisible:newRow];
-    }
-}
-
-//コンテナ開閉で選択行を移行
-- (void)outlineViewItemDidExpand:(NSNotification *)notification{
-    [self pageChanged];
-}
-- (void)outlineViewItemDidCollapse:(NSNotification *)notification{
-    [self pageChanged];
 }
 
 #pragma mark - drag and drop controll

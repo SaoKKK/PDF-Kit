@@ -30,6 +30,7 @@
 @property (assign) BOOL isOLSelected;
 @property (assign) BOOL isOLSelectedSingle;
 @property (readwrite,nonatomic)NSMutableDictionary *olInfo;
+@property (assign) BOOL bRowClicked;
 
 - (void)setMnPageDisplayState:(NSInteger)tag;
 - (void)showStatusWin:(NSRect)rect messageText:(NSString*)message infoText:(NSString*)info;

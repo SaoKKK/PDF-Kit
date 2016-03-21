@@ -121,7 +121,7 @@
         (APPD).isWinExist = YES;
         (APPD).isDocWinMain = YES;
         (APPD).isOLExists = [self isOLExists];
-        [(OLController*)_olView.delegate updateSelectedRowInfo];
+        [self updateSelectedRowInfo];
         //ページ移動メニューの有効/無効の切り替え
         [self updateGoButtonEnabled];
         //倍率変更メニューの有効／無効の切り替え
@@ -148,6 +148,8 @@
         [self updateGoButtonEnabled];
         //ページ表示テキストフィールドの値を変更
         [self updateTxtPg];
+        //アウトラインビューの選択行変更
+        [self pageChanged];
     }];
     //表示倍率変更
     [[NSNotificationCenter defaultCenter]addObserverForName:PDFViewScaleChangedNotification object:_pdfView queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
@@ -276,6 +278,7 @@
     PDFDocument *doc = [_pdfView document];
     [doc beginFindString:searchString withOptions:NSCaseInsensitiveSearch];
     [tabToc selectTabViewItemAtIndex:2];
+    [segOLViewMode setSelectedSegment:1];
 }
 
 - (void)documentDidEndDocumentFind:(NSNotification *)notification{
@@ -346,9 +349,106 @@
         //選択領域を取得
         PDFSelection *sel = [[searchResult objectAtIndex:row] objectForKey:@"selection"];
         //選択領域を表示
+        [sel setColor:[NSColor yellowColor]];
         [_pdfView setCurrentSelection:sel animate:YES];
         [_pdfView scrollSelectionToVisible:self];
     }
+}
+#pragma mark - navigate between the destinations
+
+//選択行変更時
+- (IBAction)outlineViewRowClicked:(id)sender{
+    (APPD).bRowClicked = YES;
+    if ([_olView selectedRowIndexes].count == 1) {
+        PDFOutline *ol = [_olView itemAtRow:[_olView selectedRow]];
+        [_pdfView goToDestination:ol.destination];
+        //情報データを更新
+        [self updateOLInfo:ol];
+    }
+    [self updateSelectedRowInfo];
+}
+
+//行の選択状況情報を更新
+- (void)updateSelectedRowInfo{
+    if ([_olView selectedRowIndexes].count == 1) {
+        (APPD).isOLSelected = YES;
+        (APPD).isOLSelectedSingle = YES;
+    } else if ([_olView selectedRowIndexes].count == 0) {
+        (APPD).isOLSelectedSingle = NO;
+        (APPD).isOLSelected = NO;
+    } else {
+        (APPD).isOLSelectedSingle = NO;
+        (APPD).isOLSelected = YES;
+    }
+}
+
+//PDFOutline情報の更新
+- (void)updateOLInfo:(PDFOutline*)ol{
+    PDFPage *page = ol.destination.page;
+    PDFDocument *doc = [_pdfView document];
+    NSRect rect = [page boundsForBox:kPDFDisplayBoxArtBox];
+    [(APPD).olInfo setObject:ol.label forKey:@"olLabel"];
+    [(APPD).olInfo setObject:ol.destination forKey:@"destination"];
+    [(APPD).olInfo setObject:page.label forKey:@"pageLabel"];
+    [(APPD).olInfo setObject:[NSNumber numberWithInteger:[doc indexForPage:page]] forKey:@"pageIndex"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:ol.destination.point.x] forKey:@"pointX"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:ol.destination.point.y] forKey:@"pointY"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.size.width] forKey:@"xMax"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.size.height] forKey:@"yMax"];
+}
+
+//ページ移動時
+- (void)pageChanged{
+    PDFDocument *doc = [_pdfView document];
+    if (!doc.outlineRoot||segOLViewMode.selectedSegment==1)
+        return;
+    //現在のページインデクスを取得
+    NSUInteger dPage = [doc indexForPage:[_pdfView currentDestination].page];
+    NSUInteger page = [doc indexForPage:[_pdfView currentPage]];
+    if (_olView.selectedRow >= 0) {
+        //現在のページと同ページのしおりが選択されている場合は選択行を変更しない
+        PDFOutline *selectedOL = [_olView itemAtRow:[_olView selectedRow]];
+        NSUInteger selectedRowPage = [doc indexForPage:selectedOL.destination.page];
+        if ((APPD).bRowClicked && selectedRowPage == dPage) {
+            return;
+        }
+    }
+    //アウトラインを走査してページをチェック
+    NSInteger newRow = -1;
+    NSUInteger olPg = 0;
+    for (int i = 0; i < [_olView numberOfRows]; i++){
+        //PDFアウトラインのページを取得
+        PDFOutline  *ol = [_olView itemAtRow: i];
+        olPg = [doc indexForPage:ol.destination.page];
+        if (olPg == page){
+            //現在のページとPDFアウトラインのページが一致した場合
+            newRow = i;
+            break;
+        }
+        if (olPg > page){
+            //現在のページよりPDFアウトラインのページが後ろの場合
+            newRow = i - 1;
+            break;
+        }
+    }
+    //現在のページが最終行のページより後ろの場合
+    if (olPg < page) {
+        newRow = [_olView numberOfRows]-1;
+    }
+    //該当行を選択
+    if (newRow >= 0||!olPg < page){
+        [_olView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+        [_olView scrollRowToVisible:newRow];
+    }
+    (APPD).bRowClicked = NO;
+}
+
+//コンテナ開閉で選択行を移行
+- (void)outlineViewItemDidExpand:(NSNotification *)notification{
+    [self pageChanged];
+}
+- (void)outlineViewItemDidCollapse:(NSNotification *)notification{
+    [self pageChanged];
 }
 
 #pragma mark - outline data control

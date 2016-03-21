@@ -48,6 +48,7 @@
 		B96EE7881C818A630063C7A2 /* goTop.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7821C818A630063C7A2 /* goTop.png */; };
 		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
+		B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3013A1C9FF93E00407100 /* MYOLView.m */; };
 		B9A8C96A1C916C10008A2DEB /* OLController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A8C9691C916C10008A2DEB /* OLController.m */; };
 		B9C585711C92963400243A38 /* BMPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5856F1C92963400243A38 /* BMPanelController.m */; };
 		B9C585741C92A3D100243A38 /* BMPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C585761C92A3D100243A38 /* BMPanelController.xib */; };
@@ -111,6 +112,8 @@
 		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
 		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
 		B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPDFView.m; sourceTree = "<group>"; };
+		B9A301391C9FF93E00407100 /* MYOLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOLView.h; sourceTree = "<group>"; };
+		B9A3013A1C9FF93E00407100 /* MYOLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYOLView.m; sourceTree = "<group>"; };
 		B9A8C9681C916C10008A2DEB /* OLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLController.h; sourceTree = "<group>"; };
 		B9A8C9691C916C10008A2DEB /* OLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLController.m; sourceTree = "<group>"; };
 		B9C5856E1C92963400243A38 /* BMPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPanelController.h; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 				B98CA6E01C7615A1008C3E89 /* MyWindowController.m */,
 				B9A8C9681C916C10008A2DEB /* OLController.h */,
 				B9A8C9691C916C10008A2DEB /* OLController.m */,
+				B9A301391C9FF93E00407100 /* MYOLView.h */,
+				B9A3013A1C9FF93E00407100 /* MYOLView.m */,
 				B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */,
 				B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */,
 			);
@@ -385,6 +390,7 @@
 				B9C585711C92963400243A38 /* BMPanelController.m in Sources */,
 				B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */,
 				B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */,
+				B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */,
 				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
 				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,
 				B951BD6B1C719DD0007B9359 /* Document.m in Sources */,

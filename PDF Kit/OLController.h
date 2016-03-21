@@ -11,6 +11,5 @@
 #import "MyPDFView.h"
 
 @interface OLController : NSObject <NSOutlineViewDataSource,NSOutlineViewDelegate>
-@property (weak) IBOutlet NSTextField *labelField;
-- (void)updateSelectedRowInfo;
+
 @end

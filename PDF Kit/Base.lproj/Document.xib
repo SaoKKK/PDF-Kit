@@ -147,7 +147,7 @@
                                                                 <rect key="frame" x="1" y="1" width="228" height="596"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
-                                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="z8M-9K-wjv" id="tjX-xW-I69">
+                                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="z8M-9K-wjv" id="tjX-xW-I69" customClass="MYOLView">
                                                                         <rect key="frame" x="0.0" y="0.0" width="228" height="0.0"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -225,6 +225,7 @@
                                                                             </tableColumn>
                                                                         </tableColumns>
                                                                         <connections>
+                                                                            <action selector="outlineViewRowClicked:" target="-1" id="2Pa-JQ-QEx"/>
                                                                             <outlet property="dataSource" destination="8OU-Qj-Z1W" id="mwu-IL-djb"/>
                                                                             <outlet property="delegate" destination="8OU-Qj-Z1W" id="ghl-lF-bCt"/>
                                                                         </connections>

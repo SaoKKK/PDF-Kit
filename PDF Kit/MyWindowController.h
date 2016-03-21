@@ -50,5 +50,6 @@
 - (void)getDestinationFromCurrentSelection;
 - (void)updateOL;
 - (void)newBMFromInfo;
+- (IBAction)outlineViewRowClicked:(id)sender;
 
 @end
