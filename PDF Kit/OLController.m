@@ -98,10 +98,24 @@
 //選択行変更時
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification{
     if ([_olView selectedRowIndexes].count == 1) {
+        PDFDocument *doc = [_pdfView document];
         PDFOutline *ol = [_olView itemAtRow:[_olView selectedRow]];
-        [_pdfView goToDestination:ol.destination];
-        //情報データを更新
-        [self updateOLInfo:ol];
+        NSUInteger olPg = [doc indexForPage:ol.destination.page];
+        NSUInteger lastOLPg;
+        NSUInteger page = [doc indexForPage:_pdfView.currentPage];
+        if ([_olView selectedRow] == [_olView numberOfRows]-1) {
+            //選択行が最終行であった場合＝しおりの該当範囲はしおりの移動先から最終ページまで
+            lastOLPg = [doc pageCount]-1;
+        } else {
+            //しおりの該当範囲はしおりの移動先から次のしおりの移動先まで
+            PDFOutline *nextOL = [_olView itemAtRow:[_olView selectedRow]+1];
+            lastOLPg = [doc indexForPage:nextOL.destination.page];
+        }
+        if (page < olPg || page > lastOLPg) {
+            [_pdfView goToDestination:ol.destination];
+            //情報データを更新
+            [self updateOLInfo:ol];
+        }
     }
     [self updateSelectedRowInfo];
 }
@@ -138,37 +152,26 @@
 //ページ移動時
 - (void)pageChanged{
     PDFDocument *doc = [_pdfView document];
-    NSUInteger newPage = [doc indexForPage:[_pdfView currentDestination].page];
     if (!doc.outlineRoot||segOLViewMode.selectedSegment==1)
         return;
     //現在のページインデクスを取得
-    if (_olView.selectedRow >= 0) {
-        //現在のページと同ページのしおりが選択されている場合は選択行を変更しない
-        PDFOutline *selectedOL = [_olView itemAtRow:[_olView selectedRow]];
-        NSUInteger selectedRowPage = [doc indexForPage:selectedOL.destination.page];
-        if (selectedRowPage == newPage) {
-            return;
-        }
-    }
+    NSUInteger newPage = [doc indexForPage:[_pdfView currentPage]];
     //アウトラインを走査してページをチェック
-    NSInteger newRow;
-    for (int i = 0; i < [_olView numberOfRows]; i++){
-        PDFOutline  *ol;
+    NSInteger newRow = -1;
+    for (NSInteger i = [_olView numberOfRows] - 1; i >= 0; i--){
+        PDFOutline  *ol = [_olView itemAtRow: i];
         //PDFアウトラインのページを取得
-        ol = (PDFOutline *)[_olView itemAtRow: i];
-        if ([doc indexForPage:[[ol destination] page]] == newPage){
-            //現在のページとPDFアウトラインのページが一致した場合
+        NSUInteger olPage = [doc indexForPage:ol.destination.page];
+        if (olPage <= newPage){
+            //PDFアウトラインのページが現在のページより前の場合
             newRow = i;
-            break;
-        } else if ([doc indexForPage:[[ol destination] page]] > newPage){
-            //現在のページよりPDFアウトラインのページが後ろの場合
-            newRow = i - 1;
             break;
         }
     }
     //該当行を選択
     if (newRow >= 0){
         [_olView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+        [_olView scrollRowToVisible:newRow];
     }
 }
 
