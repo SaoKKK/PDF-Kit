@@ -11,7 +11,7 @@
 #define APPD (AppDelegate *)[NSApp delegate]
 
 @implementation MYOLView{
-    DocWinC *winC;
+    MyWindowController *winC;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
