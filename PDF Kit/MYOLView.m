@@ -27,7 +27,7 @@
             [self selectNextRow:theEvent];
             break;
         case 126: //上矢印
-            if (self.selectedRow != 0) {
+            if (self.selectedRowIndexes.firstIndex != 0) {
                 //現在の選択が最初の行でなければ
                 if ([theEvent modifierFlags]==NSShiftKeyMask||[theEvent modifierFlags]==10617090) {
                     //上方向に選択を広げる
@@ -68,7 +68,7 @@
 }
 
 - (void)selectNextRow:(NSEvent *)theEvent{
-    if (self.selectedRow != self.numberOfRows-1) {
+    if (self.selectedRowIndexes.lastIndex != self.numberOfRows-1) {
         //現在の選択が最終行でなければ
         if ([theEvent modifierFlags]==NSShiftKeyMask||[theEvent modifierFlags]==10617090){
             //下方向に選択を広げる
