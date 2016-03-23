@@ -436,7 +436,7 @@
         newRow = [_olView numberOfRows]-1;
     }
     //該当行を選択
-    if (newRow >= 0||!olPg < page){
+    if (newRow >= 0||!(olPg < page)){
         [_olView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
         [_olView scrollRowToVisible:newRow];
     }

@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B907C4B71C848A440019F247 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B907C4B61C848A440019F247 /* sidebar.png */; };
+		B936FBC61CA26AE800B86A0B /* scroll.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBBF1CA26AE800B86A0B /* scroll.png */; };
+		B936FBC71CA26AE800B86A0B /* selectArea_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC01CA26AE800B86A0B /* selectArea_off.png */; };
+		B936FBC81CA26AE800B86A0B /* selectArea_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC11CA26AE800B86A0B /* selectArea_on.png */; };
+		B936FBC91CA26AE800B86A0B /* selectText_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC21CA26AE800B86A0B /* selectText_off.png */; };
+		B936FBCA1CA26AE800B86A0B /* selectText_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC31CA26AE800B86A0B /* selectText_on.png */; };
+		B936FBCB1CA26AE800B86A0B /* zoom_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC41CA26AE800B86A0B /* zoom_off.png */; };
+		B936FBCC1CA26AE800B86A0B /* zoom_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC51CA26AE800B86A0B /* zoom_on.png */; };
 		B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */; };
 		B93FD5751C86D45B00B68959 /* singleCon_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56D1C86D45B00B68959 /* singleCon_off.png */; };
 		B93FD5761C86D45B00B68959 /* singleCon_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56E1C86D45B00B68959 /* singleCon_on.png */; };
@@ -56,6 +63,13 @@
 
 /* Begin PBXFileReference section */
 		B907C4B61C848A440019F247 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = Graphics/sidebar.png; sourceTree = "<group>"; };
+		B936FBBF1CA26AE800B86A0B /* scroll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scroll.png; path = Graphics/scroll.png; sourceTree = "<group>"; };
+		B936FBC01CA26AE800B86A0B /* selectArea_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectArea_off.png; path = Graphics/selectArea_off.png; sourceTree = "<group>"; };
+		B936FBC11CA26AE800B86A0B /* selectArea_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectArea_on.png; path = Graphics/selectArea_on.png; sourceTree = "<group>"; };
+		B936FBC21CA26AE800B86A0B /* selectText_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectText_off.png; path = Graphics/selectText_off.png; sourceTree = "<group>"; };
+		B936FBC31CA26AE800B86A0B /* selectText_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectText_on.png; path = Graphics/selectText_on.png; sourceTree = "<group>"; };
+		B936FBC41CA26AE800B86A0B /* zoom_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoom_off.png; path = Graphics/zoom_off.png; sourceTree = "<group>"; };
+		B936FBC51CA26AE800B86A0B /* zoom_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoom_on.png; path = Graphics/zoom_on.png; sourceTree = "<group>"; };
 		B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCColoredTitleButton.h; sourceTree = "<group>"; };
 		B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCColoredTitleButton.m; sourceTree = "<group>"; };
 		B93FD56D1C86D45B00B68959 /* singleCon_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singleCon_off.png; path = Graphics/singleCon_off.png; sourceTree = "<group>"; };
@@ -183,6 +197,13 @@
 		B951BD7A1C719E0C007B9359 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B936FBBF1CA26AE800B86A0B /* scroll.png */,
+				B936FBC01CA26AE800B86A0B /* selectArea_off.png */,
+				B936FBC11CA26AE800B86A0B /* selectArea_on.png */,
+				B936FBC21CA26AE800B86A0B /* selectText_off.png */,
+				B936FBC31CA26AE800B86A0B /* selectText_on.png */,
+				B936FBC41CA26AE800B86A0B /* zoom_off.png */,
+				B936FBC51CA26AE800B86A0B /* zoom_on.png */,
 				B93FD5A41C872C0A00B68959 /* fitToWindow.png */,
 				B93FD5A51C872C0A00B68959 /* zoomIn.png */,
 				B93FD5A61C872C0A00B68959 /* zoomOut.png */,
@@ -347,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B951BD831C71A920007B9359 /* MergePDFWin.xib in Resources */,
+				B936FBC81CA26AE800B86A0B /* selectArea_on.png in Resources */,
 				B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */,
 				B96EE7861C818A630063C7A2 /* goNext.png in Resources */,
 				B93FD5A81C872C0A00B68959 /* zoomIn.png in Resources */,
@@ -355,10 +377,14 @@
 				B951BD931C71C2A5007B9359 /* btnRestore.png in Resources */,
 				B951BD701C719DD0007B9359 /* Assets.xcassets in Resources */,
 				B951BD6E1C719DD0007B9359 /* Document.xib in Resources */,
+				B936FBCB1CA26AE800B86A0B /* zoom_off.png in Resources */,
 				B93FD5771C86D45B00B68959 /* singlePage_off.png in Resources */,
+				B936FBC91CA26AE800B86A0B /* selectText_off.png in Resources */,
 				B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */,
 				B93FD57A1C86D45B00B68959 /* twoCont_on.png in Resources */,
+				B936FBC61CA26AE800B86A0B /* scroll.png in Resources */,
 				B93FD5791C86D45B00B68959 /* twoCont_off.png in Resources */,
+				B936FBCC1CA26AE800B86A0B /* zoom_on.png in Resources */,
 				B93FD5A91C872C0A00B68959 /* zoomOut.png in Resources */,
 				B93FD57C1C86D45B00B68959 /* twoUp_on.png in Resources */,
 				B951BD921C71C2A5007B9359 /* btnRemove.png in Resources */,
@@ -376,7 +402,9 @@
 				B93FD5A71C872C0A00B68959 /* fitToWindow.png in Resources */,
 				B96EE7841C818A630063C7A2 /* goForward.png in Resources */,
 				B96EE7831C818A630063C7A2 /* goBack.png in Resources */,
+				B936FBCA1CA26AE800B86A0B /* selectText_on.png in Resources */,
 				B93FD57B1C86D45B00B68959 /* twoUp_off.png in Resources */,
+				B936FBC71CA26AE800B86A0B /* selectArea_off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
