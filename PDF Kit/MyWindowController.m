@@ -21,6 +21,8 @@
 
 @implementation MyWindowController
 
+@synthesize _pdfView,_splitPanel;
+
 #pragma mark - Window Controller Method
 
 - (void)windowDidLoad {
@@ -263,6 +265,15 @@
     [_pdfView setDocument:pdf];
     [self initWindow];
     [self.document updateChangeCount:NSChangeDone];
+}
+
+#pragma mark - Split document
+
+- (IBAction)mnSplitPDF:(id)sender{
+    _splitPanel = [[SplitPanel alloc]initWithWindowNibName:@"SplitPanel"];
+    [self.window beginSheet:_splitPanel.window completionHandler:^(NSModalResponse returnCode){
+        _splitPanel = nil;
+    }];
 }
 
 #pragma mark - search in document

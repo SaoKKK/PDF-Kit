@@ -55,3 +55,14 @@
 "PointX_msg" = "Point x of destination is empty.";
 "PointY_msg" = "Point y of destination is empty.";
 "EmptyErr_info" = "This field value cannot be empty. Please input rightly.";
+
+//for split document
+"Choose" = "Choose";
+"ChooseFolder" = "Choose folder.";
+"fileNameAlertMsg" = "already exists. Do you want to replace it?";
+"fileNameAlertInfo" = "A file or folder with the same name already exists. Replacing it will overwrite its current contents.";
+"Suspend" = "Suspend the Processing";
+"Replace" = "Replace";
+"PageRangeMsg" = "Page Range Error:";
+"PageRangeInfo" = "The value of the page range is not correct.";
+

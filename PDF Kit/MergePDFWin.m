@@ -19,7 +19,6 @@
     IBOutlet NSWindow *errSheet;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *progressBar;
-    NSRect winFrame; //ウインドウ位置保持用
 }
 
 @end
@@ -605,7 +604,7 @@
         NSIndexSet *pageRange = [indexes objectAtIndex:i];
         NSUInteger index = [pageRange firstIndex];
         while(index != NSNotFound) {
-            //PDFページ挿入終了ノーティフィケーションを送信
+            //PDF挿入過程ノーティフィケーションを送信
             outputPDFPageIndex++;
             [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndPageInsert" object:self userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:outputPDFPageIndex] forKey:@"page"]];
             PDFPage *page = [inputDoc pageAtIndex:index - 1];
@@ -633,8 +632,6 @@
     }
     //PDF作成終了ノーティフィケーションを送信
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndCreate" object:self];
-    //一時ファイルを保存
-    
     NSDocumentController *docC = [NSDocumentController sharedDocumentController];
     [docC openUntitledDocumentAndDisplay:YES error:nil];
     MyWindowController *newWC= [docC.currentDocument.windowControllers objectAtIndex:0];

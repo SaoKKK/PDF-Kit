@@ -53,6 +53,9 @@
 		B96EE7861C818A630063C7A2 /* goNext.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7801C818A630063C7A2 /* goNext.png */; };
 		B96EE7871C818A630063C7A2 /* goPrev.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7811C818A630063C7A2 /* goPrev.png */; };
 		B96EE7881C818A630063C7A2 /* goTop.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE7821C818A630063C7A2 /* goTop.png */; };
+		B97F40341CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F40331CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m */; };
+		B97F40381CA5FCE0006CCEA4 /* SplitPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F40361CA5FCE0006CCEA4 /* SplitPanel.m */; };
+		B97F403B1CA61E27006CCEA4 /* SplitPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97F403D1CA61E27006CCEA4 /* SplitPanel.xib */; };
 		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
 		B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3013A1C9FF93E00407100 /* MYOLView.m */; };
@@ -122,6 +125,12 @@
 		B96EE7801C818A630063C7A2 /* goNext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goNext.png; path = Graphics/goNext.png; sourceTree = "<group>"; };
 		B96EE7811C818A630063C7A2 /* goPrev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goPrev.png; path = Graphics/goPrev.png; sourceTree = "<group>"; };
 		B96EE7821C818A630063C7A2 /* goTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goTop.png; path = Graphics/goTop.png; sourceTree = "<group>"; };
+		B97F40321CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+SynchronousSheet.h"; sourceTree = "<group>"; };
+		B97F40331CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+SynchronousSheet.m"; sourceTree = "<group>"; };
+		B97F40351CA5FCE0006CCEA4 /* SplitPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitPanel.h; sourceTree = "<group>"; };
+		B97F40361CA5FCE0006CCEA4 /* SplitPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitPanel.m; sourceTree = "<group>"; };
+		B97F403C1CA61E27006CCEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SplitPanel.xib; sourceTree = "<group>"; };
+		B97F403F1CA61E36006CCEA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SplitPanel.strings; sourceTree = "<group>"; };
 		B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
 		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
 		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
@@ -173,6 +182,7 @@
 				B951BD711C719DD0007B9359 /* MainMenu.xib */,
 				B98CA6DE1C761548008C3E89 /* Document */,
 				B9C585731C92965500243A38 /* BMPanel */,
+				B97F403A1CA5FCEE006CCEA4 /* SplitPanel */,
 				B951BD7B1C719E15007B9359 /* Merge PDF Win */,
 				B951BD6F1C719DD0007B9359 /* Assets.xcassets */,
 				B951BD961C71C53B007B9359 /* Custom Class */,
@@ -247,6 +257,8 @@
 		B951BD961C71C53B007B9359 /* Custom Class */ = {
 			isa = PBXGroup;
 			children = (
+				B97F40321CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.h */,
+				B97F40331CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m */,
 				B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */,
 				B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */,
 				B951BD971C71C58D007B9359 /* CCBackGroundView.h */,
@@ -279,6 +291,16 @@
 				B951BDA21C71C759007B9359 /* PDFLst.array */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		B97F403A1CA5FCEE006CCEA4 /* SplitPanel */ = {
+			isa = PBXGroup;
+			children = (
+				B97F403D1CA61E27006CCEA4 /* SplitPanel.xib */,
+				B97F40351CA5FCE0006CCEA4 /* SplitPanel.h */,
+				B97F40361CA5FCE0006CCEA4 /* SplitPanel.m */,
+			);
+			name = SplitPanel;
 			sourceTree = "<group>";
 		};
 		B98CA6DE1C761548008C3E89 /* Document */ = {
@@ -379,6 +401,7 @@
 				B951BD6E1C719DD0007B9359 /* Document.xib in Resources */,
 				B936FBCB1CA26AE800B86A0B /* zoom_off.png in Resources */,
 				B93FD5771C86D45B00B68959 /* singlePage_off.png in Resources */,
+				B97F403B1CA61E27006CCEA4 /* SplitPanel.xib in Resources */,
 				B936FBC91CA26AE800B86A0B /* selectText_off.png in Resources */,
 				B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */,
 				B93FD57A1C86D45B00B68959 /* twoCont_on.png in Resources */,
@@ -418,6 +441,8 @@
 				B9C585711C92963400243A38 /* BMPanelController.m in Sources */,
 				B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */,
 				B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */,
+				B97F40381CA5FCE0006CCEA4 /* SplitPanel.m in Sources */,
+				B97F40341CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m in Sources */,
 				B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */,
 				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
 				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,
@@ -477,6 +502,15 @@
 				B95DD1E11C7C606C002F1936 /* ja */,
 			);
 			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		B97F403D1CA61E27006CCEA4 /* SplitPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B97F403C1CA61E27006CCEA4 /* Base */,
+				B97F403F1CA61E36006CCEA4 /* ja */,
+			);
+			name = SplitPanel.xib;
 			sourceTree = "<group>";
 		};
 		B9C585761C92A3D100243A38 /* BMPanelController.xib */ = {

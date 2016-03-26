@@ -9,14 +9,15 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 #import "BMPanelController.h"
+#import "SplitPanel.h"
 
 @class MyPDFView;
+@class SplitPanel;
 
 @interface MyWindowController : NSWindowController<NSWindowDelegate,NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
     IBOutlet NSWindow *window;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *savingProgBar;
-    IBOutlet MyPDFView *_pdfView;
     IBOutlet PDFThumbnailView *thumbView;
     IBOutlet NSButton *btnGoToFirstPage;
     IBOutlet NSButton *btnGoToPrevPage;
@@ -43,6 +44,8 @@
     NSMutableArray *searchResult; //検索結果保持用
     NSUInteger selectedViewMode; //指定ビューモード保持用
 }
+@property (strong) IBOutlet MyPDFView *_pdfView;
+@property (strong) SplitPanel *_splitPanel;
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
 - (NSData *)pdfViewDocumentData;

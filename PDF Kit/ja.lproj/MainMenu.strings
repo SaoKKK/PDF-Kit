@@ -411,8 +411,11 @@
 /* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "z6F-FW-3nz"; */
 "z6F-FW-3nz.title" = "Show Substitutions";
 
-//ファイルメニュー MergePDF.title;
+//menu PDF
+//menu item "Merge PDF"
 "T87-cJ-ES5.title" = "PDFを結合...";
+//menu item "Split PDF"
+"58g-Vh-TrJ.title" = "PDFを分割...";
 
 //Status Dialogメッセージ"Failed to read the file."
 "EAL-Qs-VHJ.title" = "ファイルの読み込みに失敗しました。";

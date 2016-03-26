@@ -1,0 +1,30 @@
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Window";
+
+/* Class = "NSTextFieldCell"; placeholderString = "e.g. 1-2,5,10"; ObjectID = "HQO-Mj-OHD"; */
+"HQO-Mj-OHD.placeholderString" = "e.g. 1-2,5,10";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "IDy-VY-0pR"; */
+"IDy-VY-0pR.title" = "Window";
+
+/* Class = "NSTextFieldCell"; title = "Splitting PDF document..."; ObjectID = "KEc-Ii-hZE"; */
+"KEc-Ii-hZE.title" = "PDFファイルを分割中...";
+
+/* Class = "NSButtonCell"; title = "Split into Single Pages"; ObjectID = "QlF-W3-HVS"; */
+"QlF-W3-HVS.title" = "単ページファイルに分割";
+
+/* Class = "NSButtonCell"; title = "Extract Specified Pages"; ObjectID = "TKE-B2-1LK"; */
+"TKE-B2-1LK.title" = "指定ページを抽出";
+
+/* Class = "NSButtonCell"; title = "Split PDF"; ObjectID = "ayE-Em-6P9"; */
+"ayE-Em-6P9.title" = "PDFを分割";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "e4P-fG-R61"; */
+"e4P-fG-R61.title" = "キャンセル";
+
+/* Class = "NSButtonCell"; title = "Extract Specified Pages"; ObjectID = "oab-wv-YrS"; */
+"oab-wv-YrS.title" = "指定ページを抽出";
+
+/* Class = "NSButtonCell"; title = "Save to..."; ObjectID = "tPo-me-SLt"; */
+"tPo-me-SLt.title" = "保存先を変更する...";
