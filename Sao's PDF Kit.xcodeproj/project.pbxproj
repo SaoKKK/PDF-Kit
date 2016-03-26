@@ -56,6 +56,7 @@
 		B97F40341CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F40331CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m */; };
 		B97F40381CA5FCE0006CCEA4 /* SplitPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F40361CA5FCE0006CCEA4 /* SplitPanel.m */; };
 		B97F403B1CA61E27006CCEA4 /* SplitPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97F403D1CA61E27006CCEA4 /* SplitPanel.xib */; };
+		B97F40441CA65448006CCEA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F40431CA65448006CCEA4 /* QuartzCore.framework */; };
 		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
 		B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3013A1C9FF93E00407100 /* MYOLView.m */; };
@@ -131,6 +132,7 @@
 		B97F40361CA5FCE0006CCEA4 /* SplitPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitPanel.m; sourceTree = "<group>"; };
 		B97F403C1CA61E27006CCEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SplitPanel.xib; sourceTree = "<group>"; };
 		B97F403F1CA61E36006CCEA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SplitPanel.strings; sourceTree = "<group>"; };
+		B97F40431CA65448006CCEA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
 		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
 		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B97F40441CA65448006CCEA4 /* QuartzCore.framework in Frameworks */,
 				B951BD891C71C1FE007B9359 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +283,7 @@
 		B951BD9E1C71C6C6007B9359 /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B97F40431CA65448006CCEA4 /* QuartzCore.framework */,
 				B951BD881C71C1FE007B9359 /* Quartz.framework */,
 			);
 			name = "Linked Frameworks";

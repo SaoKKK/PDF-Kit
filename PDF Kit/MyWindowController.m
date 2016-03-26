@@ -98,6 +98,11 @@
 #pragma mark - setup notification
 
 - (void)setupNotification{
+    //ドキュメントが更新された
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSUndoManagerCheckpointNotification object:[self undoManager] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        //ドキュメント情報を更新
+        [self updateDocInfo];
+    }];
     //ドキュメント保存開始
     [[NSNotificationCenter defaultCenter] addObserverForName:@"PDFDidBeginDocumentWrite" object:[_pdfView document] queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         double pgCnt = [[_pdfView document] pageCount];
