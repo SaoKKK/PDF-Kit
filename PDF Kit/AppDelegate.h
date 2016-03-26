@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "BMPanelController.h"
 
+@class BMPanelController;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (strong) BMPanelController *_bmPanelC;

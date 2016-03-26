@@ -65,4 +65,7 @@
 "Replace" = "Replace";
 "PageRangeMsg" = "Page Range Error:";
 "PageRangeInfo" = "The value of the page range is not correct.";
+"PageEmpty" = "Page range is not inputed.";
+"CharError" = "The specified page range includes inappropriate characters.";
+"AllPages" = "The application cannot remove all pages.";
 

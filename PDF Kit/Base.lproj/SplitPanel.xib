@@ -27,7 +27,7 @@
                 <subviews>
                     <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="T3f-yi-hlH">
                         <rect key="frame" x="20" y="60" width="143" height="75"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         <size key="cellSize" width="143" height="20"/>
                         <size key="intercellSpacing" width="0.0" height="35"/>

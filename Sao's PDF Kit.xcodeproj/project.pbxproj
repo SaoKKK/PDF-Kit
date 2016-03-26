@@ -57,6 +57,8 @@
 		B97F40381CA5FCE0006CCEA4 /* SplitPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F40361CA5FCE0006CCEA4 /* SplitPanel.m */; };
 		B97F403B1CA61E27006CCEA4 /* SplitPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97F403D1CA61E27006CCEA4 /* SplitPanel.xib */; };
 		B97F40441CA65448006CCEA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F40431CA65448006CCEA4 /* QuartzCore.framework */; };
+		B97F40481CA666FA006CCEA4 /* RemovePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F40461CA666FA006CCEA4 /* RemovePanel.m */; };
+		B97F404B1CA66E1A006CCEA4 /* RemovePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97F404D1CA66E1A006CCEA4 /* RemovePanel.xib */; };
 		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
 		B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3013A1C9FF93E00407100 /* MYOLView.m */; };
@@ -133,6 +135,10 @@
 		B97F403C1CA61E27006CCEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SplitPanel.xib; sourceTree = "<group>"; };
 		B97F403F1CA61E36006CCEA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SplitPanel.strings; sourceTree = "<group>"; };
 		B97F40431CA65448006CCEA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B97F40451CA666FA006CCEA4 /* RemovePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemovePanel.h; sourceTree = "<group>"; };
+		B97F40461CA666FA006CCEA4 /* RemovePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemovePanel.m; sourceTree = "<group>"; };
+		B97F404C1CA66E1A006CCEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RemovePanel.xib; sourceTree = "<group>"; };
+		B97F404F1CA66E2F006CCEA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RemovePanel.strings; sourceTree = "<group>"; };
 		B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
 		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
 		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				B98CA6DE1C761548008C3E89 /* Document */,
 				B9C585731C92965500243A38 /* BMPanel */,
 				B97F403A1CA5FCEE006CCEA4 /* SplitPanel */,
+				B97F404A1CA66708006CCEA4 /* RemovePanel */,
 				B951BD7B1C719E15007B9359 /* Merge PDF Win */,
 				B951BD6F1C719DD0007B9359 /* Assets.xcassets */,
 				B951BD961C71C53B007B9359 /* Custom Class */,
@@ -307,6 +314,16 @@
 			name = SplitPanel;
 			sourceTree = "<group>";
 		};
+		B97F404A1CA66708006CCEA4 /* RemovePanel */ = {
+			isa = PBXGroup;
+			children = (
+				B97F404D1CA66E1A006CCEA4 /* RemovePanel.xib */,
+				B97F40451CA666FA006CCEA4 /* RemovePanel.h */,
+				B97F40461CA666FA006CCEA4 /* RemovePanel.m */,
+			);
+			name = RemovePanel;
+			sourceTree = "<group>";
+		};
 		B98CA6DE1C761548008C3E89 /* Document */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +424,7 @@
 				B93FD5771C86D45B00B68959 /* singlePage_off.png in Resources */,
 				B97F403B1CA61E27006CCEA4 /* SplitPanel.xib in Resources */,
 				B936FBC91CA26AE800B86A0B /* selectText_off.png in Resources */,
+				B97F404B1CA66E1A006CCEA4 /* RemovePanel.xib in Resources */,
 				B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */,
 				B93FD57A1C86D45B00B68959 /* twoCont_on.png in Resources */,
 				B936FBC61CA26AE800B86A0B /* scroll.png in Resources */,
@@ -448,6 +466,7 @@
 				B97F40381CA5FCE0006CCEA4 /* SplitPanel.m in Sources */,
 				B97F40341CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m in Sources */,
 				B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */,
+				B97F40481CA666FA006CCEA4 /* RemovePanel.m in Sources */,
 				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
 				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,
 				B951BD6B1C719DD0007B9359 /* Document.m in Sources */,
@@ -515,6 +534,15 @@
 				B97F403F1CA61E36006CCEA4 /* ja */,
 			);
 			name = SplitPanel.xib;
+			sourceTree = "<group>";
+		};
+		B97F404D1CA66E1A006CCEA4 /* RemovePanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B97F404C1CA66E1A006CCEA4 /* Base */,
+				B97F404F1CA66E2F006CCEA4 /* ja */,
+			);
+			name = RemovePanel.xib;
 			sourceTree = "<group>";
 		};
 		B9C585761C92A3D100243A38 /* BMPanelController.xib */ = {

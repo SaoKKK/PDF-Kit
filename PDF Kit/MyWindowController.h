@@ -10,9 +10,13 @@
 #import <Quartz/Quartz.h>
 #import "BMPanelController.h"
 #import "SplitPanel.h"
+#import "RemovePanel.h"
+#import "MYOLView.h"
 
 @class MyPDFView;
 @class SplitPanel;
+@class RemovePanel;
+@class MYOLView;
 
 @interface MyWindowController : NSWindowController<NSWindowDelegate,NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
     IBOutlet NSWindow *window;
@@ -30,7 +34,6 @@
     IBOutlet NSNumberFormatter *txtPageFormatter;
     IBOutlet NSSegmentedControl *segZoom;
     IBOutlet NSMatrix *matrixDisplayMode;
-    IBOutlet NSOutlineView *_olView;
     IBOutlet NSSegmentedControl *segOLViewMode;
     IBOutlet NSTableView *_tbView;
     IBOutlet NSSplitView *_splitView;
@@ -45,7 +48,9 @@
     NSUInteger selectedViewMode; //指定ビューモード保持用
 }
 @property (strong) IBOutlet MyPDFView *_pdfView;
+@property (strong) MYOLView *_olView;
 @property (strong) SplitPanel *_splitPanel;
+@property (strong) RemovePanel *_removePanel;
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
 - (NSData *)pdfViewDocumentData;
@@ -54,5 +59,5 @@
 - (void)updateOL;
 - (void)newBMFromInfo;
 - (IBAction)outlineViewRowClicked:(id)sender;
-
+- (void)updateDocInfo;
 @end

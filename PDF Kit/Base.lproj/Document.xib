@@ -400,7 +400,7 @@
                     <textField verticalHuggingPriority="750" id="dJg-lT-Mty">
                         <rect key="frame" x="53" y="3" width="40" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="UVz-HE-yT0">
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="UVz-HE-yT0">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="j1P-jD-Rzi">
                                 <real key="minimum" value="1"/>
                             </numberFormatter>
@@ -416,6 +416,7 @@
                         </textFieldCell>
                         <connections>
                             <action selector="txtJumpPage:" target="-2" id="oKX-tH-cb9"/>
+                            <binding destination="gZX-GQ-Agp" name="maxValue" keyPath="selection.totalPage" id="0Tu-8M-foB"/>
                         </connections>
                     </textField>
                     <textField focusRingType="none" verticalHuggingPriority="750" id="MFW-e9-CP7">

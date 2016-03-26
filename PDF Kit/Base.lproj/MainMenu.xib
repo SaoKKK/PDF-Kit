@@ -400,8 +400,11 @@ CA
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="PDF" id="qvG-SR-Z1K">
                         <items>
-                            <menuItem title="Item 1" id="TcW-h6-RTs">
+                            <menuItem title="Remove Pages by Specifying the Range..." id="TcW-h6-RTs">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="mnRemovePage:" target="-1" id="lz5-S5-VD2"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="zYm-MT-mhJ"/>
                             <menuItem title="Merge PDF..." id="T87-cJ-ES5">
@@ -416,7 +419,8 @@ CA
                                     <action selector="mnSplitPDF:" target="-1" id="uHP-jE-VX5"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Item 3" id="J73-3e-g9E">
+                            <menuItem isSeparatorItem="YES" id="okK-PO-K4x"/>
+                            <menuItem title="Export Texts..." id="J73-3e-g9E">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                         </items>

@@ -21,7 +21,7 @@
 
 @implementation MyWindowController
 
-@synthesize _pdfView,_splitPanel;
+@synthesize _pdfView,_splitPanel,_removePanel,_olView;
 
 #pragma mark - Window Controller Method
 
@@ -85,7 +85,7 @@
 #pragma mark - document save/open support
 
 - (NSData *)pdfViewDocumentData{
-    return [[_pdfView document]dataRepresentation];
+    return [_pdfView.document dataRepresentation];
 }
 
 - (void)revertDocumentToSaved{
@@ -278,6 +278,15 @@
     _splitPanel = [[SplitPanel alloc]initWithWindowNibName:@"SplitPanel"];
     [self.window beginSheet:_splitPanel.window completionHandler:^(NSModalResponse returnCode){
         _splitPanel = nil;
+    }];
+}
+
+#pragma mark - Split document
+
+- (IBAction)mnRemovePage:(id)sender{
+    _removePanel = [[RemovePanel alloc]initWithWindowNibName:@"RemovePanel"];
+    [self.window beginSheet:_removePanel.window completionHandler:^(NSModalResponse returnCode){
+        _removePanel = nil;
     }];
 }
 
@@ -687,12 +696,9 @@
 }
 
 - (IBAction)aa:(id)sender{
-    PDFDocument *doc = [_pdfView document];
-    for (int i = 0; i < doc.pageCount; i++){
-        PDFPage *page = [doc pageAtIndex:i];
-        NSLog(@"label=%@",page.label);
-        NSLog(@"index=%li",[doc indexForPage:page]);
-    }
+    [_pdfView.document writeToFile:@"/Users/kounosaori/Desktop/aaa.pdf"];
+    PDFDocument *doc = [[PDFDocument alloc]initWithURL:[NSURL fileURLWithPath:@"/Users/kounosaori/Desktop/aaa.pdf"]];
+    [_pdfView setDocument:doc];
 }
 
 - (IBAction)txtJumpPage:(id)sender {

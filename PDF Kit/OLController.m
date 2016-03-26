@@ -13,7 +13,7 @@
 #define MyPBoardType @"MyPBoardType"
 
 @implementation OLController{
-    IBOutlet NSOutlineView *_olView;
+    IBOutlet MYOLView *_olView;
     IBOutlet MyPDFView *_pdfView;
     IBOutlet NSSegmentedControl *segOLViewMode;
     NSArray *dragOLArray; //ドラッグ中のしおりデータを保持
