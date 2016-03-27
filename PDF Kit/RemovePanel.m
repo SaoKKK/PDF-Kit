@@ -88,11 +88,14 @@
     index = [pageRange lastIndex];
     while(index != NSNotFound) {
         //しおりがある場合はインデクスを修正
-        
+        if (doc.outlineRoot) {
+            [self getAllChildren:doc.outlineRoot];
+        }
         [doc removePageAtIndex:index-1];
         index = [pageRange indexLessThanIndex:index];
     }
     [docWinC._pdfView setDocument:doc];
+    [docWinC._pdfView.document setDelegate:docWinC];
     [docWinC._olView reloadData];
     [docWinC._olView expandItem:nil expandChildren:YES];
     [docWinC updateDocInfo];
@@ -108,7 +111,7 @@
     }
 }
 
-//移動先に消えるページが設定されていた場合は移動先をリセット
+//移動先に消えるページが設定されていた場合は移動先をリセット（インデクス0にジャンプするように）
 - (void)resetOLPage:(PDFOutline*)ol{
     PDFDestination *dest = ol.destination;
     NSUInteger pageIndex = [doc indexForPage:dest.page];

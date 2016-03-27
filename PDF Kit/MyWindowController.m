@@ -21,7 +21,7 @@
 
 @implementation MyWindowController
 
-@synthesize _pdfView,_splitPanel,_removePanel,_olView;
+@synthesize _pdfView,thumbView,_splitPanel,_removePanel,_olView;
 
 #pragma mark - Window Controller Method
 
@@ -685,20 +685,19 @@
 #pragma mark - actions
 
 - (IBAction)test:(id)sender {
-    PDFPage *page = _pdfView.currentPage;
-    //ページ表示に必要なNSView座標系でのサイズ
-    NSRect rect = [page boundsForBox:kPDFDisplayBoxArtBox];
-    NSSize size = [_pdfView rowSizeForPage:page];
-    //NSView座標系のpointをPDF座標系のpointに変換
-    NSPoint point = [_pdfView convertPoint:NSMakePoint(size.width, size.height) toPage:page];
-    NSLog(@"%f,%f",point.x,point.y);
-    NSLog(@"%f,%f,%f,%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
+    PDFDocument *doc = [_pdfView document];
+    for (int i=0; i<doc.pageCount; i++) {
+        PDFPage *page = [doc pageAtIndex:i];
+        NSString *label = page.label;
+        NSLog(@"%@",label);
+    }
 }
 
 - (IBAction)aa:(id)sender{
-    [_pdfView.document writeToFile:@"/Users/kounosaori/Desktop/aaa.pdf"];
-    PDFDocument *doc = [[PDFDocument alloc]initWithURL:[NSURL fileURLWithPath:@"/Users/kounosaori/Desktop/aaa.pdf"]];
-    [_pdfView setDocument:doc];
+    NSRect rect = thumbView.bounds;
+    NSLog(@"%f,%f,%f,%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
+    NSRect rect2 = thumbView.frame;
+    NSLog(@"%f,%f,%f,%f",rect2.origin.x,rect2.origin.y,rect2.size.width,rect2.size.height);
 }
 
 - (IBAction)txtJumpPage:(id)sender {

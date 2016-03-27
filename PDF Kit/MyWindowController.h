@@ -22,7 +22,6 @@
     IBOutlet NSWindow *window;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *savingProgBar;
-    IBOutlet PDFThumbnailView *thumbView;
     IBOutlet NSButton *btnGoToFirstPage;
     IBOutlet NSButton *btnGoToPrevPage;
     IBOutlet NSButton *btnGoToNextPage;
@@ -49,6 +48,7 @@
 }
 @property (strong) IBOutlet MyPDFView *_pdfView;
 @property (strong) MYOLView *_olView;
+@property (strong) IBOutlet PDFThumbnailView *thumbView;
 @property (strong) SplitPanel *_splitPanel;
 @property (strong) RemovePanel *_removePanel;
 
