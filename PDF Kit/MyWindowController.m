@@ -685,12 +685,20 @@
 #pragma mark - actions
 
 - (IBAction)test:(id)sender {
+    NSRect rect = _pdfView.bounds;
+    NSLog(@"pdfview-%f,%f,%f,%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
+    rect = _pdfView.documentView.bounds;
+    NSLog(@"documentview-%f,%f,%f,%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
     PDFDocument *doc = [_pdfView document];
-    for (int i=0; i<doc.pageCount; i++) {
-        PDFPage *page = [doc pageAtIndex:i];
-        NSString *label = page.label;
-        NSLog(@"%@",label);
-    }
+    PDFPage *page = [_pdfView currentPage];
+    NSSize size = [_pdfView rowSizeForPage:page];
+    NSLog(@"rowsize-%f,%f",size.width,size.height);
+    rect = _pdfView.superview.bounds;
+    NSLog(@"super-%f,%f,%f,%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
+    [doc removePageAtIndex:4];
+    [doc removePageAtIndex:3];
+    [doc removePageAtIndex:2];
+    [_pdfView layoutDocumentView];
 }
 
 - (IBAction)aa:(id)sender{

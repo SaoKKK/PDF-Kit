@@ -24,7 +24,7 @@
 
 - (IBAction)pshRemove:(id)sender {
     MyWindowController *docWinC = self.window.sheetParent.windowController;
-    doc = [[docWinC._pdfView document]copy];
+    doc = [docWinC._pdfView document];
     NSUInteger totalPage = doc.pageCount;
     //ページ範囲をインデックス・セットに変換
     NSString *indexStr = txtPgRange.stringValue;
@@ -85,6 +85,7 @@
         return;
     }
     //削除開始
+    [docWinC.thumbView setPDFView:nil]; //インデクスリセットのため一度切り離す
     index = [pageRange lastIndex];
     while(index != NSNotFound) {
         //しおりがある場合はインデクスを修正
@@ -94,8 +95,8 @@
         [doc removePageAtIndex:index-1];
         index = [pageRange indexLessThanIndex:index];
     }
-    [docWinC._pdfView setDocument:doc];
-    [docWinC._pdfView.document setDelegate:docWinC];
+    [docWinC.thumbView setPDFView:docWinC._pdfView];
+    [docWinC._pdfView layoutDocumentView]; //ビューのスクロールサイズをリセット
     [docWinC._olView reloadData];
     [docWinC._olView expandItem:nil expandChildren:YES];
     [docWinC updateDocInfo];
