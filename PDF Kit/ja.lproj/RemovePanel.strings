@@ -10,3 +10,6 @@
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "rHm-GD-fZB"; */
 "rHm-GD-fZB.title" = "キャンセル";
+
+"Bob-TB-Mi9.title" = "昇順でページインデクスを振り直す";
+"lfV-HC-Uje.ibShadowedToolTip" = "すべてのページに昇順でインデクスを振り直します。カスタムラベルもリセットされることに注意してください。";

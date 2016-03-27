@@ -14,6 +14,7 @@
 
 @implementation RemovePanel{
     IBOutlet NSTextField *txtPgRange;
+    IBOutlet NSButton *chkReNumber;
     PDFDocument *doc;
     NSUInteger index;
 }
@@ -94,6 +95,13 @@
         }
         [doc removePageAtIndex:index-1];
         index = [pageRange indexLessThanIndex:index];
+    }
+    //インデクスを振り直す
+    if (chkReNumber.state){
+        for (int i=0; i < doc.pageCount; i++){
+            PDFPage *page = [doc pageAtIndex:i];
+            [page setValue:[NSString stringWithFormat:@"%d",i+1] forKey:@"label"];
+        }
     }
     [docWinC.thumbView setPDFView:docWinC._pdfView];
     [docWinC._pdfView layoutDocumentView]; //ビューのスクロールサイズをリセット

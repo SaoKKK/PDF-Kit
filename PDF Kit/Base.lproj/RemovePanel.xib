@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RemovePanel">
             <connections>
+                <outlet property="chkReNumber" destination="lfV-HC-Uje" id="46q-N9-zf2"/>
                 <outlet property="txtPgRange" destination="EZd-Ar-Jot" id="ZhL-w2-Ofl"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -16,14 +17,14 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="350" height="95"/>
+            <rect key="contentRect" x="196" y="240" width="350" height="124"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="350" height="95"/>
+                <rect key="frame" x="0.0" y="0.0" width="350" height="124"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" id="EZd-Ar-Jot">
-                        <rect key="frame" x="20" y="56" width="310" height="19"/>
+                        <rect key="frame" x="20" y="85" width="310" height="19"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="e.g. 1-2,5,10" drawsBackground="YES" id="aq5-EW-Nyo">
                             <font key="font" metaFont="smallSystem"/>
@@ -34,6 +35,14 @@
                             </allowedInputSourceLocales>
                         </textFieldCell>
                     </textField>
+                    <button toolTip="re-number of all pages in ascending order. Custom labels will be also reset." id="lfV-HC-Uje">
+                        <rect key="frame" x="17" y="60" width="244" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Re-number of Pages in Order Ascending" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="Bob-TB-Mi9">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                    </button>
                     <button verticalHuggingPriority="750" id="I5e-vr-jwh">
                         <rect key="frame" x="215" y="14" width="120" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -64,7 +73,7 @@ Gw
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="238" y="208.5"/>
+            <point key="canvasLocation" x="238" y="223"/>
         </window>
     </objects>
 </document>
