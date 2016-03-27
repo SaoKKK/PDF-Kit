@@ -686,7 +686,6 @@
 
 - (IBAction)test:(id)sender {
     PDFDocument *doc = [_pdfView document];
-    [doc removePageAtIndex:4];
     [doc removePageAtIndex:3];
     [doc removePageAtIndex:2];
     for (int i=0; i < doc.pageCount; i++){
