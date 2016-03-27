@@ -65,6 +65,12 @@
 		B9A8C96A1C916C10008A2DEB /* OLController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A8C9691C916C10008A2DEB /* OLController.m */; };
 		B9C585711C92963400243A38 /* BMPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5856F1C92963400243A38 /* BMPanelController.m */; };
 		B9C585741C92A3D100243A38 /* BMPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C585761C92A3D100243A38 /* BMPanelController.xib */; };
+		B9F1E24E1CA8975100AFAA6F /* HandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E2491CA8975100AFAA6F /* HandleView.m */; };
+		B9F1E24F1CA8975100AFAA6F /* HandScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */; };
+		B9F1E2501CA8975100AFAA6F /* ZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E24D1CA8975100AFAA6F /* ZoomView.m */; };
+		B9F1E2541CA89C2400AFAA6F /* cZoom.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F1E2511CA89C2300AFAA6F /* cZoom.png */; };
+		B9F1E2551CA89C2400AFAA6F /* cZoomIn.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F1E2521CA89C2400AFAA6F /* cZoomIn.png */; };
+		B9F1E2561CA89C2400AFAA6F /* cZoomOut.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F1E2531CA89C2400AFAA6F /* cZoomOut.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +157,15 @@
 		B9C5856F1C92963400243A38 /* BMPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPanelController.m; sourceTree = "<group>"; };
 		B9C585751C92A3D100243A38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BMPanelController.xib; sourceTree = "<group>"; };
 		B9C585781C92A3DF00243A38 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/BMPanelController.strings; sourceTree = "<group>"; };
+		B9F1E2481CA8975100AFAA6F /* HandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleView.h; sourceTree = "<group>"; };
+		B9F1E2491CA8975100AFAA6F /* HandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleView.m; sourceTree = "<group>"; };
+		B9F1E24A1CA8975100AFAA6F /* HandScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandScrollView.h; sourceTree = "<group>"; };
+		B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandScrollView.m; sourceTree = "<group>"; };
+		B9F1E24C1CA8975100AFAA6F /* ZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomView.h; sourceTree = "<group>"; };
+		B9F1E24D1CA8975100AFAA6F /* ZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomView.m; sourceTree = "<group>"; };
+		B9F1E2511CA89C2300AFAA6F /* cZoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cZoom.png; path = Graphics/cZoom.png; sourceTree = "<group>"; };
+		B9F1E2521CA89C2400AFAA6F /* cZoomIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cZoomIn.png; path = Graphics/cZoomIn.png; sourceTree = "<group>"; };
+		B9F1E2531CA89C2400AFAA6F /* cZoomOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cZoomOut.png; path = Graphics/cZoomOut.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +232,9 @@
 		B951BD7A1C719E0C007B9359 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B9F1E2511CA89C2300AFAA6F /* cZoom.png */,
+				B9F1E2521CA89C2400AFAA6F /* cZoomIn.png */,
+				B9F1E2531CA89C2400AFAA6F /* cZoomOut.png */,
 				B936FBBF1CA26AE800B86A0B /* scroll.png */,
 				B936FBC01CA26AE800B86A0B /* selectArea_off.png */,
 				B936FBC11CA26AE800B86A0B /* selectArea_on.png */,
@@ -338,6 +356,12 @@
 				B9A3013A1C9FF93E00407100 /* MYOLView.m */,
 				B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */,
 				B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */,
+				B9F1E2481CA8975100AFAA6F /* HandleView.h */,
+				B9F1E2491CA8975100AFAA6F /* HandleView.m */,
+				B9F1E24A1CA8975100AFAA6F /* HandScrollView.h */,
+				B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */,
+				B9F1E24C1CA8975100AFAA6F /* ZoomView.h */,
+				B9F1E24D1CA8975100AFAA6F /* ZoomView.m */,
 			);
 			name = Document;
 			sourceTree = "<group>";
@@ -421,9 +445,11 @@
 				B951BD701C719DD0007B9359 /* Assets.xcassets in Resources */,
 				B951BD6E1C719DD0007B9359 /* Document.xib in Resources */,
 				B936FBCB1CA26AE800B86A0B /* zoom_off.png in Resources */,
+				B9F1E2561CA89C2400AFAA6F /* cZoomOut.png in Resources */,
 				B93FD5771C86D45B00B68959 /* singlePage_off.png in Resources */,
 				B97F403B1CA61E27006CCEA4 /* SplitPanel.xib in Resources */,
 				B936FBC91CA26AE800B86A0B /* selectText_off.png in Resources */,
+				B9F1E2541CA89C2400AFAA6F /* cZoom.png in Resources */,
 				B97F404B1CA66E1A006CCEA4 /* RemovePanel.xib in Resources */,
 				B951BD901C71C2A5007B9359 /* btnAdd.png in Resources */,
 				B93FD57A1C86D45B00B68959 /* twoCont_on.png in Resources */,
@@ -434,6 +460,7 @@
 				B93FD57C1C86D45B00B68959 /* twoUp_on.png in Resources */,
 				B951BD921C71C2A5007B9359 /* btnRemove.png in Resources */,
 				B96EE7871C818A630063C7A2 /* goPrev.png in Resources */,
+				B9F1E2551CA89C2400AFAA6F /* cZoomIn.png in Resources */,
 				B951BD911C71C2A5007B9359 /* btnClear.png in Resources */,
 				B93FD5761C86D45B00B68959 /* singleCon_on.png in Resources */,
 				B951BDA31C71C759007B9359 /* PDFLst.array in Resources */,
@@ -467,11 +494,14 @@
 				B97F40341CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m in Sources */,
 				B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */,
 				B97F40481CA666FA006CCEA4 /* RemovePanel.m in Sources */,
+				B9F1E24E1CA8975100AFAA6F /* HandleView.m in Sources */,
 				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
 				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,
+				B9F1E24F1CA8975100AFAA6F /* HandScrollView.m in Sources */,
 				B951BD6B1C719DD0007B9359 /* Document.m in Sources */,
 				B951BD681C719DD0007B9359 /* main.m in Sources */,
 				B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */,
+				B9F1E2501CA8975100AFAA6F /* ZoomView.m in Sources */,
 				B9A8C96A1C916C10008A2DEB /* OLController.m in Sources */,
 				B951BD651C719DD0007B9359 /* AppDelegate.m in Sources */,
 				B951BD9C1C71C58D007B9359 /* CCClearWin.m in Sources */,

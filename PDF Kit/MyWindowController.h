@@ -49,6 +49,7 @@
 @property (strong) IBOutlet MyPDFView *_pdfView;
 @property (strong) MYOLView *_olView;
 @property (strong) IBOutlet PDFThumbnailView *thumbView;
+@property (strong) IBOutlet NSSegmentedControl *segTool;
 @property (strong) SplitPanel *_splitPanel;
 @property (strong) RemovePanel *_removePanel;
 
@@ -60,4 +61,7 @@
 - (void)newBMFromInfo;
 - (IBAction)outlineViewRowClicked:(id)sender;
 - (void)updateDocInfo;
+- (IBAction)zoomIn:(id)sender;
+- (IBAction)zoomOut:(id)sender;
+
 @end

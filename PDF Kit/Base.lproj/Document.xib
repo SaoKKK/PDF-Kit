@@ -25,6 +25,7 @@
                 <outlet property="searchField" destination="q7E-K1-pD5" id="Nxc-ga-a5i"/>
                 <outlet property="segOLViewMode" destination="wj7-Ai-Z9f" id="ENO-ba-lsn"/>
                 <outlet property="segTabTocSelect" destination="lBD-hR-gww" id="ts4-mb-RqC"/>
+                <outlet property="segTool" destination="v1O-NY-DDX" id="mph-48-rlO"/>
                 <outlet property="segZoom" destination="wIW-Rg-qP5" id="c30-Ne-EcV"/>
                 <outlet property="tabToc" destination="3iR-cx-smv" id="wt8-lf-63B"/>
                 <outlet property="thumbView" destination="fbb-fr-f9P" id="T9y-Gr-jQR"/>
@@ -619,6 +620,9 @@
                                 </segment>
                             </segments>
                         </segmentedCell>
+                        <connections>
+                            <action selector="segTool:" target="-2" id="ctz-mJ-wjg"/>
+                        </connections>
                     </segmentedControl>
                 </subviews>
             </view>

@@ -782,6 +782,35 @@
     }
 }
 
+- (IBAction)segTool:(id)sender {
+    switch ([sender selectedSegment]) {
+        case 0:
+            [sender setImage:[NSImage imageNamed:@"selectText_on"] forSegment:0];
+            [sender setImage:[NSImage imageNamed:@"selectArea_off"] forSegment:1];
+            [sender setImage:[NSImage imageNamed:@"zoom_off"] forSegment:3];
+            [_pdfView removeSubView];
+            break;
+        case 1:
+            [sender setImage:[NSImage imageNamed:@"selectText_off"] forSegment:0];
+            [sender setImage:[NSImage imageNamed:@"selectArea_on"] forSegment:1];
+            [sender setImage:[NSImage imageNamed:@"zoom_off"] forSegment:3];
+            [_pdfView loadHundleView];
+            break;
+        case 2:
+            [sender setImage:[NSImage imageNamed:@"selectText_off"] forSegment:0];
+            [sender setImage:[NSImage imageNamed:@"selectArea_off"] forSegment:1];
+            [sender setImage:[NSImage imageNamed:@"zoom_off"] forSegment:3];
+            [_pdfView loadHandScrollView];
+            break;
+        case 3:
+            [sender setImage:[NSImage imageNamed:@"selectText_off"] forSegment:0];
+            [sender setImage:[NSImage imageNamed:@"selectArea_off"] forSegment:1];
+            [sender setImage:[NSImage imageNamed:@"zoom_on"] forSegment:3];
+            [_pdfView loadZoomView];
+            break;
+    }
+}
+
 #pragma mark - menu action
 
 //表示メニュー
