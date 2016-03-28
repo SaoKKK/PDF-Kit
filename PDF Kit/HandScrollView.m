@@ -8,18 +8,34 @@
 
 #import "HandScrollView.h"
 
-@implementation HandScrollView
+#define WINC (MyWindowController *)self.window.windowController
+
+@implementation HandScrollView{
+    NSPoint movePoint;
+}
+
+- (void)resetCursorRects{
+    [self discardCursorRects];
+    [self addCursorRect:self.bounds cursor:[NSCursor openHandCursor]];
+}
 
 - (void)mouseDown:(NSEvent *)theEvent{
-    NSLog(@"down");
+    [[NSCursor closedHandCursor] set];
+    movePoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent{
-    NSLog(@"drag");
+    NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+    float dx = movePoint.x - point.x;
+    float dy = movePoint.y - point.y;
+    NSView *documentView = (WINC)._pdfView.documentView;
+    NSRect visibleRect = documentView.visibleRect;
+    [documentView scrollPoint:NSMakePoint(visibleRect.origin.x+dx, visibleRect.origin.y+dy)];
+    movePoint = point;
 }
 
 - (void)mouseUp:(NSEvent *)theEvent{
-    NSLog(@"up");
+    [[NSCursor openHandCursor]set];
 }
 
 @end

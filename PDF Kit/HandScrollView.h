@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MyWindowController.h"
+#import "MyPDFView.h"
 
 @interface HandScrollView : NSView
 
