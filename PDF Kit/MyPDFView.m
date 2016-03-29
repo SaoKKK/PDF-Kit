@@ -58,6 +58,7 @@
 
 //ページ領域によるカーソル変更
 - (void)setCursorForAreaOfInterest:(PDFAreaOfInterest)area{
+    [self.window makeFirstResponder:self];
     switch ([(WINC).segTool selectedSegment]){
         case 0: //テキスト選択ツール選択時
             [super setCursorForAreaOfInterest:area];
@@ -93,6 +94,7 @@
 
 //ズームカーソル更新
 - (NSCursor*)updateZoomCursor{
+    [self discardCursorRects];
     NSCursor *cursor;
     if ([NSEvent modifierFlags] & NSAlternateKeyMask) {
         if (self.canZoomOut) {

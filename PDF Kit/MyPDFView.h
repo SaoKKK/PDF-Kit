@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 #import <QuartzCore/QuartzCore.h>
-#import "Document.h"
 #import "HandleView.h"
 #import "ZoomView.h"
 #import "HandScrollView.h"
