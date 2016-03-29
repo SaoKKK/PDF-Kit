@@ -12,12 +12,12 @@
 #define WINC (MyWindowController *)self.window.windowController
 
 @implementation MyPDFView{
-    BOOL isZoomCursolSet;
+    BOOL isZoomCursorSet;
 }
 @synthesize _rect,handleView,handScrollView,zoomView;
 
 - (void)awakeFromNib{
-    isZoomCursolSet = NO;
+    isZoomCursorSet = NO;
     [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidResizeNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         //ウインドウのリサイズ時→サブビューをリサイズする
         [handleView setFrame:self.bounds];
@@ -44,14 +44,19 @@
     [self removeSubView];
     zoomView = [[ZoomView alloc]initWithFrame:self.bounds];
     [self addSubview:zoomView];
+    isZoomCursorSet = YES;
 }
 
 - (void)removeSubView{
     [handleView removeFromSuperview];
     [handScrollView removeFromSuperview];
     [zoomView removeFromSuperview];
+    isZoomCursorSet = NO;
 }
 
+#pragma mark - cursor control
+
+//ページ領域によるカーソル変更
 - (void)setCursorForAreaOfInterest:(PDFAreaOfInterest)area{
     switch ([(WINC).segTool selectedSegment]){
         case 0: //テキスト選択ツール選択時
@@ -67,57 +72,27 @@
                     break;
             }
             break;
-        case 2: //スクロールツール選択時
-            switch (area) {
-                case 0:
-                    [super setCursorForAreaOfInterest:area];
-                    break;
-                case 1:
-                    [[NSCursor openHandCursor] set];
-                    break;
-            }
-            break;
-        case 3: //ズームツール選択時
-            switch (area) {
-                case 0:
-                    [super setCursorForAreaOfInterest:area];
-                    isZoomCursolSet = NO;
-                    break;
-                case 1:{
-                    NSCursor *cursor;
-                    isZoomCursolSet = YES;
-                    if ([NSEvent modifierFlags] & NSAlternateKeyMask) {
-                        if (self.canZoomOut) {
-                            cursor = [[NSCursor alloc]initWithImage:[NSImage imageNamed:@"cZoomOut"] hotSpot:NSMakePoint(7, 7)];
-                        } else {
-                            cursor = [[NSCursor alloc]initWithImage:[NSImage imageNamed:@"cZoom"] hotSpot:NSMakePoint(7, 7)];
-                        }
-                    } else {
-                        if (self.scaleFactor < 5.0) {
-                            cursor = [[NSCursor alloc]initWithImage:[NSImage imageNamed:@"cZoomIn"] hotSpot:NSMakePoint(7, 7)];
-                        } else {
-                            cursor = [[NSCursor alloc]initWithImage:[NSImage imageNamed:@"cZoom"] hotSpot:NSMakePoint(7, 7)];
-                        }
-                    }
-                    [cursor set];
-                }
-                    break;
-            }
-            break;
+    }
+}
+
+//ビュー領域によるカーソル変更
+- (void)resetCursorRects{
+    if (isZoomCursorSet){
+        [self addCursorRect:self.bounds cursor:[self updateZoomCursor]];
     }
 }
 
 //ズームカーソルになっている時にoptionキーが押されたら縮小カーソルに変更
 - (void)flagsChanged:(NSEvent *)theEvent{
-    if (isZoomCursolSet){
-        [self updateZoomCursor];
+    if (isZoomCursorSet){
+        [[self updateZoomCursor] set];
     } else {
         [super flagsChanged:theEvent];
     }
 }
 
 //ズームカーソル更新
-- (void)updateZoomCursor{
+- (NSCursor*)updateZoomCursor{
     NSCursor *cursor;
     if ([NSEvent modifierFlags] & NSAlternateKeyMask) {
         if (self.canZoomOut) {
@@ -132,7 +107,7 @@
             cursor = [[NSCursor alloc]initWithImage:[NSImage imageNamed:@"cZoom"] hotSpot:NSMakePoint(7, 7)];
         }
     }
-    [cursor set];
+    return cursor;
 }
 
 #pragma mark - draw page

@@ -100,14 +100,14 @@
             //拡大率を決定(縦横で倍率を出して小さい方を採用)
             float enlargementFactorFromWidth = (WINC)._pdfView.bounds.size.width/expArea.size.width;
             float enlargementFactorFromHeight = (WINC)._pdfView.bounds.size.height/expArea.size.height;
-            float enlargementFactor = MIN(enlargementFactorFromWidth,enlargementFactorFromHeight);
+            float enlargementFactor = (WINC)._pdfView.scaleFactor * MIN(enlargementFactorFromWidth,enlargementFactorFromHeight);
             if (enlargementFactor > 5.0) {
                 enlargementFactor = 5.0;
             }
             //拡大エリアをPDF座標系に変換
             NSRect expPDFArea = [(WINC)._pdfView convertRect:expArea toPage:page];
             //拡大実行
-            [(WINC)._pdfView setScaleFactor:(WINC)._pdfView.scaleFactor * MIN(enlargementFactorFromWidth,enlargementFactorFromHeight)];
+            [(WINC)._pdfView setScaleFactor:enlargementFactor];
             //拡大後の移動エリアを作成
             NSRect viewArea = [(WINC)._pdfView convertRect:(WINC)._pdfView.bounds toPage:page];
             if (expPDFArea.size.width < viewArea.size.width) {

@@ -12,11 +12,19 @@
 
 @implementation HandScrollView{
     NSPoint movePoint;
+    BOOL isDragging;
+}
+
+- (void)awakeFromNib{
+    isDragging = NO;
 }
 
 - (void)resetCursorRects{
-    [self discardCursorRects];
-    [self addCursorRect:self.bounds cursor:[NSCursor openHandCursor]];
+    if (isDragging) {
+        [self addCursorRect:self.bounds cursor:[NSCursor closedHandCursor]];
+    } else {
+        [self addCursorRect:self.bounds cursor:[NSCursor openHandCursor]];
+    }
 }
 
 - (void)mouseDown:(NSEvent *)theEvent{
@@ -25,6 +33,7 @@
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent{
+    isDragging = YES;
     NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     float dx = movePoint.x - point.x;
     float dy = movePoint.y - point.y;
@@ -35,6 +44,7 @@
 }
 
 - (void)mouseUp:(NSEvent *)theEvent{
+    isDragging = NO;
     [[NSCursor openHandCursor]set];
 }
 
