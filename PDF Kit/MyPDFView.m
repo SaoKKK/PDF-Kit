@@ -26,8 +26,11 @@ enum UNDEROBJ_TYPE{
 
 @implementation MyPDFView{
     NSPoint startPoint;
+    NSPoint endPoint;
     NSTrackingArea *track;
-    NSRect pageRect;
+    NSRect pgRect;
+    NSRect vPgRect;
+    int mouseLocation;
 }
 @synthesize handScrollView,zoomView,selRect,targetPg;
 
@@ -126,6 +129,7 @@ enum UNDEROBJ_TYPE{
     }
 }
 
+//選択エリアのハンドル領域をビュー座標系に変換して返す
 - (NSRect)makeHandleRect:(NSPoint)point{
     float sf = self.scaleFactor;
     NSRect handleRect = NSMakeRect(point.x-(HandleWidth/sf)/2.0, point.y-(HandleWidth/sf)/2.0, HandleWidth/sf, HandleWidth/sf);
@@ -219,11 +223,11 @@ enum UNDEROBJ_TYPE{
 
 - (void)mouseDown:(NSEvent *)theEvent{
     if ((WINC).segTool.selectedSegment == 1) {
-        [self deselectArea];
         NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-        //下にある最も近いページの領域をNSView座標系で取得
+        //カーソル座標に最も近いページの領域をNSView座標系で取得
         targetPg = [self pageForPoint:point nearest:YES];
-        pageRect = [self convertRect:[targetPg boundsForBox:kPDFDisplayBoxArtBox] fromPage:targetPg];
+        pgRect = [targetPg boundsForBox:kPDFDisplayBoxArtBox];
+        vPgRect = [self convertRect:pgRect fromPage:targetPg];
         if ([self pageForPoint:point nearest:NO]) {
             //マウスダウンの座標がページ領域内であればその座標をページ座標系に変換してstartPointに格納
             startPoint = [self convertPoint:point toPage:targetPg];
@@ -231,7 +235,42 @@ enum UNDEROBJ_TYPE{
             //マウスダウンの座標がページ領域外だった場合
             startPoint = [self convertPoint:[self areaPointFromOutPoint:point] toPage:targetPg];
         }
-        selRect = NSMakeRect(startPoint.x, startPoint.y, 0, 0);
+        
+        //カーソル座標にあるオブジェクトを調べる
+        mouseLocation = [self whatsUnderPoint:point];
+        switch (mouseLocation) {
+            case OUT_AREA: //新しく選択範囲を作成
+                selRect = NSMakeRect(startPoint.x, startPoint.y, 0, 0);
+                break;
+            case HANDLE_TOP_LEFT:
+                startPoint.x = selRect.origin.x + selRect.size.width;
+                startPoint.y = selRect.origin.y;
+                break;
+            case HANDLE_TOP_MIDDLE:
+                startPoint.y = selRect.origin.y;
+                break;
+            case HANDLE_TOP_RIGHT:
+                startPoint.x = selRect.origin.x;
+                startPoint.y = selRect.origin.y;
+                break;
+            case HANDLE_MIDDLE_LEFT:
+                startPoint.x = selRect.origin.x + selRect.size.width;
+                break;
+            case HANDLE_MIDDLE_RIGHT:
+                startPoint.x = selRect.origin.x;
+                break;
+            case HANDLE_BOTTOM_LEFT:
+                startPoint.x = selRect.origin.x + selRect.size.width;
+                startPoint.y = selRect.origin.y + selRect.size.height;
+                break;
+            case HANDLE_BOTTOM_MIDDLE:
+                startPoint.y = selRect.origin.y + selRect.size.height;
+                break;
+            case HANDLE_BOTTOM_RIGHT:
+                startPoint.x = selRect.origin.x;
+                startPoint.y = selRect.origin.y + selRect.size.height;
+                break;
+        }
     } else {
         [super mouseDown:theEvent];
     }
@@ -242,27 +281,43 @@ enum UNDEROBJ_TYPE{
         [self.documentView autoscroll:theEvent];
         NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
         if (! NSPointInRect(point, self.bounds)) {
-            pageRect = [self convertRect:[targetPg boundsForBox:kPDFDisplayBoxArtBox] fromPage:targetPg];
+            vPgRect = [self convertRect:[targetPg boundsForBox:kPDFDisplayBoxArtBox] fromPage:targetPg];
         }
-        NSPoint endPoint;
-        if (NSPointInRect(point, pageRect)) {
+        if (NSPointInRect(point, vPgRect)) {
             //ドラッグ座標がページ領域内であればその座標をページ座標系に変換して使用
             endPoint = [self convertPoint:point toPage:targetPg];
         } else {
             //ドラッグ座標がページ領域外だった場合
             endPoint = [self convertPoint:[self areaPointFromOutPoint:point] toPage:targetPg];
         }
-        if (endPoint.x < startPoint.x) {
-            selRect.origin.x = endPoint.x;
-            selRect.size.width = startPoint.x - endPoint.x;
+        if (mouseLocation == INSIDE_AREA) {
+            //選択エリアを移動
+            float dx = endPoint.x - startPoint.x;
+            float dy = endPoint.y - startPoint.y;
+            if (endPoint.x >= startPoint.x - selRect.origin.x && endPoint.x <= pgRect.size.width - ((selRect.size.width + selRect.origin.x) - startPoint.x)){
+                selRect.origin.x = selRect.origin.x + dx;
+            }
+            if (endPoint.y >= startPoint.y - selRect.origin.y && endPoint.y <= pgRect.size.height - ((selRect.size.height + selRect.origin.y) - startPoint.y)){
+                selRect.origin.y = selRect.origin.y + dy;
+            }
+            startPoint = endPoint;
+        } else if (mouseLocation == OUT_AREA) {
+            [self expandSelRectX];
+            [self expandSelRectY];
+        } else if (mouseLocation == HANDLE_TOP_LEFT || mouseLocation == HANDLE_BOTTOM_RIGHT) {
+            [[[NSCursor alloc]initWithImage:[NSImage imageNamed:@"resizef"] hotSpot:NSMakePoint(7, 7)]set];
+            [self expandSelRectX];
+            [self expandSelRectY];
+        } else if (mouseLocation == HANDLE_TOP_RIGHT || mouseLocation == HANDLE_BOTTOM_LEFT) {
+            [[[NSCursor alloc]initWithImage:[NSImage imageNamed:@"resizeb"] hotSpot:NSMakePoint(7, 7)]set];
+            [self expandSelRectX];
+            [self expandSelRectY];
+        } else if (mouseLocation == HANDLE_TOP_MIDDLE || mouseLocation == HANDLE_BOTTOM_MIDDLE) {
+            [[NSCursor resizeUpDownCursor]set];
+            [self expandSelRectY];
         } else {
-            selRect.size.width = endPoint.x - startPoint.x;
-        }
-        if (endPoint.y < startPoint.y) {
-            selRect.origin.y = endPoint.y;
-            selRect.size.height = startPoint.y - endPoint.y;
-        } else {
-            selRect.size.height = endPoint.y - startPoint.y;
+            [[NSCursor resizeLeftRightCursor]set];
+            [self expandSelRectX];
         }
         [self setNeedsDisplay:YES];
     } else {
@@ -270,14 +325,33 @@ enum UNDEROBJ_TYPE{
     }
 }
 
+- (void)expandSelRectX{
+    if (endPoint.x < startPoint.x) {
+        selRect.origin.x = endPoint.x;
+        selRect.size.width = startPoint.x - endPoint.x;
+    } else {
+        selRect.size.width = endPoint.x - startPoint.x;
+    }
+}
+
+- (void)expandSelRectY{
+    if (endPoint.y < startPoint.y) {
+        selRect.origin.y = endPoint.y;
+        selRect.size.height = startPoint.y - endPoint.y;
+    } else {
+        selRect.size.height = endPoint.y - startPoint.y;
+    }
+}
+
 - (void)mouseUp:(NSEvent *)theEvent{
     if ((WINC).segTool.selectedSegment == 1) {
         NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-        if (point.x == startPoint.x && point.y == startPoint.y){
-            //シングルクリックの場合
-            
-        } else {
-            
+        if (mouseLocation == OUT_AREA) {
+            NSPoint vStartP = [self convertPoint:startPoint fromPage:targetPg];
+            if (point.x ==  vStartP.x && point.y == vStartP.y){
+                //シングルクリックの場合は選択解除
+                [self deselectArea];
+            }
         }
         [self resetCursorRects];
     } else {
@@ -288,27 +362,51 @@ enum UNDEROBJ_TYPE{
 //マウス座標がページ領域外だった場合の選択領域作成のための座標を返す
 - (NSPoint)areaPointFromOutPoint:(NSPoint)point{
     NSPoint areaPoint;
-    if (point.x < pageRect.origin.x) {
+    if (point.x < vPgRect.origin.x) {
         //x座標がページの左側の場合
-        areaPoint.x = pageRect.origin.x;
-    } else if (point.x > pageRect.origin.x + pageRect.size.width){
+        areaPoint.x = vPgRect.origin.x;
+    } else if (point.x > vPgRect.origin.x + vPgRect.size.width){
         //x座標がページの右側の場合
-        areaPoint.x = pageRect.origin.x + pageRect.size.width;
+        areaPoint.x = vPgRect.origin.x + vPgRect.size.width;
     } else {
         //x座標がページの領域内の場合
         areaPoint.x = point.x;
     }
-    if (point.y < pageRect.origin.y){
+    if (point.y < vPgRect.origin.y){
         //y座標がページの下側の場合
-        areaPoint.y = pageRect.origin.y;
-    } else if (point.y > pageRect.origin.y + pageRect.size.height){
+        areaPoint.y = vPgRect.origin.y;
+    } else if (point.y > vPgRect.origin.y + vPgRect.size.height){
         //y座標がページの上側の場合
-        areaPoint.y = pageRect.origin.y + pageRect.size.height;
+        areaPoint.y = vPgRect.origin.y + vPgRect.size.height;
     } else {
         //y座標がページの領域内の場合
         areaPoint.y = point.y;
     }
     return areaPoint;
+}
+
+- (int)whatsUnderPoint:(NSPoint)point{
+    int underObj_type = OUT_AREA;
+    if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMinX(selRect),NSMaxY(selRect))])) {
+        underObj_type = HANDLE_TOP_LEFT;
+    } else if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMidX(selRect),NSMaxY(selRect))])) {
+        underObj_type = HANDLE_TOP_MIDDLE;
+    } else if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMaxX(selRect),NSMaxY(selRect))])) {
+        underObj_type = HANDLE_TOP_RIGHT;
+    } else if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMinX(selRect),NSMidY(selRect))])) {
+        underObj_type = HANDLE_MIDDLE_LEFT;
+    } else if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMaxX(selRect),NSMidY(selRect))])) {
+        underObj_type = HANDLE_MIDDLE_RIGHT;
+    } else if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMinX(selRect),NSMinY(selRect))])) {
+        underObj_type = HANDLE_BOTTOM_LEFT;
+    } else if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMidX(selRect),NSMinY(selRect))])) {
+        underObj_type = HANDLE_BOTTOM_MIDDLE;
+    } else if (NSPointInRect(point, [self makeHandleRect:NSMakePoint(NSMaxX(selRect),NSMinY(selRect))])) {
+        underObj_type = HANDLE_BOTTOM_RIGHT;
+    } else if (NSPointInRect(point, [self convertRect:selRect fromPage:targetPg])){
+        underObj_type = INSIDE_AREA;
+    }
+    return underObj_type;
 }
 
 //選択領域の解除
