@@ -126,6 +126,7 @@
             (APPD).isOLSelectedSingle = NO;
             (APPD).isOLSelected = NO;
             (APPD).isOLExists = NO;
+            (APPD).isSelection = NO;
             //ページ移動ボタンの有効/無効の切り替え
             [self updateGoButtonEnabled];
             //スクリーンモード変更メニューのタイトルを変更

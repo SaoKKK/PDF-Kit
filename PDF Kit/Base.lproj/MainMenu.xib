@@ -192,6 +192,7 @@ CA
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="mnDeselect:" target="-1" id="EOo-2f-DE6"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isSelection" id="XI4-wk-hSG"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="uyl-h8-XO2"/>
@@ -372,7 +373,7 @@ CA
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="mnNewBookmarkFromSelection:" target="-1" id="V9w-D4-OgR"/>
-                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isDocWinMain" id="87g-Ru-L0Q"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isSelection" id="d9I-3j-8bR"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Remove Bookmark" enabled="NO" id="QUy-8Q-3Zt">

@@ -129,6 +129,11 @@
         (APPD).isDocWinMain = YES;
         (APPD).isOLExists = [self isOLExists];
         [self updateSelectedRowInfo];
+        if (_pdfView.currentSelection || _pdfView.selRect.size.width != 0 || _pdfView.selRect.size.height  != 0) {
+            (APPD).isSelection = YES;
+        } else {
+            (APPD).isSelection = NO;
+        }
         //ページ移動メニューの有効/無効の切り替え
         [self updateGoButtonEnabled];
         //倍率変更メニューの有効／無効の切り替え
@@ -144,6 +149,7 @@
         if (docCtr.documents.count == 1) {
             (APPD).isWinExist = NO;
             (APPD).isDocWinMain = NO;
+            (APPD).isSelection = NO;
             (APPD).isOLExists = NO;
             (APPD).isOLSelectedSingle = NO;
             (APPD).isOLSelected = NO;
@@ -489,16 +495,20 @@
 //メニュー／選択範囲から新規しおり作成
 - (IBAction)mnNewBookmarkFromSelection:(id)sender{
     PDFSelection *sel = [_pdfView currentSelection];
+    PDFPage *page;
+    NSRect rect;
     if (!sel) {
-        [self showNoSelectAlert];
+        page = _pdfView.targetPg;
+        rect = _pdfView.selRect;
+        sel = [page selectionForRect:_pdfView.selRect];
     } else {
-        NSString *label = [sel string];
-        PDFPage *page = [[sel pages]objectAtIndex:0];
-        NSRect rect = [sel boundsForPage:page];
-        NSPoint point = NSMakePoint(rect.origin.x, rect.origin.y + rect.size.height);
-        PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:point];
-        [self makeNewBookMark:label withDestination:destination];
+        page = [[sel pages]objectAtIndex:0];
+        rect = [sel boundsForPage:page];
     }
+    NSString *label = [sel string];
+    NSPoint point = NSMakePoint(rect.origin.x, rect.origin.y + rect.size.height);
+    PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:point];
+    [self makeNewBookMark:label withDestination:destination];
 }
 
 //BMパネル新規しおり作成
@@ -582,7 +592,7 @@
 //メニュー／しおりクリア
 - (IBAction)clearOutline:(id)sender{
     PDFOutline *root = _pdfView.document.outlineRoot;
-    for (int i = 0; i<root.numberOfChildren; i++) {
+    for (NSInteger i = root.numberOfChildren - 1; i >= 0; i--) {
         PDFOutline *ol = [root childAtIndex:i];
         [ol removeFromParent];
     }
@@ -610,18 +620,21 @@
 
 //現在の選択範囲からPDFDestinationを取得
 - (void)getDestinationFromCurrentSelection{
+    PDFDocument *doc = _pdfView.document;
     PDFSelection *sel = [_pdfView currentSelection];
+    PDFPage *page;
+    NSRect rect;
     if (!sel) {
-        [self showNoSelectAlert];
+        page = _pdfView.targetPg;
+        rect = _pdfView.selRect;
     } else {
-        PDFDocument *doc = _pdfView.document;
-        PDFPage *page = [[sel pages]objectAtIndex:0];
-        NSRect rect = [sel boundsForPage:page];
-        [(APPD).olInfo setObject:[NSNumber numberWithInteger:[doc indexForPage:page]] forKey:@"pageIndex"];
-        [(APPD).olInfo setObject:page.label forKey:@"pageLabel"];
-        [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.origin.x] forKey:@"pointX"];
-        [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.origin.y+rect.size.height] forKey:@"pointY"];
+        page = [[sel pages]objectAtIndex:0];
+        rect = [sel boundsForPage:page];
     }
+    [(APPD).olInfo setObject:[NSNumber numberWithInteger:[doc indexForPage:page]] forKey:@"pageIndex"];
+    [(APPD).olInfo setObject:page.label forKey:@"pageLabel"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.origin.x] forKey:@"pointX"];
+    [(APPD).olInfo setObject:[NSNumber numberWithDouble:rect.origin.y+rect.size.height] forKey:@"pointY"];
 }
 
 //アウトラインを更新

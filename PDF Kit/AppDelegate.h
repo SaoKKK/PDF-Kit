@@ -28,6 +28,7 @@
 @property (weak) IBOutlet NSWindow *statusWin;
 @property (assign) BOOL isWinExist;
 @property (assign) BOOL isDocWinMain;
+@property (assign) BOOL isSelection;
 @property (assign) BOOL isOLExists;
 @property (assign) BOOL isOLSelected;
 @property (assign) BOOL isOLSelectedSingle;

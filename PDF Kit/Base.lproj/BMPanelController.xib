@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BMPanelController">
@@ -191,7 +191,7 @@
                         </buttonCell>
                         <connections>
                             <action selector="getDestinationFromCurrentSelection:" target="-1" id="fD1-nc-fI9"/>
-                            <binding destination="Dmm-53-Exd" name="enabled" keyPath="delegate.isDocWinMain" id="QZz-bB-Qlp"/>
+                            <binding destination="Dmm-53-Exd" name="enabled" keyPath="delegate.isSelection" id="YeL-FB-CLY"/>
                         </connections>
                     </button>
                     <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="R3a-6s-LcJ">
