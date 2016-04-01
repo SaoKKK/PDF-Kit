@@ -11,7 +11,7 @@
 #import "NSAlert+SynchronousSheet.h"
 #import "MyWinC.h"
 #import "MyPDFView.h"
-#import "MYOLView.h"
+#import "MyOLView.h"
 
 @interface RemovePanel : NSWindowController
 

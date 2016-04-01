@@ -505,7 +505,9 @@
         page = [[sel pages]objectAtIndex:0];
         rect = [sel boundsForPage:page];
     }
-    NSString *label = [sel string];
+    //ラベルから先頭末尾の改行文字を取り除く
+    NSCharacterSet *chrSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *label = [[sel string] stringByTrimmingCharactersInSet:chrSet];
     NSPoint point = NSMakePoint(rect.origin.x, rect.origin.y + rect.size.height);
     PDFDestination *destination = [[PDFDestination alloc]initWithPage:page atPoint:point];
     [self makeNewBookMark:label withDestination:destination];
@@ -526,18 +528,6 @@
     return destination;
 }
 
-//未選択アラート表示
-- (void)showNoSelectAlert{
-    NSAlert *alert = [[NSAlert alloc]init];
-    alert.messageText = NSLocalizedString(@"NoSelectBM_msg", @"");
-    [alert setInformativeText:NSLocalizedString(@"NoSelectBM_info", @"")];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setAlertStyle:NSInformationalAlertStyle];
-    [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode){
-        return;
-    }];
-}
-
 //新規PDFアウトライン作成
 - (void)makeNewBookMark:(NSString *)label withDestination:(PDFDestination *)destination{
     PDFOutline *ol = [[PDFOutline alloc]init];
@@ -549,10 +539,10 @@
 - (void)addNewDataToSelection:(PDFOutline*)ol{
     //ルートアイテムがない場合は作成
     [self createOLRoot];
-    //アウトラインビューを編集モードに変更
-    [self viewToEditBMMode];
     PDFOutline *parentOL = [[PDFOutline alloc]init];
     NSInteger selectedRow = _olView.selectedRow;
+    //アウトラインビューを編集モードに変更
+    [self viewToEditBMMode];
     if (selectedRow == -1){
         //何も選択されていない = ルートが親
         parentOL = [[_pdfView document]outlineRoot];

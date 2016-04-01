@@ -1,16 +1,16 @@
 //
-//  MYOLView.m
+//  MyOLView.m
 //  Document-based2
 //
 //  Created by 河野 さおり on 2016/03/21.
 //  Copyright © 2016年 河野 さおり. All rights reserved.
 //
 
-#import "MYOLView.h"
+#import "MyOLView.h"
 
 #define APPD (AppDelegate *)[NSApp delegate]
 
-@implementation MYOLView
+@implementation MyOLView
 
 - (void)keyDown:(NSEvent *)theEvent{
     MyWinC *winC = self.window.windowController;

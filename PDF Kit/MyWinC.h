@@ -11,12 +11,12 @@
 #import "BMPanel.h"
 #import "SplitPanel.h"
 #import "RemovePanel.h"
-#import "MYOLView.h"
+#import "MyOLView.h"
 
 @class MyPDFView;
 @class SplitPanel;
 @class RemovePanel;
-@class MYOLView;
+@class MyOLView;
 
 @interface MyWinC : NSWindowController<NSWindowDelegate,NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
     IBOutlet NSWindow *window;
@@ -47,7 +47,7 @@
     NSUInteger selectedViewMode; //指定ビューモード保持用
 }
 @property (strong) IBOutlet MyPDFView *_pdfView;
-@property (strong) MYOLView *_olView;
+@property (strong) IBOutlet MyOLView *_olView;
 @property (strong) IBOutlet PDFThumbnailView *thumbView;
 @property (strong) IBOutlet NSSegmentedControl *segTool;
 @property (strong) SplitPanel *_splitPanel;

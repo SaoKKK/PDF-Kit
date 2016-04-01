@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
 #import "MyPDFView.h"
-#import "MYOLView.h"
+#import "MyOLView.h"
 
-@class MYOLView;
+@class MyOLView;
 
 @interface OLController : NSObject <NSOutlineViewDataSource,NSOutlineViewDelegate>
 

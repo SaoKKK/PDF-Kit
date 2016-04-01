@@ -45,9 +45,7 @@
 
 - (BOOL)checkInput{
     [self.window makeFirstResponder:nil]; //入力を確定させる
-    if ([txtOLLabel.stringValue isEqualToString:@""]) {
-        [self emptyFieldAlert:txtOLLabel.identifier];
-    } else if ([txtPgIndex.stringValue isEqualToString:@""]) {
+    if ([txtPgIndex.stringValue isEqualToString:@""]) {
         [self emptyFieldAlert:txtPgIndex.identifier];
     } else if ([txtPointX.stringValue isEqualToString:@""]) {
         [self emptyFieldAlert:txtPointX.identifier];

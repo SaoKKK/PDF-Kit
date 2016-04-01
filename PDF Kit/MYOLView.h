@@ -1,5 +1,5 @@
 //
-//  MYOLView.h
+//  MyOLView.h
 //  Document-based2
 //
 //  Created by 河野 さおり on 2016/03/21.
@@ -10,6 +10,6 @@
 #import "MyWinC.h"
 #import "AppDelegate.h"
 
-@interface MYOLView : NSOutlineView
+@interface MyOLView : NSOutlineView
 
 @end
