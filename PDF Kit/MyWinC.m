@@ -1,12 +1,12 @@
 //
-//  MyWindowController.m
+//  MyWinC.m
 //  Sao's PDF Kit
 //
 //  Created by 河野 さおり on 2016/02/19.
 //  Copyright © 2016年 河野 さおり. All rights reserved.
 //
 
-#import "MyWindowController.h"
+#import "MyWinC.h"
 #import "Document.h"
 #import "MyPDFView.h"
 #import "AppDelegate.h"
@@ -15,11 +15,11 @@
 #define kMinTocAreaSplit	200.0f
 #define APPD (AppDelegate *)[NSApp delegate]
 
-@interface MyWindowController ()
+@interface MyWinC ()
 
 @end
 
-@implementation MyWindowController
+@implementation MyWinC
 
 @synthesize _pdfView,thumbView,_splitPanel,_removePanel,_olView;
 

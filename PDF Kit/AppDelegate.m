@@ -90,7 +90,7 @@
 
 - (IBAction)showBookmarkPanel:(id)sender{
     if (! _bmPanelC){
-        _bmPanelC = [[BMPanelController alloc]initWithWindowNibName:@"BMPanelController"];
+        _bmPanelC = [[BMPanel alloc]initWithWindowNibName:@"BMPanel"];
     }
     [_bmPanelC showOrHideWindow];
 }

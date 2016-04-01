@@ -9,7 +9,7 @@
 #import "MergePDFWin.h"
 #import "AppDelegate.h"
 #import <Quartz/Quartz.h>
-#import "MyWindowController.h"
+#import "MyWinC.h"
 
 #define MyTVDragNDropPboardType @"MyTVDragNDropPboardType"
 #define APPD (AppDelegate *)[NSApp delegate]
@@ -635,7 +635,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndCreate" object:self];
     NSDocumentController *docC = [NSDocumentController sharedDocumentController];
     [docC openUntitledDocumentAndDisplay:YES error:nil];
-    MyWindowController *newWC= [docC.currentDocument.windowControllers objectAtIndex:0];
+    MyWinC *newWC= [docC.currentDocument.windowControllers objectAtIndex:0];
     [newWC makeNewDocWithPDF:outputDoc];
 }
 

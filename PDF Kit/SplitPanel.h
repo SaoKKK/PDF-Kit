@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 #import "NSAlert+SynchronousSheet.h"
-#import "MyWindowController.h"
+#import "MyWinC.h"
 #import "MyPDFView.h"
 
 @interface SplitPanel : NSWindowController

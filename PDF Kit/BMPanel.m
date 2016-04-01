@@ -1,21 +1,21 @@
 //
-//  BMPanelController.m
+//  BMPanel.m
 //  Sao's PDF Kit
 //
 //  Created by 河野 さおり on 2016/03/11.
 //  Copyright © 2016年 河野 さおり. All rights reserved.
 //
 
-#import "BMPanelController.h"
+#import "BMPanel.h"
 #import "AppDelegate.h"
 
 #define APPD (AppDelegate *)[NSApp delegate]
 
-@interface BMPanelController ()
+@interface BMPanel ()
 
 @end
 
-@implementation BMPanelController{
+@implementation BMPanel{
     IBOutlet NSTextField *txtOLLabel;
     IBOutlet NSTextField *txtPgIndex;
     IBOutlet NSTextField *txtPgLabel;
@@ -69,7 +69,7 @@
     [alert beginSheetModalForWindow:[self currentDocWinController].window completionHandler:^(NSModalResponse returnCode){}];
 }
 
-- (MyWindowController*)currentDocWinController{
+- (MyWinC*)currentDocWinController{
     NSDocumentController *docC = [NSDocumentController sharedDocumentController];
     NSDocument *doc = [docC currentDocument];
     return [doc.windowControllers objectAtIndex:0];

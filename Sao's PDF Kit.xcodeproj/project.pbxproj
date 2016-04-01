@@ -59,14 +59,14 @@
 		B97F40441CA65448006CCEA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97F40431CA65448006CCEA4 /* QuartzCore.framework */; };
 		B97F40481CA666FA006CCEA4 /* RemovePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F40461CA666FA006CCEA4 /* RemovePanel.m */; };
 		B97F404B1CA66E1A006CCEA4 /* RemovePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97F404D1CA66E1A006CCEA4 /* RemovePanel.xib */; };
-		B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWindowController.m */; };
+		B98CA6E11C7615A1008C3E89 /* MyWinC.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CA6E01C7615A1008C3E89 /* MyWinC.m */; };
 		B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */; };
 		B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3013A1C9FF93E00407100 /* MYOLView.m */; };
 		B9A8C96A1C916C10008A2DEB /* OLController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A8C9691C916C10008A2DEB /* OLController.m */; };
 		B9C45DAF1CADFC9F00683937 /* resizeb.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C45DAD1CADFC9F00683937 /* resizeb.png */; };
 		B9C45DB01CADFC9F00683937 /* resizef.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C45DAE1CADFC9F00683937 /* resizef.png */; };
-		B9C585711C92963400243A38 /* BMPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5856F1C92963400243A38 /* BMPanelController.m */; };
-		B9C585741C92A3D100243A38 /* BMPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C585761C92A3D100243A38 /* BMPanelController.xib */; };
+		B9C585711C92963400243A38 /* BMPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5856F1C92963400243A38 /* BMPanel.m */; };
+		B9C585741C92A3D100243A38 /* BMPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C585761C92A3D100243A38 /* BMPanel.xib */; };
 		B9F1E24F1CA8975100AFAA6F /* HandScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */; };
 		B9F1E2501CA8975100AFAA6F /* ZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E24D1CA8975100AFAA6F /* ZoomView.m */; };
 		B9F1E2541CA89C2400AFAA6F /* cZoom.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F1E2511CA89C2300AFAA6F /* cZoom.png */; };
@@ -146,8 +146,8 @@
 		B97F40461CA666FA006CCEA4 /* RemovePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemovePanel.m; sourceTree = "<group>"; };
 		B97F404C1CA66E1A006CCEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RemovePanel.xib; sourceTree = "<group>"; };
 		B97F404F1CA66E2F006CCEA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RemovePanel.strings; sourceTree = "<group>"; };
-		B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
-		B98CA6E01C7615A1008C3E89 /* MyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
+		B98CA6DF1C7615A1008C3E89 /* MyWinC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWinC.h; sourceTree = "<group>"; };
+		B98CA6E01C7615A1008C3E89 /* MyWinC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWinC.m; sourceTree = "<group>"; };
 		B9A2FF1A1C79730B00E39B57 /* MyPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPDFView.h; sourceTree = "<group>"; };
 		B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPDFView.m; sourceTree = "<group>"; };
 		B9A301391C9FF93E00407100 /* MYOLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYOLView.h; sourceTree = "<group>"; };
@@ -156,10 +156,10 @@
 		B9A8C9691C916C10008A2DEB /* OLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLController.m; sourceTree = "<group>"; };
 		B9C45DAD1CADFC9F00683937 /* resizeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeb.png; path = Graphics/resizeb.png; sourceTree = "<group>"; };
 		B9C45DAE1CADFC9F00683937 /* resizef.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizef.png; path = Graphics/resizef.png; sourceTree = "<group>"; };
-		B9C5856E1C92963400243A38 /* BMPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPanelController.h; sourceTree = "<group>"; };
-		B9C5856F1C92963400243A38 /* BMPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPanelController.m; sourceTree = "<group>"; };
-		B9C585751C92A3D100243A38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BMPanelController.xib; sourceTree = "<group>"; };
-		B9C585781C92A3DF00243A38 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/BMPanelController.strings; sourceTree = "<group>"; };
+		B9C5856E1C92963400243A38 /* BMPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPanel.h; sourceTree = "<group>"; };
+		B9C5856F1C92963400243A38 /* BMPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPanel.m; sourceTree = "<group>"; };
+		B9C585751C92A3D100243A38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BMPanel.xib; sourceTree = "<group>"; };
+		B9C585781C92A3DF00243A38 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/BMPanel.strings; sourceTree = "<group>"; };
 		B9F1E24A1CA8975100AFAA6F /* HandScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandScrollView.h; sourceTree = "<group>"; };
 		B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandScrollView.m; sourceTree = "<group>"; };
 		B9F1E24C1CA8975100AFAA6F /* ZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomView.h; sourceTree = "<group>"; };
@@ -351,8 +351,8 @@
 				B951BD6C1C719DD0007B9359 /* Document.xib */,
 				B951BD691C719DD0007B9359 /* Document.h */,
 				B951BD6A1C719DD0007B9359 /* Document.m */,
-				B98CA6DF1C7615A1008C3E89 /* MyWindowController.h */,
-				B98CA6E01C7615A1008C3E89 /* MyWindowController.m */,
+				B98CA6DF1C7615A1008C3E89 /* MyWinC.h */,
+				B98CA6E01C7615A1008C3E89 /* MyWinC.m */,
 				B9A8C9681C916C10008A2DEB /* OLController.h */,
 				B9A8C9691C916C10008A2DEB /* OLController.m */,
 				B9A301391C9FF93E00407100 /* MYOLView.h */,
@@ -370,9 +370,9 @@
 		B9C585731C92965500243A38 /* BMPanel */ = {
 			isa = PBXGroup;
 			children = (
-				B9C585761C92A3D100243A38 /* BMPanelController.xib */,
-				B9C5856E1C92963400243A38 /* BMPanelController.h */,
-				B9C5856F1C92963400243A38 /* BMPanelController.m */,
+				B9C585761C92A3D100243A38 /* BMPanel.xib */,
+				B9C5856E1C92963400243A38 /* BMPanel.h */,
+				B9C5856F1C92963400243A38 /* BMPanel.m */,
 			);
 			name = BMPanel;
 			sourceTree = "<group>";
@@ -468,7 +468,7 @@
 				B951BDA31C71C759007B9359 /* PDFLst.array in Resources */,
 				B951BD731C719DD0007B9359 /* MainMenu.xib in Resources */,
 				B93FD5781C86D45B00B68959 /* singlePage_on.png in Resources */,
-				B9C585741C92A3D100243A38 /* BMPanelController.xib in Resources */,
+				B9C585741C92A3D100243A38 /* BMPanel.xib in Resources */,
 				B96EE7851C818A630063C7A2 /* goLast.png in Resources */,
 				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
 				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
@@ -490,14 +490,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C585711C92963400243A38 /* BMPanelController.m in Sources */,
+				B9C585711C92963400243A38 /* BMPanel.m in Sources */,
 				B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */,
 				B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */,
 				B97F40381CA5FCE0006CCEA4 /* SplitPanel.m in Sources */,
 				B97F40341CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m in Sources */,
 				B9A3013B1C9FF93E00407100 /* MYOLView.m in Sources */,
 				B97F40481CA666FA006CCEA4 /* RemovePanel.m in Sources */,
-				B98CA6E11C7615A1008C3E89 /* MyWindowController.m in Sources */,
+				B98CA6E11C7615A1008C3E89 /* MyWinC.m in Sources */,
 				B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */,
 				B9F1E24F1CA8975100AFAA6F /* HandScrollView.m in Sources */,
 				B951BD6B1C719DD0007B9359 /* Document.m in Sources */,
@@ -577,13 +577,13 @@
 			name = RemovePanel.xib;
 			sourceTree = "<group>";
 		};
-		B9C585761C92A3D100243A38 /* BMPanelController.xib */ = {
+		B9C585761C92A3D100243A38 /* BMPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B9C585751C92A3D100243A38 /* Base */,
 				B9C585781C92A3DF00243A38 /* ja */,
 			);
-			name = BMPanelController.xib;
+			name = BMPanel.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

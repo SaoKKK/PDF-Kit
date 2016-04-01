@@ -7,7 +7,7 @@
 //
 
 #import "Document.h"
-#import "MyWindowController.h"
+#import "MyWinC.h"
 
 @interface Document ()
 
@@ -35,7 +35,7 @@
 
 - (void)makeWindowControllers {
     //ドキュメントウインドウコントローラのインスタンスを作成
-    NSWindowController *cntr = [[MyWindowController alloc]initWithWindowNibName:[self windowNibName]];
+    NSWindowController *cntr = [[MyWinC alloc]initWithWindowNibName:[self windowNibName]];
     [self addWindowController:cntr];
     [cntr setShouldCloseDocument:YES];
     //ウインドウの位置を制御
@@ -50,14 +50,14 @@
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError{
     //PDFビューのドキュメントをNSDataにパッケージして返す
-    MyWindowController *winC = [[self windowControllers]objectAtIndex:0];
+    MyWinC *winC = [[self windowControllers]objectAtIndex:0];
     return [winC pdfViewDocumentData];
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {
     if ([self windowControllers].count != 0) {
         //復帰のための読み込みの場合
-        MyWindowController *winC = [[self windowControllers]objectAtIndex:0];
+        MyWinC *winC = [[self windowControllers]objectAtIndex:0];
         [winC revertDocumentToSaved];
     }
     return YES;

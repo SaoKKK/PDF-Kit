@@ -8,7 +8,7 @@
 
 #import "HandScrollView.h"
 
-#define WINC (MyWindowController *)self.window.windowController
+#define WINC (MyWinC *)self.window.windowController
 
 @implementation HandScrollView{
     NSPoint movePoint;

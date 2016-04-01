@@ -28,7 +28,7 @@
 }
 
 //現在のドキュメントのウインドウコントローラを返す
-- (MyWindowController*)currentDocWinController{
+- (MyWinC*)currentDocWinController{
     NSDocumentController *docC = [NSDocumentController sharedDocumentController];
     NSDocument *doc = [docC currentDocument];
     return [doc.windowControllers objectAtIndex:0];

@@ -13,7 +13,7 @@
 @implementation MYOLView
 
 - (void)keyDown:(NSEvent *)theEvent{
-    MyWindowController *winC = self.window.windowController;
+    MyWinC *winC = self.window.windowController;
     switch ([theEvent keyCode]) {
         case 125: //下矢印
             if (self.selectedRowIndexes.lastIndex != self.numberOfRows-1) {

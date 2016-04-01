@@ -1,5 +1,5 @@
 //
-//  BMPanelController.h
+//  BMPanel.h
 //  Sao's PDF Kit
 //
 //  Created by 河野 さおり on 2016/03/11.
@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MyWindowController.h"
+#import "MyWinC.h"
 
-@interface BMPanelController : NSWindowController
+@interface BMPanel : NSWindowController
 
 @end

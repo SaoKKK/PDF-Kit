@@ -8,7 +8,7 @@
 
 #import "ZoomView.h"
 
-#define WINC (MyWindowController *)self.window.windowController
+#define WINC (MyWinC *)self.window.windowController
 
 @implementation ZoomView{
     NSPoint startPoint;

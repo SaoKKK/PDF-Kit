@@ -7,13 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "BMPanelController.h"
+#import "BMPanel.h"
 
-@class BMPanelController;
+@class BMPanel;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong) BMPanelController *_bmPanelC;
+@property (strong) BMPanel *_bmPanelC;
 @property (weak) IBOutlet NSMenuItem *mnGoToPrevPg;
 @property (weak) IBOutlet NSMenuItem *mnGoToNextPg;
 @property (weak) IBOutlet NSMenuItem *mnGoToFirstPg;

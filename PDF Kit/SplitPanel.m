@@ -70,7 +70,7 @@
 }
 
 - (IBAction)splitPDF:(id)sender {
-    MyWindowController *docWinC = self.window.sheetParent.windowController;
+    MyWinC *docWinC = self.window.sheetParent.windowController;
     PDFDocument *inputDoc = [[docWinC._pdfView document]copy];
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     //保存先のパスを作成

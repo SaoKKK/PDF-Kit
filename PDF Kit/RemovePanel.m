@@ -24,7 +24,7 @@
 }
 
 - (IBAction)pshRemove:(id)sender {
-    MyWindowController *docWinC = self.window.sheetParent.windowController;
+    MyWinC *docWinC = self.window.sheetParent.windowController;
     doc = [docWinC._pdfView document];
     NSUInteger totalPage = doc.pageCount;
     //ページ範囲をインデックス・セットに変換

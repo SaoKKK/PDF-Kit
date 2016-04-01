@@ -9,7 +9,7 @@
 #import "MyPDFView.h"
 
 #define APPD (AppDelegate *)[NSApp delegate]
-#define WINC (MyWindowController *)self.window.windowController
+#define WINC (MyWinC *)self.window.windowController
 
 static CGFloat HandleWidth = 6.0f;
 

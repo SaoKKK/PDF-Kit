@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="BMPanelController">
+        <customObject id="-2" userLabel="File's Owner" customClass="BMPanel">
             <connections>
                 <outlet property="txtOLLabel" destination="YmT-Qp-dqy" id="L9u-0n-yCA"/>
                 <outlet property="txtPgIndex" destination="U8e-uH-2PH" id="VWs-O4-SxZ"/>

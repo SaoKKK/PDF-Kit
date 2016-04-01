@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MyWindowController.h"
+#import "MyWinC.h"
 #import "AppDelegate.h"
 
 @interface MYOLView : NSOutlineView

@@ -1,5 +1,5 @@
 //
-//  MyWindowController.h
+//  MyWinC.h
 //  Sao's PDF Kit
 //
 //  Created by 河野 さおり on 2016/02/19.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
-#import "BMPanelController.h"
+#import "BMPanel.h"
 #import "SplitPanel.h"
 #import "RemovePanel.h"
 #import "MYOLView.h"
@@ -18,7 +18,7 @@
 @class RemovePanel;
 @class MYOLView;
 
-@interface MyWindowController : NSWindowController<NSWindowDelegate,NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
+@interface MyWinC : NSWindowController<NSWindowDelegate,NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
     IBOutlet NSWindow *window;
     IBOutlet NSWindow *progressWin;
     IBOutlet NSProgressIndicator *savingProgBar;

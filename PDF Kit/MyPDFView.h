@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ZoomView.h"
 #import "HandScrollView.h"
-#import "MyWindowController.h"
+#import "MyWinC.h"
 
 @class HandScrollView;
 @class ZoomView;
