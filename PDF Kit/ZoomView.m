@@ -8,7 +8,6 @@
 
 #import "ZoomView.h"
 
-#define APPD (AppDelegate *)[NSApp delegate]
 #define WINC (MyWindowController *)self.window.windowController
 
 @implementation ZoomView{
@@ -56,7 +55,7 @@
     NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     NSPoint dragPoint;
     if (NSPointInRect(point, pageRect)) {
-        //ドラッグ座標がページ領域内であればその座標をstartPointに格納
+        //ドラッグ座標がページ領域内であればその座標をdragPointに格納
         dragPoint = point;
     } else {
         //ドラッグ座標がページ領域外だった場合

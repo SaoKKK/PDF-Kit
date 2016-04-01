@@ -9,25 +9,23 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 #import <QuartzCore/QuartzCore.h>
-#import "HandleView.h"
 #import "ZoomView.h"
 #import "HandScrollView.h"
 #import "MyWindowController.h"
 
-@class HandleView;
 @class HandScrollView;
 @class ZoomView;
 
 @interface MyPDFView : PDFView
 
-@property (assign)NSRect _rect;
-@property (strong)HandleView *handleView;
 @property (strong)HandScrollView *handScrollView;
 @property (strong)ZoomView *zoomView;
+@property (assign)NSRect selRect;
+@property (readonly,nonatomic)PDFPage *targetPg;
 
-- (void)loadHundleView;
 - (void)loadHandScrollView;
 - (void)loadZoomView;
 - (void)removeSubView;
+- (void)deselectArea;
 
 @end

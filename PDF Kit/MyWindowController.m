@@ -789,12 +789,14 @@
             [sender setImage:[NSImage imageNamed:@"selectArea_off"] forSegment:1];
             [sender setImage:[NSImage imageNamed:@"zoom_off"] forSegment:3];
             [_pdfView removeSubView];
+            [_pdfView deselectArea];
             break;
         case 1:
             [sender setImage:[NSImage imageNamed:@"selectText_off"] forSegment:0];
             [sender setImage:[NSImage imageNamed:@"selectArea_on"] forSegment:1];
             [sender setImage:[NSImage imageNamed:@"zoom_off"] forSegment:3];
-            [_pdfView loadHundleView];
+            [_pdfView removeSubView];
+            [_pdfView clearSelection];
             break;
         case 2:
             [sender setImage:[NSImage imageNamed:@"selectText_off"] forSegment:0];
