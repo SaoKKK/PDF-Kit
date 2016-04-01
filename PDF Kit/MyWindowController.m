@@ -890,4 +890,9 @@
     [self.window makeFirstResponder:searchField];
 }
 
+- (IBAction)mnDeselect:(id)sender{
+    [_pdfView clearSelection];
+    [_pdfView deselectArea];
+}
+
 @end
