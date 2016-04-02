@@ -512,28 +512,6 @@
                             <action selector="showSideBar:" target="-2" id="k1M-RT-Zhb"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="ZbJ-pm-tfY">
-                        <rect key="frame" x="465" y="668" width="81" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9eK-Iq-c5M">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="aa:" target="-2" id="yk4-6E-Edm"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" id="JWA-R3-mSh">
-                        <rect key="frame" x="384" y="667" width="81" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wdX-OS-OWn">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="test:" target="-1" id="4Gp-ck-luM"/>
-                        </connections>
-                    </button>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8Gp-5y-7Rn">
                         <rect key="frame" x="266" y="3" width="1" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

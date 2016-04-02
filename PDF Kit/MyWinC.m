@@ -687,24 +687,6 @@
 
 #pragma mark - actions
 
-- (IBAction)test:(id)sender {
-    PDFDocument *doc = [_pdfView document];
-    [doc removePageAtIndex:3];
-    [doc removePageAtIndex:2];
-    for (int i=0; i < doc.pageCount; i++){
-        PDFPage *page = [doc pageAtIndex:i];
-        [page setValue:[NSString stringWithFormat:@"%d",i+1] forKey:@"label"];
-    }
-    [_pdfView layoutDocumentView];
-}
-
-- (IBAction)aa:(id)sender{
-    NSRect rect = thumbView.bounds;
-    NSLog(@"%f,%f,%f,%f",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
-    NSRect rect2 = thumbView.frame;
-    NSLog(@"%f,%f,%f,%f",rect2.origin.x,rect2.origin.y,rect2.size.width,rect2.size.height);
-}
-
 - (IBAction)txtJumpPage:(id)sender {
     PDFDocument *doc = [_pdfView document];
     PDFPage *page = [doc pageAtIndex:[[sender stringValue]integerValue]-1];
