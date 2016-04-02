@@ -160,7 +160,7 @@
         //ドロップ先にペーストボードアイテムを挿入
         [targetOL insertChild:[dragOLArray objectAtIndex:i] atIndex:index];
         [_olView reloadData];
-        if (oldIndex > targetIndex) {
+        if (oldIndex > targetIndex && ([_olView isItemExpanded:targetOL] || !item)) {
             //上への移動の場合（ドロップ元のインデクスが下にずれる）
             [oldIndexes shiftIndexesStartingAtIndex:targetIndex by:1];
             oldIndex ++;
