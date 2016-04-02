@@ -553,10 +553,16 @@
                             }
                         } else if ([[pages objectAtIndex:0]isEqualToString:@""]) {
                             //"-"が先頭にある場合
-                            [pageRange addIndexesInRange:NSMakeRange(1,[[pages objectAtIndex:1]integerValue])];
+                            if ([[pages objectAtIndex:1]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] < 1) {
+                                [self setErrMessage:[data objectForKey:@"fName"]];
+                                [self showErrorDialog];
+                                return;
+                            } else {
+                                [pageRange addIndexesInRange:NSMakeRange(1,[[pages objectAtIndex:1]integerValue])];
+                            }
                         } else if ([[pages objectAtIndex:1]isEqualToString:@""]) {
                             //"-"が末尾にある場合
-                            if ([[pages objectAtIndex:0]integerValue] > totalPage) {
+                            if ([[pages objectAtIndex:0]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] < 1) {
                                 [self setErrMessage:[data objectForKey:@"fName"]];
                                 [self showErrorDialog];
                                 return;

@@ -115,10 +115,15 @@
                     }
                 } else if ([[pages objectAtIndex:0]isEqualToString:@""]) {
                     //"-"が先頭にある場合
-                    [pageRange addIndexesInRange:NSMakeRange(1,[[pages objectAtIndex:1]integerValue])];
+                    if ([[pages objectAtIndex:1]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] < 1) {
+                        [self showPageRangeAllert:NSLocalizedString(@"PageRangeInfo",@"")];
+                        return;
+                    } else {
+                        [pageRange addIndexesInRange:NSMakeRange(1,[[pages objectAtIndex:1]integerValue])];
+                    }
                 } else if ([[pages objectAtIndex:1]isEqualToString:@""]) {
                     //"-"が末尾にある場合
-                    if ([[pages objectAtIndex:0]integerValue] > totalPage) {
+                    if ([[pages objectAtIndex:0]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] < 1) {
                         [self showPageRangeAllert:NSLocalizedString(@"PageRangeInfo",@"")];
                         return;
                     } else {
@@ -202,7 +207,7 @@
     NSAlert *alert = [[NSAlert alloc]init];
     alert.messageText = NSLocalizedString(@"PageRangeMsg",@"");
     [alert setInformativeText:infoTxt];
-    [alert addButtonWithTitle:NSLocalizedString(@"OK",@"")];
+    [alert addButtonWithTitle:@"OK"];
     [alert setAlertStyle:NSCriticalAlertStyle];
     return [alert runModalSheetForWindow:self.window];
 }

@@ -500,7 +500,7 @@
     if (!sel) {
         page = _pdfView.targetPg;
         rect = _pdfView.selRect;
-        sel = [page selectionForRect:_pdfView.selRect];
+        sel = [page selectionForRect:rect];
     } else {
         page = [[sel pages]objectAtIndex:0];
         rect = [sel boundsForPage:page];

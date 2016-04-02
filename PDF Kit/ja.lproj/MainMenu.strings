@@ -349,7 +349,7 @@
 "ogc-rX-tC1.title" = "Loosen";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "pa3-QI-u2k"; */
-"pa3-QI-u2k.title" = "Delete";
+"pa3-QI-u2k.title" = "消去";
 
 /* Class = "NSMenuItem"; title = "Save…"; ObjectID = "pxx-59-PXV"; */
 "pxx-59-PXV.title" = "保存";
