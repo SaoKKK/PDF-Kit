@@ -56,6 +56,10 @@
 "PointY_msg" = "移動先の位置のY座標が入力されていません。";
 "EmptyErr_info" = "この値に空白は許可されません。入力を正しく行ってください。";
 
+//Menu item Show or Hide Text Panel
+"ShowTP" = "テキストパネルを表示";
+"HideTP" = "テキストパネルを隠す";
+
 //for split document
 "Choose" = "選択";
 "ChooseFolder" = "保存先のフォルダを選択してください。";

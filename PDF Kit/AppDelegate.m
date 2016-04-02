@@ -48,7 +48,7 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC;
+@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC,_txtPanel;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成
@@ -95,6 +95,14 @@
     [_bmPanelC showOrHideWindow];
 }
 
+- (IBAction)showTxtPanel:(id)sender{
+    if (! _txtPanel){
+        _txtPanel = [[TxtPanel alloc]initWithWindowNibName:@"TxtPanel"];
+    }
+    [_txtPanel clearTxt];
+    [_txtPanel showOrHideWindow];
+}
+
 #pragma mark - menu control
 
 //メニュータイトルの変更
@@ -102,7 +110,10 @@
     SEL action = menuItem.action;
     if (action==@selector(showBookmarkPanel:)) {
         [menuItem setTitle:([_bmPanelC isWindowShown] ? NSLocalizedString(@"HideBM", @""):NSLocalizedString(@"ShowBM", @""))];
+    } else if (action==@selector(showTxtPanel:)) {
+        [menuItem setTitle:([_txtPanel isWindowShown] ? NSLocalizedString(@"HideTP", @""):NSLocalizedString(@"ShowTP", @""))];
     }
+
     return YES;
 }
 

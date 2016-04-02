@@ -7,7 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
+#import "MyWinC.h"
+#import "MyPDFView.h"
+#import "NSAlert+SynchronousSheet.h"
 
-@interface TxtPanel : NSWindowController
+@interface TxtPanel : NSWindowController<NSWindowDelegate>
+
+- (void)clearTxt;
 
 @end

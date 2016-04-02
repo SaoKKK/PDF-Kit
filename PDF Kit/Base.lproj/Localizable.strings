@@ -56,6 +56,10 @@
 "PointY_msg" = "Point y of destination is empty.";
 "EmptyErr_info" = "This field value cannot be empty. Please input rightly.";
 
+//Menu item Show or Hide Text Panel
+"ShowTP" = "Show Text Panel";
+"HideTP" = "Hide Text Panel";
+
 //for split document
 "Choose" = "Choose";
 "ChooseFolder" = "Choose folder.";

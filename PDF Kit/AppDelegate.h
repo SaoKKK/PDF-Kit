@@ -8,12 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BMPanel.h"
+#import "TxtPanel.h"
 
 @class BMPanel;
+@class TxtPanel;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (strong) BMPanel *_bmPanelC;
+@property (strong) TxtPanel *_txtPanel;
 @property (weak) IBOutlet NSMenuItem *mnGoToPrevPg;
 @property (weak) IBOutlet NSMenuItem *mnGoToNextPg;
 @property (weak) IBOutlet NSMenuItem *mnGoToFirstPg;
