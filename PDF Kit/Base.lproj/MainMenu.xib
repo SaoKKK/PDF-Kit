@@ -420,10 +420,6 @@ CA
                                     <action selector="mnSplitPDF:" target="-1" id="uHP-jE-VX5"/>
                                 </connections>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="okK-PO-K4x"/>
-                            <menuItem title="Export Texts..." id="J73-3e-g9E">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

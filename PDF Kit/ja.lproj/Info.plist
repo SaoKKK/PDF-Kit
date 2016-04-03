@@ -6,6 +6,10 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>Sao&apos;s PDF Kit</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>SPK.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>SPKHelp</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>

@@ -17,13 +17,6 @@
     BOOL bSave;
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
-
 //オートセーブ機能のON/OFF
 + (BOOL)autosavesInPlace {
     return NO;
@@ -61,6 +54,11 @@
         [winC revertDocumentToSaved];
     }
     return YES;
+}
+
+//セーブパネルにファイルフォーマット選択のポップアップを表示させるかの可否
+- (BOOL)shouldRunSavePanelWithAccessoryView{
+    return NO;
 }
 
 @end

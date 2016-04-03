@@ -84,6 +84,12 @@ enum UNDEROBJ_TYPE{
     [self addTrackingArea:track];
 }
 
+#pragma mark - print document
+
+- (void)printDocument:(id)sender{
+    [self printWithInfo:[self.window.windowController.document printInfo]  autoRotate:YES];
+}
+
 #pragma mark - sub view control
 
 - (void)loadHandScrollView{
