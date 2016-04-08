@@ -10,3 +10,7 @@
 //TableView header title
 "RHz-PF-bq9.headerCell.title" = "ページ";
 "bHY-Bk-jUu.headerCell.title" = "結果";
+
+//outline mode
+"LXD-SX-hqg.ibShadowedLabels[0]" = "表示モード";
+"LXD-SX-hqg.ibShadowedLabels[1]" = "編集モード";

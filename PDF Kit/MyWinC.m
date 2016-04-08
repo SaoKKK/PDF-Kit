@@ -685,6 +685,14 @@
     [rightView setFrame:rightFrame];
 }
 
+- (CGFloat)splitView:(NSSplitView *)splitView constrainSplitPosition:(CGFloat)proposedPosition ofSubviewAt:(NSInteger)dividerIndex{
+    NSView *leftView = [[splitView subviews]objectAtIndex:0];
+    NSRect leftFrame = [leftView frame];
+    [segOLViewMode setWidth:leftFrame.size.width/2 forSegment:0];
+    [segOLViewMode setWidth:leftFrame.size.width/2 forSegment:1];
+    return proposedPosition;
+}
+
 #pragma mark - actions
 
 - (IBAction)txtJumpPage:(id)sender {
@@ -872,6 +880,10 @@
 }
 
 - (IBAction)mnFindInPDF:(id)sender{
+    CGFloat currentTocWidth = tocView.frame.size.width;
+    if (currentTocWidth == 0) {
+        [self showSideBar:nil];
+    }
     [self.window makeFirstResponder:searchField];
 }
 
