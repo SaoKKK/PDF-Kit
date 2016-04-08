@@ -179,6 +179,17 @@ enum UNDEROBJ_TYPE{
     return cursor;
 }
 
+- (IBAction)selectAll:(id)sender{
+    if ((WINC).segTool.selectedSegment == 1){
+        targetPg = self.currentPage;
+        selRect = [self.currentPage boundsForBox:kPDFDisplayBoxArtBox];
+        [self setNeedsDisplay:YES];
+        (APPD).isSelection = YES;
+    } else {
+       [super selectAll:nil];
+    }
+}
+
 #pragma mark - draw page
 
 - (void)drawPage:(PDFPage *)page{
