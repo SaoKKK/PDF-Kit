@@ -113,7 +113,6 @@
     } else if (action==@selector(showTxtPanel:)) {
         [menuItem setTitle:([_txtPanel isWindowShown] ? NSLocalizedString(@"HideTP", @""):NSLocalizedString(@"ShowTP", @""))];
     }
-
     return YES;
 }
 

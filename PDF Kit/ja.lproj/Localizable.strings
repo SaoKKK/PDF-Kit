@@ -49,6 +49,14 @@
 "ShowBM" = "しおりパネルを表示";
 "HideBM" = "しおりパネルを隠す";
 
+//Menu item Show or Hide Font Panel
+"ShowFont" = "フォントパネルを表示";
+"HideFont" = "フォントパネルを隠す";
+
+//Menu item Show or Hide Color Panel
+"ShowColor" = "カラーパネルを表示";
+"HideColor" = "カラーパネルを隠す";
+
 //Bookmark panel empty input error message
 "OLLabel_msg" = "ラベルが入力されていません。";
 "PageIndex_msg" = "移動先のページインデックスが入力されていません。";

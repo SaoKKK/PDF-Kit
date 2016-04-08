@@ -60,6 +60,14 @@
 "ShowTP" = "Show Text Panel";
 "HideTP" = "Hide Text Panel";
 
+//Menu item Show or Hide Font Panel
+"ShowFont" = "Show Fonts";
+"HideFont" = "Hide Fonts";
+
+//Menu item Show or Hide Color Panel
+"ShowColor" = "Show Colors";
+"HideColor" = "Hide Colors";
+
 //for split document
 "Choose" = "Choose";
 "ChooseFolder" = "Choose folder.";

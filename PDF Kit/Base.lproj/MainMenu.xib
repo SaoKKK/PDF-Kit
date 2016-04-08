@@ -250,7 +250,7 @@ CA
                                     <items>
                                         <menuItem title="Show Fonts" keyEquivalent="t" id="zrI-Nl-cNs">
                                             <connections>
-                                                <action selector="orderFrontFontPanel:" target="-1" id="rFs-oB-7yI"/>
+                                                <action selector="orderFrontFontPanel:" target="YLy-65-1bz" id="1HA-Fp-wRa"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Bold" tag="2" keyEquivalent="b" id="5ev-oK-vOH">
