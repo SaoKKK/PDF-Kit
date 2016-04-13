@@ -21,7 +21,7 @@
 
 @implementation MyWinC
 
-@synthesize _pdfView,thumbView,_splitPanel,_removePanel,_olView;
+@synthesize _pdfView,thumbView,_splitPanel,_removePanel,_olView,segTool;
 
 #pragma mark - Window Controller Method
 
@@ -807,6 +807,11 @@
 }
 
 #pragma mark - menu action
+
+//ファイルメニュー/印刷
+- (void)printDocument:(id)sender{
+    [_pdfView printWithInfo:[self.document printInfo]  autoRotate:YES];
+}
 
 //表示メニュー
 - (IBAction)zoomIn:(id)sender{

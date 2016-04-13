@@ -209,9 +209,9 @@
 // menu item Clear Bookmark
 "gRL-h3-Ngi.title" = "しおりデータをクリア";
 
-/* Class = "NSMenuItem"; title = "Open…"; ObjectID = "IAo-SY-fd9"; */
+//menu item "Open..."
 "IAo-SY-fd9.title" = "開く…";
-/* Class = "NSMenuItem"; title = "Revert to Saved"; ObjectID = "KaW-ft-85H"; */
+//menu item "Revert to Saved"
 "KaW-ft-85H.title" = "最後の保存に戻す";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */

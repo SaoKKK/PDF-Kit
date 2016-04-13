@@ -26,10 +26,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="T3f-yi-hlH">
-                        <rect key="frame" x="20" y="60" width="143" height="75"/>
+                        <rect key="frame" x="20" y="60" width="150" height="75"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        <size key="cellSize" width="143" height="20"/>
+                        <size key="cellSize" width="150" height="20"/>
                         <size key="intercellSpacing" width="0.0" height="35"/>
                         <buttonCell key="prototype" type="radio" title="Extract Specified Pages" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="TKE-B2-1LK">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

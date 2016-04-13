@@ -84,12 +84,6 @@ enum UNDEROBJ_TYPE{
     [self addTrackingArea:track];
 }
 
-#pragma mark - print document
-
-- (void)printDocument:(id)sender{
-    [self printWithInfo:[self.window.windowController.document printInfo]  autoRotate:YES];
-}
-
 #pragma mark - sub view control
 
 - (void)loadHandScrollView{
@@ -179,6 +173,8 @@ enum UNDEROBJ_TYPE{
     return cursor;
 }
 
+#pragma mark - menu action
+
 - (IBAction)selectAll:(id)sender{
     if ((WINC).segTool.selectedSegment == 1){
         targetPg = self.currentPage;
@@ -187,6 +183,17 @@ enum UNDEROBJ_TYPE{
         (APPD).isSelection = YES;
     } else {
        [super selectAll:nil];
+    }
+}
+
+- (void)copy:(id)sender{
+    if ((WINC).segTool.selectedSegment == 1) {
+        PDFSelection *sel = [targetPg selectionForRect:selRect];
+        [self setCurrentSelection:sel];
+        [super copy:nil];
+        [self clearSelection];
+    } else {
+        [super copy:nil];
     }
 }
 

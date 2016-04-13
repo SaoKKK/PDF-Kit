@@ -85,12 +85,14 @@
         _mergePDFWC = [[MergePDFWin alloc]initWithWindowNibName:@"MergePDFWin"];
     }
     [_mergePDFWC setShouldCascadeWindows:NO];
+    [_mergePDFWC setWindowFrameAutosaveName:@"MergePDFWin"];
     [_mergePDFWC showWindow:self];
 }
 
 - (IBAction)showBookmarkPanel:(id)sender{
     if (! _bmPanelC){
         _bmPanelC = [[BMPanel alloc]initWithWindowNibName:@"BMPanel"];
+        [_bmPanelC setWindowFrameAutosaveName:@"BMPanel"];
     }
     [_bmPanelC showOrHideWindow];
 }
@@ -98,6 +100,7 @@
 - (IBAction)showTxtPanel:(id)sender{
     if (! _txtPanel){
         _txtPanel = [[TxtPanel alloc]initWithWindowNibName:@"TxtPanel"];
+        [_txtPanel setWindowFrameAutosaveName:@"TxtPanel"];
     }
     [_txtPanel clearTxt];
     [_txtPanel showOrHideWindow];

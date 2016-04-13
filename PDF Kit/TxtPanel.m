@@ -21,8 +21,16 @@
     NSString *saveFolder;
 }
 
+
+
 - (void)windowDidLoad {
     [super windowDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidBecomeKeyNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        (APPD).isTextPanelKey = YES;
+    }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidResignKeyNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        (APPD).isTextPanelKey = NO;
+    }];
 }
 
 - (void)clearTxt{
