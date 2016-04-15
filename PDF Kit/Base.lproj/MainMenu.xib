@@ -693,6 +693,13 @@ CA
                                     <action selector="mnSplitPDF:" target="-1" id="uHP-jE-VX5"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="wIL-mo-FK7"/>
+                            <menuItem title="Export as Image..." id="8zL-6Z-AEd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="mnExportASImage:" target="-1" id="BvG-rK-TzM"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

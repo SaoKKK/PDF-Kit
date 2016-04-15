@@ -1,0 +1,37 @@
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "3lF-qg-ZmP"; */
+"3lF-qg-ZmP.title" = "キャンセル";
+
+/* Class = "NSTextFieldCell"; title = "Exporting images..."; ObjectID = "5yP-Nf-22x"; */
+"5yP-Nf-22x.title" = "Exporting images...";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Window";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "Ffc-4t-hph"; */
+"Ffc-4t-hph.title" = "Window";
+
+/* Class = "NSComboBoxCell"; title = "All Pages"; ObjectID = "Fwu-e4-Pna"; */
+"Fwu-e4-Pna.title" = "全ページ";
+
+/* Class = "NSMenuItem"; title = "TIFF"; ObjectID = "HpZ-zn-BCW"; */
+"HpZ-zn-BCW.title" = "TIFF";
+
+/* Class = "NSTextFieldCell"; title = "Format:"; ObjectID = "enQ-l2-2b2"; */
+"enQ-l2-2b2.title" = "フォーマット:";
+"RBF-qT-eca.title" = "圧縮方式:";
+"oOM-ad-Bxz.title" = "アルファ";
+"LqF-UY-jkN.title" = "画質:";
+"3ai-5c-Hie.title" = "最低";
+"DlC-T8-st4.title" = "高画質";
+/* Class = "NSButtonCell"; title = "Export as Image"; ObjectID = "kTQ-8o-lHW"; */
+"kTQ-8o-lHW.title" = "画像書き出し";
+
+/* Class = "NSButtonCell"; title = "Save to..."; ObjectID = "pIA-3K-v93"; */
+"pIA-3K-v93.title" = "保存先を変更する...";
+
+/* Class = "NSMenuItem"; title = "JPEG"; ObjectID = "pxD-YD-qfk"; */
+"pxD-YD-qfk.title" = "JPEG";
+
+/* Class = "NSTextFieldCell"; title = "Target Pages:"; ObjectID = "sFp-cn-1mu"; */
+"sFp-cn-1mu.title" = "対象ページ:";

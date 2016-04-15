@@ -31,8 +31,6 @@
 }
 
 #pragma mark - set up notification
-- (IBAction)test:(id)sender {
-}
 
 - (void)setUpNotification{
     //PDF作成開始
@@ -131,7 +129,7 @@
                     }
                 } else {
                     //通常の範囲指定
-                    if ([[pages objectAtIndex:0]integerValue] < 1 || [[pages objectAtIndex:0]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] > [[pages objectAtIndex:1]integerValue]) {
+                    if ([[pages objectAtIndex:0]integerValue] < 1 || [[pages objectAtIndex:1]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] > [[pages objectAtIndex:1]integerValue]) {
                         [self showPageRangeAllert:NSLocalizedString(@"PageRangeInfo",@"")];
                         return;
                     } else {
@@ -159,7 +157,6 @@
             NSUInteger index = [pageRange firstIndex];
             int indexCount = 0;
             while(index != NSNotFound) {
-                PDFCount = pageRange.count;
                 //PDF作成過程ノーティフィケーションを送信
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"PDFDidEndPageInsert" object:self userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:indexCount] forKey:@"page"]];
                 [outputDoc insertPage:[inputDoc pageAtIndex:index-1] atIndex:outputDoc.pageCount];

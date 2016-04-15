@@ -347,6 +347,8 @@
 "58g-Vh-TrJ.title" = "PDFを分割...";
 //menu item "remove pages by specifying the range"
 "TcW-h6-RTs.title" = "範囲指定してページを削除...";
+//menu item "Export as Image..."
+"8zL-6Z-AEd.title" = "イメージファイルとして書き出し...";
 
 //Status Dialogメッセージ"Failed to read the file."
 "EAL-Qs-VHJ.title" = "ファイルの読み込みに失敗しました。";

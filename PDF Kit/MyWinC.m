@@ -21,7 +21,7 @@
 
 @implementation MyWinC
 
-@synthesize _pdfView,thumbView,_splitPanel,_removePanel,_olView,segTool;
+@synthesize _pdfView,thumbView,_expPanel,_splitPanel,_removePanel,_olView,segTool;
 
 #pragma mark - Window Controller Method
 
@@ -276,24 +276,6 @@
     [_pdfView setDocument:pdf];
     [self initWindow];
     [self.document updateChangeCount:NSChangeDone];
-}
-
-#pragma mark - Split document
-
-- (IBAction)mnSplitPDF:(id)sender{
-    _splitPanel = [[SplitPanel alloc]initWithWindowNibName:@"SplitPanel"];
-    [self.window beginSheet:_splitPanel.window completionHandler:^(NSModalResponse returnCode){
-        _splitPanel = nil;
-    }];
-}
-
-#pragma mark - Split document
-
-- (IBAction)mnRemovePage:(id)sender{
-    _removePanel = [[RemovePanel alloc]initWithWindowNibName:@"RemovePanel"];
-    [self.window beginSheet:_removePanel.window completionHandler:^(NSModalResponse returnCode){
-        _removePanel = nil;
-    }];
 }
 
 #pragma mark - search in document
@@ -895,6 +877,27 @@
 - (IBAction)mnDeselect:(id)sender{
     [_pdfView clearSelection];
     [_pdfView deselectArea];
+}
+
+- (IBAction)mnExportASImage:(id)sender{
+    _expPanel = [[ExportPanel alloc]initWithWindowNibName:@"ExportPanel"];
+    [self.window beginSheet:_expPanel.window completionHandler:^(NSModalResponse returnCode){
+        _expPanel = nil;
+    }];
+}
+
+- (IBAction)mnSplitPDF:(id)sender{
+    _splitPanel = [[SplitPanel alloc]initWithWindowNibName:@"SplitPanel"];
+    [self.window beginSheet:_splitPanel.window completionHandler:^(NSModalResponse returnCode){
+        _splitPanel = nil;
+    }];
+}
+
+- (IBAction)mnRemovePage:(id)sender{
+    _removePanel = [[RemovePanel alloc]initWithWindowNibName:@"RemovePanel"];
+    [self.window beginSheet:_removePanel.window completionHandler:^(NSModalResponse returnCode){
+        _removePanel = nil;
+    }];
 }
 
 @end

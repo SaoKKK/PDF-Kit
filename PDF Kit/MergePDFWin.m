@@ -571,7 +571,7 @@
                             }
                         } else {
                             //通常の範囲指定
-                            if ([[pages objectAtIndex:0]integerValue] < 1 || [[pages objectAtIndex:0]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] > [[pages objectAtIndex:1]integerValue]) {
+                            if ([[pages objectAtIndex:0]integerValue] < 1 || [[pages objectAtIndex:1]integerValue] > totalPage || [[pages objectAtIndex:0]integerValue] > [[pages objectAtIndex:1]integerValue]) {
                                 [self setErrMessage:[data objectForKey:@"fName"]];
                                 [self showErrorDialog];
                                 return;

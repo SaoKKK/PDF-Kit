@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 #import "BMPanel.h"
+#import "ExportPanel.h"
 #import "SplitPanel.h"
 #import "RemovePanel.h"
 #import "MyOLView.h"
 
 @class MyPDFView;
+@class ExportPanel;
 @class SplitPanel;
 @class RemovePanel;
 @class MyOLView;
@@ -50,6 +52,7 @@
 @property (strong) IBOutlet MyOLView *_olView;
 @property (strong) IBOutlet PDFThumbnailView *thumbView;
 @property (strong) IBOutlet NSSegmentedControl *segTool;
+@property (strong) ExportPanel *_expPanel;
 @property (strong) SplitPanel *_splitPanel;
 @property (strong) RemovePanel *_removePanel;
 
