@@ -168,20 +168,6 @@
         NSData *tifRep = [image TIFFRepresentation];
         //Bitmap画像に変換
         NSBitmapImageRep *imgRep = [NSBitmapImageRep imageRepWithData:tifRep];
-        /*
-         NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc]
-         initWithBitmapDataPlanes:NULL
-         pixelsWide:imageSize.width
-         pixelsHigh:imageSize.height
-         bitsPerSample:8
-         samplesPerPixel:3
-         hasAlpha:NO
-         isPlanar:NO
-         bitmapFormat:NSAlphaNonpremultipliedBitmapFormat
-         bytesPerRow:(3 * imageSize.width)
-         bitsPerPixel:24];
-
-         */
         if (popFormat.indexOfSelectedItem == 0) {
             //TIFF出力
             savePath = [NSString stringWithFormat:@"%@/%@(%li).tiff",saveFolder,fName,index];

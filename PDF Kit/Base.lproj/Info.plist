@@ -5,11 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Sao&apos;s PDF Kit</string>
-	<key>CFBundleHelpBookFolder</key>
-	<string>SPK.help</string>
-	<key>CFBundleHelpBookName</key>
-	<string>SPKHelp</string>
+	<string>Sao's PDF Kit</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -45,6 +41,10 @@
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>SPK.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>SPKHelp</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
@@ -60,7 +60,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
