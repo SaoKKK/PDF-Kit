@@ -207,7 +207,6 @@
                     cMethod = [NSNumber numberWithInt:NSTIFFCompressionPackBits];
                   break;
             }
-            NSLog(@"%hhi",imgRep.alpha);
             NSDictionary *pTiff = [NSDictionary dictionaryWithObjectsAndKeys:cMethod,NSImageCompressionMethod, nil];
             NSData *tifData = [imgRep representationUsingType:NSTIFFFileType properties:pTiff];
             [tifData writeToFile:savePath atomically:YES];
