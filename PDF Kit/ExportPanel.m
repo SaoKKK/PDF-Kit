@@ -19,7 +19,6 @@
     IBOutlet NSPopUpButton *popFormat;
     IBOutlet NSTabView *tabOption;
     IBOutlet NSPopUpButton *popCMethod;
-    IBOutlet NSButton *chkAlpha;
     IBOutlet NSSlider *cSlider;
     NSString *saveFolder;
     NSString *savePath;
