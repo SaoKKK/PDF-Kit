@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Merge PDF</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+</head>
+<body>
+<div class="content">
+	<h1>Merge PDF</h1>
+	<h2>● Merge PDF<a name="merge">　</a></h2>
+	<h3>1. Structure of the window "Merge PDF"</h3>
+	<img border="1px" src = "image/ss10.tiff" width = "602" height = "315">
+	<p style="margin-top:10;">
+		To merge PDF files, click the menu item <b>"PDF" → "Merge PDF..."</b> to show the window <b>"Merge PDF"</b> first.<BR>
+		The files that will be merged will be registered to the left list and you can confirm the preview of a registered file in the right pane. The buttons under the list are used to edit the list. You can perform merging with the right-most button at the bottom of the window after registering the files.
+	</p>
+	<h3>2. Register the Files that will be Merged</h3>
+	<p>
+		If the window <b>"Merge PDF"</b> is displayed for the first time after the application was launched, the opened documents will be added to the list of the window automatically. If there's no opened document, the list will be empty. To add files to the list, drag and drop PDF files into the list from <b>"Finder"</b> or click <b>"+"</b> button under the list and choose PDF files with the file dialog and click the button <b>"Open"</b>.<br>
+		When you need to remove files from the list, choose files that you want to remove on the list and click <b>"-"</b> button under the list or press <b>command + delete</b> key. If you want to clear all files, click <b>"Clear"</b> button under the list.<br>
+		The files will be merged according to order of lists. When you want to change the order of the files, move the items by drag and drop on the list.
+	</p>
+	<h3>3. Confirmation of the each Files and Registration of Pages that will be Merged</h3>
+	<p>
+		When a file is selected on the list, the preview of the file will be viewed in the right pane. The way to navigate between the pages is similar to document window. Use the buttons at the bottom of the pane or the menu items of <b>"Go"</b>.<BR>
+		After registering files, set the page range for every each file. Choose "All Pages" from the combo box, if you want to merge all pages from the file. If pages should be specified, choose the second row of the combo box and input pages in Comma Separated Value following the example format.
+	</p>
+	<h3>4. perform merging</h3>
+	<p>
+		After the registrations are all done, click the right-most button <b>"Merge PDF"</b> at the bottom of the window. If the check box <b>"Create Bookmark"</b > is on, the application will add bookmarks to the created file automatically. The destination of the bookmark is the top page of the each source files and the label of the bookmark is the file name of the each source files. If the state of the chack box is off, the created file has no bookmarks.<br>
+		When merging processing is finished, the created file is displayed as a new document. Specify the file path and save the document.
+	</p>
+	<h2>● Temporarily Store Processing<a name="store">　</a></h2>
+	<p>
+		When the button <b>"Store Work State"</b> is clicked, the application stores the state of registration on the list to the temporary file. This is kept even after application is finished. Use it in the cases that registration is not settled with once. Click the button <b>"Restore Work State"</b> to restore the state of the registration to the list from temporary file. Please note it is only the state of the registration that the application saves. PDF files themselves are not stored by this processing.

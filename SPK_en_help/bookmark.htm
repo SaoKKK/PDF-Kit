@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Working with Bookmark</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+</head>
+<body>
+<div class="content">
+	<h1>Working with Bookmark</h1>
+	
+	<h2>● Use Bookmark<a name="useBookmark">　</a></h2>
+	<p>
+		The PDF document can have a marker called "bookmark" which has the label  and the positional information in the document in any place. The structure which arranges them hierarchically is called outline.<br>
+		If document has an outline, <b>Sao's PDF Kit</b> provids the means to display and use it. You can create new bookmarks and edit them with this application, too.<BR>
+		Bookmarks navigate in the PDF document according to their position information. When you click a bookmark, document pane displays its destination. And if the outline view is in <b>"Preview Mode"</b>, the selected row of the outline is changed in sync with the movement of the page. About the mode of outline view, see the <a href="bookmark.htm#mode">next chapter</a>.
+	</p>
+	<h2>● Mode of Outline View<a name="mode">　</a></h2>
+		<span class="fTitle">【Buttons for switching outline view mode】</span><br>
+		<img border="1px" src = "image/ss12.png" width = "266" height = "217">
+	<p style="margin-top:10;">
+		The outline view has two modes.<BR>
+		Under <b>"Preview Mode"</b>, the outline is specialized in ability to guide, and the selected row of the outline changes by the linkage with movement of the page. You cannot edit the label of the bookmark. It is the default mode.<br>
+		<b>"Edit Mode"</b> is the mode for editing. Under this mode, the selected row of the outline doesn't synchronize with movement of the page, and you can edit the label of the bookmark on the outline view.<br>
+		To switch the mode, click the lower button of the outline view (See an upper figure). When a new bookmark is created, the application changes it to <b>"Edit Mode"</b> automatically.
+	</p>
+	<h2>● Bookmark Panel<a name="bookmarkPanel">　</a></h2>
+		<span class="fTitle">【Structure of Bookmark Panel】</span><br>
+		<img border="1px" src = "image/ss08.tiff" width = "284" height = "252">
+	<p style="margin-top:10;">
+		Bookmark panel is used to display the information of a bookmark, create/edit it. To show/hide it, select the menu item <b>"Window" → "Show/Hide Bookmark Panel" (shift + command + B)</b>. When you create a new bookmark, the application shows it automatically.<BR>
+		When a bookmark is selected on outline view, its information will be indicated there. The value of <b>"Label"</b> is the title of the bookmark, it is same as the one indicated in the outline view. The value of <b>"Index"</b> of <b>"Destination"</b> indicates the zero-based serial number of the page. The value of <b>"Label"</b> of <b>"Destination"</b> indicates the title of the page. It is 1-based consecutive numbers generally, but it can be a specific character string. <b>"Point"</b> of <b>"Destination"</b> is the position in the document that is displayed when you click the bookmark. The application moves a document so that this coordinate is located on the upper left of the document pane. The origin of the coordinate is the lower-left corner of the page. And the numerical value increases towards top-right corner.　
+	</p>
+	<h2>● Create New Bookmark<a name="newBookmark">　</a></h2>
+	<p>
+		To create a new bookmark, use the menu item <b>"Bookmark"</b> or the button <b>"New Bookmark from Data"</b> of <b>Bookmark panel</b>. Each item works as follows.<BR>
+		<li class="item" style="margin-bottom:0;">the menu item <b>"New Bookmark"</b></li>
+		<div style="margin:0 0 5 27;">A new bookmark whose label is "Untitled" and whose destination is top left corner of page whose index is 0 is created. Change the data of each item later as needed. For editing them, See the <a href="bookmark.htm#updateBookmark">next chapter</a>.</div>
+		<li class="item">the menu item <b>"New Bookmark from Selection"</b></li>
+		<div style="margin:0 0 5 27;">A new bookmark whose label is the character strings contained in selection and whose destination is top left corner of the selection is created. Select this menu item after making selection.</div>
+		<li class="item">the button <b>"New Bookmark from Data"</b> of <b>Bookmark panel</b></li>
+		<div style="margin:0 0 5 27;">A new bookmark is created from the data of panel.</div>
+		No matter which making method is selected, when a bookmark is selected, a new bookmark will be added at the end of the child items of the selected bookmark, and when nothing is selected on outline view  a new bookmark will be added at the end of the outline. You can change a hierarchy or the order of the added bookmark later. For changing it, See "<a href="bookmark.htm#changeNest">Change Hierarchy and Order</a>".
+	</p>
+	<h2>● Edit Bookmark<a name="updateBookmark">　</a></h2>
+	<p>
+		You can perform the change of the label of the bookmark from the outline view or the bookmark panel. To change from the outline view, switch the mode of outline view to <b>"Edit Mode"</b> first (When a new bookmark is created, it changes to <b>"Edit Mode"</b> automatically). Under <b>"Edit Mode"</b>, the field for the label is editable. Select the row which you want to change the label, and push <b>enter</b> key, and input the new label.<BR>
+		To change from the bookmark panel, select the row which you want to change the label. And input the new label to label field of panel and click the button <b>"Update Selected Bookmark Data"</b>.<br>
+		To change the destination of a bookmark, select the row which you want to change the destination. And input new destination on bookmark panel and click the button <b>"Update Selected Bookmark Data"</b>.
+	</p>
+	<h2>● Change Hierarchy and Order<a name="changeNest">　</a></h2>
+		<div style="width:585px; border-width:1px; border-style:solid; border-color:#000000; padding:5px 8px 8px 8px; margin-bottom:10px;">
+			<img src = "image/ss09.png" width = "588" height = "150">
+		</div>
+	<p>
+		To change a hierarchy or the order of outlines, move a bookmark by drag & drop on the outline view.<BR>
+		Refer to an upper figure about the way of the movement.
+	</p>
+</div>
+</body>
+</html>
+

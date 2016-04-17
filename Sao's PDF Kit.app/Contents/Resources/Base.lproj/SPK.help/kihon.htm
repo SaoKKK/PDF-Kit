@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basic Operations</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+</head>
+<body>
+<div class="content">
+	<h1>Basic Operations</h1>
+	
+	<h2>● Working with PDF Files<a name="operateFile">　</a></h2>
+	<p>
+		Sao's PDF Kit can open/close existing PDF files, and can save them with the same name or a different name after editing, and can return the document to saved status last. Those procedures are as follows.
+	</p>
+	<h3>1. Open/Close PDF Files</h3>
+	<p>
+		To open PDF documents, select the menu item <b>"File" → "Open" (command + O)</b> and select PDF files in the Open dialog sheet and click the button <b>"Open"</b>, or drag and drop PDF files to the application icon. If you are setting Sao's PDF Kit as the default application to open PDF files, double click will open PDF files.<br>
+		To close a PDF file, select the menu item <b>"File" → "Close" (command + W)</b> or click the close button of the document window. When you press option key to select the menu item "Close", the application will close all opened windows.
+	</p>
+	<h3>2. Save PDF Files</h3>
+	<p>
+		When you select the menu item <b>"File" → "Save..." (command + S)</b>, the application saves current document to the same file path. When you save the PDF file that was created with <b>Sao's PDF Kit</b>, select the menu item <b>"File" → "Save..."</b> and set the file path in Save dialog and click the button <b>"Save"</b>. If you need to save the current document to different file path, select the menu item <b>"File" → "Save As..." (shift + command + S)</b> and set the file path in Save dialog and click the button <b>"Save"</b>.
+	</p>
+	<h3>3. Return the Document to Saved Status Last</h3>
+	<p>
+		If you need to abandon all edits and return the document to saved status last after editing it, select the menu item <b>"File" → "Revert to Saved"</b>. Please note that all of the current edits will be lost.
+	</p>
+	<h2>● View PDF<a name="preview">　</a></h2>
+	<span class="fTitle">【Figure 1: Structure of Document Window】<a name="figure1">　</a></span><br>
+	<div style="width:517px; border-width:1px; border-style:solid; border-color:#000000; padding:10px;">
+		<img src = "image/ss01.png" width = "497" height = "530">
+	</div>
+	<h3>1. Display Mode</h3>
+		<span class="fTitle">【Figure 2: Buttons to Switch Display Mode】</span><br>
+		<div style="width:335px; border-width:1px; border-style:solid; border-color:#000000; padding:10px; margin-bottom:10px;">
+			<img src = "image/ss02.png" width = "315" height = "106">
+		</div>
+	<p>
+		You can use four following display mode when viewing PDF documents:<br>
+	</p>
+	<li class="item" style="margin-bottom:0;">Single Page</li>
+	<div style="margin:0 0 5 27;">Display one page at a time</div>
+	<li class="item">Single Page Continuous</li>
+	<div style="margin:0 0 5 27;">Display one page in a horizontal direction and display all pages continuously in a vertical direction</div>
+	<li class="item">Two Pages</li>
+	<div style="margin:0 0 5 27;">Display two facing-pages at a time</div>
+	<li class="item">Two Pages Continuous</li>
+	<div style="margin:0 0 5 27;">Display two facing-pages in a horizontal direction and display all pages continuously in a vertical direction</div>
+	<p>
+		To switch display mode, use the menu item <b>"View"</b> or the right-most buttons on the bottom of the document window. Select the menu item corresponding to the display mode which you expect from <b>"Single Page" (command + 1), "Single Page Continuous" (command + 2), "Two Pages" (command + 3)</b> and <b>"Two Pages Continuous" (command + 4)</b> of the <b>"View"</b> menu. When the buttons to switch display mode are clicked, the application change the display mode to corresponding mode to the clicked button, too. See <b>figure 2</b> about which display mode is corresponding to each button.
+	</p>
+	<h3>2. Paging through a Document</h3>
+		<span class="fTitle">【Figure 3: Go Buttons Group】</span><br>
+		<div style="width:346px; border-width:1px; border-style:solid; border-color:#000000; padding:10px; margin-bottom:10px;">
+			<img src = "image/ss03.png" width = "326" height = "148">
+		</div>
+	<p>
+		To go to another page, use the menu item <b>"Go"</b> or <b>"Go Buttons Group"</b> (left-most buttons group of the bottom of document window). To go to the next page, select the menu item <b>"Next Page" (command + ↓)</b> or click the button [<img src="image/goNext.png" style="vertical-align:-25%; width:20px; height:20px;">]. To go to the previous page, select the menu item <b>"Previous Page" (command + ↑)</b> or click the button [<img src="image/goPrev.png" style="vertical-align:-25%; width:20px; height:20px;">]. To go to the first page, select the menu item <b>"First Page"</b> or click the button [<img src="image/goTop.png" style="vertical-align:-25%; width:20px; height:20px;">]. To go to the last page, select the menu item <b>"Last Page"</b> or click the button [<img src="image/goLast.png" style="vertical-align:-25%; width:20px; height:20px;">].<br>
+		The text field of the left of "/" indicates the current page and the one of the right indicates the total pages of the document. Input the page number which you want to see and press <b>Enter</b> key, then the specified page will be displayed.<br>
+		By using the menu items "Go Back" and "Go Forward" or the button [<img src="image/goBack.png" style="vertical-align:-25%; width:20px; height:20px;">] and [<img src="image/goForward.png" style="vertical-align:-25%; width:20px; height:20px;">], the application stores a history of the movement of the page. To step back on the page history, select the menu item <b>"Go Back"</b> or click the button [<img src="image/goBack.png" style="vertical-align:-25%; width:20px; height:20px;">]. To step forward on the page history, select the menu item <b>"Go Forward"</b> or click the button [<img src="image/goForward.png" style="vertical-align:-25%; width:20px; height:20px;">].<br>
+		As other way for paging through a document, the application provides <b>"Scroll Tool (<img src="image/scroll.png" style="vertical-align:-25%; width:20px; height:20px;">)"</b>. While <b>"Scroll Tool"</b> of <b>"Tool Button Group"</b> is selected, you can control scrolling with mouse movement. Select "Scroll Tool", and move the mouse on the document. Then press left-mouse button and drag it toward the direction opposite to the direction you want to see. The document will be moved through the distance of the mouse movement.
+</p>
+	<h3>3. Change the Magnification</h3>
+		<span class="fTitle">【Figure 4: Zoom Buttons Group】</span><br>
+		<div style="width:270px; border-width:1px; border-style:solid; border-color:#000000; padding:10px; margin-bottom:10px;">
+			<img src = "image/ss04.png" width = "250" height = "100">
+		</div>
+	<p>
+		To change the magnification, use the menu item <b>"View"</b> or <b>"Zoom Button Group"</b> or <b>"Zoom Tool"</b>.<br>
+		To zoom in, select the menu item <b>"Zoom In" (shift + command + >)</b> or click the button [<img src="image/zoomIn.png" style="vertical-align:-25%; width:20px; height:20px;">] or select <b>"Zoom Tool"</b> from <b>"Tool Button Group"</b> and click on the document.<br>
+		To zoom out, select the menu item <b>"Zoom Out" (shift + command + <)</b> or click the button [<img src="image/zoomOut.png" style="vertical-align:-25%; width:20px; height:20px;">] or select <b>"Zoom Tool"</b> from <b>"Tool Button Group"</b> and <b>option-click</b> on the document.
+		To view the document with its actual size, select the menu item <b>"Acrual Size" (command + 0)</b>.<br>
+		To resize the document to fit document pane, select the menu item <b>"Zoom to Fit" (command + 9)</b> or click the button [<img src="image/fitToWindow.png" style="vertical-align:-25%; width:20px; height:20px;">]. When the display mode <b>"Single Page"</b> or <b>"Two Pages"</b> is selected, the application changes the magnification of the document to the maximum size that the whole page fits into the document pane. When the display mode <b>"Single Page Continuous"</b> or <b>"Two Pages Continuous"</b> is selected, the application changes the magnification of the document to the size that the width of the page fits a document pane.<br>
+		When you want to zoom in a specified area, select <b>"Zoom Tool"</b>, and drag to draw a rectangle around the area to magnify. Then the application resizes document to fit the area to the document pane and displays the area in the center of document pane.<br>
+		When view reaches the limit of the magnification / reduction, the button and the menu item which reached the limit is disabled. If <b>"Zoom Tool"</b> is selected, the cursor changes to [<img src="image/cZoom.png" style="vertical-align:-20%; width:18px; height:18px;">] to notice reaching the limit.
+	</p>
+	<h3>4. Full Screen View</h3>
+	<p>
+		Document windows and the window "Merge PDF" which appears when the menu item "Merge PDF" is clicked can be seen in full screen view. To see them in full screen view, click the menu item <b>"View" → "Enter Full Screen" (control + command + F)</b>. And when you want the window to exit full screen view, click the menu item <b>"View" → "Exit Full Screen" (control + command + F)</b>.
+	</p>
+	<h2>● Print Document<a name="print">　</a></h2>
+	<p>
+		Click menu item <b>[File] → [Page Setup...] (shift + command + P)</b> to set general printing options. Theavailableoptions will vary with different printers and drivers. See your printer driver documentation for details.<br>
+		Click menu item <b>[File] → [Print...] (command + P)</b> to print document. Specify the printer, page range, number of copies, and other options, and click "Print" button.
+	</p>
+	<h2>● Navigator Pane<a name="navi">　</a></h2>
+		<span class="fTitle">【Figure 5: Navigator Pane】</span><br>
+		<div style="width:520px; border-width:1px; border-style:solid; border-color:#000000; padding:10px; margin-bottom:10px;">
+			<img src = "image/ss05.png" width = "500" height = "440">
+		</div>
+	<p>
+		The <b>"Navigator Pane"</b> is an area located on the left side of the document window (In <a href="kihon.htm#figure1">figure 1</a>, it is displayed in blue color). Objects which navigates in the document are displayed there. You can display a thumbnail view or an outline view there, and when you searth any word in the document, the search result will be displayed there.(About searching in the document, see "<a href="search.htm#_">Search in the Document</a>").<br>
+		To show or hide <b>"Navigator Pane"</b>, click the left upper button of the document window.<br>
+		<b>Thumbnail view</b> arranges thumbnail images of each page of the PDF document in a line in order of pages. To display <b>thumbnail view</b> in navigator pane, click the left button of <b>"Switch Navigator Button"</b>.<br>
+		An outline is the information such as the headline of the PDF document having hierarchical structure. The PDF document can have a marker called "bookmark" which has the label and the positional information in the document in any place. The structure which arranges them hierarchically is an outline. To display <b>outline view</b> in navigator pane, click the right button of <b>"Switch Navigator Button"</b>. If the document has no bookmark, the application tell you that with display dialog, and navigator pane won't change.<br>
+		About create/edit bookmarks, see "<a href="bookmark.htm#_">Working with Bookmark</a>".
+	</p>
+	<h2>● Create Selection<a name="select">　</a></h2>
+		<span class="fTitle">【Figure 6: Create Selection】</span><br>
+		<div style="width:479px; border-width:1px; border-style:solid; border-color:#000000; padding:10px; margin-bottom:10px;">
+			<img src = "image/ss07.png" width = "459" height = "249">
+		</div>
+	<p>
+		<b>Sao's PDF Kit</b> provides two functions to create selection and the created selection will be used by other editing processing. They can be switched by switching the button <b>"Letter Selection Tool"</b> and the button <b>"Area Selection Tool"</b>.<br><br>
+		<b>"Letter Selection Tool"</b> should be used as follows;<br>
+	</p>
+		<li class="item">To select any letters, mouse down to the first letter and drag to the last letter.</li>
+		<li class="item">To select a word, double click upon the word.</li>
+		<li class="item">To select a line, triple click upon the line.</li>
+		<li class="item">To select the letters in any area, hold down option key as you drag across the area which contains letters you want to select.</li>
+		<li class="item">To select all of the text in the document, select the menu item <b>"Edit" → "Select All" (command + A)</b></li>
+	<p>
+		When <b>"Area Selection Tool"</b> is selected, drag acress the area that you want to select. You can move or resize the area even after it was created. The selection which is created with <b>"Area Selection Tool"</b> is limited in arbitrary one page. content across a plurality of pages. When "Area Selection Tool" is selected, the menu item <b>"Edit" → "Select All"</b> will create the selected area which covers whole of the current page.<br><br>
+		Regardless of the selected tool, to deselect, click anywhere outside the selected objects or select the menu item <b>"Edit" → "Deselect" (shift + command + A)</b>
+	</p>
+</div>
+</body>
+</html>
+

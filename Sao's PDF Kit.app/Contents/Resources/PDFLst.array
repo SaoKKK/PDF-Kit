@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>fName</key>
+            <string>カスタードプリン.pdf</string>
+            <key>fPath</key>
+            <string>/Users/kounosaori/Documents/recipe/カスタードプリン.pdf</string>
+            <key>fSize</key>
+            <integer>398364</integer>
+            <key>pageRange</key>
+            <string>All Pages</string>
+            <key>totalPage</key>
+            <integer>3</integer>
+        </dict>
+        <dict>
+            <key>fName</key>
+            <string>スイーツ豆花.pdf</string>
+            <key>fPath</key>
+            <string>/Users/kounosaori/Documents/recipe/スイーツ豆花.pdf</string>
+            <key>fSize</key>
+            <integer>402037</integer>
+            <key>pageRange</key>
+            <string>2-3</string>
+            <key>totalPage</key>
+            <integer>2</integer>
+        </dict>
+        <dict>
+            <key>fName</key>
+            <string>ショコラプリン.pdf</string>
+            <key>fPath</key>
+            <string>/Users/kounosaori/Documents/recipe/ショコラプリン.pdf</string>
+            <key>fSize</key>
+            <integer>419986</integer>
+            <key>pageRange</key>
+            <string>1</string>
+            <key>totalPage</key>
+            <integer>3</integer>
+        </dict>
+    </array>
+</plist>

@@ -1,0 +1,361 @@
+
+/* Class = "NSMenuItem"; title = "Customize Toolbar…"; ObjectID = "1UK-8n-QPP"; */
+"1UK-8n-QPP.title" = "Customize Toolbar…";
+
+/* Class = "NSMenuItem"; title = "Sao's PDF Kit"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Sao's PDF Kit";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "2oI-Rn-ZJC"; */
+"2oI-Rn-ZJC.title" = "Transformations";
+
+/* Class = "NSMenu"; title = "Spelling"; ObjectID = "3IN-sU-3Bg"; */
+"3IN-sU-3Bg.title" = "Spelling";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "3rS-ZA-NoH"; */
+"3rS-ZA-NoH.title" = "Speech";
+
+/* Class = "NSMenuItem"; title = "Quit Sao's PDF Kit"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Sao's PDF Kit を終了";
+
+/* Class = "NSMenuItem"; title = "About Sao's PDF Kit"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Sao's PDF Kit について";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "6dh-zS-Vam"; */
+"6dh-zS-Vam.title" = "やり直し";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Preferences…";
+
+/* Class = "NSMenuItem"; title = "Save As…"; ObjectID = "Bw7-FT-i3A"; */
+"Bw7-FT-i3A.title" = "別名で保存…";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "閉じる";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "Dv1-io-Yv7"; */
+"Dv1-io-Yv7.title" = "Spelling and Grammar";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "ヘルプ";
+/* Class = "NSMenuItem"; title = "Sao's PDF Kit Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Sao's PDF Kit ヘルプ";
+
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
+"H8h-7b-M4v.title" = "表示";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "HFQ-gK-NFA"; */
+"HFQ-gK-NFA.title" = "Text Replacement";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "HFo-cy-zxI"; */
+"HFo-cy-zxI.title" = "Show Spelling and Grammar";
+
+// menu Edit
+"W48-6f-4Dl.title" = "編集";
+// menu item paste
+"gVA-U4-sdL.title" = "ペースト";
+//menu item "Paste and Match Style"
+"3kk-hw-G3g.title" = "ペーストしてスタイルを合わせる";
+// menu item Find
+"4EN-yA-p0u.title" = "検索";
+// menu item Find in PDF Document
+"gWw-me-c5m.title" = "PDF文書内を検索";
+// menu item Find
+"Xz5-n4-O0W.title" = "検索…";
+// menu item Find and Replace…
+"YEy-JH-Tfz.title" = "検索と置換…";
+// menu item Find Next
+"q09-fT-Sye.title" = "次を検索";
+// menu item Find Previous
+"OwM-mh-QMV.title" = "前を検索";
+// menu item Use Selection for Find
+"buJ-ug-pKt.title" = "選択部分を検索に使用";
+
+//menu "Format"
+"Fsc-Hx-Ppq.title" = "フォーマット";
+//menu item "Font"
+"hWK-hm-OzM.title" = "フォント";
+//menu item "Show Fonts"
+"zrI-Nl-cNs.title" = "フォントパネルを表示";
+//menu item "Bold"
+"5ev-oK-vOH.title" = "ボールド";
+//menu item "Italic"
+"PN8-n8-vf2.title" = "イタリック";
+//menu item "Underline"
+"Xer-o0-2P4.title" = "アンダーライン";
+//menu item "Bigger"
+"2Yv-TX-6Si.title" = "大きく";
+//menu item "Smaller"
+"73p-gk-Umf.title" = "小さく";
+//menu item "Kern"
+"7uK-zG-F80.title" = "カーニング";
+//menu item "Use Default"
+"v2y-qY-l9m.title" = "デフォルト";
+//menu item "Use None"
+"9vP-oZ-sjr.title" = "使用しない";
+//menu item "Tighten"
+"c36-K1-AsX.title" = "きつく";
+//menu item "Loosen"
+"zfa-6C-e6K.title" = "ゆるく";
+//menu item "Ligatures"
+"Ddr-O3-LRg.title" = "リガチャ";
+//menu item "Use Default"
+"Fww-zR-q8j.title" = "デフォルト";
+//menu item "Use None"
+"Ypz-e2-DEL.title" = "使用しない";
+//menu item "Use All"
+"2Zr-Qh-28R.title" = "すべて使用";
+//menu item "Baseline"
+"v6J-W7-dvy.title" = "ベースライン";
+//menu item "Use Default"
+"dkW-OU-Yk5.title" = "デフォルト";
+//menu item "Superscript"
+"9Tu-ZB-oXo.title" = "上付き";
+//menu item "Subscript"
+"shq-EH-gID.title" = "下付き";
+//menu item "Raise"
+"OOQ-Jp-XuT.title" = "上げる";
+//menu item "Lower"
+"Cuw-Yi-b7o.title" = "下げる";
+//menu item "Show Colors"
+"aO7-HL-pXu.title" = "カラーパネルを表示";
+//menu item "Copy Style"
+"mxk-NW-phW.title" = "スタイルをコピー";
+//menu item "Paste Style"
+"J9q-XH-axL.title" = "スタイルをペースト";
+//menu item "Text"
+"JgA-Ez-AHp.title" = "テキスト";
+//menu item "Align Left"
+"pB4-A6-ix9.title" = "左揃え";
+//menu item "Center"
+"qM4-JQ-NWl.title" = "中央揃え";
+//menu item "Justify"
+"CH8-uX-xWb.title" = "両端揃え";
+//menu item "Align Right"
+"fyl-bE-ZgO.title" = "右揃え";
+//menu item "Writing Direction"
+"sGV-FH-krd.title" = "文章の方向";
+//menu item "Paragraph"
+"SZo-SC-wYO.title" = "段落";
+//menu item "Default"
+"aN8-r6-eUD.title" = "デフォルト";
+//menu item "Left to Right"
+"Yui-uY-qRJ.title" = "左から右";
+//menu item "Right to Left"
+"j2I-pw-StE.title" = "右から左";
+//menu item "Selection"
+"V28-gn-Fx6.title" = "選択部分";
+//menu item "Default"
+"4GH-BQ-L0c.title" = "デフォルト";
+//menu item "Left to Right"
+"C2u-jn-tYk.title" = "左から右";
+//menu item "Right to Left"
+"Rus-OI-UYO.title" = "右から左";
+//menu item "Show Ruler"
+"CUh-3X-mCE.title" = "ルーラを表示";
+//menu item "Copy Ruler"
+"AWF-Um-Gyd.title" = "ルーラをコピー";
+//menu item "Paste Ruler"
+"GDk-Pc-yPT.title" = "ルーラをペースト";
+
+// menu View
+"HyV-fh-RgO.title" = "表示";
+// menu item Single Page
+"vMI-OH-7jF.title" = "単ページ表示";
+// menu item Single Page Continuous
+"lH5-m2-okq.title" = "単ページ連続表示";
+// menu item Two Pages
+"bcl-No-8o4.title" = "見開表示";
+// menu item Two Pages Continuous
+"T3n-UQ-drN.title" = "見開連続表示";
+// memu item Actual Size
+"5u2-Bj-I70.title" = "実際のサイズ";
+// menu item Zoom to Fit
+"pnX-U1-zdr.title" = "ウインドウに合わせる";
+// menu item Zoom In
+"uzB-W5-Iaf.title" = "拡大";
+// menu item Zoom Out
+"P38-qd-m5f.title" = "縮小";
+// menu item Enter Full Screen
+"uEs-de-IhG.title" = "フルスクリーンにする";
+
+// menu Go
+"uec-tg-F7v.title" = "移動";
+// menu item
+"OBp-55-fn0.title" = "前ページへ";
+// menu item
+"TaX-By-9xG.title" = "次ページへ";
+// menu item
+"e0R-J4-zmR.title" = "最初のページへ";
+// menu item
+"9Ey-WJ-ZzM.title" = "最後のページへ";
+// menu item
+"JEm-sw-yNJ.title" = "指定のページへ移動...";
+// menu item
+"dDD-jY-g1L.title" = "戻る";
+// menu item
+"G89-Bs-PYg.title" = "進む";
+
+// menu Bookmark
+"r86-BW-sKA.title" = "しおり";
+// menu item New Bookmark
+"f66-iI-bBa.title" = "新規しおり作成";
+// menu item New Bookmark from Selecton
+"26Z-a0-6uA.title" = "選択範囲から新規しおり作成";
+// menu item Remove Bookmark
+"QUy-8Q-3Zt.title" = "しおりを削除";
+// menu item Clear Bookmark
+"gRL-h3-Ngi.title" = "しおりデータをクリア";
+
+//menu item "Open..."
+"IAo-SY-fd9.title" = "開く…";
+//menu item "Revert to Saved"
+"KaW-ft-85H.title" = "最後の保存に戻す";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "すべてを表示";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "すべてを手前に移動";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "しまう";
+
+/* Class = "NSMenuItem"; title = "Hide Sao's PDF Kit"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Sao's PDF Kit を隠す";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "Oyz-dy-DGm"; */
+"Oyz-dy-DGm.title" = "Stop Speaking";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "ズーム";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "Ruw-6m-B2m"; */
+"Ruw-6m-B2m.title" = "すべて選択";
+"Mo4-dh-fZn.title" = "選択を解除";
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "ウインドウ";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "UEZ-Bs-lqG"; */
+"UEZ-Bs-lqG.title" = "Capitalize";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "他を隠す";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "Ynk-f8-cLZ"; */
+"Ynk-f8-cLZ.title" = "Start Speaking";
+
+/* Class = "NSMenuItem"; title = "Print…"; ObjectID = "aTl-1u-JFS"; */
+"aTl-1u-JFS.title" = "印刷…";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "ウインドウ";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "ファイル";
+
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "c8a-y6-VQd"; */
+"c8a-y6-VQd.title" = "Transformations";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "cwL-P1-jid"; */
+"cwL-P1-jid.title" = "Smart Links";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "d9M-CD-aMd"; */
+"d9M-CD-aMd.title" = "Make Lower Case";
+
+/* Class = "NSMenu"; title = "Text"; ObjectID = "d9c-me-L2H"; */
+"d9c-me-L2H.title" = "Text";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "ファイル";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "dRJ-4n-Yzg"; */
+"dRJ-4n-Yzg.title" = "取り消し";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "hQb-2v-fYv"; */
+"hQb-2v-fYv.title" = "Smart Quotes";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "hz2-CU-CR7"; */
+"hz2-CU-CR7.title" = "Check Document Now";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "mK6-2p-4JG"; */
+"mK6-2p-4JG.title" = "Check Grammar With Spelling";
+
+/* Class = "NSMenu"; title = "Open Recent"; ObjectID = "oas-Oc-fiZ"; */
+"oas-Oc-fiZ.title" = "最近使った項目を開く";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "pa3-QI-u2k"; */
+"pa3-QI-u2k.title" = "消去";
+
+/* Class = "NSMenuItem"; title = "Save…"; ObjectID = "pxx-59-PXV"; */
+"pxx-59-PXV.title" = "保存";
+
+/* Class = "NSMenuItem"; title = "Page Setup…"; ObjectID = "qIS-W8-SiK"; */
+"qIS-W8-SiK.title" = "印刷書式…";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "rbD-Rh-wIN"; */
+"rbD-Rh-wIN.title" = "Check Spelling While Typing";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "rgM-f4-ycn"; */
+"rgM-f4-ycn.title" = "Smart Dashes";
+
+/* Class = "NSMenuItem"; title = "Show Toolbar"; ObjectID = "snW-S8-Cw5"; */
+"snW-S8-Cw5.title" = "Show Toolbar";
+
+/* Class = "NSMenuItem"; title = "Data Detectors"; ObjectID = "tRr-pd-1PS"; */
+"tRr-pd-1PS.title" = "Data Detectors";
+
+/* Class = "NSMenuItem"; title = "Open Recent"; ObjectID = "tXI-mr-wws"; */
+"tXI-mr-wws.title" = "最近使った項目を開く";
+
+/* Class = "NSMenu"; title = "Sao's PDF Kit"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Sao's PDF Kit";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "uRl-iY-unG"; */
+"uRl-iY-unG.title" = "カット";
+
+/* Class = "NSMenuItem"; title = "Clear Menu"; ObjectID = "vNY-rz-j42"; */
+"vNY-rz-j42.title" = "Clear Menu";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "vmV-6d-7jI"; */
+"vmV-6d-7jI.title" = "Make Upper Case";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "ヘルプ";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "x3v-GG-iWU"; */
+"x3v-GG-iWU.title" = "コピー";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "xrE-MZ-jX0"; */
+"xrE-MZ-jX0.title" = "Speech";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "z6F-FW-3nz"; */
+"z6F-FW-3nz.title" = "Show Substitutions";
+
+//menu PDF
+//menu item "Merge PDF"
+"T87-cJ-ES5.title" = "PDFを結合...";
+//menu item "Split PDF"
+"58g-Vh-TrJ.title" = "PDFを分割...";
+//menu item "remove pages by specifying the range"
+"TcW-h6-RTs.title" = "範囲指定してページを削除...";
+//menu item "Export as Image..."
+"8zL-6Z-AEd.title" = "イメージファイルとして書き出し...";
+
+//Status Dialogメッセージ"Failed to read the file."
+"EAL-Qs-VHJ.title" = "ファイルの読み込みに失敗しました。";
+
+//Status Dialogメッセージ"The file does not exist..."
+"YrD-Gu-5hN.title" = "指定されたファイルは存在しません。";
+
+
+
+

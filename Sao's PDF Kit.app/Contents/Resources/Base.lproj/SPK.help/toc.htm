@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>目次</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+</head>
+<body bgcolor="#F1F6FC">
+<script type="text/javascript">
+<!--
+function expandcollapse_kihon()
+{
+	var cur = document.getElementById("chapter_kihon");
+	expandcollapse(cur);
+}
+function expandcollapse_search()
+{
+	var cur = document.getElementById("chapter_search");
+	expandcollapse(cur);
+}
+function expandcollapse_merge()
+{
+	var cur = document.getElementById("chapter_merge");
+	expandcollapse(cur);
+}
+function expandcollapse_topic()
+{
+	var cur = document.getElementById("chapter_topic");
+	expandcollapse(cur);
+}
+function expandcollapse_tips()
+{
+	var cur = document.getElementById("chapter_tips");
+	expandcollapse(cur);
+}
+function expandcollapse_gamen()
+{
+	var cur = document.getElementById("chapter_gamen");
+	expandcollapse(cur);
+}
+function expandcollapse_pref()
+{
+	var cur = document.getElementById("chapter_pref");
+	expandcollapse(cur);
+}
+function expandcollapse_regexp()
+{
+	var cur = document.getElementById("chapter_regexp");
+	expandcollapse(cur);
+}
+function expandcollapse_toolcommand()
+{
+	var cur = document.getElementById("chapter_toolcommand");
+	expandcollapse(cur);
+}
+function expandcollapse_applescript()
+{
+	var cur = document.getElementById("chapter_applescript");
+	expandcollapse(cur);
+}
+function expandcollapse_shellscript()
+{
+	var cur = document.getElementById("chapter_shellscript");
+	expandcollapse(cur);
+}
+function expandcollapse_term()
+{
+	var cur = document.getElementById("chapter_term");
+	expandcollapse(cur);
+}
+function expandcollapse_error()
+{
+	var cur = document.getElementById("chapter_error");
+	expandcollapse(cur);
+}
+//メニューのサブ項目の表示／非表示を切り替える
+function expandcollapse(cur)
+{
+	var h2s = cur.getElementsByTagName("h2");
+	var divs = cur.getElementsByTagName("div");
+	if( divs[0].style.display=='none' ) 
+	{
+		h2s[0].style.backgroundImage='url(downarrow.png)';
+		divs[0].style.display='block'; 
+	}
+	else
+	{
+		h2s[0].style.backgroundImage='url(rightarrow.png)';
+		divs[0].style.display='none';
+	}
+}
+-->
+</script>
+<div class="toc">
+	<!--概要-->
+	<div id="chapter_gaiyo" class="chapter" color="#FFFFFF">
+		<h1><a href="gaiyo.htm" target="right">Introduction</a></h1>
+	</div>
+	
+	<!--基本操作-->
+	<div id="chapter_kihon" class="chapter">
+		<h2 onclick="expandcollapse_kihon()"><a href="kihon.htm" target="right">Basic Operations</a></h2>
+		<div style="display:none;">
+			<ul>
+			<li class="item"><a href="kihon.htm#operateFile" target="right">Working with PDF Files</a></li>
+			<li class="item"><a href="kihon.htm#preview" target="right">Viewing PDF Documents</a></li>
+			<li class="item"><a href="kihon.htm#print" target="right">Print Document</a></li>
+			<li class="item"><a href="kihon.htm#navi" target="right">Navigator Pane</a></li>
+			<li class="item"><a href="kihon.htm#select" target="right">Making Selection</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--文書内の検索-->
+	<div id="chapter_search" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_search())"><a href="search.htm" target="right">Search in the Document</a></h2>
+		<div style="display:none;">
+			<a href = "search.htm"></a><ul>
+			<li class="item"><a href="search.htm#search" target="right">Perform Search in PDF Document</a></li>
+			<li class="item"><a href="search.htm#result" target="right">View and Use the Search Result</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--しおりの利用と作成／編集-->
+	<div id="chapter_topic" class="chapter">
+		<h2 onclick="expandcollapse_topic()"><a href="bookmark.htm" target="right">Working with Bookmark</a></h2>
+		<div style="display:none;">
+			<ul>
+			<li class="item"><a href="bookmark.htm#useBookmark" target="right">Use Bookmark</a></li>
+			<li class="item"><a href="bookmark.htm#mode" target="right">Mode of Outline View</a></li>
+			<li class="item"><a href="bookmark.htm#bookmarkPanel" target="right">Bookmark Panel</a></li>
+			<li class="item"><a href="bookmark.htm#newBookmark" target="right">Create New Bookmark</a></li>
+			<li class="item"><a href="bookmark.htm#updateBookmark" target="right">Edit Bookmark</a></li>
+			<li class="item"><a href="bookmark.htm#changeNest" target="right">Change Hierarchy and Order</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--PDFの結合-->
+	<div id="chapter_merge" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_merge())"><a href="merge.htm" target="right">Merge PDF</a></h2>
+		<div style="display:none;">
+			<a href = "merge.htm"></a><ul>
+			<li class="item"><a href="merge.htm#merge" target="right">Merge PDF</a></li>
+			<li class="item"><a href="merge.htm#store" target="right">Temporarily Store Processing</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--その他の機能-->
+	<div id="chapter_gamen" class="chapter">
+		<h2 onclick="expandcollapse_gamen()"><a href="other.htm" target="right">Other Functions</a></h2>
+		<div style="display:none;">
+			<ul>
+			<li class="item"><a href="other.htm#remove" target="right">Remove Pages/Change the Order</a></li>
+			<li class="item"><a href="other.htm#split" target="right">Split PDF/Extract Pages</a></li>
+			<li class="item"><a href="other.htm#text" target="right">Extract Text</a></li>
+			<li class="item"><a href="other.htm#export" target="right">Export as an Image</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--更新履歴-->
+	<div id="chapter_update" class="chapter">
+		<h1><a href="update.htm" target="right">Update History</a></h1>
+	</div>
+	
+</div>
+</body>
+</html>
+

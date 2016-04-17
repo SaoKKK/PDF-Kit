@@ -1,0 +1,33 @@
+
+/* Class = "NSWindow"; title = "Text Panel"; ObjectID = "5QS-rA-UF6"; */
+"5QS-rA-UF6.title" = "テキスト パネル";
+
+/* Class = "NSMenuItem"; title = "Whole Document"; ObjectID = "IUD-DS-PEA"; */
+"IUD-DS-PEA.title" = "ドキュメント全体";
+
+/* Class = "NSTextFieldCell"; title = "from:"; ObjectID = "Ogn-Ol-zng"; */
+"Ogn-Ol-zng.title" = "対象:";
+
+/* Class = "NSButtonCell"; title = "Export as Plane Text"; ObjectID = "SfO-o5-U1E"; */
+"SfO-o5-U1E.title" = "プレーンテキストとして書き出し";
+
+/* Class = "NSMenuItem"; title = "Selection"; ObjectID = "Xpg-N2-fK2"; */
+"Xpg-N2-fK2.title" = "選択範囲";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "hTu-sw-bW0"; */
+"hTu-sw-bW0.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "Get Text"; ObjectID = "iaE-HH-0hE"; */
+"iaE-HH-0hE.title" = "文字情報取得";
+
+/* Class = "NSButtonCell"; title = "Save to..."; ObjectID = "ie1-7S-5Iw"; */
+"ie1-7S-5Iw.title" = "保存先を変更する...";
+
+/* Class = "NSButtonCell"; title = "Export as Rich Text"; ObjectID = "rL1-K5-obJ"; */
+"rL1-K5-obJ.title" = "リッチテキストとして書き出し";
+
+/* Class = "NSTextFieldCell"; placeholderString = "e.g. 1-2,5,10"; ObjectID = "v7z-f7-aAr"; */
+"v7z-f7-aAr.placeholderString" = "e.g. 1-2,5,10";
+
+/* Class = "NSMenuItem"; title = "Pages"; ObjectID = "z7L-l0-9Zf"; */
+"z7L-l0-9Zf.title" = "ページ";

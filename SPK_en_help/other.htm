@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Other Functions</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+</head>
+<body>
+<div class="content">
+	<h1>Other Functions</h1>
+	
+	<h2>● Remove Pages/Change the Order<a name="remove">　</a></h2>
+	<p>
+		You can remove any pages or change the order of the pages with thumbnail view easily. To remove any pages from the document with thumbnail view, select pages you want to remove on thumbnail view, and press delete key. To change the order of pages, move pages with drag and drop on thumbnail view. Just after removing pages or changing the order of pages with thumbnail view, the page indexes aren't re-arranged. But when the document is re-open after saving, thumbnails will be re-numbered in order ascending.<BR>
+	<img vspace="15px" border="1px" src = "image/ss11.tiff" width = "350" height = "124"><br>
+	You can remove any pages by using the menu item <b>"PDF" → "Remove Pages by Specifying the Range..."</b>, too.<br>
+	After selecting this menu item, the dialog sheet appears to specify the page range as shown in the upper figure. Input the page range you want to remove there, then click the button <b>"Remove Pages"</b>. If the check box <b>"Re-number of Pages in Order Ascending"</b> is on, after removing pages, the application indexes pages in ascending order.
+	</p>
+	<h2>● Split PDF/Extract Pages<a name="split">　</a></h2>
+	<img border="1px" src = "image/ss13.tiff" width = "350" height = "153">
+	<p style="margin-top:10;">
+		To split a PDF file constructed in plural pages into some files, use the menu item <b>"PDF" → "Split PDF..."</b>. After selecting this menu item, the dialog sheet appears as shown in the upper figure. To extract specified pages from the current document, switch on the check box <b>"Extract Specified Pages"</b>, and input the pages you want to extract to the lower text field, and click the button <b>"Split PDF"</b>. If the directory to save isn't specified, the application saves the extracted file to the same directory as the current document with the file name that added a page number to the file name of the current document. If you need to change the directory to save, click the button <b>"Save to..."</b> and select the directory.<br>
+		To split the current document to documents composed of single page, switch on the check box <b>"Split to Single Pages"</b> and click the button <b>"Split PDF"</b>. The rule about the file path is the same as extracting pages.
+	</p>
+	<h2>● Extract Text<a name="text">　</a></h2>
+	<img border="1px" src = "image/ss14.tiff" width = "400" height = "380">
+	<p style="margin-top:10;">
+		To extract the text from the PDF document, use <b>"Text Panel"</b>. Select the menu item <b>"Window" → "Show/Hide Text Panel" (shift + command + T)</b> to show or hide <b>"Text Panel"</b>. With <b>"Text Panel"</b>, you can extract text from the current document with specifying the target. Select the target from <b>"Whole Document"</b> and <b>"Pages"</b> and <b>"Selection"</b> with the popup menu. When <b>"Whole Document"</b> is selected, the application extracts text from the whole document. When <b>"Pages"</b> is selected and the pages are specified, the application extracts text from the specified pages. When <b>"Selection"</b> is selected, the application extracts text from the selection. To perform extracting, after specifying the target, click the button <b>"Get Text"</b>.<br>
+		Extracted text is displayed in the text view on the upper of the panel. You can edit the text of the text view freely, and it doesn't affect to the PDF document at all. <b>Sao's PDF Kit</b> holds a standard text editing function. You can use the menu items which belong to the menu <b>"Edit"</b> and <b>"Format"</b> to edit text.<br>
+		To Export the text of the text view, click the button <b>"Export as Plane Text"</b> or <b>"Export as Rich Text"</b>. Each button performs exporting text in each format. The exported file will be saved to the same directory as the source document by default. The file name will be the character strings which added "_text" to the file name of the source document.(If there's the same name file, it will be added the number that is not  duplicated.) If you need to change the directory to save, click the button <b>"Save to..."</b> and select the directory.
+		</p>
+	<h2>● Export as an Image<a name="export">　</a></h2>
+	<p>
+		<b>Sao's PDF Kit</b> provides the method to export an image file from a page data of the PDF document. To export images, select the menu item <b>"PDF" → "Export as Image"</b>. Then the application displays the following sheet panel.
+	</p>
+	<span class="fTitle">【Options for exporting as TIFF image format】</span><br>
+	<img border="1px" src = "image/ss15.tiff" width = "350" height = "187">
+	<p style="margin-top:10;">
+		First, Select the file format of the exported files with the popup menu <b>"Format"</b>. You can select it from <b>"TIFF"</b> and <b>"JPEG"</b>. When the image is exported as <b>TIFF</b> image format, the image can hold its alpha channel. If you don't need it, select <b>JPEG</b> image format.<br>
+		When you select <b>TIFF</b> image format, the popup menu <b>"Compression Method"</b> will be indicated to set the compression method of the <b>TIFF</b> image format. Select the item you want from <b>"None"</b> and <b>"LZW"</b> and <b>"Packbits"</b>.
+	</p>
+	<span class="fTitle">【Options for exporting as JPEG image format】</span><br>
+	<img border="1px" src = "image/ss16.tiff" width = "350" height = "187">
+	<p style="margin-top:10;">
+		When you select <b>JPEG</b> image format, set <b>"Compression Factor"</b> with the slider.<br><br>
+		Next, Specify the pages that you want to export with the combo box <b>"Target Pages"</b>.<br>
+		To perform exporting, click the button <b>"Export as Image"</b>. The exported files will be saved to the same directory as the source document by default. The file name will be the character strings which added the number of page indexes to the file name of the source document. If you need to change the directory to save, click the button <b>"Save to..."</b> and select the directory.
+	</p>
+</div>
+</body>
+</html>
+
