@@ -23,7 +23,7 @@
 
 @synthesize _pdfView,thumbView,_expPanel,_splitPanel,_removePanel,_olView,segTool;
 
-#pragma mark - Window Controller Method
+#pragma mark - initialize window
 
 - (void)windowDidLoad {
     [super windowDidLoad];

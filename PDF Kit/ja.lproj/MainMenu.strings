@@ -29,6 +29,8 @@
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
 "BOF-NM-1cW.title" = "Preferences…";
 
+// menu item "New Document from Clipboard"
+"9Oq-7f-DZZ.title" = "クリップボードから新規作成";
 /* Class = "NSMenuItem"; title = "Save As…"; ObjectID = "Bw7-FT-i3A"; */
 "Bw7-FT-i3A.title" = "別名で保存…";
 

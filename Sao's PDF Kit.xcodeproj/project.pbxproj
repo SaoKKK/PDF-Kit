@@ -248,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				B951BD671C719DD0007B9359 /* main.m */,
+				B97F40321CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.h */,
+				B97F40331CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m */,
 				B95DD1E01C7C6069002F1936 /* Info.plist */,
 				B95DD1DB1C7C602C002F1936 /* Localizable.strings */,
 			);
@@ -312,8 +314,6 @@
 		B951BD961C71C53B007B9359 /* Custom Class */ = {
 			isa = PBXGroup;
 			children = (
-				B97F40321CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.h */,
-				B97F40331CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m */,
 				B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */,
 				B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */,
 				B951BD971C71C58D007B9359 /* CCBackGroundView.h */,

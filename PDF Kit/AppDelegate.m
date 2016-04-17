@@ -42,17 +42,20 @@
     NSArray *mnPageDisplay; //表示モード変更メニューグループ
     IBOutlet NSTextField *statusWinMsg;
     IBOutlet NSTextField *statusWinInfo;
+    NSTimer *timer; //ペーストボード監視用タイマー
 }
 
 @end
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC,_txtPanel;
+@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC,_txtPanel,isImgInPboard;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成
     mnPageDisplay = [NSArray arrayWithObjects:mnSinglePage,mnSingleCont,mnTwoPages,mnTwoPageCont,nil];
+    //ペーストボード監視用タイマー開始
+    timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(observePboard) userInfo:nil repeats:YES];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -78,7 +81,35 @@
     PDFLst = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"PDFLst" ofType:@"array"]];
 }
 
+//ペーストボードを監視
+- (void)observePboard{
+    NSPasteboard *pboard = [NSPasteboard generalPasteboard];
+    NSArray *classes = [NSArray arrayWithObject:[NSImage class]];
+    if ([pboard canReadObjectForClasses:classes options:nil]) {
+        isImgInPboard = YES;
+    } else {
+        isImgInPboard = NO;
+    }
+}
+
 #pragma mark - menu item action
+
+- (IBAction)newDocFromPboard:(id)sender{
+    //クリップボードから画像オブジェクトを取得
+    NSPasteboard *pboard = [NSPasteboard generalPasteboard];
+    NSArray *classes = [NSArray arrayWithObject:[NSImage class]];
+    NSImage *img = [[pboard readObjectsForClasses:classes options:nil] objectAtIndex:0];
+    //画像からPDFを作成
+    PDFPage *page = [[PDFPage alloc]initWithImage:img];
+    [page setValue:@"1" forKey:@"label"];
+    PDFDocument *doc = [[PDFDocument alloc]init];
+    [doc insertPage:page atIndex:0];
+    //新規ドキュメント作成
+    NSDocumentController *docC = [NSDocumentController sharedDocumentController];
+    [docC openUntitledDocumentAndDisplay:YES error:nil];
+    MyWinC *newWC= [docC.currentDocument.windowControllers objectAtIndex:0];
+    [newWC makeNewDocWithPDF:doc];
+}
 
 - (IBAction)showMergeWin:(id)sender {
     if (! _mergePDFWC){

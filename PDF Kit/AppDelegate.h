@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MyWinC.h"
 #import "BMPanel.h"
 #import "TxtPanel.h"
 
@@ -29,6 +30,7 @@
 @property (readwrite,retain,nonatomic)NSMutableArray* PDFLst;
 @property (readwrite,retain,nonatomic)NSMutableArray* errLst;
 @property (weak) IBOutlet NSWindow *statusWin;
+@property (assign) BOOL isImgInPboard;
 @property (assign) BOOL isWinExist;
 @property (assign) BOOL isDocWinMain;
 @property (assign) BOOL isSelection;
