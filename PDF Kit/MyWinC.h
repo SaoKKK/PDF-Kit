@@ -57,7 +57,6 @@
 @property (strong) RemovePanel *_removePanel;
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
-- (NSData *)pdfViewDocumentData;
 - (void)revertDocumentToSaved;
 - (void)getDestinationFromCurrentSelection;
 - (void)updateOL;

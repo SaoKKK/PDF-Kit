@@ -84,10 +84,6 @@
 
 #pragma mark - document save/open support
 
-- (NSData *)pdfViewDocumentData{
-    return [_pdfView.document dataRepresentation];
-}
-
 - (void)revertDocumentToSaved{
     PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
     [_pdfView setDocument:doc];
