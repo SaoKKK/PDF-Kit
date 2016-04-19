@@ -71,6 +71,8 @@
 		B9C45DB01CADFC9F00683937 /* resizef.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C45DAE1CADFC9F00683937 /* resizef.png */; };
 		B9C585711C92963400243A38 /* BMPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5856F1C92963400243A38 /* BMPanel.m */; };
 		B9C585741C92A3D100243A38 /* BMPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C585761C92A3D100243A38 /* BMPanel.xib */; };
+		B9E398221CC5BB2A0018DC88 /* InfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E398201CC5BB290018DC88 /* InfoPanel.m */; };
+		B9E398231CC5BB2A0018DC88 /* InfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E398211CC5BB290018DC88 /* InfoPanel.xib */; };
 		B9F1E24F1CA8975100AFAA6F /* HandScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */; };
 		B9F1E2501CA8975100AFAA6F /* ZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E24D1CA8975100AFAA6F /* ZoomView.m */; };
 		B9F1E2541CA89C2400AFAA6F /* cZoom.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F1E2511CA89C2300AFAA6F /* cZoom.png */; };
@@ -172,6 +174,9 @@
 		B9C5856F1C92963400243A38 /* BMPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPanel.m; sourceTree = "<group>"; };
 		B9C585751C92A3D100243A38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BMPanel.xib; sourceTree = "<group>"; };
 		B9C585781C92A3DF00243A38 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/BMPanel.strings; sourceTree = "<group>"; };
+		B9E3981F1CC5BB290018DC88 /* InfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPanel.h; sourceTree = "<group>"; };
+		B9E398201CC5BB290018DC88 /* InfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPanel.m; sourceTree = "<group>"; };
+		B9E398211CC5BB290018DC88 /* InfoPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoPanel.xib; sourceTree = "<group>"; };
 		B9F1E24A1CA8975100AFAA6F /* HandScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandScrollView.h; sourceTree = "<group>"; };
 		B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandScrollView.m; sourceTree = "<group>"; };
 		B9F1E24C1CA8975100AFAA6F /* ZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomView.h; sourceTree = "<group>"; };
@@ -228,6 +233,7 @@
 				B951BD641C719DD0007B9359 /* AppDelegate.m */,
 				B951BD711C719DD0007B9359 /* MainMenu.xib */,
 				B98CA6DE1C761548008C3E89 /* Document */,
+				B9E398241CC5BB350018DC88 /* InfoPanel */,
 				B90EC2AD1CC0AC450062F9A5 /* ExportPanel */,
 				B9C585731C92965500243A38 /* BMPanel */,
 				B97F403A1CA5FCEE006CCEA4 /* SplitPanel */,
@@ -411,6 +417,16 @@
 			name = BMPanel;
 			sourceTree = "<group>";
 		};
+		B9E398241CC5BB350018DC88 /* InfoPanel */ = {
+			isa = PBXGroup;
+			children = (
+				B9E398211CC5BB290018DC88 /* InfoPanel.xib */,
+				B9E3981F1CC5BB290018DC88 /* InfoPanel.h */,
+				B9E398201CC5BB290018DC88 /* InfoPanel.m */,
+			);
+			name = InfoPanel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -479,6 +495,7 @@
 				B951BD931C71C2A5007B9359 /* btnRestore.png in Resources */,
 				B951BD701C719DD0007B9359 /* Assets.xcassets in Resources */,
 				B951BD6E1C719DD0007B9359 /* Document.xib in Resources */,
+				B9E398231CC5BB2A0018DC88 /* InfoPanel.xib in Resources */,
 				B936FBCB1CA26AE800B86A0B /* zoom_off.png in Resources */,
 				B9F1E2561CA89C2400AFAA6F /* cZoomOut.png in Resources */,
 				B93FD5771C86D45B00B68959 /* singlePage_off.png in Resources */,
@@ -546,6 +563,7 @@
 				B951BD9C1C71C58D007B9359 /* CCClearWin.m in Sources */,
 				B997BF9D1CAF75A30022C246 /* TxtPanel.m in Sources */,
 				B951BD9B1C71C58D007B9359 /* CCBackGroundView.m in Sources */,
+				B9E398221CC5BB2A0018DC88 /* InfoPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

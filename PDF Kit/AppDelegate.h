@@ -37,6 +37,7 @@
 @property (assign) BOOL isOLExists;
 @property (assign) BOOL isOLSelected;
 @property (assign) BOOL isOLSelectedSingle;
+@property (assign) BOOL isTwoPages;
 @property (assign) BOOL isTextPanelKey;
 @property (readwrite,nonatomic)NSMutableDictionary *olInfo;
 @property (assign) BOOL bRowClicked;

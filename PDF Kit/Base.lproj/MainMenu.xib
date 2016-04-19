@@ -541,6 +541,13 @@ CA
                                     <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isDocWinMain" id="DAo-C5-D8k"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="e5t-5M-UhN"/>
+                            <menuItem title="Display as Book" enabled="NO" keyEquivalent="5" id="YW5-cc-p1l">
+                                <connections>
+                                    <action selector="mnDisplayAsBook:" target="-1" id="mcB-Bg-lRP"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isTwoPages" id="Jj5-gm-3y6"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="zjs-Co-H6w"/>
                             <menuItem title="Zoom to Fit" enabled="NO" keyEquivalent="9" id="pnX-U1-zdr">
                                 <connections>

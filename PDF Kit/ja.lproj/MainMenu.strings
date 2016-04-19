@@ -172,6 +172,8 @@
 "bcl-No-8o4.title" = "見開表示";
 // menu item Two Pages Continuous
 "T3n-UQ-drN.title" = "見開連続表示";
+// menu item Display as Book
+"YW5-cc-p1l.title" = "先頭ページを表紙として扱う";
 // memu item Actual Size
 "5u2-Bj-I70.title" = "実際のサイズ";
 // menu item Zoom to Fit

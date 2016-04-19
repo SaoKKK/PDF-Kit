@@ -726,17 +726,22 @@
     switch ([sender selectedColumn]) {
         case 0:
             [_pdfView setDisplayMode:kPDFDisplaySinglePage];
+            (APPD).isTwoPages = NO;
             break;
         case 2:
             [_pdfView setDisplayMode:kPDFDisplayTwoUp];
+            (APPD).isTwoPages = YES;
             break;
         case 3:
             [_pdfView setDisplayMode:kPDFDisplayTwoUpContinuous];
+            (APPD).isTwoPages = YES;
             break;
         default:
             [_pdfView setDisplayMode:kPDFDisplaySinglePageContinuous];
+            (APPD).isTwoPages = NO;
             break;
     }
+    [self updateDisplayModeMenuStatus];
 }
 
 - (IBAction)segZoom:(id)sender {
@@ -831,6 +836,16 @@
     [matrixDisplayMode selectCellWithTag:3];
     [APPD setMnPageDisplayState:3];
     [self matrixDisplayMode:matrixDisplayMode];
+}
+
+- (IBAction)mnDisplayAsBook:(id)sender{
+    if (_pdfView.displaysAsBook) {
+        [_pdfView setDisplaysAsBook:NO];
+        [sender setState:0];
+    } else {
+        [_pdfView setDisplaysAsBook:YES];
+        [sender setState:1];
+    }
 }
 
 //移動メニュー
