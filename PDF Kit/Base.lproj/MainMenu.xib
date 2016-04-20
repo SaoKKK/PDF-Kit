@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="PassWin" destination="Wmu-nM-xba" id="Zne-Rh-zsB"/>
                 <outlet property="mnFullScreen" destination="uEs-de-IhG" id="uC9-3i-3RW"/>
                 <outlet property="mnGoBack" destination="dDD-jY-g1L" id="Ngf-wU-HxB"/>
                 <outlet property="mnGoForward" destination="G89-Bs-PYg" id="NgJ-mg-2O7"/>
@@ -27,6 +28,8 @@
                 <outlet property="mnTwoPages" destination="bcl-No-8o4" id="307-M1-WjO"/>
                 <outlet property="mnZoomIn" destination="uzB-W5-Iaf" id="RSc-H9-E5l"/>
                 <outlet property="mnZoomOut" destination="P38-qd-m5f" id="e9q-Ss-Pfn"/>
+                <outlet property="pwInfoTxt" destination="zDL-Tc-tXw" id="WPP-sy-aw8"/>
+                <outlet property="pwMsgTxt" destination="R1J-CS-9q7" id="IQw-2w-z4h"/>
                 <outlet property="statusWin" destination="pIj-hh-1WQ" id="6HU-Ba-flq"/>
                 <outlet property="statusWinInfo" destination="P6V-eo-Ka3" id="0Qi-5y-HxR"/>
                 <outlet property="statusWinMsg" destination="AUk-is-Uck" id="mRt-CC-pz1"/>
@@ -798,5 +801,87 @@ CA
                 </subviews>
             </view>
         </window>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Wmu-nM-xba">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="109" y="138" width="400" height="170"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <view key="contentView" id="dzp-NM-sgo">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="170"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sa6-dg-Mda">
+                        <rect key="frame" x="20" y="100" width="50" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="appIcon_64" id="X5G-9m-JIU"/>
+                    </imageView>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="R1J-CS-9q7">
+                        <rect key="frame" x="84" y="116" width="298" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="You don't have permission to copy portions of this document." id="kiL-8H-YbU">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="zDL-Tc-tXw">
+                        <rect key="frame" x="84" y="80" width="298" height="28"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Enter the owner passwort to unlock copying from the document." id="Jjo-yc-UY2">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="goj-du-PdR">
+                        <rect key="frame" x="84" y="56" width="59" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Password:" id="Nga-eG-sHi">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <secureTextField verticalHuggingPriority="750" id="Zi0-gT-Hz9">
+                        <rect key="frame" x="145" y="53" width="235" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="NSs-gx-znL">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
+                    <button verticalHuggingPriority="750" id="iyc-TL-5RO">
+                        <rect key="frame" x="306" y="10" width="79" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Unlock" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y6t-6F-i6O">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" id="29y-K7-MzZ">
+                        <rect key="frame" x="229" y="10" width="79" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CzD-Vl-NFe">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="819" y="1243"/>
+        </window>
     </objects>
+    <resources>
+        <image name="appIcon_64" width="64" height="64"/>
+    </resources>
 </document>

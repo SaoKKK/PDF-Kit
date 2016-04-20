@@ -49,7 +49,7 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC,_txtPanel,isImgInPboard;
+@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC,_txtPanel,isImgInPboard,beResponse;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成
@@ -175,5 +175,8 @@
 - (void)closeStatusWin{
     [statusWin orderOut:self];
 }
+
+#pragma mark - pass window
+
 
 @end

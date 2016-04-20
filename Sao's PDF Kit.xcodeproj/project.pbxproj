@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9023E8D1CC6E823002A0E65 /* appIcon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = B9023E8C1CC6E823002A0E65 /* appIcon_64.png */; };
 		B907C4B71C848A440019F247 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B907C4B61C848A440019F247 /* sidebar.png */; };
 		B90EC2AB1CC0AC3C0062F9A5 /* ExportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90EC2A91CC0AC3C0062F9A5 /* ExportPanel.m */; };
 		B90EC2AE1CC0BCD90062F9A5 /* ExportPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90EC2B01CC0BCD90062F9A5 /* ExportPanel.xib */; };
@@ -81,6 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9023E8C1CC6E823002A0E65 /* appIcon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon_64.png; path = Assets.xcassets/AppIcon.appiconset/appIcon_64.png; sourceTree = "<group>"; };
 		B907C4B61C848A440019F247 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = Graphics/sidebar.png; sourceTree = "<group>"; };
 		B90EC2A81CC0AC3C0062F9A5 /* ExportPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportPanel.h; sourceTree = "<group>"; };
 		B90EC2A91CC0AC3C0062F9A5 /* ExportPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportPanel.m; sourceTree = "<group>"; };
@@ -243,7 +245,7 @@
 				B951BD6F1C719DD0007B9359 /* Assets.xcassets */,
 				B951BD961C71C53B007B9359 /* Custom Class */,
 				B951BD9F1C71C714007B9359 /* Resources */,
-				B951BD7A1C719E0C007B9359 /* Graphics */,
+				B951BD7A1C719E0C007B9359 /* app */,
 				B951BD661C719DD0007B9359 /* Supporting Files */,
 			);
 			name = "Sao's PDF Kit";
@@ -262,9 +264,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B951BD7A1C719E0C007B9359 /* Graphics */ = {
+		B951BD7A1C719E0C007B9359 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				B9023E8C1CC6E823002A0E65 /* appIcon_64.png */,
 				B9C45DAD1CADFC9F00683937 /* resizeb.png */,
 				B9C45DAE1CADFC9F00683937 /* resizef.png */,
 				B9F1E2511CA89C2300AFAA6F /* cZoom.png */,
@@ -302,7 +305,7 @@
 				B951BD8E1C71C2A5007B9359 /* btnSave.png */,
 				B951BD8F1C71C2A5007B9359 /* vline.png */,
 			);
-			name = Graphics;
+			name = app;
 			sourceTree = "<group>";
 		};
 		B951BD7B1C719E15007B9359 /* Merge PDF Win */ = {
@@ -530,6 +533,7 @@
 				B9C45DAF1CADFC9F00683937 /* resizeb.png in Resources */,
 				B96EE7841C818A630063C7A2 /* goForward.png in Resources */,
 				B96EE7831C818A630063C7A2 /* goBack.png in Resources */,
+				B9023E8D1CC6E823002A0E65 /* appIcon_64.png in Resources */,
 				B936FBCA1CA26AE800B86A0B /* selectText_on.png in Resources */,
 				B93FD57B1C86D45B00B68959 /* twoUp_off.png in Resources */,
 				B936FBC71CA26AE800B86A0B /* selectArea_off.png in Resources */,

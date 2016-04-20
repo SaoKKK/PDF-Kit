@@ -360,6 +360,10 @@
 //Status Dialogメッセージ"The file does not exist..."
 "YrD-Gu-5hN.title" = "指定されたファイルは存在しません。";
 
-
+//Pass win
+"kiL-8H-YbU.title" = "この書類をコピーするための権限がありません。";
+"Jjo-yc-UY2.title" = "コピー操作のロックを解除するには、オーナーパスワードを入力してください。";
+"y6t-6F-i6O.title" = "ロック解除";
+"CzD-Vl-NFe.title" = "キャンセル";
 
 

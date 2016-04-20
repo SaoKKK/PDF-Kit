@@ -25,5 +25,6 @@
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
         </window>
+        <objectController id="w5c-hN-z2f"/>
     </objects>
 </document>
