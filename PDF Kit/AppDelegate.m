@@ -49,7 +49,7 @@
 
 @implementation AppDelegate
 
-@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC,_txtPanel,isImgInPboard,beResponse;
+@synthesize PDFLst,errLst,olInfo,statusWin,_bmPanelC,_txtPanel,isImgInPboard,beResponse,passWin,pwTxtPass,parentWin;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //メニューグループを作成
@@ -178,5 +178,17 @@
 
 #pragma mark - pass window
 
+- (IBAction)pwUnlock:(id)sender {
+    NSDocumentController *docC = [NSDocumentController sharedDocumentController];
+    MyWinC *winC = [docC.currentDocument.windowControllers objectAtIndex:0];
+    [winC._pdfView.document unlockWithPassword:pwTxtPass.stringValue];
+    if (winC._pdfView.document.allowsCopying && winC._pdfView.document.allowsPrinting) {
+        [parentWin endSheet:passWin returnCode:NSModalResponseOK];
+    }
+}
+
+- (IBAction)pwCancel:(id)sender {
+    [parentWin endSheet:passWin returnCode:NSModalResponseCancel];
+}
 
 @end

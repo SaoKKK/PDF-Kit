@@ -30,9 +30,14 @@
 @property (readwrite,retain,nonatomic)NSMutableArray* PDFLst;
 @property (readwrite,retain,nonatomic)NSMutableArray* errLst;
 @property (weak) IBOutlet NSWindow *statusWin;
-@property (weak) IBOutlet NSWindow *PassWin;
+
+//pass win
+@property (weak) IBOutlet NSWindow *passWin;
 @property (weak) IBOutlet NSTextField *pwMsgTxt;
 @property (weak) IBOutlet NSTextField *pwInfoTxt;
+@property (weak) IBOutlet NSSecureTextField *pwTxtPass;
+@property (readwrite) NSWindow *parentWin;
+
 @property (assign) BOOL isImgInPboard;
 @property (assign) BOOL isWinExist;
 @property (assign) BOOL isDocWinMain;
@@ -42,6 +47,10 @@
 @property (assign) BOOL isOLSelectedSingle;
 @property (assign) BOOL isTwoPages;
 @property (assign) BOOL isTextPanelKey;
+@property (assign) BOOL isLocked;
+@property (assign) BOOL isCopyLocked;
+@property (assign) BOOL isPrintLocked;
+@property (assign) BOOL isDocLocked;
 @property (assign) BOOL beResponse;
 @property (readwrite,nonatomic)NSMutableDictionary *olInfo;
 @property (assign) BOOL bRowClicked;

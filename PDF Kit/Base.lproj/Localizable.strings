@@ -81,3 +81,7 @@
 "CharError" = "The specified page range includes inappropriate characters.";
 "AllPages" = "The application cannot remove all pages.";
 
+//pass win
+"UnlockMsg" = "You don't have full permissions of this document.";
+"UnlockInfo" = "To enable full permissions of this document, you must input the owner password.";
+

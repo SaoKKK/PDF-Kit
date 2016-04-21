@@ -21,7 +21,7 @@
 
 @implementation MyWinC
 
-@synthesize _pdfView,thumbView,_expPanel,_splitPanel,_removePanel,_olView,segTool;
+@synthesize _pdfView,thumbView,_expPanel,_splitPanel,_removePanel,_olView,segTool,options;
 
 #pragma mark - initialize window
 
@@ -38,6 +38,7 @@
     //インスタンス変数を初期化
     selectedViewMode = 0;
     bFullscreen = NO;
+    options = [NSMutableDictionary dictionary];
     //ノーティフィケーションを設定
     [self setupNotification];
     //デリゲートを設定
@@ -82,6 +83,17 @@
     [(APPD).olInfo setObject:[NSNumber numberWithFloat:doc.pageCount-1] forKey:@"lastIndex"];
 }
 
+//暗号化情報を更新
+- (void)updateLockInfo{
+    (APPD).isCopyLocked = ![_pdfView.document allowsCopying];
+    (APPD).isPrintLocked = ![_pdfView.document allowsPrinting];
+    if ((APPD).isCopyLocked || (APPD).isPrintLocked){
+        (APPD).isDocLocked = YES;
+    } else {
+        (APPD).isDocLocked = NO;
+    }
+}
+
 #pragma mark - document save/open support
 
 - (void)revertDocumentToSaved{
@@ -124,6 +136,7 @@
         (APPD).isWinExist = YES;
         (APPD).isDocWinMain = YES;
         (APPD).isOLExists = [self isOLExists];
+        [self updateLockInfo];
         [self updateSelectedRowInfo];
         if (_pdfView.currentSelection || _pdfView.selRect.size.width != 0 || _pdfView.selRect.size.height  != 0) {
             (APPD).isSelection = YES;
@@ -178,6 +191,10 @@
     [[NSNotificationCenter defaultCenter]addObserverForName:NSWindowDidExitFullScreenNotification object:self.window queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
         bFullscreen = NO;
         [self mnFullScreenSetTitle];
+    }];
+    //ドキュメントがアンロックされた
+    [[NSNotificationCenter defaultCenter]addObserverForName:PDFDocumentDidUnlockNotification object:_pdfView.document queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        [self updateLockInfo];
     }];
 }
 
@@ -791,7 +808,15 @@
 
 #pragma mark - menu action
 
-//ファイルメニュー/印刷
+//ファイルメニュー
+- (IBAction)inputPassword:(id)sender{
+    (APPD).parentWin = self.window;
+    (APPD).pwTxtPass.stringValue = @"";
+    (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockMsg", @"");
+    (APPD).pwInfoTxt.stringValue = NSLocalizedString(@"UnlockInfo", @"");
+    [self.window beginSheet:(APPD).passWin completionHandler:^(NSInteger returnCode){}];
+}
+
 - (void)printDocument:(id)sender{
     [_pdfView printWithInfo:[self.document printInfo]  autoRotate:YES];
 }

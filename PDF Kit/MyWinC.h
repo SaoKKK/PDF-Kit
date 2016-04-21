@@ -55,6 +55,7 @@
 @property (strong) ExportPanel *_expPanel;
 @property (strong) SplitPanel *_splitPanel;
 @property (strong) RemovePanel *_removePanel;
+@property (readwrite,nonatomic) NSMutableDictionary *options;
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
 - (void)revertDocumentToSaved;

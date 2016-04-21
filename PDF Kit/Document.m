@@ -43,9 +43,7 @@
 
 - (BOOL)writeToURL:(NSURL *)url ofType:(NSString *)typeName error:(NSError * _Nullable __autoreleasing *)outError{
     MyWinC *winC = [[self windowControllers]objectAtIndex:0];
-    NSMutableDictionary *options = [NSMutableDictionary dictionary];
-    //NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:@"", kCGPDFContextOwnerPassword, @"", kCGPDFContextUserPassword, nil];
-    return [winC._pdfView.document writeToURL:url withOptions:options];
+    return [winC._pdfView.document writeToURL:url withOptions:winC.options];
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {

@@ -217,7 +217,8 @@
 "IAo-SY-fd9.title" = "開く…";
 //menu item "Revert to Saved"
 "KaW-ft-85H.title" = "最後の保存に戻す";
-
+//menu item "Input Password..."
+"C4x-wX-sts.title" = "パスワードを入力...";
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "すべてを表示";
 
