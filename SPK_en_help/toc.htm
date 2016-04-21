@@ -59,9 +59,9 @@ function expandcollapse_applescript()
 	var cur = document.getElementById("chapter_applescript");
 	expandcollapse(cur);
 }
-function expandcollapse_shellscript()
+function expandcollapse_encrypt()
 {
-	var cur = document.getElementById("chapter_shellscript");
+	var cur = document.getElementById("chapter_encrypt");
 	expandcollapse(cur);
 }
 function expandcollapse_term()
@@ -119,6 +119,18 @@ function expandcollapse(cur)
 			<a href = "search.htm"></a><ul>
 			<li class="item"><a href="search.htm#search" target="right">Perform Search in PDF Document</a></li>
 			<li class="item"><a href="search.htm#result" target="right">View and Use the Search Result</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--文書のセキュリティ-->
+	<div id="chapter_encrypt" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_encrypt())"><a href="pass.htm" target="right">Managing Security</a></h2>
+		<div style="display:none;">
+			<a href = "pass.htm"></a><ul>
+			<li class="item"><a href="pass.htm#encrypt" target="right">About Encrypting with Password</a></li>
+			<li class="item"><a href="pass.htm#unlock" target="right">Unlock the Document</a></li>
+			<li class="item"><a href="pass.htm#lock" target="right">Set Password</a></li>
 			</ul>
 		</div>
 	</div>

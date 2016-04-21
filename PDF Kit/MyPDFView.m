@@ -187,6 +187,22 @@ enum UNDEROBJ_TYPE{
 }
 
 - (void)copy:(id)sender{
+    if ((APPD).isCopyLocked){
+        (APPD).parentWin = self.window;
+        (APPD).pwTxtPass.stringValue = @"";
+        (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockCopyMsg", @"");
+        (APPD).pwInfoTxt.stringValue = NSLocalizedString(@"UnlockCopyInfo", @"");
+        [self.window beginSheet:(APPD).passWin completionHandler:^(NSInteger returnCode){
+            if (returnCode == NSModalResponseOK) {
+                [self performCopy];
+            }
+        }];
+    } else {
+        [self performCopy];
+    }
+}
+
+- (void)performCopy{
     if ((WINC).segTool.selectedSegment == 1) {
         PDFSelection *sel = [targetPg selectionForRect:selRect];
         [self setCurrentSelection:sel];

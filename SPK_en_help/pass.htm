@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Managing Security</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+</head>
+<body>
+<div class="content">
+	<h1>Managing Security</h1>
+	
+	<h2>● About Encrypting with Password<a name="encrypt">　</a></h2>
+	<p>
+		<b>Sao's PDF Kit</b> can encrypt PDF document with passwords and restrict user's permissions. PDF document can have the following two passwords.
+		<li class="item">Open password (User password)</li>
+		<div style="margin:0 0 5 27;">
+			The document encrypted with this password requires the password when it's opened.
+		</div>
+		<li class="item">Owner password</li>
+		<div style="margin:0 0 5 27;">
+			With this password, you can limit the user's authority for <b>editing/copying/printing</b> operations. To change the limiting requires owner password.
+		</div>
+	If the document is protected with two password, it can be open with a password of either. But only <b>owner password</b> can change the authority.
+	</p>
+	<h2>● Unlock the Document<a name="unlock">　</a></h2>
+	<img border="1px" src = "image/ss18.png" width = "325" height = "252">
+	<p style="margin-top:10;">
+		To open the document which is setted <b>open password (user password)</b>, input the user or owner password to the text field that is displayed when you try to open it (<b>see upper figure</b>).
+	</p>
+	<img border="1px" src = "image/ss17.tiff" width = "400" height = "170">
+	<p style="margin-top:10;">
+		If you need to enable full permissions of the document, select the menu item <b>"File" → "Input Password..."</b> and input the <b>owner password</b> to the dialog's password field. And when you try operation that you don't have permission, the application will display that requires <B>owner password</b>. You can enable full permissions by inputting the <b>owner password</b> to its password field, too.
+	</p>
+	<h2>● Set Password<a name="lock">　</a></h2>
+	<p>
+		The search results are displayed in a list in navigator pane. The left column of the list indicates the pages that contains the finded words. The right column of the list indicates the finded words and the character strings before and after the finded words. And the total number of search results will be indicated in the header of the right column. Click the each row of list, then application scrolls view to show the finded words and highlights them.
+	</p>
+</body>
+</html>
+

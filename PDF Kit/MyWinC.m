@@ -817,8 +817,20 @@
     [self.window beginSheet:(APPD).passWin completionHandler:^(NSInteger returnCode){}];
 }
 
-- (void)printDocument:(id)sender{
-    [_pdfView printWithInfo:[self.document printInfo]  autoRotate:YES];
+- (IBAction)printDocument:(id)sender{
+    if ((APPD).isPrintLocked){
+        (APPD).parentWin = self.window;
+        (APPD).pwTxtPass.stringValue = @"";
+        (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockPrintMsg", @"");
+        (APPD).pwInfoTxt.stringValue = NSLocalizedString(@"UnlockPrintInfo", @"");
+        [self.window beginSheet:(APPD).passWin completionHandler:^(NSInteger returnCode){
+            if (returnCode == NSModalResponseOK) {
+                [_pdfView printWithInfo:[self.document printInfo]  autoRotate:YES];
+            }
+        }];
+    } else {
+        [_pdfView printWithInfo:[self.document printInfo]  autoRotate:YES];
+    }
 }
 
 //表示メニュー

@@ -84,4 +84,11 @@
 //pass win
 "UnlockMsg" = "You don't have full permissions of this document.";
 "UnlockInfo" = "To enable full permissions of this document, you must input the owner password.";
+"UnlockPrintMsg" = "You don't have permission to print this document.";
+"UnlockPrintInfo" = "Enter the owner password to unlock printing the document.";
+"UnlockCopyMsg" = "You don't have permission to copy portions of this document.";
+"UnlockCopyInfo" = "Enter the owner password to unlock copying from the document.";
+"UnlockEditMsg" = "You don't have permission to edit the information of this document.";
+"UnlockEditInfo" = "Enter the owner password to unlock editing the document information.";
+
 
