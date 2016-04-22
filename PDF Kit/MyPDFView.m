@@ -273,7 +273,13 @@ enum UNDEROBJ_TYPE{
     if ((WINC).segTool.selectedSegment == 1) {
         NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
         //カーソル座標に最も近いページの領域をNSView座標系で取得
+        PDFPage *oldPg = targetPg;
         targetPg = [self pageForPoint:point nearest:YES];
+        //違うページにマウスダウンされた場合はselRectをクリア
+        if (targetPg != oldPg) {
+            selRect = NSZeroRect;
+            [self setNeedsDisplay:YES];
+        }
         pgRect = [targetPg boundsForBox:kPDFDisplayBoxArtBox];
         vPgRect = [self convertRect:pgRect fromPage:targetPg];
         if ([self pageForPoint:point nearest:NO]) {

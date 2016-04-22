@@ -7,6 +7,22 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="InfoPanel">
             <connections>
+                <outlet property="txtAuthor" destination="DX4-yG-czm" id="rEq-uU-JvV"/>
+                <outlet property="txtCDate" destination="ppW-Lt-Gze" id="NjB-Jc-ogi"/>
+                <outlet property="txtCopy" destination="sLp-ts-STd" id="4Cz-ua-P33"/>
+                <outlet property="txtCreator" destination="RRT-dD-9Tv" id="6ql-M4-yb2"/>
+                <outlet property="txtFName" destination="Wsz-TM-faM" id="uGh-Ou-7Cm"/>
+                <outlet property="txtFPath" destination="FWa-2w-ago" id="Tk1-rf-Mew"/>
+                <outlet property="txtKeyword" destination="9DJ-Fp-4zv" id="5ac-Rh-Kts"/>
+                <outlet property="txtLock" destination="3ug-Ei-3bg" id="9gF-6v-aEv"/>
+                <outlet property="txtMDate" destination="drV-ll-ww5" id="wyc-AF-X4Q"/>
+                <outlet property="txtPage" destination="NLf-p0-2mm" id="koS-zB-2mY"/>
+                <outlet property="txtPrint" destination="cwS-6n-Hw1" id="VHs-hy-tJE"/>
+                <outlet property="txtProducer" destination="j20-nn-oEr" id="Ert-kQ-KtW"/>
+                <outlet property="txtSecurity" destination="FkN-U1-ZdG" id="COC-W2-IWu"/>
+                <outlet property="txtSubject" destination="PVM-Vs-Wbt" id="ywE-1m-EfN"/>
+                <outlet property="txtTitle" destination="IBu-HD-Nlh" id="AgL-XV-o4F"/>
+                <outlet property="txtVer" destination="AZg-8D-d6D" id="rLO-mN-diw"/>
                 <outlet property="window" destination="A7p-gt-H8w" id="nog-fp-h6s"/>
             </connections>
         </customObject>
@@ -46,6 +62,10 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystem"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="pshUpdate:" target="-2" id="bSA-bN-UpJ"/>
+                            <binding destination="EiH-WB-VnP" name="enabled" keyPath="delegate.isLocked" id="tP1-XD-Qpg"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="4a8-hg-p5B">
                         <rect key="frame" x="362" y="7" width="79" height="28"/>
@@ -57,6 +77,9 @@
 Gw
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="pshCancel:" target="-2" id="HCF-A4-aXr"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="1yg-3e-zd8">
                         <rect key="frame" x="11" y="11" width="20" height="20"/>
@@ -65,6 +88,9 @@ Gw
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="pshLock:" target="-2" id="flZ-EQ-eeG"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="lkD-Xs-nMB">
                         <rect key="frame" x="10" y="396" width="126" height="14"/>
@@ -250,6 +276,9 @@ Gw
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <binding destination="EiH-WB-VnP" name="editable" keyPath="delegate.isLocked" id="vYG-gv-32m"/>
+                        </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="DX4-yG-czm">
                         <rect key="frame" x="131" y="106" width="305" height="19"/>
@@ -259,6 +288,9 @@ Gw
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <binding destination="EiH-WB-VnP" name="editable" keyPath="delegate.isLocked" id="V0E-Gp-QdA"/>
+                        </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ckf-Jc-QFG">
                         <rect key="frame" x="10" y="58" width="120" height="14"/>
@@ -358,6 +390,9 @@ Gw
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <binding destination="EiH-WB-VnP" name="editable" keyPath="delegate.isLocked" id="jjJ-71-5xF"/>
+                        </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="9DJ-Fp-4zv">
                         <rect key="frame" x="131" y="54" width="305" height="19"/>
@@ -367,6 +402,9 @@ Gw
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <binding destination="EiH-WB-VnP" name="editable" keyPath="delegate.isLocked" id="s6c-yY-Uag"/>
+                        </connections>
                     </textField>
                 </subviews>
             </view>

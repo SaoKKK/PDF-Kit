@@ -700,13 +700,26 @@ CA
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="PDF" id="qvG-SR-Z1K">
                         <items>
+                            <menuItem title="Show Document Info" keyEquivalent="i" id="zke-1c-zl8">
+                                <connections>
+                                    <action selector="showInfo:" target="-1" id="WXU-ID-UG3"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isWinExist" id="8bK-yX-zKo"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show Security..." id="baw-Iw-Kah">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showSecurity:" target="-1" id="qJd-wt-Xkl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="zYm-MT-mhJ"/>
                             <menuItem title="Remove Pages by Specifying the Range..." id="TcW-h6-RTs">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="mnRemovePage:" target="-1" id="lz5-S5-VD2"/>
                                 </connections>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="zYm-MT-mhJ"/>
+                            <menuItem isSeparatorItem="YES" id="Tvo-ya-a6F"/>
                             <menuItem title="Merge PDF..." id="T87-cJ-ES5">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>

@@ -21,7 +21,7 @@
 
 @implementation MyWinC
 
-@synthesize _pdfView,thumbView,_expPanel,_splitPanel,_removePanel,_olView,segTool,options;
+@synthesize _pdfView,thumbView,_expPanel,_splitPanel,_removePanel,_olView,segTool,options,docURL;
 
 #pragma mark - initialize window
 
@@ -925,6 +925,22 @@
 - (IBAction)mnDeselect:(id)sender{
     [_pdfView clearSelection];
     [_pdfView deselectArea];
+}
+
+//PDFメニュー
+- (IBAction)showInfo:(id)sender{
+    self.infoPanel = [[InfoPanel alloc]initWithWindowNibName:@"InfoPanel"];
+    [self.window beginSheet:self.infoPanel.window completionHandler:^(NSModalResponse returnCode){
+        self.infoPanel = nil;
+        (APPD).isLocked = NO;
+    }];
+}
+
+- (IBAction)showSecurity:(id)sender{
+    self.secPanel = [[EncryptPanel alloc]initWithWindowNibName:@"EncryptPanel"];
+    [self.window beginSheet:self.secPanel.window completionHandler:^(NSModalResponse returnCode){
+        self.secPanel = nil;
+    }];
 }
 
 - (IBAction)mnExportASImage:(id)sender{

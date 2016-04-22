@@ -13,12 +13,16 @@
 #import "SplitPanel.h"
 #import "RemovePanel.h"
 #import "MyOLView.h"
+#import "InfoPanel.h"
+#import "EncryptPanel.h"
 
 @class MyPDFView;
 @class ExportPanel;
 @class SplitPanel;
 @class RemovePanel;
 @class MyOLView;
+@class InfoPanel;
+@class EncryptPanel;
 
 @interface MyWinC : NSWindowController<NSWindowDelegate,NSTableViewDataSource,NSTableViewDelegate,NSSplitViewDelegate>{
     IBOutlet NSWindow *window;
@@ -42,7 +46,6 @@
     IBOutlet NSView *tocView;
     IBOutlet NSTabView *tabToc;
     IBOutlet NSSearchField *searchField;
-    NSURL *docURL;  //ドキュメントのURL保持用
     CGFloat oldTocWidth; //目次エリアの変更前の幅保持用
     BOOL bFullscreen; //スクリーンモード保持用
     NSMutableArray *searchResult; //検索結果保持用
@@ -55,6 +58,9 @@
 @property (strong) ExportPanel *_expPanel;
 @property (strong) SplitPanel *_splitPanel;
 @property (strong) RemovePanel *_removePanel;
+@property (strong) InfoPanel *infoPanel;
+@property (strong) EncryptPanel *secPanel;
+@property (readonly) NSURL *docURL;  //ドキュメントのURL保持用
 @property (readwrite,nonatomic) NSMutableDictionary *options;
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;

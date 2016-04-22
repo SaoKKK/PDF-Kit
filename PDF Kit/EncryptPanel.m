@@ -1,18 +1,18 @@
 //
-//  EncriptPanel.m
+//  EncryptPanel.m
 //  Sao's PDF Kit
 //
 //  Created by 河野 さおり on 2016/04/21.
 //  Copyright © 2016年 河野 さおり. All rights reserved.
 //
 
-#import "EncriptPanel.h"
+#import "EncryptPanel.h"
 
-@interface EncriptPanel ()
+@interface EncryptPanel ()
 
 @end
 
-@implementation EncriptPanel
+@implementation EncryptPanel
 
 - (void)windowDidLoad {
     [super windowDidLoad];

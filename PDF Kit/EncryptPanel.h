@@ -1,5 +1,5 @@
 //
-//  EncriptPanel.h
+//  EncryptPanel.h
 //  Sao's PDF Kit
 //
 //  Created by 河野 さおり on 2016/04/21.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface EncriptPanel : NSWindowController
+@interface EncryptPanel : NSWindowController
 
 @end

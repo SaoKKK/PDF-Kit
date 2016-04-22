@@ -7,6 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AppDelegate.h"
+#import "MyWinC.h"
 
 @interface InfoPanel : NSWindowController
 
