@@ -50,6 +50,7 @@
 		B951BDA31C71C759007B9359 /* PDFLst.array in Resources */ = {isa = PBXBuildFile; fileRef = B951BDA21C71C759007B9359 /* PDFLst.array */; };
 		B951BDA61C71DB23007B9359 /* ErrLstController.m in Sources */ = {isa = PBXBuildFile; fileRef = B951BDA51C71DB23007B9359 /* ErrLstController.m */; };
 		B95DD1DD1C7C602C002F1936 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B95DD1DB1C7C602C002F1936 /* Localizable.strings */; };
+		B95FEAC61CCA615A00FC91FF /* CCFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B95FEAC51CCA615A00FC91FF /* CCFormatter.m */; };
 		B96EE7831C818A630063C7A2 /* goBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77D1C818A630063C7A2 /* goBack.png */; };
 		B96EE7841C818A630063C7A2 /* goForward.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77E1C818A630063C7A2 /* goForward.png */; };
 		B96EE7851C818A630063C7A2 /* goLast.png in Resources */ = {isa = PBXBuildFile; fileRef = B96EE77F1C818A630063C7A2 /* goLast.png */; };
@@ -145,6 +146,8 @@
 		B95DD1DE1C7C6035002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B95DD1DF1C7C6069002F1936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		B95DD1E11C7C606C002F1936 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/Info.plist; sourceTree = "<group>"; };
+		B95FEAC41CCA615A00FC91FF /* CCFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFormatter.h; sourceTree = "<group>"; };
+		B95FEAC51CCA615A00FC91FF /* CCFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFormatter.m; sourceTree = "<group>"; };
 		B96EE77D1C818A630063C7A2 /* goBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goBack.png; path = Graphics/goBack.png; sourceTree = "<group>"; };
 		B96EE77E1C818A630063C7A2 /* goForward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goForward.png; path = Graphics/goForward.png; sourceTree = "<group>"; };
 		B96EE77F1C818A630063C7A2 /* goLast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goLast.png; path = Graphics/goLast.png; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				B951BD981C71C58D007B9359 /* CCBackGroundView.m */,
 				B951BD991C71C58D007B9359 /* CCClearWin.h */,
 				B951BD9A1C71C58D007B9359 /* CCClearWin.m */,
+				B95FEAC41CCA615A00FC91FF /* CCFormatter.h */,
+				B95FEAC51CCA615A00FC91FF /* CCFormatter.m */,
 			);
 			name = "Custom Class";
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */,
 				B951BD811C71A8FC007B9359 /* MergePDFWin.m in Sources */,
 				B97F40381CA5FCE0006CCEA4 /* SplitPanel.m in Sources */,
+				B95FEAC61CCA615A00FC91FF /* CCFormatter.m in Sources */,
 				B97F40341CA5FBE2006CCEA4 /* NSAlert+SynchronousSheet.m in Sources */,
 				B97F40481CA666FA006CCEA4 /* RemovePanel.m in Sources */,
 				B90EC2AB1CC0AC3C0062F9A5 /* ExportPanel.m in Sources */,
