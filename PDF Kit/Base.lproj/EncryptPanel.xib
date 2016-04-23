@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="InfoPanel">
+        <customObject id="-2" userLabel="File's Owner" customClass="EncryptPanel">
             <connections>
+                <outlet property="chkForbidCopy" destination="fOy-Zm-RWP" id="eaX-30-gSB"/>
+                <outlet property="chkForbidPrint" destination="q0l-ef-3M7" id="PRk-OW-ePp"/>
+                <outlet property="txtOPass1" destination="wM8-Go-dcY" id="Pc7-Qu-bJW"/>
+                <outlet property="txtOPass2" destination="fdJ-m0-9WD" id="KeY-x6-Ged"/>
+                <outlet property="txtUPass1" destination="623-hQ-hOX" id="a3Y-Bm-RFM"/>
+                <outlet property="txtUPass2" destination="ctt-TV-015" id="p2c-rI-4kh"/>
                 <outlet property="window" destination="A7p-gt-H8w" id="nog-fp-h6s"/>
             </connections>
         </customObject>
@@ -15,14 +21,16 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="A7p-gt-H8w">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="109" y="138" width="450" height="220"/>
+            <rect key="contentRect" x="109" y="138" width="450" height="230"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <value key="minSize" type="size" width="450" height="230"/>
+            <value key="maxSize" type="size" width="450" height="230"/>
             <view key="contentView" id="bdQ-hC-msc">
-                <rect key="frame" x="0.0" y="0.0" width="450" height="220"/>
+                <rect key="frame" x="0.0" y="0.0" width="450" height="230"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <secureTextField verticalHuggingPriority="750" id="623-hQ-hOX">
-                        <rect key="frame" x="132" y="167" width="110" height="19"/>
+                        <rect key="frame" x="132" y="177" width="110" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="6qA-iT-fpC">
                             <font key="font" metaFont="smallSystem"/>
@@ -34,7 +42,7 @@
                         </secureTextFieldCell>
                     </secureTextField>
                     <secureTextField verticalHuggingPriority="750" id="ctt-TV-015">
-                        <rect key="frame" x="328" y="168" width="110" height="19"/>
+                        <rect key="frame" x="328" y="178" width="110" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="HWt-Vr-NU2">
                             <font key="font" metaFont="smallSystem"/>
@@ -45,27 +53,8 @@
                             </allowedInputSourceLocales>
                         </secureTextFieldCell>
                     </secureTextField>
-                    <button verticalHuggingPriority="750" id="mUe-Pn-8AM">
-                        <rect key="frame" x="287" y="10" width="79" height="28"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hRm-cn-dwI">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="smallSystem"/>
-                        </buttonCell>
-                    </button>
-                    <button verticalHuggingPriority="750" id="4a8-hg-p5B">
-                        <rect key="frame" x="364" y="10" width="79" height="28"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WZI-w3-5qD">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="smallSystem"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                        </buttonCell>
-                    </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ROK-21-aAx">
-                        <rect key="frame" x="11" y="191" width="204" height="14"/>
+                        <rect key="frame" x="11" y="201" width="204" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Require Password for Open Document" usesSingleLineMode="YES" id="YBh-Nx-4ZI">
                             <font key="font" metaFont="smallSystem"/>
@@ -74,7 +63,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="GwX-Ym-oXO">
-                        <rect key="frame" x="12" y="170" width="120" height="14"/>
+                        <rect key="frame" x="12" y="180" width="120" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="User Password:" usesSingleLineMode="YES" id="fWL-Jl-y3N">
                             <font key="font" metaFont="smallSystem"/>
@@ -83,7 +72,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ZSJ-Ij-JOw">
-                        <rect key="frame" x="240" y="169" width="85" height="14"/>
+                        <rect key="frame" x="240" y="179" width="85" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="(Confirmation)" usesSingleLineMode="YES" id="JGC-bo-mWT">
                             <font key="font" size="11" name=".HiraKakuInterface-W3"/>
@@ -92,7 +81,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ISR-Mc-76d">
-                        <rect key="frame" x="11" y="145" width="204" height="14"/>
+                        <rect key="frame" x="11" y="155" width="204" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Restrict Copy/Print Processing" usesSingleLineMode="YES" id="Ga6-jD-oD7">
                             <font key="font" metaFont="smallSystem"/>
@@ -101,7 +90,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <button id="fOy-Zm-RWP">
-                        <rect key="frame" x="11" y="118" width="202" height="22"/>
+                        <rect key="frame" x="11" y="128" width="202" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Forbid Copying Contents" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="Y1T-V3-ouw">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -109,7 +98,7 @@ Gw
                         </buttonCell>
                     </button>
                     <button id="q0l-ef-3M7">
-                        <rect key="frame" x="238" y="118" width="202" height="22"/>
+                        <rect key="frame" x="238" y="128" width="202" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Forbid Printing Document" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="PUl-ql-OSL">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -117,7 +106,7 @@ Gw
                         </buttonCell>
                     </button>
                     <secureTextField verticalHuggingPriority="750" id="wM8-Go-dcY">
-                        <rect key="frame" x="132" y="95" width="110" height="19"/>
+                        <rect key="frame" x="132" y="105" width="110" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="S5c-ep-jeG">
                             <font key="font" metaFont="smallSystem"/>
@@ -129,7 +118,7 @@ Gw
                         </secureTextFieldCell>
                     </secureTextField>
                     <secureTextField verticalHuggingPriority="750" id="fdJ-m0-9WD">
-                        <rect key="frame" x="328" y="96" width="110" height="19"/>
+                        <rect key="frame" x="328" y="106" width="110" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="giT-kG-cKd">
                             <font key="font" metaFont="smallSystem"/>
@@ -141,7 +130,7 @@ Gw
                         </secureTextFieldCell>
                     </secureTextField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="7Se-eE-owf">
-                        <rect key="frame" x="12" y="98" width="120" height="14"/>
+                        <rect key="frame" x="12" y="108" width="120" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Owner Password:" usesSingleLineMode="YES" id="cDC-bq-qj2">
                             <font key="font" metaFont="smallSystem"/>
@@ -150,7 +139,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="PTo-Ag-gih">
-                        <rect key="frame" x="240" y="97" width="85" height="14"/>
+                        <rect key="frame" x="240" y="107" width="85" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="(Confirmation)" usesSingleLineMode="YES" id="MjE-Ef-I88">
                             <font key="font" size="11" name=".HiraKakuInterface-W3"/>
@@ -159,14 +148,49 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="iMm-o2-z1v">
-                        <rect key="frame" x="9" y="73" width="431" height="14"/>
+                        <rect key="frame" x="9" y="83" width="88" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title=" " usesSingleLineMode="YES" id="iHa-23-UBD">
-                            <font key="font" metaFont="smallSystem"/>
+                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" title="- ATTENTION -" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="iHa-23-UBD">
+                            <font key="font" metaFont="smallSystemBold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="HEc-Lr-aEs">
+                        <rect key="frame" x="9" y="52" width="431" height="30"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" id="ClV-LA-WS3">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">If you lose password, the document cannot be restored to the original state. Please store backup copy of the PDF before protecting it by password.</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" id="mUe-Pn-8AM">
+                        <rect key="frame" x="364" y="10" width="79" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Encrypt" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hRm-cn-dwI">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pshEncrypt:" target="-2" id="uHu-CR-lpu"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="4a8-hg-p5B">
+                        <rect key="frame" x="287" y="10" width="79" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WZI-w3-5qD">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pshCancel:" target="-2" id="70B-3N-QoB"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <connections>
@@ -174,6 +198,5 @@ Gw
             </connections>
             <point key="canvasLocation" x="169" y="-197"/>
         </window>
-        <customObject id="EiH-WB-VnP" userLabel="sharedApp" customClass="NSApplication"/>
     </objects>
 </document>

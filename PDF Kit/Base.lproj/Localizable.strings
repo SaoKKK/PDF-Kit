@@ -103,4 +103,19 @@
 "UnlockEditMsg" = "You don't have permission to edit the information of this document.";
 "UnlockEditInfo" = "Enter the owner password to unlock editing the document information.";
 
+//EncryptPanel alert
+"passSameMsg" = "User password and owner password must be different.";
+"oNoneMsg" = "To lock copying or printing requires owner password.";
+"oNoneInfo" = "Input owner password and its confirmation.";
+"uPassMsg" = "The inputed value of the user password is different from the inputed value for confirmation.";
+"oPassMsg" = "The inputed value of the owner password is different from the inputed value for confirmation.";
+"passInfo" = "Re-try updating after re-input the passwords to the text field for registration and the text field for confirmation.";
+
+//Info Panel
+"Encrypted" = "Encrypted";
+"None" = "None";
+"Allow" = "Allow";
+"Forbid" = "Forbid";
+"Unlock" = "Click the lock to update.";
+"Lock" = "Click the lock to prevent updating.";
 

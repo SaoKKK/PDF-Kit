@@ -73,10 +73,10 @@
 		B9C45DB01CADFC9F00683937 /* resizef.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C45DAE1CADFC9F00683937 /* resizef.png */; };
 		B9C585711C92963400243A38 /* BMPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5856F1C92963400243A38 /* BMPanel.m */; };
 		B9C585741C92A3D100243A38 /* BMPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C585761C92A3D100243A38 /* BMPanel.xib */; };
+		B9CA97A71CCBA7FC00B2E5F6 /* EncryptPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9CA97A91CCBA7FC00B2E5F6 /* EncryptPanel.xib */; };
 		B9E398221CC5BB2A0018DC88 /* InfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E398201CC5BB290018DC88 /* InfoPanel.m */; };
 		B9E51F111CC845C9004F002E /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E51F0F1CC845C8004F002E /* lock.png */; };
 		B9E51F121CC845C9004F002E /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E51F101CC845C9004F002E /* unlock.png */; };
-		B9E51F141CC846BF004F002E /* EncryptPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E51F131CC846BF004F002E /* EncryptPanel.xib */; };
 		B9E51F181CC84708004F002E /* EncryptPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E51F171CC84708004F002E /* EncryptPanel.m */; };
 		B9E51F1B1CC87D3F004F002E /* InfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E51F1D1CC87D3F004F002E /* InfoPanel.xib */; };
 		B9F1E24F1CA8975100AFAA6F /* HandScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F1E24B1CA8975100AFAA6F /* HandScrollView.m */; };
@@ -183,11 +183,12 @@
 		B9C5856F1C92963400243A38 /* BMPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPanel.m; sourceTree = "<group>"; };
 		B9C585751C92A3D100243A38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BMPanel.xib; sourceTree = "<group>"; };
 		B9C585781C92A3DF00243A38 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/BMPanel.strings; sourceTree = "<group>"; };
+		B9CA97A81CCBA7FC00B2E5F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EncryptPanel.xib; sourceTree = "<group>"; };
+		B9CA97AB1CCBA80E00B2E5F6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/EncryptPanel.strings; sourceTree = "<group>"; };
 		B9E3981F1CC5BB290018DC88 /* InfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPanel.h; sourceTree = "<group>"; };
 		B9E398201CC5BB290018DC88 /* InfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPanel.m; sourceTree = "<group>"; };
 		B9E51F0F1CC845C8004F002E /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = Graphics/lock.png; sourceTree = "<group>"; };
 		B9E51F101CC845C9004F002E /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unlock.png; path = Graphics/unlock.png; sourceTree = "<group>"; };
-		B9E51F131CC846BF004F002E /* EncryptPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EncryptPanel.xib; sourceTree = "<group>"; };
 		B9E51F161CC84708004F002E /* EncryptPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptPanel.h; sourceTree = "<group>"; };
 		B9E51F171CC84708004F002E /* EncryptPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptPanel.m; sourceTree = "<group>"; };
 		B9E51F1C1CC87D3F004F002E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InfoPanel.xib; sourceTree = "<group>"; };
@@ -451,7 +452,7 @@
 		B9E51F151CC846DA004F002E /* EncryptPanel */ = {
 			isa = PBXGroup;
 			children = (
-				B9E51F131CC846BF004F002E /* EncryptPanel.xib */,
+				B9CA97A91CCBA7FC00B2E5F6 /* EncryptPanel.xib */,
 				B9E51F161CC84708004F002E /* EncryptPanel.h */,
 				B9E51F171CC84708004F002E /* EncryptPanel.m */,
 			);
@@ -546,7 +547,7 @@
 				B93FD5A91C872C0A00B68959 /* zoomOut.png in Resources */,
 				B93FD57C1C86D45B00B68959 /* twoUp_on.png in Resources */,
 				B951BD921C71C2A5007B9359 /* btnRemove.png in Resources */,
-				B9E51F141CC846BF004F002E /* EncryptPanel.xib in Resources */,
+				B9CA97A71CCBA7FC00B2E5F6 /* EncryptPanel.xib in Resources */,
 				B96EE7871C818A630063C7A2 /* goPrev.png in Resources */,
 				B9F1E2551CA89C2400AFAA6F /* cZoomIn.png in Resources */,
 				B951BD911C71C2A5007B9359 /* btnClear.png in Resources */,
@@ -695,6 +696,15 @@
 				B9C585781C92A3DF00243A38 /* ja */,
 			);
 			name = BMPanel.xib;
+			sourceTree = "<group>";
+		};
+		B9CA97A91CCBA7FC00B2E5F6 /* EncryptPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9CA97A81CCBA7FC00B2E5F6 /* Base */,
+				B9CA97AB1CCBA80E00B2E5F6 /* ja */,
+			);
+			name = EncryptPanel.xib;
 			sourceTree = "<group>";
 		};
 		B9E51F1D1CC87D3F004F002E /* InfoPanel.xib */ = {

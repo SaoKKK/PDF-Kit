@@ -428,7 +428,8 @@ CA
                                                 <action selector="alignLeft:" target="-1" id="QjA-rj-Tac"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Center" keyEquivalent="|" id="qM4-JQ-NWl">
+                                        <menuItem title="Center" id="qM4-JQ-NWl">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="alignCenter:" target="-1" id="Dfe-T7-Mbq"/>
                                             </connections>
@@ -700,7 +701,8 @@ CA
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="PDF" id="qvG-SR-Z1K">
                         <items>
-                            <menuItem title="Show Document Info" keyEquivalent="i" id="zke-1c-zl8">
+                            <menuItem title="Show Document Info" keyEquivalent="I" id="zke-1c-zl8">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="showInfo:" target="-1" id="WXU-ID-UG3"/>
                                     <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isWinExist" id="8bK-yX-zKo"/>
@@ -710,6 +712,7 @@ CA
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showSecurity:" target="-1" id="qJd-wt-Xkl"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isWinExist" id="epq-bX-gBn"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="zYm-MT-mhJ"/>

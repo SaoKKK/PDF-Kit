@@ -7,6 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
+#import "MyWinC.h"
+#import "AppDelegate.h"
+#import "NSAlert+SynchronousSheet.h"
 
 @interface EncryptPanel : NSWindowController
 
