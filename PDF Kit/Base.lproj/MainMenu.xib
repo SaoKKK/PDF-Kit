@@ -139,7 +139,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="inputPassword:" target="-1" id="gl1-UR-gmQ"/>
-                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isDocLocked" id="8oL-ek-8eE"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.canUnlocked" id="NKM-6b-Die"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="UGl-MT-Qzi"/>
@@ -706,7 +706,7 @@ CA
                                     <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isWinExist" id="8bK-yX-zKo"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Show Security..." id="baw-Iw-Kah">
+                            <menuItem title="Encrypt Document..." id="baw-Iw-Kah">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showSecurity:" target="-1" id="qJd-wt-Xkl"/>

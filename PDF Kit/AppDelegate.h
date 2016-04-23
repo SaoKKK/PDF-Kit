@@ -48,9 +48,7 @@
 @property (assign) BOOL isTwoPages;
 @property (assign) BOOL isTextPanelKey;
 @property (assign) BOOL isLocked;
-@property (assign) BOOL isCopyLocked;
-@property (assign) BOOL isPrintLocked;
-@property (assign) BOOL isDocLocked;
+@property (assign) BOOL canUnlocked;
 @property (assign) BOOL beResponse;
 @property (readwrite,nonatomic)NSMutableDictionary *olInfo;
 @property (assign) BOOL bRowClicked;

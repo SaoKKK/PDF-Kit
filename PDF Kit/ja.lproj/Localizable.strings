@@ -68,6 +68,18 @@
 "ShowTP" = "テキストパネルを表示";
 "HideTP" = "テキストパネルを隠す";
 
+//Document encrypted allert dialog
+"EncryptedMsg" = "この文書はパスワードによって暗号化されています。";
+"EncryptedInfo" = "処理を続行した場合、暗号化は解除されます。暗号化を解除しない場合は、キャンセルボタンをクリックし、「PDF」メニューから「文書を暗号化...」を選択して、暗号化を実行してください。ドキュメントは暗号化されて保存されます。";
+
+//Document Changed Alert Dialog Button Title
+"Continue" = "続行";
+"Cancel" = "キャンセル";
+
+//AllertWithOKBtn
+"LockedMsg" = "テキストの取得にはこのドキュメントをコピーする権限が必要です。";
+"LockedInfo" = "コピー操作のロックを解除するには、「ファイル」メニューから「パスワードを入力...」を選択してください。";
+
 //for split document
 "Choose" = "選択";
 "ChooseFolder" = "保存先のフォルダを選択してください。";
@@ -75,8 +87,8 @@
 "fileNameAlertInfo" = "同じ名前のファイルまたはフォルダがすでに存在しています。これを置き換えると現在の内容が上書きされます。";
 "Suspend" = "処理を中断する";
 "Replace" = "置き換え";
-"PageRangeMsg" = "ページ範囲指定エラー：";
-"PageRangeInfo" = "ページ範囲の指定が不正です。";
+"PRangeMsg" = "ページ範囲指定エラー：";
+"PRangeInfo" = "ページ範囲の指定が不正です。";
 "PageEmpty" = "ページ範囲が指定されていません。";
 "CharError" = "ページ範囲の指定に不適切な文字が使用されています。";
 "AllPages" = "すべてのページを削除することはできません。";

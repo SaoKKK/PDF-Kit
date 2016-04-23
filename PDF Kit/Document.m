@@ -10,6 +10,7 @@
 #import "MyWinC.h"
 
 #define APPD (AppDelegate *)[NSApp delegate]
+#define WINC (MyWinC *)[[self windowControllers]objectAtIndex:0]
 
 @interface Document ()
 
@@ -46,24 +47,39 @@
 #pragma mark - Save Document
 
 - (BOOL)writeToURL:(NSURL *)url ofType:(NSString *)typeName error:(NSError * _Nullable __autoreleasing *)outError{
-    MyWinC *winC = [[self windowControllers]objectAtIndex:0];
-    return [winC._pdfView.document writeToURL:url withOptions:winC.options];
+    return [(WINC)._pdfView.document writeToURL:url withOptions:(WINC).options];
 }
 
 - (void)saveDocument:(id)sender{
-    if ((APPD).isCopyLocked || (APPD).isPrintLocked) {
+    if (!(WINC)._pdfView.document.allowsCopying || !(WINC)._pdfView.document.allowsPrinting) {
         [self showUnlock:^(NSInteger returnCode){
             if (returnCode == NSModalResponseOK) {
-                [super saveDocument:nil];
+                [self performSave];
             }
         }];
     } else {
-        [super saveDocument:nil];
+        [self performSave];
     }
 }
 
+- (void)performSave{
+    if ((WINC).isEncrypted) {
+        NSAlert *alert = [[NSAlert alloc]init];
+        alert.messageText = NSLocalizedString(@"EncryptedMsg", @"");
+        [alert setInformativeText:NSLocalizedString(@"EncryptedInfo", @"")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Continue", @"")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"")];
+        [alert setAlertStyle:NSCriticalAlertStyle];
+        if ([alert runModalSheetForWindow:(WINC).window] == NSAlertSecondButtonReturn){
+            return;
+        }
+    }
+    [super saveDocument:nil];
+    (WINC).isEncrypted = NO;
+}
+
 - (IBAction)saveDocumentAs:(id)sender{
-    if ((APPD).isCopyLocked || (APPD).isPrintLocked) {
+    if (!(WINC)._pdfView.document.allowsCopying || !(WINC)._pdfView.document.allowsPrinting) {
         [self showUnlock:^(NSInteger returnCode){
             if (returnCode == NSModalResponseOK) {
                 [super saveDocumentAs:nil];
@@ -75,8 +91,7 @@
 }
 
 - (void)showUnlock:(void (^)(NSModalResponse returnCode))handler{
-    MyWinC *winC = [[self windowControllers]objectAtIndex:0];
-    (APPD).parentWin = winC.window;
+    (APPD).parentWin = (WINC).window;
     (APPD).pwTxtPass.stringValue = @"";
     (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockEditMsg", @"");
     (APPD).pwInfoTxt.stringValue = NSLocalizedString(@"UnlockEditInfo", @"");
@@ -93,8 +108,7 @@
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError {
     if ([self windowControllers].count != 0) {
         //復帰のための読み込みの場合
-        MyWinC *winC = [[self windowControllers]objectAtIndex:0];
-        [winC revertDocumentToSaved];
+        [WINC revertDocumentToSaved];
     }
     return YES;
 }

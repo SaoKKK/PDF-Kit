@@ -68,6 +68,18 @@
 "ShowColor" = "Show Colors";
 "HideColor" = "Hide Colors";
 
+//Document encrypted allert dialog
+"EncryptedMsg" = "This document is encrypted with password.";
+"EncryptedInfo" = "If you continue processing, the document will be decrypted. If you don't want it, click the cancel button and select the menu item \"File\" → \"Show Document Info\" and perform encrypting. Then encrypted file will be saved.";
+
+//Document Changed Alert Dialog Button Title
+"Continue" = "Continue";
+"Cancel" = "Cancel";
+
+//AllertWithOKBtn
+"LockedMsg" = "To get text requires the permission to copy this document.";
+"LockedInfo" = "To unlock copying, select the menu item \"File\" → \"Input Password...\".";
+
 //for split document
 "Choose" = "Choose";
 "ChooseFolder" = "Choose folder.";
@@ -75,8 +87,8 @@
 "fileNameAlertInfo" = "A file or folder with the same name already exists. Replacing it will overwrite its current contents.";
 "Suspend" = "Suspend the Processing";
 "Replace" = "Replace";
-"PageRangeMsg" = "Page Range Error:";
-"PageRangeInfo" = "The value of the page range is not correct.";
+"PRangeMsg" = "Page Range Error:";
+"PRangeInfo" = "The value of the page range is not correct.";
 "PageEmpty" = "Page range is not inputed.";
 "CharError" = "The specified page range includes inappropriate characters.";
 "AllPages" = "The application cannot remove all pages.";

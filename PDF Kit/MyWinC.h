@@ -61,7 +61,8 @@
 @property (strong) InfoPanel *infoPanel;
 @property (strong) EncryptPanel *secPanel;
 @property (readonly) NSURL *docURL;  //ドキュメントのURL保持用
-@property (readwrite,nonatomic) NSMutableDictionary *options;
+@property (assign) BOOL isEncrypted; //ドキュメントの暗号化の有無
+@property (readwrite,nonatomic) NSMutableDictionary *options; //保存オプション
 
 - (void)makeNewDocWithPDF:(PDFDocument*)pdf;
 - (void)revertDocumentToSaved;

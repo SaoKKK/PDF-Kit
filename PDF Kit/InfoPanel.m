@@ -9,6 +9,7 @@
 #import "InfoPanel.h"
 
 #define APPD (AppDelegate *)[NSApp delegate]
+#define WINC (MyWinC *)self.window.sheetParent.windowController
 
 @interface InfoPanel (){
     IBOutlet NSTextField *txtFName;
@@ -56,17 +57,13 @@
         }
         if (doc.allowsCopying) {
             txtCopy.stringValue = NSLocalizedString(@"Allow", @"");
-            (APPD).isCopyLocked = NO;
         } else {
             txtCopy.stringValue = NSLocalizedString(@"Forbid", @"");
-            (APPD).isCopyLocked = YES;
         }
         if (doc.allowsPrinting) {
             txtPrint.stringValue = NSLocalizedString(@"Allow", @"");
-            (APPD).isPrintLocked = NO;
         } else {
             txtPrint.stringValue = NSLocalizedString(@"Forbid", @"");
-            (APPD).isPrintLocked = YES;
         }
         txtCreator.stringValue = [self stringOrEmpty:[attr objectForKey:PDFDocumentCreatorAttribute]];
         txtProducer.stringValue = [self stringOrEmpty:[attr objectForKey:PDFDocumentProducerAttribute]];
@@ -97,7 +94,7 @@
 
 - (IBAction)pshLock:(id)sender {
     if ([sender state]){
-        if ((APPD).isCopyLocked || (APPD).isPrintLocked) {
+        if (!(WINC)._pdfView.document.allowsCopying || !(WINC)._pdfView.document.allowsPrinting) {
             (APPD).parentWin = self.window;
             (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockEditMsg", @"");
             (APPD).pwInfoTxt.stringValue = NSLocalizedString(@"UnlockEditInfo", @"");
@@ -121,8 +118,7 @@
 }
 
 - (IBAction)pshUpdate:(id)sender {
-    MyWinC *winC = self.window.sheetParent.windowController;
-    PDFDocument *doc = winC._pdfView.document;
+    PDFDocument *doc = (WINC)._pdfView.document;
     //書類の概説を更新
     NSMutableDictionary *attr = [NSMutableDictionary dictionaryWithDictionary:doc.documentAttributes];
     [attr setObject:txtTitle.stringValue forKey:PDFDocumentTitleAttribute];
@@ -130,7 +126,7 @@
     [attr setObject:txtSubject.stringValue forKey:PDFDocumentSubjectAttribute];
     [attr setObject:[txtKeyword.stringValue componentsSeparatedByString:@","] forKey:PDFDocumentKeywordsAttribute];
     [doc setDocumentAttributes:attr];
-    [winC.document updateChangeCount:NSChangeDone];
+    [(WINC).document updateChangeCount:NSChangeDone];
     [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 }
 

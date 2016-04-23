@@ -193,8 +193,6 @@
     //アンロック後のアウトラインにバックアップしておいたページインデクスをセット
     [self setIndex:root];
     if ((WINC)._pdfView.document.allowsCopying && (WINC)._pdfView.document.allowsPrinting) {
-        self.isCopyLocked = NO;
-        self.isPrintLocked = NO;
         self.isLocked = NO;
         [parentWin endSheet:passWin returnCode:NSModalResponseOK];
     }
@@ -205,6 +203,9 @@
         PDFOutline *ol = [parent childAtIndex:i];
         PDFPage *page = ol.destination.page;
         NSInteger pgIndex = [(WINC)._pdfView.document indexForPage:page];
+        if (pgIndex == NSNotFound) {
+            pgIndex = 0;
+        }
         [indexes addObject:[NSNumber numberWithInteger:pgIndex]];
         if (ol.numberOfChildren > 0) {
             [self getIndex:ol];

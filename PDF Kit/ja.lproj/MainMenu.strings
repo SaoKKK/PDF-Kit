@@ -349,7 +349,7 @@
 //menu item "Show Info"
 "zke-1c-zl8.title" = "文書情報を表示";
 //menu item "Show Security"
-"baw-Iw-Kah.title" = "セキュリティを表示";
+"baw-Iw-Kah.title" = "文書を暗号化...";
 //menu item "Merge PDF"
 "T87-cJ-ES5.title" = "PDFを結合...";
 //menu item "Split PDF"

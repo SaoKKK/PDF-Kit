@@ -30,6 +30,7 @@
     //ファイルから読み込まれたPDFドキュメントをビューに表示
     docURL = [[self document] fileURL];
     PDFDocument *doc = [[PDFDocument alloc]initWithURL:docURL];
+    self.isEncrypted = doc.isEncrypted;
     [_pdfView setDocument:doc];
     [self initWindow];
 }
@@ -85,12 +86,10 @@
 
 //暗号化情報を更新
 - (void)updateLockInfo{
-    (APPD).isCopyLocked = ![_pdfView.document allowsCopying];
-    (APPD).isPrintLocked = ![_pdfView.document allowsPrinting];
-    if ((APPD).isCopyLocked || (APPD).isPrintLocked){
-        (APPD).isDocLocked = YES;
+    if (![_pdfView.document allowsCopying] || ![_pdfView.document allowsPrinting]){
+        (APPD).canUnlocked = YES;
     } else {
-        (APPD).isDocLocked = NO;
+        (APPD).canUnlocked = NO;
     }
 }
 
@@ -818,7 +817,7 @@
 }
 
 - (IBAction)printDocument:(id)sender{
-    if ((APPD).isPrintLocked){
+    if (!_pdfView.document.allowsPrinting){
         (APPD).parentWin = self.window;
         (APPD).pwTxtPass.stringValue = @"";
         (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockPrintMsg", @"");

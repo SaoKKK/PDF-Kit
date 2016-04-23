@@ -187,7 +187,7 @@ enum UNDEROBJ_TYPE{
 }
 
 - (void)copy:(id)sender{
-    if ((APPD).isCopyLocked){
+    if (!self.document.allowsCopying){
         (APPD).parentWin = self.window;
         (APPD).pwTxtPass.stringValue = @"";
         (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockCopyMsg", @"");
