@@ -105,6 +105,7 @@
                     txtCopy.stringValue = NSLocalizedString(@"Allow", @"");
                     txtPrint.stringValue = NSLocalizedString(@"Allow", @"");
                     txtLock.stringValue = NSLocalizedString(@"Lock", @"");
+                    (APPD).isLocked = YES;
                 }
             }];
         } else {

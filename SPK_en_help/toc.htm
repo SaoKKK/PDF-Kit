@@ -64,9 +64,9 @@ function expandcollapse_encrypt()
 	var cur = document.getElementById("chapter_encrypt");
 	expandcollapse(cur);
 }
-function expandcollapse_term()
+function expandcollapse_info()
 {
-	var cur = document.getElementById("chapter_term");
+	var cur = document.getElementById("chapter_info");
 	expandcollapse(cur);
 }
 function expandcollapse_error()
@@ -123,6 +123,17 @@ function expandcollapse(cur)
 		</div>
 	</div>
 	
+	<!--文書情報の表示と編集-->
+	<div id="chapter_info" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_info())"><a href="info.htm" target="right">Indicate/Edit Document Info</a></h2>
+		<div style="display:none;">
+			<a href = "info.htm"></a><ul>
+			<li class="item"><a href="info.htm#indicate" target="right">Indicate the Document Info</a></li>
+			<li class="item"><a href="info.htm#edit" target="right">Edit the Document Info</a></li>
+			</ul>
+		</div>
+	</div>
+	
 	<!--文書のセキュリティ-->
 	<div id="chapter_encrypt" class="chapter">
 		<h2 onclick="expandcollapse(expandcollapse_encrypt())"><a href="pass.htm" target="right">Managing Security</a></h2>
@@ -131,6 +142,7 @@ function expandcollapse(cur)
 			<li class="item"><a href="pass.htm#encrypt" target="right">About Encrypting with Password</a></li>
 			<li class="item"><a href="pass.htm#unlock" target="right">Unlock the Document</a></li>
 			<li class="item"><a href="pass.htm#lock" target="right">Set Password</a></li>
+			<li class="item"><a href="pass.htm#decrypt" target="right">Decrypt the Document</a></li>
 			</ul>
 		</div>
 	</div>

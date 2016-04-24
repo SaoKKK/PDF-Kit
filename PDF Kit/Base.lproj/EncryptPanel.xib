@@ -90,7 +90,7 @@
                         </textFieldCell>
                     </textField>
                     <button id="fOy-Zm-RWP">
-                        <rect key="frame" x="11" y="128" width="202" height="22"/>
+                        <rect key="frame" x="11" y="128" width="224" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Forbid Copying Contents" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="Y1T-V3-ouw">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
