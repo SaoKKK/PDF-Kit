@@ -13,5 +13,4 @@
 #import "NSAlert+SynchronousSheet.h"
 
 @interface EncryptPanel : NSWindowController
-
 @end

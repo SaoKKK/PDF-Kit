@@ -708,8 +708,8 @@ CA
                                     <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isWinExist" id="8bK-yX-zKo"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Encrypt Document..." id="baw-Iw-Kah">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Encrypt Document..." keyEquivalent="s" id="baw-Iw-Kah">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="showSecurity:" target="-1" id="qJd-wt-Xkl"/>
                                     <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.isWinExist" id="epq-bX-gBn"/>

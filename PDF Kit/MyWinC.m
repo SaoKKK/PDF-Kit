@@ -936,22 +936,6 @@
 }
 
 - (IBAction)showSecurity:(id)sender{
-    if (!_pdfView.document.allowsCopying || !_pdfView.document.allowsPrinting) {
-        (APPD).parentWin = self.window;
-        (APPD).pwTxtPass.stringValue = @"";
-        (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockEditMsg", @"");
-        (APPD).pwInfoTxt.stringValue = NSLocalizedString(@"UnlockEditInfo", @"");
-        [self.window beginSheet:(APPD).passWin completionHandler:^(NSInteger returnCode){
-            if (returnCode == NSModalResponseOK) {
-                [self performShowSecurity];
-            }
-        }];
-
-    }
-    [self performShowSecurity];
-}
-
-- (void)performShowSecurity{
     self.secPanel = [[EncryptPanel alloc]initWithWindowNibName:@"EncryptPanel"];
     [self.window beginSheet:self.secPanel.window completionHandler:^(NSModalResponse returnCode){
         self.secPanel = nil;

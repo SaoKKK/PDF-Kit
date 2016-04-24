@@ -29,6 +29,22 @@
 }
 
 - (IBAction)pshEncrypt:(id)sender {
+    if (!(WINC)._pdfView.document.allowsCopying || !(WINC)._pdfView.document.allowsPrinting) {
+        (APPD).parentWin = self.window;
+        (APPD).pwTxtPass.stringValue = @"";
+        (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockEditMsg", @"");
+        (APPD).pwInfoTxt.stringValue = NSLocalizedString(@"UnlockEditInfo", @"");
+        [self.window beginSheet:(APPD).passWin completionHandler:^(NSInteger returnCode){
+            if (returnCode == NSModalResponseOK) {
+                [self performEncrypt];
+            }
+        }];
+    } else {
+        [self performEncrypt];
+    }
+}
+
+- (void)performEncrypt{
     //入力値のチェック
     NSString *uPass = txtUPass1.stringValue;
     NSString *oPass = txtOPass1.stringValue;
