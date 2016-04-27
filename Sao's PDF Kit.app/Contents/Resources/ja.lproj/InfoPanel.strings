@@ -1,0 +1,63 @@
+
+/* Class = "NSTextFieldCell"; title = "Document Description:"; ObjectID = "03C-m0-6nr"; */
+"03C-m0-6nr.title" = "ドキュメントの概説:";
+
+/* Class = "NSTextFieldCell"; title = "Detailed Information:"; ObjectID = "0qY-Yy-n8k"; */
+"0qY-Yy-n8k.title" = "詳細情報:";
+
+/* Class = "NSTextFieldCell"; title = "Keyword:"; ObjectID = "16j-Kg-y1S"; */
+"16j-Kg-y1S.title" = "キーワード:";
+
+/* Class = "NSTextFieldCell"; title = "General Information:"; ObjectID = "1bW-UY-oJb"; */
+"1bW-UY-oJb.title" = "一般情報:";
+
+/* Class = "NSTextFieldCell"; title = "File Name:"; ObjectID = "Cjx-4Y-rrh"; */
+"Cjx-4Y-rrh.title" = "ファイル名:";
+
+/* Class = "NSTextFieldCell"; title = "Print:"; ObjectID = "E0a-H6-sKi"; */
+"E0a-H6-sKi.title" = "プリント:";
+
+/* Class = "NSTextFieldCell"; title = "Title:"; ObjectID = "EOR-Xg-af2"; */
+"EOR-Xg-af2.title" = "タイトル:";
+
+/* Class = "NSTextFieldCell"; title = "Subject:"; ObjectID = "QZA-TC-4Jj"; */
+"QZA-TC-4Jj.title" = "件名:";
+
+/* Class = "NSTextFieldCell"; title = "Page:"; ObjectID = "TDK-fM-vOE"; */
+"TDK-fM-vOE.title" = "ページ:";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "WZI-w3-5qD"; */
+"WZI-w3-5qD.title" = "閉じる";
+
+/* Class = "NSTextFieldCell"; title = "Creator:"; ObjectID = "bqd-9k-QbN"; */
+"bqd-9k-QbN.title" = "コンテンツの作成:";
+
+/* Class = "NSTextFieldCell"; title = "Producer:"; ObjectID = "cgR-XL-RpZ"; */
+"cgR-XL-RpZ.title" = "PDFデータの作成:";
+
+/* Class = "NSTextFieldCell"; title = "Modification Date:"; ObjectID = "dMu-yJ-RtM"; */
+"dMu-yJ-RtM.title" = "更新日:";
+
+/* Class = "NSButtonCell"; title = "Update"; ObjectID = "hRm-cn-dwI"; */
+"hRm-cn-dwI.title" = "更新";
+
+/* Class = "NSTextFieldCell"; title = "Version:"; ObjectID = "iNa-tK-gqI"; */
+"iNa-tK-gqI.title" = "バージョン:";
+
+/* Class = "NSTextFieldCell"; title = "Creation Date:"; ObjectID = "kLQ-To-QFV"; */
+"kLQ-To-QFV.title" = "作成日:";
+
+/* Class = "NSTextFieldCell"; title = "File Path:"; ObjectID = "qyK-qD-mPv"; */
+"qyK-qD-mPv.title" = "ファイル・パス:";
+
+/* Class = "NSTextFieldCell"; title = "Copy:"; ObjectID = "uG7-BV-ZUe"; */
+"uG7-BV-ZUe.title" = "コピー:";
+
+/* Class = "NSTextFieldCell"; title = "Security:"; ObjectID = "xIt-KX-rLk"; */
+"xIt-KX-rLk.title" = "セキュリティ:";
+
+/* Class = "NSTextFieldCell"; title = "Author:"; ObjectID = "y06-Jp-Qp8"; */
+"y06-Jp-Qp8.title" = "著者:";
+
+/* Class = "NSTextFieldCell"; title = "Click the lock to update"; ObjectID = "yJw-us-ORz"; */
+"yJw-us-ORz.title" = "変更するには鍵をクリックしてください";

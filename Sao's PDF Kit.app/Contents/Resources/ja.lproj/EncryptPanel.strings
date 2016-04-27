@@ -1,0 +1,35 @@
+/* Class = "NSTextFieldCell"; title = "If you lose password, the document cannot be restored to the original state. Please store backup copy of the PDF before protecting it by password."; ObjectID = "ClV-LA-WS3"; */
+"ClV-LA-WS3.title" = "パスワードを忘れた場合、ドキュメントを元の状態に復元することはできません。パスワードで保護する前にファイルのバックアップコピーを保存することを推奨します。";
+
+/* Class = "NSTextFieldCell"; title = "Restrict Copy/Print Processing"; ObjectID = "Ga6-jD-oD7"; */
+"Ga6-jD-oD7.title" = "コピー／プリント操作の制限";
+
+/* Class = "NSTextFieldCell"; title = "(Confirmation)"; ObjectID = "JGC-bo-mWT"; */
+"JGC-bo-mWT.title" = "(確認用)";
+
+/* Class = "NSTextFieldCell"; title = "(Confirmation)"; ObjectID = "MjE-Ef-I88"; */
+"MjE-Ef-I88.title" = "(確認用)";
+
+/* Class = "NSButtonCell"; title = "Forbid Printing Document"; ObjectID = "PUl-ql-OSL"; */
+"PUl-ql-OSL.title" = "ドキュメントの印刷を禁止する";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WZI-w3-5qD"; */
+"WZI-w3-5qD.title" = "キャンセル";
+
+/* Class = "NSButtonCell"; title = "Forbid Copying Contents"; ObjectID = "Y1T-V3-ouw"; */
+"Y1T-V3-ouw.title" = "ドキュメントの内容のコピーを禁止する";
+
+/* Class = "NSTextFieldCell"; title = "Require Password for Open Document"; ObjectID = "YBh-Nx-4ZI"; */
+"YBh-Nx-4ZI.title" = "ドキュメントを開く時にパスワードを請求する";
+
+/* Class = "NSTextFieldCell"; title = "Owner Password:"; ObjectID = "cDC-bq-qj2"; */
+"cDC-bq-qj2.title" = "オーナー・パスワード:";
+
+/* Class = "NSTextFieldCell"; title = "User Password:"; ObjectID = "fWL-Jl-y3N"; */
+"fWL-Jl-y3N.title" = "ユーザ・パスワード:";
+
+/* Class = "NSButtonCell"; title = "Encrypt"; ObjectID = "hRm-cn-dwI"; */
+"hRm-cn-dwI.title" = "暗号化";
+
+/* Class = "NSTextFieldCell"; title = "- ATTENTION -"; ObjectID = "iHa-23-UBD"; */
+"iHa-23-UBD.title" = "- 注意事項 -";

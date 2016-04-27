@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Managing Security</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+</head>
+<body>
+<div class="content">
+	<h1>Managing Security</h1>
+	
+	<h2>● About Encrypting with Password<a name="encrypt">　</a></h2>
+	<p>
+		<b>Sao's PDF Kit</b> can encrypt PDF document with passwords and restrict user's permissions. PDF document can have the following two passwords.
+		<li class="item">Open password (User password)</li>
+		<div style="margin:0 0 5 27;">
+			The document encrypted with this password requires the password when it's opened.
+		</div>
+		<li class="item">Owner password</li>
+		<div style="margin:0 0 5 27;">
+			With this password, you can limit the user's authority for <b>editing/copying/printing</b> operations. To change the limiting requires owner password.
+		</div>
+	If the document is protected with two password, it can be open with a password of either. But only <b>owner password</b> can change the authority.
+	</p>
+	<h2>● Unlock the Document<a name="unlock">　</a></h2>
+	<img border="1px" src = "image/ss18.png" width = "325" height = "252">
+	<p style="margin-top:10;">
+		To open the document which is setted <b>open password (user password)</b>, input the user or owner password to the text field that is displayed when you try to open it (<b>see upper figure</b>).
+	</p>
+	<img border="1px" src = "image/ss17.tiff" width = "400" height = "170">
+	<p style="margin-top:10;">
+		If you need to enable full permissions of the document, select the menu item <b>"File" → "Input Password..."</b> and input the <b>owner password</b> to the dialog's password field. And when you try operation that you don't have permission, the application will display that requires <B>owner password</b>. You can enable full permissions by inputting the <b>owner password</b> to its password field, too.
+	</p>
+	<h2>● Set Password<a name="lock">　</a></h2>
+	<p>
+		To set password to the document and encrypt it, select the menu item <b>"PDF" → "Encrypt Document"</b>. Then the dialog sheet appears, as shown in the following figure.
+	</p>
+		<img border="1px" src = "image/ss19.tiff" width = "450" height = "230">
+	<p style="margin-top:10;">
+		Use "<a href="#encrypt">About Encrypting with Password</a>" as a reference and input passwords you need. When you need to limit the user's authority for editing/copying/printing operations, use two check boxes. When you switch on the check box <b>"Forbid Copying Contents"</b>, users cannot copy contents of the document. When you switch on the check box <b>"Forbid Printing Document"</b>, users cannot print the document. When either check box is on, users cannot edit and save the document.<br>
+		After setting up, click the button <b>"Encrypt"</b>.<br>
+		Note that if you use the menu item <b>"Save..."</b> or <b>"Save as..."</b> after encrypting, the document will be decrypted.
+		<br><br>
+		<b style="color:#FF0000">- ATTENTION -</b><br>
+		<b>If you lose password, the document cannot be restored to the original state. Please store backup copy of the PDF before protecting it by password.</b>
+	</p>
+	<h2>● Decrypt the Document<a name="decrypt">　</a></h2>
+	<p>
+		If you need to decrypt the document, open the document with owner password and use the menu item <b>"Save..."</b> or <b>"Save as..."</b>.
+	</p>
+</body>
+</html>
+
