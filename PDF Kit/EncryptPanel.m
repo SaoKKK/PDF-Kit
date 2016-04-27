@@ -26,6 +26,11 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    //パスワード・フィールドに文字数制限を設定
+    [txtUPass1 setFormatter:[MaxLenxFormatter formatterWithMaxLength:32]];
+    [txtUPass2 setFormatter:[MaxLenxFormatter formatterWithMaxLength:32]];
+    [txtOPass1 setFormatter:[MaxLenxFormatter formatterWithMaxLength:32]];
+    [txtOPass2 setFormatter:[MaxLenxFormatter formatterWithMaxLength:32]];
 }
 
 - (IBAction)pshEncrypt:(id)sender {

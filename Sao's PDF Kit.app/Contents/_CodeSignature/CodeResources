@@ -26,6 +26,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/Base.lproj/EncryptPanel.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CPZwYwCjhFb8Tq3MezkOvFs2Mzg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/Base.lproj/ExportPanel.nib</key>
 		<dict>
 			<key>hash</key>
@@ -35,11 +44,20 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/Base.lproj/InfoPanel.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zE0k9A+i8dIEYBJOlcak/g/tUeY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/Base.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9UafSUbocmvihOaJldcN/VVUszA=
+			R6jFXAwgBJHjTPl6wvIk3/yiOrI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -48,7 +66,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UF8rZpuFKheOTqgcnatnDR8WVuE=
+			YCF0ogq00H0q2RE3hadEIowbQ/Q=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -92,6 +110,10 @@
 		<key>Resources/PDFLst.array</key>
 		<data>
 		rMaPS/7q6Zp2NgoPW72GtjSENeY=
+		</data>
+		<key>Resources/appIcon_64.png</key>
+		<data>
+		sthHqQp5wCaMbVu4G7HDTDPGT2c=
 		</data>
 		<key>Resources/btnAdd.png</key>
 		<data>
@@ -171,6 +193,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/ja.lproj/EncryptPanel.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Gx4z+VQS4schKtEPJyfUMO/vx/A=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/ja.lproj/ExportPanel.strings</key>
 		<dict>
 			<key>hash</key>
@@ -180,11 +211,20 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/ja.lproj/InfoPanel.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XRgCH7qhPqFyI0AsWOPptSOWB8s=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/ja.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GfCm0H9RVvgChtS4/+aIRAojdC4=
+			IJOXOWWSDQgzyEcM7nLUzjKMVCQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -193,7 +233,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WCbxGG3wEobOobogwQMefpQV2hw=
+			kG/purpDridlCYBWzr6D/aFB8bk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -234,6 +274,10 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/lock.png</key>
+		<data>
+		QYF4bu3x+6nutbXtq1wmiYdzq14=
+		</data>
 		<key>Resources/resizeb.png</key>
 		<data>
 		DumhExZs8c3mn1yluJKqW+aWRj8=
@@ -298,6 +342,10 @@
 		<data>
 		8r4JSPPeajF2/gE66jDF0Ie5tRI=
 		</data>
+		<key>Resources/unlock.png</key>
+		<data>
+		l7CKcLiTLNx2r4HSFTXD86e9tqM=
+		</data>
 		<key>Resources/vline.png</key>
 		<data>
 		Qs0LXVQjU/nQci4HD64/VJWjwJA=
@@ -358,6 +406,19 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/Base.lproj/EncryptPanel.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CPZwYwCjhFb8Tq3MezkOvFs2Mzg=
+			</data>
+			<key>hash2</key>
+			<data>
+			r2KGXtcExYl6XWPOwloxSxjjW5NgWScp/Io5YoWxM/E=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/Base.lproj/ExportPanel.nib</key>
 		<dict>
 			<key>hash</key>
@@ -371,15 +432,28 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/Base.lproj/InfoPanel.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zE0k9A+i8dIEYBJOlcak/g/tUeY=
+			</data>
+			<key>hash2</key>
+			<data>
+			3Hbwg5q2S6n0aIE54U7AfdRObVRXnd5ZpV6zW3aWZzM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/Base.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9UafSUbocmvihOaJldcN/VVUszA=
+			R6jFXAwgBJHjTPl6wvIk3/yiOrI=
 			</data>
 			<key>hash2</key>
 			<data>
-			hrzSGv8UcJNBtFbpWbjAc3LqBmroIqW98Pm371iV6yM=
+			Q45pHqF+cjeKCaIfPFhcja4iPIpPd9BRhLNuPKPk0+g=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -388,11 +462,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UF8rZpuFKheOTqgcnatnDR8WVuE=
+			YCF0ogq00H0q2RE3hadEIowbQ/Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			a/jppJI57aDdQLSyQeGi+OFsJPdeQhaqCDH9P1kpxdY=
+			epPqdHITSvX/FCYXwKCefmEsQ7BOnhR7EMmjYjolic8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -458,6 +532,17 @@
 			<key>hash2</key>
 			<data>
 			/foZmZ5wc1UvLiv6mEpfLsXB4BXa0gfKDuKbKN0Jeu4=
+			</data>
+		</dict>
+		<key>Resources/appIcon_64.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sthHqQp5wCaMbVu4G7HDTDPGT2c=
+			</data>
+			<key>hash2</key>
+			<data>
+			h3yTg3Hd9PogP6+WRsNw5FWLFN8JBH9ZAqmbJ465MEc=
 			</data>
 		</dict>
 		<key>Resources/btnAdd.png</key>
@@ -651,6 +736,19 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/ja.lproj/EncryptPanel.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Gx4z+VQS4schKtEPJyfUMO/vx/A=
+			</data>
+			<key>hash2</key>
+			<data>
+			DvEbROrX8DQye3Iiypcf9doguOlgRskWK5W61yXJ1BI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/ja.lproj/ExportPanel.strings</key>
 		<dict>
 			<key>hash</key>
@@ -664,15 +762,28 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Resources/ja.lproj/InfoPanel.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XRgCH7qhPqFyI0AsWOPptSOWB8s=
+			</data>
+			<key>hash2</key>
+			<data>
+			xQgWxQ/pPIemaGZ31AvetWdw11JPoCEh0EL9A/bLTS8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Resources/ja.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GfCm0H9RVvgChtS4/+aIRAojdC4=
+			IJOXOWWSDQgzyEcM7nLUzjKMVCQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			BnSHDFtMaZ1S2mioYTAytTmRsd35i5w4vbfBV1nAKiU=
+			TH3cB9wHDPdUdQvFlg8cBH7s0D+h4jiXMzZtYsIKAAM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -681,11 +792,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WCbxGG3wEobOobogwQMefpQV2hw=
+			kG/purpDridlCYBWzr6D/aFB8bk=
 			</data>
 			<key>hash2</key>
 			<data>
-			HWoDjPJoF04sywamnWHcf9qbhoIDOAcQmWrxiNqHHrY=
+			nV1rwcAPuijGJkiIWq7t2STjJySeaq83OVwx/qX67Uo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -741,6 +852,17 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>Resources/lock.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QYF4bu3x+6nutbXtq1wmiYdzq14=
+			</data>
+			<key>hash2</key>
+			<data>
+			oN8kZmzvkJ2iknsVhS2a7hi/ky5kRMAVDDqC9Slo3Y8=
+			</data>
 		</dict>
 		<key>Resources/resizeb.png</key>
 		<dict>
@@ -916,6 +1038,17 @@
 			<key>hash2</key>
 			<data>
 			OZRp9Lx027CxFP2fudZqgsXAHf3WXKNNl+ko9rSolYQ=
+			</data>
+		</dict>
+		<key>Resources/unlock.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			l7CKcLiTLNx2r4HSFTXD86e9tqM=
+			</data>
+			<key>hash2</key>
+			<data>
+			zCfWe12crUZxj0DiGKSm4YaNlNXdPhrGR8gTipsZgds=
 			</data>
 		</dict>
 		<key>Resources/vline.png</key>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B9023E8D1CC6E823002A0E65 /* appIcon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = B9023E8C1CC6E823002A0E65 /* appIcon_64.png */; };
 		B907C4B71C848A440019F247 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B907C4B61C848A440019F247 /* sidebar.png */; };
+		B90C05E01CD021E90085D918 /* MaxLenxFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90C05DF1CD021E90085D918 /* MaxLenxFormatter.m */; };
 		B90EC2AB1CC0AC3C0062F9A5 /* ExportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90EC2A91CC0AC3C0062F9A5 /* ExportPanel.m */; };
 		B90EC2AE1CC0BCD90062F9A5 /* ExportPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90EC2B01CC0BCD90062F9A5 /* ExportPanel.xib */; };
 		B936FBC61CA26AE800B86A0B /* scroll.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBBF1CA26AE800B86A0B /* scroll.png */; };
@@ -89,6 +90,8 @@
 /* Begin PBXFileReference section */
 		B9023E8C1CC6E823002A0E65 /* appIcon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon_64.png; path = Assets.xcassets/AppIcon.appiconset/appIcon_64.png; sourceTree = "<group>"; };
 		B907C4B61C848A440019F247 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = Graphics/sidebar.png; sourceTree = "<group>"; };
+		B90C05DE1CD021E90085D918 /* MaxLenxFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxLenxFormatter.h; sourceTree = "<group>"; };
+		B90C05DF1CD021E90085D918 /* MaxLenxFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxLenxFormatter.m; sourceTree = "<group>"; };
 		B90EC2A81CC0AC3C0062F9A5 /* ExportPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportPanel.h; sourceTree = "<group>"; };
 		B90EC2A91CC0AC3C0062F9A5 /* ExportPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportPanel.m; sourceTree = "<group>"; };
 		B90EC2AF1CC0BCD90062F9A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ExportPanel.xib; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 		B951BD961C71C53B007B9359 /* Custom Class */ = {
 			isa = PBXGroup;
 			children = (
+				B90C05DE1CD021E90085D918 /* MaxLenxFormatter.h */,
+				B90C05DF1CD021E90085D918 /* MaxLenxFormatter.m */,
 				B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */,
 				B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */,
 				B951BD971C71C58D007B9359 /* CCBackGroundView.h */,
@@ -593,6 +598,7 @@
 				B9F1E24F1CA8975100AFAA6F /* HandScrollView.m in Sources */,
 				B951BD6B1C719DD0007B9359 /* Document.m in Sources */,
 				B951BD681C719DD0007B9359 /* main.m in Sources */,
+				B90C05E01CD021E90085D918 /* MaxLenxFormatter.m in Sources */,
 				B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */,
 				B9F1E2501CA8975100AFAA6F /* ZoomView.m in Sources */,
 				B99FBCF71CAF3D7C00DAF769 /* MyOLView.m in Sources */,

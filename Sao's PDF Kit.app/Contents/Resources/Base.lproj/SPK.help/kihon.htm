@@ -16,6 +16,7 @@
 	<h3>1. Open/Close PDF Files</h3>
 	<p>
 		To open PDF documents, select the menu item <b>"File" → "Open" (command + O)</b> and select PDF files in the Open dialog sheet and click the button <b>"Open"</b>, or drag and drop PDF files to the application icon. If you are setting Sao's PDF Kit as the default application to open PDF files, double click will open PDF files.<br>
+		To know about opening document which is locked with password, see "<a href="pass.htm">Managing Security</a>".
 		To close a PDF file, select the menu item <b>"File" → "Close" (command + W)</b> or click the close button of the document window. When you press option key to select the menu item "Close", the application will close all opened windows.
 	</p>
 	<h3>2. Save PDF Files</h3>
@@ -51,8 +52,10 @@
 	<div style="margin:0 0 5 27;">Display two facing-pages at a time</div>
 	<li class="item">Two Pages Continuous</li>
 	<div style="margin:0 0 5 27;">Display two facing-pages in a horizontal direction and display all pages continuously in a vertical direction</div>
+	<li class="item">Display as Book</li>
+	<div style="margin:0 0 5 27;">When the current display mode is <b>"Two Pages"</b> or <b>"Two Pages Continuous"</b>, treat the document's first page as a book cover.</div>
 	<p>
-		To switch display mode, use the menu item <b>"View"</b> or the right-most buttons on the bottom of the document window. Select the menu item corresponding to the display mode which you expect from <b>"Single Page" (command + 1), "Single Page Continuous" (command + 2), "Two Pages" (command + 3)</b> and <b>"Two Pages Continuous" (command + 4)</b> of the <b>"View"</b> menu. When the buttons to switch display mode are clicked, the application change the display mode to corresponding mode to the clicked button, too. See <b>figure 2</b> about which display mode is corresponding to each button.
+		To switch display mode, use the menu item <b>"View"</b> or the right-most buttons on the bottom of the document window. Select the menu item corresponding to the display mode which you expect from <b>"Single Page" (command + 1), "Single Page Continuous" (command + 2), "Two Pages" (command + 3)</b> and <b>"Two Pages Continuous" (command + 4)</b> of the <b>"View"</b> menu. When the buttons to switch display mode are clicked, the application changes the display mode to corresponding mode to the clicked button, too. See <b>figure 2</b> about which display mode is corresponding to each button. To swich display mode to "Display as Book", select the menu item <b>"Display as Book" (command + 5)</b>.
 	</p>
 	<h3>2. Paging through a Document</h3>
 		<span class="fTitle">【Figure 3: Go Buttons Group】</span><br>
@@ -85,8 +88,9 @@
 	</p>
 	<h2>● Print Document<a name="print">　</a></h2>
 	<p>
-		Click menu item <b>[File] → [Page Setup...] (shift + command + P)</b> to set general printing options. Theavailableoptions will vary with different printers and drivers. See your printer driver documentation for details.<br>
-		Click menu item <b>[File] → [Print...] (command + P)</b> to print document. Specify the printer, page range, number of copies, and other options, and click "Print" button.
+		Click menu item <b>"File" → "Page Setup..." (shift + command + P)</b> to set general printing options. Theavailableoptions will vary with different printers and drivers. See your printer driver documentation for details.<br>
+		Click menu item <b>"File" → "Print..." (command + P)</b> to print document. Specify the printer, page range, number of copies, and other options, and click "Print" button.<br>
+		<div style="text-indent:-1em; padding-left:20; color:#000000;">✳︎ If the document is encrypted with password and you don't have permission to print it, when you select the menu item <b>"Print..."</b>, the application displays the dialog sheet to require the owner password. To print the document, input the owner password to it.</div>
 	</p>
 	<h2>● Navigator Pane<a name="navi">　</a></h2>
 		<span class="fTitle">【Figure 5: Navigator Pane】</span><br>

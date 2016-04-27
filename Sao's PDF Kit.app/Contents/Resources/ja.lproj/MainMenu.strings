@@ -172,6 +172,8 @@
 "bcl-No-8o4.title" = "見開表示";
 // menu item Two Pages Continuous
 "T3n-UQ-drN.title" = "見開連続表示";
+// menu item Display as Book
+"YW5-cc-p1l.title" = "先頭ページを表紙として扱う";
 // memu item Actual Size
 "5u2-Bj-I70.title" = "実際のサイズ";
 // menu item Zoom to Fit
@@ -215,7 +217,8 @@
 "IAo-SY-fd9.title" = "開く…";
 //menu item "Revert to Saved"
 "KaW-ft-85H.title" = "最後の保存に戻す";
-
+//menu item "Input Password..."
+"C4x-wX-sts.title" = "パスワードを入力...";
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "すべてを表示";
 
@@ -343,6 +346,10 @@
 "z6F-FW-3nz.title" = "Show Substitutions";
 
 //menu PDF
+//menu item "Show Info"
+"zke-1c-zl8.title" = "文書情報を表示";
+//menu item "Show Security"
+"baw-Iw-Kah.title" = "文書を暗号化...";
 //menu item "Merge PDF"
 "T87-cJ-ES5.title" = "PDFを結合...";
 //menu item "Split PDF"
@@ -358,6 +365,10 @@
 //Status Dialogメッセージ"The file does not exist..."
 "YrD-Gu-5hN.title" = "指定されたファイルは存在しません。";
 
-
+//Pass win
+"kiL-8H-YbU.title" = "この書類をコピーするための権限がありません。";
+"Jjo-yc-UY2.title" = "コピー操作のロックを解除するには、オーナーパスワードを入力してください。";
+"y6t-6F-i6O.title" = "ロック解除";
+"CzD-Vl-NFe.title" = "キャンセル";
 
 

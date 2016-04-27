@@ -10,6 +10,7 @@
 #import "MyWinC.h"
 #import "BMPanel.h"
 #import "TxtPanel.h"
+#import "MaxLenxFormatter.h"
 
 @class BMPanel;
 @class TxtPanel;
