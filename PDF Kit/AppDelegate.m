@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MergePDFWin.h"
+#import "PrefWinC.h"
 
 #define WINC (MyWinC *)[[NSDocumentController sharedDocumentController].currentDocument.windowControllers objectAtIndex:0]
 
@@ -139,6 +140,11 @@
     }
     [_txtPanel clearTxt];
     [_txtPanel showOrHideWindow];
+}
+
+- (IBAction)showPrefWin:(id)sender {
+    PrefWinC *sharedController = [PrefWinC sharedPrefWinC];
+    [sharedController showWindow:sender];
 }
 
 #pragma mark - menu control

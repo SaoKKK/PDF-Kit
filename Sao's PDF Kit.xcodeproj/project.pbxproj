@@ -19,6 +19,8 @@
 		B936FBCA1CA26AE800B86A0B /* selectText_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC31CA26AE800B86A0B /* selectText_on.png */; };
 		B936FBCB1CA26AE800B86A0B /* zoom_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC41CA26AE800B86A0B /* zoom_off.png */; };
 		B936FBCC1CA26AE800B86A0B /* zoom_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC51CA26AE800B86A0B /* zoom_on.png */; };
+		B93C5E6F1D0BCF990064F99F /* PrefWinC.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C5E6D1D0BCF990064F99F /* PrefWinC.m */; };
+		B93C5E701D0BCF990064F99F /* PrefWinC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93C5E6E1D0BCF990064F99F /* PrefWinC.xib */; };
 		B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */; };
 		B93FD5751C86D45B00B68959 /* singleCon_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56D1C86D45B00B68959 /* singleCon_off.png */; };
 		B93FD5761C86D45B00B68959 /* singleCon_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56E1C86D45B00B68959 /* singleCon_on.png */; };
@@ -103,6 +105,9 @@
 		B936FBC31CA26AE800B86A0B /* selectText_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = selectText_on.png; path = Graphics/selectText_on.png; sourceTree = "<group>"; };
 		B936FBC41CA26AE800B86A0B /* zoom_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoom_off.png; path = Graphics/zoom_off.png; sourceTree = "<group>"; };
 		B936FBC51CA26AE800B86A0B /* zoom_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoom_on.png; path = Graphics/zoom_on.png; sourceTree = "<group>"; };
+		B93C5E6C1D0BCF990064F99F /* PrefWinC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefWinC.h; sourceTree = "<group>"; };
+		B93C5E6D1D0BCF990064F99F /* PrefWinC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefWinC.m; sourceTree = "<group>"; };
+		B93C5E6E1D0BCF990064F99F /* PrefWinC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrefWinC.xib; sourceTree = "<group>"; };
 		B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCColoredTitleButton.h; sourceTree = "<group>"; };
 		B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCColoredTitleButton.m; sourceTree = "<group>"; };
 		B93FD56D1C86D45B00B68959 /* singleCon_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singleCon_off.png; path = Graphics/singleCon_off.png; sourceTree = "<group>"; };
@@ -228,6 +233,16 @@
 			name = ExportPanel;
 			sourceTree = "<group>";
 		};
+		B93C5E6B1D0BCDFE0064F99F /* PrefWin */ = {
+			isa = PBXGroup;
+			children = (
+				B93C5E6E1D0BCF990064F99F /* PrefWinC.xib */,
+				B93C5E6C1D0BCF990064F99F /* PrefWinC.h */,
+				B93C5E6D1D0BCF990064F99F /* PrefWinC.m */,
+			);
+			name = PrefWin;
+			sourceTree = "<group>";
+		};
 		B951BD571C719DD0007B9359 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +267,7 @@
 				B951BD641C719DD0007B9359 /* AppDelegate.m */,
 				B951BD711C719DD0007B9359 /* MainMenu.xib */,
 				B98CA6DE1C761548008C3E89 /* Document */,
+				B93C5E6B1D0BCDFE0064F99F /* PrefWin */,
 				B9E51F151CC846DA004F002E /* EncryptPanel */,
 				B9E398241CC5BB350018DC88 /* InfoPanel */,
 				B90EC2AD1CC0AC450062F9A5 /* ExportPanel */,
@@ -561,6 +577,7 @@
 				B951BD731C719DD0007B9359 /* MainMenu.xib in Resources */,
 				B93FD5781C86D45B00B68959 /* singlePage_on.png in Resources */,
 				B9C585741C92A3D100243A38 /* BMPanel.xib in Resources */,
+				B93C5E701D0BCF990064F99F /* PrefWinC.xib in Resources */,
 				B96EE7851C818A630063C7A2 /* goLast.png in Resources */,
 				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
 				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
@@ -600,6 +617,7 @@
 				B951BD681C719DD0007B9359 /* main.m in Sources */,
 				B90C05E01CD021E90085D918 /* MaxLenxFormatter.m in Sources */,
 				B9A2FF1C1C79730B00E39B57 /* MyPDFView.m in Sources */,
+				B93C5E6F1D0BCF990064F99F /* PrefWinC.m in Sources */,
 				B9F1E2501CA8975100AFAA6F /* ZoomView.m in Sources */,
 				B99FBCF71CAF3D7C00DAF769 /* MyOLView.m in Sources */,
 				B9A8C96A1C916C10008A2DEB /* OLController.m in Sources */,
