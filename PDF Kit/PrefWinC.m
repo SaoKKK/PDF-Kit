@@ -35,6 +35,7 @@
 @property (weak) IBOutlet NSView *generalView;
 @property (weak) IBOutlet NSView *fontsView;
 @property (weak) IBOutlet NSView *content;
+@property (weak) IBOutlet NSUserDefaultsController *defaultsCntr;
 @end
 
 enum ContentView {
@@ -43,7 +44,22 @@ enum ContentView {
 };
 typedef NSInteger ContentView;
 
-@implementation PrefWinC
+@implementation PrefWinC{
+    IBOutlet NSTextField *txtWinX;
+    IBOutlet NSTextField *txtWinY;
+    IBOutlet NSTextField *txtWinW;
+    IBOutlet NSTextField *txtWinH;
+    IBOutlet NSPopUpButton *popWinPos;
+    IBOutlet NSPopUpButton *popMag;
+    IBOutlet NSTextField *txtMagV;
+    IBOutlet NSStepper *stpMagV;
+    IBOutlet NSPopUpButton *popDisplayMode;
+    IBOutlet NSButton *chkDisplayAsBook;
+    IBOutlet NSButton *chkNavi;
+    IBOutlet NSButton *chkAnti;
+    IBOutlet NSTextField *txtGreeking;
+    IBOutlet NSStepper *stpGreeking;
+}
 @synthesize content;
 
 + (PrefWinC *)sharedPrefWinC{
@@ -57,9 +73,23 @@ typedef NSInteger ContentView;
 - (id)init{
     self = [super initWithWindowNibName:@"PrefWinC"];
     if (self) {
-        
     }
     return self;
+}
+
+- (void)awakeFromNib{
+    NSDictionary *initVal = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"",@"WinX",@"",@"WinY",
+                            @"",@"WinW",@"",@"WinH",
+                            [NSNumber numberWithInt:0],@"WinPos",
+                            [NSNumber numberWithInt:0],@"Magnification",
+                            @"",@"MagnificationVal",
+                            [NSNumber numberWithInt:1],@"DisplayMode",
+                            [NSNumber numberWithBool:NO],@"DisplayAsBook",
+                            [NSNumber numberWithBool:YES],@"Navigator",
+                            [NSNumber numberWithBool:YES],@"AntiAliase",
+                            [NSNumber numberWithFloat:3.0],@"Greeking",nil];
+    [self.defaultsCntr setInitialValues:initVal];
 }
 
 - (void)windowDidLoad {
@@ -100,7 +130,23 @@ typedef NSInteger ContentView;
 }
 
 - (IBAction)initialize:(id)sender {
-    [self.window.contentView addSubview:self.generalView];
+    NSDictionary *initVal = self.defaultsCntr.initialValues;
+    if ([self.window.title isEqualToString:@"General"]) {
+        txtWinX.stringValue = [initVal objectForKey:@"WinX"];
+        txtWinY.stringValue = [initVal objectForKey:@"WinY"];
+        txtWinW.stringValue = [initVal objectForKey:@"WinW"];
+        txtWinH.stringValue = [initVal objectForKey:@"WinH"];
+        [popWinPos selectItemAtIndex:[[initVal objectForKey:@"WinPos"]intValue]];
+        txtMagV.stringValue = [[initVal objectForKey:@"MagnificationVal"]stringValue];
+        stpMagV.floatValue = 1.0;
+        [popDisplayMode selectItemAtIndex:[[initVal objectForKey:@"DisplayMode"]intValue]];
+        [chkDisplayAsBook setState:[[initVal objectForKey:@"DisplayAsBook"]intValue]];
+        [chkNavi setState:[[initVal objectForKey:@"Navigator"]intValue]];
+    } else {
+        [chkAnti setState:[[initVal objectForKey:@"AntiAliase"]intValue]];
+        txtGreeking.stringValue = [[initVal objectForKey:@"Greeking"]stringValue];
+        stpGreeking.floatValue = 3.0;
+    }
 }
 
 @end

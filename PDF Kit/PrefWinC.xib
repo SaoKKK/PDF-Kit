@@ -7,9 +7,24 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PrefWinC">
             <connections>
+                <outlet property="chkAnti" destination="vT9-aO-f2p" id="doz-Q5-paF"/>
+                <outlet property="chkDisplayAsBook" destination="l9L-vc-SIc" id="Y5b-bS-B20"/>
+                <outlet property="chkNavi" destination="938-6Z-JPn" id="gXl-1S-seY"/>
                 <outlet property="content" destination="XSc-6V-Xfm" id="4uO-jm-ZN9"/>
+                <outlet property="defaultsCntr" destination="8Ts-WD-Px6" id="bSa-ID-aR0"/>
                 <outlet property="fontsView" destination="qau-yt-YYn" id="ScE-kn-48q"/>
                 <outlet property="generalView" destination="QJl-cr-e2p" id="oIt-gl-4al"/>
+                <outlet property="popDisplayMode" destination="pOo-Dd-cV6" id="Shj-Rq-KWK"/>
+                <outlet property="popMag" destination="Yt7-D6-ULI" id="rDb-ET-NXv"/>
+                <outlet property="popWinPos" destination="4xB-0G-Cqf" id="eRc-Va-Bhh"/>
+                <outlet property="stpGreeking" destination="fad-cq-tKv" id="Lg5-mH-VkK"/>
+                <outlet property="stpMagV" destination="AEn-Gk-urd" id="Gfn-FJ-v51"/>
+                <outlet property="txtGreeking" destination="nQX-Sz-M6m" id="uwZ-Og-MTu"/>
+                <outlet property="txtMagV" destination="3U8-n1-eW5" id="tat-nN-8IE"/>
+                <outlet property="txtWinH" destination="eM7-ke-uaX" id="CEU-sk-aXq"/>
+                <outlet property="txtWinW" destination="NsP-ZM-BCP" id="S4u-4f-qVw"/>
+                <outlet property="txtWinX" destination="tbr-jw-aa2" id="5jS-E0-eEO"/>
+                <outlet property="txtWinY" destination="PZ8-fd-Pch" id="aO7-NK-qJ0"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="EVj-6j-C2I"/>
             </connections>
         </customObject>
@@ -46,6 +61,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystem"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="revertToInitialValues:" target="8Ts-WD-Px6" id="YXt-Kb-rKs"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -117,6 +135,9 @@
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="8Ts-WD-Px6" name="selectedIndex" keyPath="values.Magnification" id="DCs-es-HG0"/>
+                    </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" id="3U8-n1-eW5">
                     <rect key="frame" x="314" y="142" width="60" height="19"/>
@@ -132,6 +153,20 @@
                     </textFieldCell>
                     <connections>
                         <action selector="takeFloatValueFrom:" target="AEn-Gk-urd" id="H5C-65-pRi"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.MagnificationVal" id="gsN-Yj-9on"/>
+                    </connections>
+                </textField>
+                <textField hidden="YES" verticalHuggingPriority="750" id="tbr-jw-aa2">
+                    <rect key="frame" x="190" y="194" width="44" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="epa-Hq-rNp">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="AEn-Gk-urd" id="0JU-sC-srs"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.WinX" id="lPv-8p-Rym"/>
                     </connections>
                 </textField>
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="AEn-Gk-urd">
@@ -140,6 +175,7 @@
                     <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" increment="0.10000000000000001" minValue="0.10000000000000001" maxValue="5" doubleValue="1" id="nwx-dr-0vQ"/>
                     <connections>
                         <action selector="takeFloatValueFrom:" target="3U8-n1-eW5" id="zqJ-oP-frO"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.MagnificationVal" id="cdE-3g-Mgw"/>
                     </connections>
                 </stepper>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="EH3-ts-gJc">
@@ -151,94 +187,17 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <popUpButton verticalHuggingPriority="750" id="1Xa-3D-Csm">
-                    <rect key="frame" x="187" y="113" width="205" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Single Page Continuous" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="KLh-kk-H1E" id="t4A-nw-V0j">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="smallSystem"/>
-                        <menu key="menu" id="KPw-zy-Dcg">
-                            <items>
-                                <menuItem title="Single Page" id="rXE-M8-tnh">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnSinglePage:" target="-1" id="snY-9r-nNj"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem title="Single Page Continuous" state="on" id="KLh-kk-H1E">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnSingleCont:" target="-1" id="mD7-ZM-ori"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem title="Two Pages" id="g3J-0V-GXK">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnTwoPages:" target="-1" id="gtN-eA-gmC"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem title="Two Pages Continuous" id="pau-uE-mdd">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnTwoPagesCont:" target="-1" id="DhG-OA-c0c"/>
-                                    </connections>
-                                </menuItem>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                </popUpButton>
                 <button id="l9L-vc-SIc">
-                    <rect key="frame" x="187" y="91" width="220" height="20"/>
+                    <rect key="frame" x="187" y="91" width="205" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Display as Book" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" inset="2" id="K1M-3V-YI1">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.DisplayAsBook" id="HVq-VT-VMX"/>
+                    </connections>
                 </button>
-                <popUpButton verticalHuggingPriority="750" id="uWz-ME-8ta">
-                    <rect key="frame" x="186" y="166" width="206" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="I5N-pw-ziF" id="luL-RS-nfb">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="smallSystem"/>
-                        <menu key="menu" id="cGd-ZR-ELC">
-                            <items>
-                                <menuItem title="Default" state="on" id="I5N-pw-ziF">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnSinglePage:" target="-1" id="Gpk-MP-gDW"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem title="Maximize" id="pcD-ee-p1U">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnSingleCont:" target="-1" id="CtJ-x3-Uly"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem title="Fit to PDF" id="wxF-VA-QwH">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnTwoPages:" target="-1" id="KSU-Fj-srU"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem isSeparatorItem="YES" id="jpz-L6-DQP"/>
-                                <menuItem title="Full Screen" id="7FQ-di-J0N">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnTwoPages:" target="-1" id="arm-n3-gb6"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem isSeparatorItem="YES" id="J8S-ws-Zit"/>
-                                <menuItem title="Customized" enabled="NO" id="tX0-XO-maQ">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="mnTwoPagesCont:" target="-1" id="Ikf-2g-BIc"/>
-                                    </connections>
-                                </menuItem>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                </popUpButton>
                 <button id="938-6Z-JPn">
                     <rect key="frame" x="29" y="71" width="261" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -246,9 +205,104 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.Navigator" id="KAN-cn-LxG"/>
+                    </connections>
                 </button>
+                <textField hidden="YES" verticalHuggingPriority="750" id="PZ8-fd-Pch">
+                    <rect key="frame" x="242" y="194" width="44" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="CdW-qg-bAn">
+                        <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="#,##0.0#" negativeFormat="#,##0.0#" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="1" maximumFractionDigits="2" id="Vvp-wF-Oea">
+                            <real key="minimum" value="0.10000000000000001"/>
+                            <real key="maximum" value="5"/>
+                        </numberFormatter>
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="AEn-Gk-urd" id="LNT-wS-0g3"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.WinY" id="cy6-uM-cam"/>
+                    </connections>
+                </textField>
+                <textField hidden="YES" verticalHuggingPriority="750" id="eM7-ke-uaX">
+                    <rect key="frame" x="345" y="194" width="44" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="o9L-QI-e0d">
+                        <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="#,##0.0#" negativeFormat="#,##0.0#" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="1" maximumFractionDigits="2" id="H8f-kK-RTs">
+                            <real key="minimum" value="0.10000000000000001"/>
+                            <real key="maximum" value="5"/>
+                        </numberFormatter>
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="AEn-Gk-urd" id="NNf-CS-43o"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.WinH" id="Pbv-vh-OEV"/>
+                    </connections>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" id="4xB-0G-Cqf">
+                    <rect key="frame" x="187" y="166" width="205" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="bDb-6G-hdJ" id="4iA-VE-YGf">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="QkK-dU-2iZ">
+                            <items>
+                                <menuItem title="Default" state="on" id="bDb-6G-hdJ" userLabel="Default"/>
+                                <menuItem title="Maximam" id="jvk-CO-DAI"/>
+                                <menuItem title="Fit to PDF" id="TOy-e3-jWZ"/>
+                                <menuItem isSeparatorItem="YES" id="f3X-eA-zNW"/>
+                                <menuItem title="Full Screen" id="ERX-1F-y8v"/>
+                                <menuItem isSeparatorItem="YES" id="KTU-vo-czq"/>
+                                <menuItem title="Customized" id="38i-ty-tlJ"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="8Ts-WD-Px6" name="selectedIndex" keyPath="values.WinPos" id="UGW-qW-g0Q"/>
+                    </connections>
+                </popUpButton>
+                <textField hidden="YES" verticalHuggingPriority="750" id="NsP-ZM-BCP">
+                    <rect key="frame" x="294" y="194" width="44" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="JBo-Qc-6rR">
+                        <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="#,##0.0#" negativeFormat="#,##0.0#" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="1" maximumFractionDigits="2" id="UeS-WP-glq">
+                            <real key="minimum" value="0.10000000000000001"/>
+                            <real key="maximum" value="5"/>
+                        </numberFormatter>
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="AEn-Gk-urd" id="l0W-FG-be7"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.WinW" id="b6X-QK-Tx0"/>
+                    </connections>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" id="pOo-Dd-cV6">
+                    <rect key="frame" x="187" y="113" width="205" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Single Page Continuous" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ueC-Oi-kv6" id="IFz-dm-ndb">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="nl5-GW-FDA">
+                            <items>
+                                <menuItem title="Single Page" id="QpO-8d-toX"/>
+                                <menuItem title="Single Page Continuous" state="on" id="ueC-Oi-kv6"/>
+                                <menuItem title="Two Pages" id="8XI-j5-pHt"/>
+                                <menuItem title="Two Pages Continuous" id="kpQ-Mq-odY"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="8Ts-WD-Px6" name="selectedIndex" keyPath="values.DisplayMode" id="cIo-BR-P9h"/>
+                    </connections>
+                </popUpButton>
             </subviews>
-            <point key="canvasLocation" x="178.5" y="586"/>
+            <point key="canvasLocation" x="178" y="621"/>
         </customView>
         <customView id="qau-yt-YYn">
             <rect key="frame" x="0.0" y="0.0" width="410" height="130"/>
@@ -261,6 +315,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.AntiAliase" id="8TZ-xm-1hg"/>
+                    </connections>
                 </button>
                 <textField verticalHuggingPriority="750" id="nQX-Sz-M6m">
                     <rect key="frame" x="131" y="69" width="50" height="19"/>
@@ -273,6 +330,10 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="fad-cq-tKv" id="jee-tn-T5n"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.Greeking" id="Nka-q5-RLo"/>
+                    </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="vKy-zc-boz">
                     <rect key="frame" x="18" y="71" width="108" height="14"/>
@@ -283,9 +344,19 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="fad-cq-tKv">
+                    <rect key="frame" x="183" y="67" width="15" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" increment="0.10000000000000001" minValue="0.10000000000000001" maxValue="5" doubleValue="1" id="eHI-JR-2W2"/>
+                    <connections>
+                        <action selector="takeFloatValueFrom:" target="nQX-Sz-M6m" id="eyh-ep-iPg"/>
+                        <binding destination="8Ts-WD-Px6" name="value" keyPath="values.Greeking" id="JXC-XB-HND"/>
+                    </connections>
+                </stepper>
             </subviews>
-            <point key="canvasLocation" x="178.5" y="803"/>
+            <point key="canvasLocation" x="178" y="859"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="8Ts-WD-Px6"/>
     </objects>
     <resources>
         <image name="NSFontPanel" width="32" height="32"/>
