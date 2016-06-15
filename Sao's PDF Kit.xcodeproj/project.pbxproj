@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9023E8D1CC6E823002A0E65 /* appIcon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = B9023E8C1CC6E823002A0E65 /* appIcon_64.png */; };
+		B905BCFF1D0DA27E00E8A438 /* PrefWinC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B905BD011D0DA27E00E8A438 /* PrefWinC.xib */; };
 		B907C4B71C848A440019F247 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B907C4B61C848A440019F247 /* sidebar.png */; };
 		B90C05E01CD021E90085D918 /* MaxLenxFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90C05DF1CD021E90085D918 /* MaxLenxFormatter.m */; };
 		B90EC2AB1CC0AC3C0062F9A5 /* ExportPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90EC2A91CC0AC3C0062F9A5 /* ExportPanel.m */; };
@@ -20,7 +21,6 @@
 		B936FBCB1CA26AE800B86A0B /* zoom_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC41CA26AE800B86A0B /* zoom_off.png */; };
 		B936FBCC1CA26AE800B86A0B /* zoom_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B936FBC51CA26AE800B86A0B /* zoom_on.png */; };
 		B93C5E6F1D0BCF990064F99F /* PrefWinC.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C5E6D1D0BCF990064F99F /* PrefWinC.m */; };
-		B93C5E701D0BCF990064F99F /* PrefWinC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93C5E6E1D0BCF990064F99F /* PrefWinC.xib */; };
 		B93D8C501C9E7E3900CC3202 /* CCColoredTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */; };
 		B93FD5751C86D45B00B68959 /* singleCon_off.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56D1C86D45B00B68959 /* singleCon_off.png */; };
 		B93FD5761C86D45B00B68959 /* singleCon_on.png in Resources */ = {isa = PBXBuildFile; fileRef = B93FD56E1C86D45B00B68959 /* singleCon_on.png */; };
@@ -91,6 +91,8 @@
 
 /* Begin PBXFileReference section */
 		B9023E8C1CC6E823002A0E65 /* appIcon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon_64.png; path = Assets.xcassets/AppIcon.appiconset/appIcon_64.png; sourceTree = "<group>"; };
+		B905BD001D0DA27E00E8A438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PrefWinC.xib; sourceTree = "<group>"; };
+		B905BD031D0DA29100E8A438 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/PrefWinC.strings; sourceTree = "<group>"; };
 		B907C4B61C848A440019F247 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = Graphics/sidebar.png; sourceTree = "<group>"; };
 		B90C05DE1CD021E90085D918 /* MaxLenxFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxLenxFormatter.h; sourceTree = "<group>"; };
 		B90C05DF1CD021E90085D918 /* MaxLenxFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxLenxFormatter.m; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 		B936FBC51CA26AE800B86A0B /* zoom_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoom_on.png; path = Graphics/zoom_on.png; sourceTree = "<group>"; };
 		B93C5E6C1D0BCF990064F99F /* PrefWinC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefWinC.h; sourceTree = "<group>"; };
 		B93C5E6D1D0BCF990064F99F /* PrefWinC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefWinC.m; sourceTree = "<group>"; };
-		B93C5E6E1D0BCF990064F99F /* PrefWinC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrefWinC.xib; sourceTree = "<group>"; };
 		B93D8C4E1C9E7E3900CC3202 /* CCColoredTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCColoredTitleButton.h; sourceTree = "<group>"; };
 		B93D8C4F1C9E7E3900CC3202 /* CCColoredTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCColoredTitleButton.m; sourceTree = "<group>"; };
 		B93FD56D1C86D45B00B68959 /* singleCon_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singleCon_off.png; path = Graphics/singleCon_off.png; sourceTree = "<group>"; };
@@ -236,7 +237,7 @@
 		B93C5E6B1D0BCDFE0064F99F /* PrefWin */ = {
 			isa = PBXGroup;
 			children = (
-				B93C5E6E1D0BCF990064F99F /* PrefWinC.xib */,
+				B905BD011D0DA27E00E8A438 /* PrefWinC.xib */,
 				B93C5E6C1D0BCF990064F99F /* PrefWinC.h */,
 				B93C5E6D1D0BCF990064F99F /* PrefWinC.m */,
 			);
@@ -577,7 +578,7 @@
 				B951BD731C719DD0007B9359 /* MainMenu.xib in Resources */,
 				B93FD5781C86D45B00B68959 /* singlePage_on.png in Resources */,
 				B9C585741C92A3D100243A38 /* BMPanel.xib in Resources */,
-				B93C5E701D0BCF990064F99F /* PrefWinC.xib in Resources */,
+				B905BCFF1D0DA27E00E8A438 /* PrefWinC.xib in Resources */,
 				B96EE7851C818A630063C7A2 /* goLast.png in Resources */,
 				B951BD951C71C2A5007B9359 /* vline.png in Resources */,
 				B951BD941C71C2A5007B9359 /* btnSave.png in Resources */,
@@ -632,6 +633,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B905BD011D0DA27E00E8A438 /* PrefWinC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B905BD001D0DA27E00E8A438 /* Base */,
+				B905BD031D0DA29100E8A438 /* ja */,
+			);
+			name = PrefWinC.xib;
+			sourceTree = "<group>";
+		};
 		B90EC2B01CC0BCD90062F9A5 /* ExportPanel.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

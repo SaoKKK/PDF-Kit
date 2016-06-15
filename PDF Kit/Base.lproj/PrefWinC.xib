@@ -122,14 +122,14 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" id="Yt7-D6-ULI">
-                    <rect key="frame" x="187" y="139" width="122" height="22"/>
+                    <rect key="frame" x="187" y="139" width="132" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Fit to Window" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="xmV-3F-K6E" id="VKQ-it-IsC">
+                    <popUpButtonCell key="cell" type="push" title="Fit to Window" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="xmV-3F-K6E" id="VKQ-it-IsC">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
-                        <menu key="menu" id="JaO-AE-W1I">
+                        <menu key="menu" autoenablesItems="NO" id="JaO-AE-W1I">
                             <items>
-                                <menuItem title="Fit to Window" state="on" id="xmV-3F-K6E"/>
+                                <menuItem title="Fit to Window" state="on" enabled="NO" id="xmV-3F-K6E"/>
                                 <menuItem title="Actual Size" id="8QK-zB-cE5"/>
                                 <menuItem title="Customized..." id="ziG-Q0-Ng8"/>
                             </items>
@@ -140,9 +140,9 @@
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" id="3U8-n1-eW5">
-                    <rect key="frame" x="314" y="142" width="60" height="19"/>
+                    <rect key="frame" x="324" y="142" width="50" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="XF1-eH-b27">
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="XF1-eH-b27">
                         <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="#,##0.0#" negativeFormat="#,##0.0#" numberStyle="decimal" alwaysShowsDecimalSeparator="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="1" maximumFractionDigits="2" id="kMD-Rq-3AH">
                             <real key="minimum" value="0.10000000000000001"/>
                             <real key="maximum" value="5"/>
@@ -172,7 +172,7 @@
                 <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" id="AEn-Gk-urd">
                     <rect key="frame" x="376" y="139" width="15" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" increment="0.10000000000000001" minValue="0.10000000000000001" maxValue="5" doubleValue="1" id="nwx-dr-0vQ"/>
+                    <stepperCell key="cell" controlSize="small" continuous="YES" enabled="NO" alignment="left" increment="0.10000000000000001" minValue="0.10000000000000001" maxValue="5" doubleValue="1" id="nwx-dr-0vQ"/>
                     <connections>
                         <action selector="takeFloatValueFrom:" target="3U8-n1-eW5" id="zqJ-oP-frO"/>
                         <binding destination="8Ts-WD-Px6" name="value" keyPath="values.MagnificationVal" id="cdE-3g-Mgw"/>
@@ -246,14 +246,14 @@
                 <popUpButton verticalHuggingPriority="750" id="4xB-0G-Cqf">
                     <rect key="frame" x="187" y="166" width="205" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="bDb-6G-hdJ" id="4iA-VE-YGf">
+                    <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" selectedItem="bDb-6G-hdJ" id="4iA-VE-YGf">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>
-                        <menu key="menu" id="QkK-dU-2iZ">
+                        <menu key="menu" autoenablesItems="NO" id="QkK-dU-2iZ">
                             <items>
                                 <menuItem title="Default" state="on" id="bDb-6G-hdJ" userLabel="Default"/>
                                 <menuItem title="Maximam" id="jvk-CO-DAI"/>
-                                <menuItem title="Fit to PDF" id="TOy-e3-jWZ"/>
+                                <menuItem title="Fit to PDF" enabled="NO" id="TOy-e3-jWZ"/>
                                 <menuItem isSeparatorItem="YES" id="f3X-eA-zNW"/>
                                 <menuItem title="Full Screen" id="ERX-1F-y8v"/>
                                 <menuItem isSeparatorItem="YES" id="KTU-vo-czq"/>

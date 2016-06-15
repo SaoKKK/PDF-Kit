@@ -78,6 +78,7 @@ typedef NSInteger ContentView;
 }
 
 - (void)awakeFromNib{
+    //初期値設定
     NSDictionary *initVal = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"",@"WinX",@"",@"WinY",
                             @"",@"WinW",@"",@"WinH",
@@ -90,6 +91,31 @@ typedef NSInteger ContentView;
                             [NSNumber numberWithBool:YES],@"AntiAliase",
                             [NSNumber numberWithFloat:3.0],@"Greeking",nil];
     [self.defaultsCntr setInitialValues:initVal];
+    //ノーティフィケーションの設定
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSUserDefaultsDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif){
+        if ([popWinPos indexOfSelectedItem] == 2) {
+            [[popMag itemAtIndex:0]setEnabled:NO];
+        } else {
+            [[popMag itemAtIndex:0]setEnabled:YES];
+        }
+        if ([popMag indexOfSelectedItem] == 0) {
+            [[popWinPos itemAtIndex:2]setEnabled:NO];
+        } else {
+            [[popWinPos itemAtIndex:2]setEnabled:YES];
+        }
+        if ([popMag indexOfSelectedItem] == 2) {
+            [txtMagV setEnabled:YES];
+            [self.window makeFirstResponder:txtMagV];
+        } else {
+            txtMagV.stringValue = @"";
+            [txtMagV setEnabled:NO];
+        }
+        if ([popDisplayMode indexOfSelectedItem] == 0 || [popDisplayMode indexOfSelectedItem] == 1){
+            [chkDisplayAsBook setEnabled:NO];
+        } else {
+            [chkDisplayAsBook setEnabled:YES];
+        }
+    }];
 }
 
 - (void)windowDidLoad {

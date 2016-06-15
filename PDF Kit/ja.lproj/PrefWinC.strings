@@ -1,0 +1,77 @@
+/* Class = "NSMenuItem"; title = "Customized"; ObjectID = "38i-ty-tlJ"; */
+"38i-ty-tlJ.title" = "カスタムサイズ";
+
+/* Class = "NSButtonCell"; title = "Initialize"; ObjectID = "8Aw-pi-lx0"; */
+"8Aw-pi-lx0.title" = "初期化";
+
+/* Class = "NSMenuItem"; title = "Actual Size"; ObjectID = "8QK-zB-cE5"; */
+"8QK-zB-cE5.title" = "実際のサイズ";
+
+/* Class = "NSMenuItem"; title = "Two Pages"; ObjectID = "8XI-j5-pHt"; */
+"8XI-j5-pHt.title" = "見開表示";
+
+/* Class = "NSTextFieldCell"; title = "Initial setting for PDF view"; ObjectID = "92O-ZR-I96"; */
+"92O-ZR-I96.title" = "PDFの初期表示の設定";
+
+/* Class = "NSTextFieldCell"; title = "Display magnification:"; ObjectID = "AJp-Ux-TPm"; */
+"AJp-Ux-TPm.title" = "表示倍率:";
+
+/* Class = "NSMenuItem"; title = "Full Screen"; ObjectID = "ERX-1F-y8v"; */
+"ERX-1F-y8v.title" = "フルスクリーン";
+
+/* Class = "NSButtonCell"; title = "Display as Book"; ObjectID = "K1M-3V-YI1"; */
+"K1M-3V-YI1.title" = "先頭ページを表紙として扱う";
+
+/* Class = "NSButtonCell"; title = "Display Navigator Pane"; ObjectID = "KaU-yj-oh5"; */
+"KaU-yj-oh5.title" = "ナビゲータ・ペインを表示する";
+
+/* Class = "NSTextFieldCell"; title = "Position and size of window:"; ObjectID = "NHw-HU-QSf"; */
+"NHw-HU-QSf.title" = "ウインドウの位置とサイズ:";
+
+/* Class = "NSMenuItem"; title = "Single Page"; ObjectID = "QpO-8d-toX"; */
+"QpO-8d-toX.title" = "単ページ表示";
+
+/* Class = "NSMenuItem"; title = "Fit to PDF"; ObjectID = "TOy-e3-jWZ"; */
+"TOy-e3-jWZ.title" = "PDFに合わせる";
+
+/* Class = "NSMenuItem"; title = "Default"; ObjectID = "bDb-6G-hdJ"; */
+"bDb-6G-hdJ.title" = "デフォルト";
+
+/* Class = "NSTextFieldCell"; title = "Display mode:"; ObjectID = "bo7-ph-MyG"; */
+"bo7-ph-MyG.title" = "表示モード:";
+
+/* Class = "NSToolbarItem"; label = "Fonts"; ObjectID = "fqX-Ma-6mg"; */
+"fqX-Ma-6mg.label" = "フォント";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Fonts"; ObjectID = "fqX-Ma-6mg"; */
+"fqX-Ma-6mg.paletteLabel" = "フォント";
+
+/* Class = "NSButtonCell"; title = "Anti-aliase text and line-art"; ObjectID = "gcl-mV-e7v"; */
+"gcl-mV-e7v.title" = "テキストとラインアートのスムージング処理";
+
+/* Class = "NSMenuItem"; title = "Maximam"; ObjectID = "jvk-CO-DAI"; */
+"jvk-CO-DAI.title" = "最大化";
+
+/* Class = "NSMenuItem"; title = "Two Pages Continuous"; ObjectID = "kpQ-Mq-odY"; */
+"kpQ-Mq-odY.title" = "見開連続表示";
+
+/* Class = "NSToolbarItem"; label = "General"; ObjectID = "rgl-sd-1jE"; */
+"rgl-sd-1jE.label" = "一般";
+
+/* Class = "NSToolbarItem"; paletteLabel = "General"; ObjectID = "rgl-sd-1jE"; */
+"rgl-sd-1jE.paletteLabel" = "一般";
+
+/* Class = "NSTextFieldCell"; title = "Greeking threshold:"; ObjectID = "t2O-QK-xRG"; */
+"t2O-QK-xRG.title" = "文字の簡略表示のしきい値:";
+
+/* Class = "NSButtonCell"; title = "Initialize All"; ObjectID = "uQL-wW-FRh"; */
+"uQL-wW-FRh.title" = "すべてを初期化";
+
+/* Class = "NSMenuItem"; title = "Single Page Continuous"; ObjectID = "ueC-Oi-kv6"; */
+"ueC-Oi-kv6.title" = "単ページ連続表示";
+
+/* Class = "NSMenuItem"; title = "Fit to Window"; ObjectID = "xmV-3F-K6E"; */
+"xmV-3F-K6E.title" = "ウインドウに合わせる";
+
+/* Class = "NSMenuItem"; title = "Customized..."; ObjectID = "ziG-Q0-Ng8"; */
+"ziG-Q0-Ng8.title" = "倍率指定...";
