@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> 
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>目次</title>
+<link rel="stylesheet" type="text/css" href="style.css" charset="UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+</head>
+<body bgcolor="#F1F6FC">
+<script type="text/javascript">
+<!--
+function expandcollapse_kihon()
+{
+	var cur = document.getElementById("chapter_kihon");
+	expandcollapse(cur);
+}
+function expandcollapse_search()
+{
+	var cur = document.getElementById("chapter_search");
+	expandcollapse(cur);
+}
+function expandcollapse_merge()
+{
+	var cur = document.getElementById("chapter_merge");
+	expandcollapse(cur);
+}
+function expandcollapse_topic()
+{
+	var cur = document.getElementById("chapter_topic");
+	expandcollapse(cur);
+}
+function expandcollapse_tips()
+{
+	var cur = document.getElementById("chapter_tips");
+	expandcollapse(cur);
+}
+function expandcollapse_gamen()
+{
+	var cur = document.getElementById("chapter_gamen");
+	expandcollapse(cur);
+}
+function expandcollapse_pref()
+{
+	var cur = document.getElementById("chapter_pref");
+	expandcollapse(cur);
+}
+function expandcollapse_regexp()
+{
+	var cur = document.getElementById("chapter_regexp");
+	expandcollapse(cur);
+}
+function expandcollapse_toolcommand()
+{
+	var cur = document.getElementById("chapter_toolcommand");
+	expandcollapse(cur);
+}
+function expandcollapse_applescript()
+{
+	var cur = document.getElementById("chapter_applescript");
+	expandcollapse(cur);
+}
+function expandcollapse_encrypt()
+{
+	var cur = document.getElementById("chapter_encrypt");
+	expandcollapse(cur);
+}
+function expandcollapse_info()
+{
+	var cur = document.getElementById("chapter_info");
+	expandcollapse(cur);
+}
+function expandcollapse_error()
+{
+	var cur = document.getElementById("chapter_error");
+	expandcollapse(cur);
+}
+//メニューのサブ項目の表示／非表示を切り替える
+function expandcollapse(cur)
+{
+	var h2s = cur.getElementsByTagName("h2");
+	var divs = cur.getElementsByTagName("div");
+	if( divs[0].style.display=='none' ) 
+	{
+		h2s[0].style.backgroundImage='url(downarrow.png)';
+		divs[0].style.display='block'; 
+	}
+	else
+	{
+		h2s[0].style.backgroundImage='url(rightarrow.png)';
+		divs[0].style.display='none';
+	}
+}
+-->
+</script>
+<div class="toc">
+	<!--概要-->
+	<div id="chapter_gaiyo" class="chapter" color="#FFFFFF">
+		<h1><a href="gaiyo.htm" target="right">はじめに</a></h1>
+	</div>
+	
+	<!--基本操作-->
+	<div id="chapter_kihon" class="chapter">
+		<h2 onclick="expandcollapse_kihon()"><a href="kihon.htm" target="right">基本操作</a></h2>
+		<div style="display:none;">
+			<ul>
+			<li class="item"><a href="kihon.htm#operateFile" target="right">ファイルの基本操作</a></li>
+			<li class="item"><a href="kihon.htm#preview" target="right">閲覧の基本操作</a></li>
+			<li class="item"><a href="kihon.htm#print" target="right">文書の印刷</a></li>
+			<li class="item"><a href="kihon.htm#navi" target="right">ナビゲータ・ペイン</a></li>
+			<li class="item"><a href="kihon.htm#select" target="right">選択範囲の作成</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--文書内の検索-->
+	<div id="chapter_search" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_search())"><a href="search.htm" target="right">文書内の検索</a></h2>
+		<div style="display:none;">
+			<a href = "search.htm"></a><ul>
+			<li class="item"><a href="search.htm#search" target="right">検索の実行</a></li>
+			<li class="item"><a href="search.htm#result" target="right">検索結果の表示</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--文書情報の表示と編集-->
+	<div id="chapter_info" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_info())"><a href="info.htm" target="right">文書情報の表示／編集</a></h2>
+		<div style="display:none;">
+			<a href = "info.htm"></a><ul>
+			<li class="item"><a href="info.htm#indicate" target="right">文書情報の表示</a></li>
+			<li class="item"><a href="info.htm#edit" target="right">文書情報の編集</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--文書のセキュリティ-->
+	<div id="chapter_encrypt" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_encrypt())"><a href="pass.htm" target="right">文書のセキュリティ</a></h2>
+		<div style="display:none;">
+			<a href = "pass.htm"></a><ul>
+			<li class="item"><a href="pass.htm#encrypt" target="right">パスワードによる文書の暗号化</a></li>
+			<li class="item"><a href="pass.htm#unlock" target="right">ドキュメントのロック解除</a></li>
+			<li class="item"><a href="pass.htm#lock" target="right">パスワードの設定</a></li>
+			<li class="item"><a href="pass.htm#decrypt" target="right">暗号化の解除</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--しおりの利用と作成／編集-->
+	<div id="chapter_topic" class="chapter">
+		<h2 onclick="expandcollapse_topic()"><a href="bookmark.htm" target="right">しおりの利用と作成／編集</a></h2>
+		<div style="display:none;">
+			<ul>
+			<li class="item"><a href="bookmark.htm#useBookmark" target="right">しおりの利用</a></li>
+			<li class="item"><a href="bookmark.htm#bookmarkPanel" target="right">しおりパネル</a></li>
+			<li class="item"><a href="bookmark.htm#newBookmark" target="right">しおりの新規作成</a></li>
+			<li class="item"><a href="bookmark.htm#updateBookmark" target="right">しおりの編集</a></li>
+			<li class="item"><a href="bookmark.htm#changeNest" target="right">アウトラインの階層・順序の変更</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--PDFの結合-->
+	<div id="chapter_merge" class="chapter">
+		<h2 onclick="expandcollapse(expandcollapse_merge())"><a href="merge.htm" target="right">PDFの結合</a></h2>
+		<div style="display:none;">
+			<a href = "merge.htm"></a><ul>
+			<li class="item"><a href="merge.htm#merge" target="right">PDFの結合</a></li>
+			<li class="item"><a href="merge.htm#store" target="right">処理の一時保存</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!--その他の機能-->
+	<div id="chapter_gamen" class="chapter">
+		<h2 onclick="expandcollapse_gamen()"><a href="other.htm" target="right">その他の機能</a></h2>
+		<div style="display:none;">
+			<ul>
+			<li class="item"><a href="other.htm#remove" target="right">ページの削除／入れ替え</a></li>
+			<li class="item"><a href="other.htm#split" target="right">ページの分割と抽出</a></li>
+			<li class="item"><a href="other.htm#text" target="right">文字情報の抽出</a></li>
+			<li class="item"><a href="other.htm#export" target="right">画像として書き出す</a></li>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
+
