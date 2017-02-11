@@ -4,158 +4,20 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "D053031153987100DAC57F9A607EA2640EB9A806" : 0,
-    "A4DE8DF3CDBFF39911AB2F7320ADE64CE9A13B5C" : 0,
-    "6D2D555B44909E8E03DFDE087DF45579CBDC0E2B" : 0,
     "989A0CAE09730C3408593109A667BBD36BA20F0D" : 0,
-    "BCD12C8089FAAB6BB5BA0EB29D5E9B819F96835E" : 0,
-    "A4DF768E84CDA8CAF9B957278171D1B47FE5E499" : 0,
-    "134716499D45ADB5AA3018FF51506506646CA4F9" : 0,
-    "6DCEED915CDB0C6A0F32BFCCAD70BF15612D4365" : 0,
-    "3DD46C313F52CDA56D9E5FAF66856056F11BFBD9" : 0,
-    "0E23F7A70E6955233CB95489A54B4BEE14601139" : 0,
-    "8935EB3DFEBD89FACA38DF4218B2E6D8E6CB7476" : 0,
-    "F4F1996D83199909C444C0C6D5B675E9B1D28D91" : 0,
-    "B5B953A4B857AC52A2FA9FF878BD126472DBB60D" : 0,
-    "799E4B385F09AA231932B9E6CA9228B5E70BE31D" : 0,
-    "D029A61EEBEB04E70E6291A370F18EEBD3A97A35" : 0,
-    "C0CBBD8D2AD206D6461CBB71DB08D812505ACBE7" : 0,
-    "ACDF1C3558667A5037CAF127F68566EECDADCFBC" : 0,
-    "F6FA607D05B1BF6C0004C1F2C02CD8E2DB2AFDC7" : 0,
-    "680424A7C6DD521A605E767581D2940E67BD3855" : 0,
-    "A359826602C1B39DD795D504557B6C18661D474A" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5550670A-17AD-4FD2-8335-9828FC132DC0",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "D053031153987100DAC57F9A607EA2640EB9A806" : "..\/Practice\/Document-based1",
-    "A4DE8DF3CDBFF39911AB2F7320ADE64CE9A13B5C" : "..\/Practice\/WindowLevel",
-    "6D2D555B44909E8E03DFDE087DF45579CBDC0E2B" : "..\/Practice\/NotificationTest",
     "989A0CAE09730C3408593109A667BBD36BA20F0D" : "PDF%20Kit\/",
-    "BCD12C8089FAAB6BB5BA0EB29D5E9B819F96835E" : "..\/Practice\/TextFieldTest",
-    "A4DF768E84CDA8CAF9B957278171D1B47FE5E499" : "..\/Practice\/Document-based3",
-    "134716499D45ADB5AA3018FF51506506646CA4F9" : "..\/Practice\/DragNDropTable",
-    "6DCEED915CDB0C6A0F32BFCCAD70BF15612D4365" : "..\/Practice\/PDFSelectionDemo",
-    "3DD46C313F52CDA56D9E5FAF66856056F11BFBD9" : "..\/Practice\/ClearIcon",
-    "0E23F7A70E6955233CB95489A54B4BEE14601139" : "..\/Practice\/LinkToSubView",
-    "8935EB3DFEBD89FACA38DF4218B2E6D8E6CB7476" : "..\/Practice\/SplitViewTest",
-    "F4F1996D83199909C444C0C6D5B675E9B1D28D91" : "..\/Practice\/LimitMaxLengthFormatter",
-    "B5B953A4B857AC52A2FA9FF878BD126472DBB60D" : "..\/Practice\/DropletTemplate",
-    "799E4B385F09AA231932B9E6CA9228B5E70BE31D" : "..\/Practice\/ComboTest",
-    "D029A61EEBEB04E70E6291A370F18EEBD3A97A35" : "..\/Practice\/UseASInObjC",
-    "C0CBBD8D2AD206D6461CBB71DB08D812505ACBE7" : "..\/Practice\/FilterTableViewContents",
-    "ACDF1C3558667A5037CAF127F68566EECDADCFBC" : "..\/Practice\/TagController",
-    "F6FA607D05B1BF6C0004C1F2C02CD8E2DB2AFDC7" : "..\/Practice\/ClipboardObserver",
-    "680424A7C6DD521A605E767581D2940E67BD3855" : "..\/Practice\/customButton",
-    "A359826602C1B39DD795D504557B6C18661D474A" : "..\/Practice\/SheetDialogTest"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Sao's PDF Kit",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Sao's PDF Kit.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/LinkToSubView.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0E23F7A70E6955233CB95489A54B4BEE14601139"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/DragNDropTable.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "134716499D45ADB5AA3018FF51506506646CA4F9"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/ClearIcon.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3DD46C313F52CDA56D9E5FAF66856056F11BFBD9"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/customButton.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "680424A7C6DD521A605E767581D2940E67BD3855"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/NotificationTest.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6D2D555B44909E8E03DFDE087DF45579CBDC0E2B"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/PDFSelectionDemo.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6DCEED915CDB0C6A0F32BFCCAD70BF15612D4365"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/ComboTest.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "799E4B385F09AA231932B9E6CA9228B5E70BE31D"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/SplitViewTest.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8935EB3DFEBD89FACA38DF4218B2E6D8E6CB7476"
-    },
-    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/PDF-Kit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "989A0CAE09730C3408593109A667BBD36BA20F0D"
     },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/SheetDialogTest.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A359826602C1B39DD795D504557B6C18661D474A"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/WindowLevel.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4DE8DF3CDBFF39911AB2F7320ADE64CE9A13B5C"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/Document-based2.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4DF768E84CDA8CAF9B957278171D1B47FE5E499"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/Document-based3.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4DF768E84CDA8CAF9B957278171D1B47FE5E499"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/TagController.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ACDF1C3558667A5037CAF127F68566EECDADCFBC"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/DropletTemplate.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B5B953A4B857AC52A2FA9FF878BD126472DBB60D"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/TextFieldTest.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BCD12C8089FAAB6BB5BA0EB29D5E9B819F96835E"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/FilterTableViewContents.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C0CBBD8D2AD206D6461CBB71DB08D812505ACBE7"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/UseASInObjC.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D029A61EEBEB04E70E6291A370F18EEBD3A97A35"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/Document-based1.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D053031153987100DAC57F9A607EA2640EB9A806"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/LimitMaxLengthFormatter.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F4F1996D83199909C444C0C6D5B675E9B1D28D91"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SaoKKK\/ClipboardObserver.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F6FA607D05B1BF6C0004C1F2C02CD8E2DB2AFDC7"
-    }
   ]
 }
