@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B9023E8D1CC6E823002A0E65 /* appIcon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = B9023E8C1CC6E823002A0E65 /* appIcon_64.png */; };
 		B905BCFF1D0DA27E00E8A438 /* PrefWinC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B905BD011D0DA27E00E8A438 /* PrefWinC.xib */; };
 		B907C4B71C848A440019F247 /* sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = B907C4B61C848A440019F247 /* sidebar.png */; };
 		B90C05E01CD021E90085D918 /* MaxLenxFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90C05DF1CD021E90085D918 /* MaxLenxFormatter.m */; };
@@ -91,7 +90,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B9023E8C1CC6E823002A0E65 /* appIcon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon_64.png; path = Assets.xcassets/AppIcon.appiconset/appIcon_64.png; sourceTree = "<group>"; };
 		B905BD001D0DA27E00E8A438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PrefWinC.xib; sourceTree = "<group>"; };
 		B905BD031D0DA29100E8A438 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/PrefWinC.strings; sourceTree = "<group>"; };
 		B907C4B61C848A440019F247 /* sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sidebar.png; path = Graphics/sidebar.png; sourceTree = "<group>"; };
@@ -189,6 +187,9 @@
 		B9A2FF1B1C79730B00E39B57 /* MyPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPDFView.m; sourceTree = "<group>"; };
 		B9A8C9681C916C10008A2DEB /* OLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLController.h; sourceTree = "<group>"; };
 		B9A8C9691C916C10008A2DEB /* OLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLController.m; sourceTree = "<group>"; };
+		B9B179D61E4F6883003BB3B1 /* appIcon_32.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = appIcon_32.xcf; path = Graphics/appIcon_32.xcf; sourceTree = "<group>"; };
+		B9B179D71E4F6883003BB3B1 /* appIcon_64.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = appIcon_64.xcf; path = Graphics/appIcon_64.xcf; sourceTree = "<group>"; };
+		B9B179D81E4F6883003BB3B1 /* appIcon.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = appIcon.xcf; path = Graphics/appIcon.xcf; sourceTree = "<group>"; };
 		B9C45DAD1CADFC9F00683937 /* resizeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeb.png; path = Graphics/resizeb.png; sourceTree = "<group>"; };
 		B9C45DAE1CADFC9F00683937 /* resizef.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizef.png; path = Graphics/resizef.png; sourceTree = "<group>"; };
 		B9C5856E1C92963400243A38 /* BMPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPanel.h; sourceTree = "<group>"; };
@@ -306,9 +307,11 @@
 		B951BD7A1C719E0C007B9359 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B9B179D61E4F6883003BB3B1 /* appIcon_32.xcf */,
+				B9B179D71E4F6883003BB3B1 /* appIcon_64.xcf */,
+				B9B179D81E4F6883003BB3B1 /* appIcon.xcf */,
 				B9E51F0F1CC845C8004F002E /* lock.png */,
 				B9E51F101CC845C9004F002E /* unlock.png */,
-				B9023E8C1CC6E823002A0E65 /* appIcon_64.png */,
 				B9C45DAD1CADFC9F00683937 /* resizeb.png */,
 				B9C45DAE1CADFC9F00683937 /* resizef.png */,
 				B9F1E2511CA89C2300AFAA6F /* cZoom.png */,
@@ -594,7 +597,6 @@
 				B9C45DAF1CADFC9F00683937 /* resizeb.png in Resources */,
 				B96EE7841C818A630063C7A2 /* goForward.png in Resources */,
 				B96EE7831C818A630063C7A2 /* goBack.png in Resources */,
-				B9023E8D1CC6E823002A0E65 /* appIcon_64.png in Resources */,
 				B9E51F111CC845C9004F002E /* lock.png in Resources */,
 				B936FBCA1CA26AE800B86A0B /* selectText_on.png in Resources */,
 				B93FD57B1C86D45B00B68959 /* twoUp_off.png in Resources */,
