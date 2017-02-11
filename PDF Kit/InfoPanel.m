@@ -28,6 +28,7 @@
     IBOutlet NSTextField *txtSubject;
     IBOutlet NSTextField *txtKeyword;
     IBOutlet NSTextField *txtLock;
+    IBOutlet NSButton *pshLock;
 }
 
 @end
@@ -93,7 +94,7 @@
 }
 
 - (IBAction)pshLock:(id)sender {
-    if ([sender state]){
+    if (pshLock.state){
         if (!(WINC)._pdfView.document.allowsCopying || !(WINC)._pdfView.document.allowsPrinting) {
             (APPD).parentWin = self.window;
             (APPD).pwMsgTxt.stringValue = NSLocalizedString(@"UnlockEditMsg", @"");
